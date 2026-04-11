@@ -65,7 +65,7 @@ p{color:var(--ink-2)}
 }
 
 /* HERO - clean elegant */
-.hero{min-height:90vh;background:linear-gradient(180deg,#1a1d2e 0%,#2d3142 100%);position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#fff;padding:80px 94px 80px 24px;overflow:hidden}
+.hero{min-height:90vh;background:linear-gradient(180deg,#1a1d2e 0%,#2d3142 100%);position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#fff;padding:80px 94px;overflow:hidden}
 @media(max-width:768px){.hero{padding:60px 20px}}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center top,rgba(200,85,61,.15),transparent 60%),radial-gradient(ellipse at center bottom,rgba(184,137,58,.1),transparent 50%);pointer-events:none}
 .hero-label{font-size:.7rem;text-transform:uppercase;letter-spacing:4px;color:rgba(255,255,255,.5);margin-bottom:20px;font-weight:500;position:relative}
@@ -81,6 +81,7 @@ p{color:var(--ink-2)}
 
 /* SECTIONS */
 .sec{max-width:1110px;margin:0 auto;padding:80px 94px 80px 24px}
+@media(min-width:769px){.sec{padding-left:80px}}
 .sec-label{text-align:center;font-size:.7rem;text-transform:uppercase;letter-spacing:3px;color:var(--accent);font-weight:600;margin-bottom:12px}
 .sec-title{font-family:'Inter',sans-serif;font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:700;text-align:center;margin-bottom:16px;color:var(--ink);line-height:1.15;letter-spacing:-.025em}
 .sec-sub{text-align:center;color:var(--mute);margin-bottom:48px;font-size:.95rem;max-width:600px;margin-left:auto;margin-right:auto}
@@ -92,7 +93,7 @@ p{color:var(--ink-2)}
 .day-n{width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:1.4rem;font-weight:700;flex-shrink:0;letter-spacing:-.02em}
 .day-info h2{font-family:'Inter',sans-serif;font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:4px;letter-spacing:-.015em}
 .day-info .date{opacity:.75;font-size:.75rem;letter-spacing:1.5px;text-transform:uppercase;font-weight:500}
-.day-body{padding:32px}
+.day-body{padding:32px 40px}
 .day-body>p{font-size:.92rem;color:var(--ink-2);margin-bottom:12px}
 .day-body h4{font-family:'Inter',sans-serif;font-size:1rem;color:var(--ink);margin-top:24px;margin-bottom:12px;font-weight:700;letter-spacing:-.01em}
 
@@ -192,7 +193,7 @@ p{color:var(--ink-2)}
 .chk li::before{content:'';position:absolute;left:0;top:14px;width:14px;height:14px;border:1.5px solid var(--accent);border-radius:3px}
 
 /* FOOTER */
-.footer{background:var(--ink);color:#fff;text-align:center;padding:60px 94px 60px 24px;font-size:.88rem;margin-top:40px}
+.footer{background:var(--ink);color:#fff;text-align:center;padding:60px 94px;font-size:.88rem;margin-top:40px}
 @media(max-width:768px){.footer{padding:50px 20px}}
 .footer>p:first-child{font-size:.7rem;text-transform:uppercase;letter-spacing:3px;opacity:.7;margin-bottom:16px}
 .footer .sub{opacity:.4;font-size:.7rem;margin-top:8px;letter-spacing:.5px}
@@ -215,7 +216,7 @@ p{color:var(--ink-2)}
 .do p,.dont p{color:var(--ink-2)}
 
 @media(max-width:768px){
-  .day-body{padding:24px 20px}
+  .day-body{padding:22px 18px}
   .day-head{padding:22px 24px}
   .sec{padding:56px 20px}
   .curr{position:static;margin-top:10px;display:inline-block}
