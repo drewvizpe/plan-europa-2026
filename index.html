@@ -282,11 +282,37 @@ p{color:var(--ink-2)}
 .em-item a{color:var(--ink);text-decoration:none;font-weight:600;font-size:1rem;font-family:'Fraunces',serif;font-style:italic}
 .em-item a:hover{text-decoration:underline}
 
-/* LIGHTBOX */
-.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:3000;display:none;align-items:center;justify-content:center;padding:20px}
+/* LIGHTBOX - CAROUSEL */
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.96);z-index:3000;display:none;align-items:center;justify-content:center;padding:60px 20px 80px}
 .lightbox.open{display:flex}
-.lightbox img{max-width:95%;max-height:92vh;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
-.lightbox-close{position:absolute;top:20px;right:20px;background:rgba(255,255,255,.15);border:none;color:#fff;width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:1.4rem;backdrop-filter:blur(8px)}
+.lightbox-img-wrap{max-width:95%;max-height:85vh;display:flex;align-items:center;justify-content:center;position:relative}
+.lightbox img{max-width:100%;max-height:85vh;border-radius:8px;box-shadow:0 20px 80px rgba(0,0,0,.5);object-fit:contain}
+.lightbox-close{position:absolute;top:20px;right:20px;background:rgba(255,255,255,.12);border:none;color:#fff;width:48px;height:48px;border-radius:50%;cursor:pointer;font-size:1.5rem;backdrop-filter:blur(10px);transition:all .2s;z-index:10}
+.lightbox-close:hover{background:rgba(255,255,255,.25);transform:rotate(90deg)}
+.lightbox-arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.12);border:none;color:#fff;width:54px;height:54px;border-radius:50%;cursor:pointer;font-size:1.8rem;backdrop-filter:blur(10px);transition:all .2s;z-index:10;display:flex;align-items:center;justify-content:center}
+.lightbox-arrow:hover{background:rgba(255,255,255,.25)}
+.lightbox-arrow.prev{left:30px}
+.lightbox-arrow.next{right:30px}
+.lightbox-caption{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);color:#fff;text-align:center;font-family:'Fraunces',serif;font-style:italic;font-size:1.1rem;background:rgba(0,0,0,.4);padding:10px 24px;border-radius:100px;backdrop-filter:blur(10px);max-width:90%}
+.lightbox-counter{position:absolute;top:28px;left:30px;color:rgba(255,255,255,.7);font-size:.85rem;letter-spacing:2px;font-weight:500}
+@media(max-width:600px){
+  .lightbox{padding:50px 10px 70px}
+  .lightbox-arrow{width:44px;height:44px;font-size:1.4rem}
+  .lightbox-arrow.prev{left:10px}
+  .lightbox-arrow.next{right:10px}
+  .lightbox-caption{font-size:.9rem;padding:8px 16px;bottom:20px}
+  .lightbox-close{top:12px;right:12px;width:42px;height:42px}
+  .lightbox-counter{top:18px;left:16px;font-size:.75rem}
+}
+
+/* GALLERY - thumbnails */
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin:16px 0}
+.gallery .thumb{position:relative;aspect-ratio:4/3;border-radius:8px;overflow:hidden;cursor:pointer;transition:all .25s;border:1px solid var(--line)}
+.gallery .thumb:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,.15)}
+.gallery .thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.gallery .thumb:hover img{transform:scale(1.08)}
+.gallery .thumb .cap{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.8));color:#fff;padding:20px 12px 10px;font-size:.72rem;font-weight:500;letter-spacing:.3px}
+@media(max-width:600px){.gallery{grid-template-columns:repeat(2,1fr);gap:8px}.gallery .thumb .cap{font-size:.68rem}}
 
 /* COUNTRY FLAG STRIPE on day cards */
 .day{position:relative}
@@ -713,7 +739,7 @@ details.coll .coll-body{padding:18px}
 <div class="hr-row"><div class="hr-time">9:30 PM</div><div class="hr-desc"><strong>A dormir</strong> (NO antes — para ajustar jet lag)</div></div>
 </div>
 <div class="tip t-danger"><div class="ti">🚨</div><div><strong>IMPORTANTE — Recargo traslado Gatwick:</strong> Su vuelo llega a Gatwick, PERO el paquete solo incluye traslado gratis si llegan a Heathrow. Para que los recojan en Gatwick <strong>TIENEN que pagar $31 por persona ($155 familia)</strong>. Llamen a Anahí (0810-345-0014). Si no lo contratan, nadie los recoge.</div></div>
-<div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=London+autumn+october" target="_blank">📷 Londres en octubre</a></div>
+<div class="gallery" id="gal-dia2"><div class="thumb" onclick="openGallery('gal-dia2',0)"><img src="img/london1.jpg" alt="Londres en octubre" loading="lazy"><div class="cap">Londres en octubre</div></div><div class="thumb" onclick="openGallery('gal-dia2',1)"><img src="img/london2.jpg" alt="Londres vista" loading="lazy"><div class="cap">Londres vista</div></div></div>
 <div class="pocket"><div class="pm-icon">💰</div><div><strong>Llevar: ~£30-40/persona (~$40-50).</strong> Cena + supermercado.</div></div>
 <div class="tip t-food"><div class="ti">🍽</div><div><strong>Cena:</strong> Nando's (~£12-15/pp) o pub Fish & Chips (~£10-12). Meal Deal en supermercado: £3.50-5 (sandwich+bebida+snack).</div></div>
 <div class="tip t-warn"><div class="ti">⚠️</div><div><strong>DOMINGO:</strong> Tiendas con horario reducido (11 AM-5 PM). Supermercados sí abren normal.</div></div>
@@ -765,7 +791,7 @@ details.coll .coll-body{padding:18px}
 <div class="hr-row"><div class="hr-time">9:00 PM</div><div class="hr-desc"><strong>Regreso al hotel</strong> (metro o Uber, por su cuenta)</div></div>
 </div>
 <p><span class="tag tag-inc">✅ INCLUIDO</span> Tour mañana: Hyde Park, Piccadilly Circus, Big Ben, Buckingham (cambio de guardia), Westminster.</p>
-<div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Big+Ben+London" target="_blank">📷 Big Ben</a><a href="https://www.google.com/search?tbm=isch&q=Buckingham+Palace+changing+guard" target="_blank">📷 Cambio Guardia</a><a href="https://www.google.com/search?tbm=isch&q=Westminster+Abbey" target="_blank">📷 Westminster</a></div>
+<div class="gallery" id="gal-dia3"><div class="thumb" onclick="openGallery('gal-dia3',0)"><img src="img/bigben.jpg" alt="Big Ben y Westminster" loading="lazy"><div class="cap">Big Ben y Westminster</div></div><div class="thumb" onclick="openGallery('gal-dia3',1)"><img src="img/tower_bridge.jpg" alt="Tower Bridge" loading="lazy"><div class="cap">Tower Bridge</div></div></div>
 <h4 style="margin-top:18px;color:var(--primary)">🕐 Tarde libre</h4>
 <div class="vs">
 <div class="vs-tour"><h4>🎟 Tour: Este de Londres — $73/pp ($365 familia)</h4>
@@ -783,7 +809,7 @@ details.coll .coll-body{padding:18px}
 </div>
 <div class="tip t-info"><div class="ti">🤔</div><div><strong>MI OPINIÓN:</strong> Háganlo solos. Este recorrido es básicamente caminar por lugares que son gratis y que están pegados uno al otro. NO necesitan guía para esto. Con Google Maps llegan perfecto. Se ahorran $290 y además tienen libertad de quedarse más tiempo donde les guste (Borough Market es genial para comer y pasear). El tour vale la pena cuando hay colas largas o cuando la historia es compleja — aquí no es el caso.</div></div>
 </div>
-<div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Covent+Garden+London" target="_blank">📷 Covent Garden</a><a href="https://www.google.com/search?tbm=isch&q=Tower+Bridge+London" target="_blank">📷 Tower Bridge</a><a href="https://www.google.com/search?tbm=isch&q=Borough+Market+London" target="_blank">📷 Borough Market</a><a href="https://www.google.com/search?tbm=isch&q=Millennium+Bridge+London" target="_blank">📷 Millennium Bridge</a></div>
+
 <div class="pocket"><div class="pm-icon">💰</div><div><strong>Llevar: ~£50-70/persona.</strong> Almuerzo (~£10), cena (~£12-15), metro.</div></div>
 <div class="tip t-crowd"><div class="ti">👥</div><div><strong>Multitudes:</strong> Covent Garden y Borough Market populares pero manejables un lunes. Tower Bridge: vayan al lado sur para fotos con menos gente.</div></div>
 <div class="tip t-danger"><div class="ti">🔒</div><div><strong>Carteristas:</strong> Oxford Street y metro 5-7 PM. Mochila adelante. Celular con cordón.</div></div>
@@ -812,7 +838,7 @@ details.coll .coll-body{padding:18px}
 <p><span class="tag tag-inc">✅ INCLUIDO</span> Bus a Dover, ferry 75 min cruzando el Canal de la Mancha a Calais (Francia), bus a París.</p>
 <div class="tip t-info"><div class="ti">🚢</div><div><strong>¿Qué es un ferry?</strong> Es un barco ENORME donde sube el bus entero con ustedes adentro (o bajan del bus y suben al barco a pie, depende del tour). Tiene varios pisos: cafetería, tienda libre de impuestos, asientos, cubierta abierta (terraza arriba). No es un botecito, es como un edificio flotante. Dura 75 minutos cruzar de Inglaterra a Francia por el Canal de la Mancha (el mar que separa a los dos países). NO se marean normalmente, el mar es tranquilo.<br><br>
 <strong>Tip importante:</strong> Suban a la cubierta (terraza de arriba, al aire libre) cuando estén saliendo de Dover. Van a ver los famosos <strong>acantilados blancos de Dover</strong> — paredes de roca blanca enormes que se ven desde el mar. Es una imagen icónica. Lleven la chaqueta porque arriba hace viento y frío.</div></div>
-<div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=White+Cliffs+Dover+from+ferry" target="_blank">📷 Acantilados Dover</a><a href="https://www.google.com/search?tbm=isch&q=Dover+Calais+ferry+inside+ship" target="_blank">📷 Cómo es un ferry por dentro</a></div>
+<div class="gallery" id="gal-dia4"><div class="thumb" onclick="openGallery('gal-dia4',0)"><img src="img/ferry_dover.jpg" alt="Ferry cruzando el Canal" loading="lazy"><div class="cap">Ferry cruzando el Canal</div></div><div class="thumb" onclick="openGallery('gal-dia4',1)"><img src="img/paris1.jpg" alt="París al atardecer" loading="lazy"><div class="cap">París al atardecer</div></div></div>
 <h4 style="margin-top:15px;color:var(--primary)">🌙 Noche</h4>
 <div class="vs">
 <div class="vs-tour"><h4>🎟 Tour: Crucero Sena + París Iluminado — $93/pp ($465 familia)</h4>
@@ -827,7 +853,7 @@ details.coll .coll-body{padding:18px}
 </div>
 <div class="tip t-info"><div class="ti">🤔</div><div><strong>MI OPINIÓN:</strong> Este es de los pocos tours que SÍ les recomiendo contratar. Razones: (1) Es su PRIMERA noche en París, no conocen nada, (2) vienen agotados de un día de viaje largo, (3) París de noche es una experiencia única y el tour la hace cómoda y segura, (4) no quieren estar buscando cómo volver al hotel a la 1 AM en una ciudad desconocida. Los $465 suenan mucho pero es una noche que van a recordar para siempre. Si de todas formas quieren ahorrar, mejor descansen esa noche y hagan el crucero por su cuenta OTRO día libre — pero no tienen otro día libre en París por la noche.</div></div>
 </div>
-<div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Paris+Seine+cruise+night" target="_blank">📷 Sena de noche</a><a href="https://www.google.com/search?tbm=isch&q=Eiffel+Tower+sparkling+night" target="_blank">📷 Torre Eiffel noche</a></div>
+
 <div class="pocket"><div class="pm-icon">💰</div><div><strong>Llevar: ~€30-40/persona.</strong> Día de traslado. Si crucero del tour: ya pagado.</div></div>
 <div class="logi"><h4>🧭 Logística del día</h4>
 <div class="logi-row"><div class="logi-icon">🚌</div><div class="logi-text"><strong>Cómo viajan:</strong> Bus del tour todo el día: Londres → Dover → ferry → Calais → París. Ustedes NO manejan nada, solo se suben al bus y disfrutan.</div></div>
@@ -851,7 +877,7 @@ details.coll .coll-body{padding:18px}
 <div class="hr-row"><div class="hr-time">9:30 PM</div><div class="hr-desc"><strong>Regreso al hotel</strong> (por su cuenta en metro)</div></div>
 </div>
 <p><span class="tag tag-inc">✅ INCLUIDO</span> Tour mañana: Campos Elíseos, Torre Eiffel, etc.</p>
-<div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Champs+Elysees+Paris" target="_blank">📷 Campos Elíseos</a><a href="https://www.google.com/search?tbm=isch&q=Eiffel+Tower+daytime" target="_blank">📷 Torre Eiffel</a></div>
+<div class="gallery" id="gal-dia5"><div class="thumb" onclick="openGallery('gal-dia5',0)"><img src="img/eiffel.jpg" alt="Torre Eiffel" loading="lazy"><div class="cap">Torre Eiffel</div></div><div class="thumb" onclick="openGallery('gal-dia5',1)"><img src="img/montmartre.jpg" alt="Montmartre y Sacré-Cœur" loading="lazy"><div class="cap">Montmartre y Sacré-Cœur</div></div><div class="thumb" onclick="openGallery('gal-dia5',2)"><img src="img/notre_dame.jpg" alt="Notre Dame" loading="lazy"><div class="cap">Notre Dame</div></div></div>
 <h4 style="margin-top:15px;color:var(--primary)">🕐 Tarde</h4>
 <div class="vs">
 <div class="vs-tour"><h4>🎟 Tour: Montmartre + Barrio Latino + Notre Dame — $78/pp ($390 familia)</h4>
@@ -872,7 +898,7 @@ details.coll .coll-body{padding:18px}
 </div>
 <div class="tip t-info"><div class="ti">🤔</div><div><strong>MI OPINIÓN:</strong> Háganlo solos. Estos barrios son para PASEAR, sentarse en un café, comer una crêpe, ver artistas, entrar a Notre Dame con calma. Un tour grupal los apura: "vamos, vamos, siguiente parada". Pierden lo mejor que es el ambiente. Con Google Maps van de un punto a otro sin problema. Se ahorran $320 y disfrutan MÁS. Lo único que pierden es la explicación histórica del guía, pero pueden leer sobre Notre Dame en Wikipedia 5 minutos antes de entrar y listo.</div></div>
 </div>
-<div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Sacre+Coeur+Paris+view" target="_blank">📷 Sacré-Cœur</a><a href="https://www.google.com/search?tbm=isch&q=Place+du+Tertre+artists" target="_blank">📷 Artistas Montmartre</a><a href="https://www.google.com/search?tbm=isch&q=Notre+Dame+Paris+2025" target="_blank">📷 Notre Dame</a></div>
+
 <div class="pocket"><div class="pm-icon">💰</div><div><strong>Llevar: ~€50-60/persona.</strong> Almuerzo (~€6), cena menú del día (~€13), metro.</div></div>
 <div class="scam"><h4>⚠️ ESTAFA: Pulseras en Montmartre</h4><div class="sw">📍 Escaleras del Sacré-Cœur</div><p>Hombres atan pulseras en la muñeca MUY rápido. Luego exigen €10-20.</p><div class="sd">🛡️ Manos en bolsillos. "NON" fuerte. NO extiendan la mano.</div></div>
 <div class="scam"><h4>⚠️ ESTAFA: Peticiones falsas</h4><div class="sw">📍 Sacré-Cœur, Ópera</div><p>Jóvenes con clipboard piden firmar "petición". Mientras firman, cómplice roba del bolsillo.</p><div class="sd">🛡️ NO firmen NADA en la calle. "Non, merci" sin detenerse.</div></div>
@@ -935,11 +961,11 @@ details.coll .coll-body{padding:18px}
 <div class="hr-row"><div class="hr-time">9:00 PM</div><div class="hr-desc"><strong>Regreso al hotel.</strong> Mañana EMPACAR TODO (salen hacia Frankfurt)</div></div>
 </div>
 <div style="background:#e8f5e9;border-radius:12px;padding:16px;margin-bottom:15px"><p><span class="exc-v v-must">✅ CONTRATAR</span> <strong>Versalles — $114/pp ($570)</strong></p><p style="font-size:.82rem;color:#555;margin-top:6px">8:30 AM-2 PM. Sin cola + guía + transporte. Solos: 2-3 HORAS de cola. Vale cada centavo.</p></div>
-<div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Versailles+Hall+of+Mirrors" target="_blank">📷 Salón de Espejos</a><a href="https://www.google.com/search?tbm=isch&q=Versailles+gardens" target="_blank">📷 Jardines</a><a href="https://www.google.com/search?tbm=isch&q=Palace+Versailles+exterior" target="_blank">📷 Palacio</a></div>
+<div class="gallery" id="gal-dia6"><div class="thumb" onclick="openGallery('gal-dia6',0)"><img src="img/versailles.jpg" alt="Palacio de Versalles" loading="lazy"><div class="cap">Palacio de Versalles</div></div><div class="thumb" onclick="openGallery('gal-dia6',1)"><img src="img/paris1.jpg" alt="París - Tarde libre" loading="lazy"><div class="cap">París - Tarde libre</div></div></div>
 <div class="tip t-info"><div class="ti">⏱</div><div><strong>¿Aburrido?</strong> PARA NADA. El Salón de los Espejos (357 espejos) es impresionante. Los jardines son ENORMES. Con guía la historia cobra vida. 5h pasan volando.</div></div>
 <h4 style="margin-top:15px">🕐 2:30 PM — Tarde libre</h4>
 <p style="font-size:.85rem;color:#555">3 PM → Almuerzo boulangerie: baguette €4 + croissant €1.50<br>4 PM → <strong>Trocadéro</strong> = MEJOR foto Torre Eiffel (metro línea 6)<br>5 PM → <strong>Primark Rue de Rivoli</strong> (ropa barata) o <strong>Galeries Lafayette</strong> (cúpula de vidrio gratis, terraza con vista)</p>
-<div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Trocadero+Eiffel+Tower+view" target="_blank">📷 Vista Trocadéro</a><a href="https://www.google.com/search?tbm=isch&q=Galeries+Lafayette+dome" target="_blank">📷 Galeries Lafayette</a></div>
+
 <div class="pocket"><div class="pm-icon">💰</div><div><strong>Llevar: ~€40-50/persona.</strong> Versalles ya pagado. Almuerzo, metro, alguna compra.</div></div>
 <div class="logi"><h4>🧭 Logística del día</h4>
 <div class="logi-row"><div class="logi-icon">🚌</div><div class="logi-text"><strong>Versalles:</strong> El tour los recoge del hotel a las 8:30 AM, los lleva a Versalles (~45 min), los trae de vuelta a París centro ~2 PM. Desde ahí TARDE LIBRE.</div></div>
@@ -962,7 +988,7 @@ details.coll .coll-body{padding:18px}
 <div class="hr-row"><div class="hr-time meal">8:00 PM</div><div class="hr-desc"><strong>Cena</strong> cerca del hotel</div></div>
 </div>
 <p><span class="tag tag-inc">✅ INCLUIDO</span> Luxemburgo (tiempo libre) + Valle del Rin (castillos desde bus) + Frankfurt.</p>
-<div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Luxembourg+city+old+town" target="_blank">📷 Luxemburgo</a><a href="https://www.google.com/search?tbm=isch&q=Rhine+Valley+castles" target="_blank">📷 Castillos del Rin</a></div>
+<div class="gallery" id="gal-dia7"><div class="thumb" onclick="openGallery('gal-dia7',0)"><img src="img/rhine.jpg" alt="Valle del Rin" loading="lazy"><div class="cap">Valle del Rin</div></div></div>
 <div class="tip t-info"><div class="ti">⏱</div><div><strong>¿Aburrido?</strong> El Valle del Rin se ve desde el bus — castillos sobre colinas con viñedos. Bonito pero es ventana. Luxemburgo es parada corta. Si les gusta naturaleza, disfruten. Si no, buena siesta.</div></div>
 
 <details class="coll"><summary>💡 Datos curiosos</summary><div class="coll-body"><p style="font-size:.85rem;color:var(--ink-2);line-height:1.7"><strong>Luxemburgo</strong> es el único Gran Ducado del mundo. Fue el PRIMER país en tener transporte público 100% gratis (2020). Hablan 3 idiomas oficiales.<br><br><strong>Loreley:</strong> Según la leyenda, una sirena cantaba desde esta roca (132m de altura) y distraía a los marineros que chocaban con las rocas del Rin.<br><br><strong>Frankfurt:</strong> Es la capital financiera de Europa. Aquí está el Banco Central Europeo.</p></div></details>
@@ -1012,7 +1038,7 @@ details.coll .coll-body{padding:18px}
 <div class="hr-row"><div class="hr-time meal">7:30 PM</div><div class="hr-desc"><strong>Cena</strong> (comprar en supermercado Migros/Coop, NO restaurante)</div></div>
 </div>
 <p><span class="tag tag-inc">✅ INCLUIDO</span> Heidelberg + Titisee (Selva Negra) + Cataratas del Rin + Zurich.</p>
-<div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Heidelberg+old+bridge+castle" target="_blank">📷 Heidelberg</a><a href="https://www.google.com/search?tbm=isch&q=Titisee+Black+Forest" target="_blank">📷 Titisee</a><a href="https://www.google.com/search?tbm=isch&q=Rhine+Falls+Schaffhausen" target="_blank">📷 Cataratas del Rin</a></div>
+<div class="gallery" id="gal-dia8"><div class="thumb" onclick="openGallery('gal-dia8',0)"><img src="img/swiss_alps.jpg" alt="Selva Negra y Alpes" loading="lazy"><div class="cap">Selva Negra y Alpes</div></div><div class="thumb" onclick="openGallery('gal-dia8',1)"><img src="img/zurich.jpg" alt="Zurich" loading="lazy"><div class="cap">Zurich</div></div></div>
 <div class="tip t-info"><div class="ti">⏱</div><div><strong>¿Aburrido?</strong> NO. Día variado: ciudad bonita + lago en bosque + cascadas enormes. Paradas cortas 30-60 min.</div></div>
 <div class="tip t-warn"><div class="ti">💸</div><div><strong>🚨 SUIZA ES CARÍSIMA.</strong> Café CHF 5-6 (~$6). Comida en restaurante CHF 25-40/pp. Compren en supermercados <strong>Migros</strong> o <strong>Coop</strong> (comida preparada CHF 8-12). Coman fuerte en desayuno del hotel.</div></div>
 <div class="pocket"><div class="pm-icon">💰</div><div><strong>Llevar: ~€30 para Alemania + ~CHF 20-30 para Suiza.</strong> Mínimo gasto en Suiza.</div></div>
@@ -1040,13 +1066,13 @@ details.coll .coll-body{padding:18px}
 <div class="hr-row"><div class="hr-time meal">8:30 PM</div><div class="hr-desc"><strong>Cena</strong> en Munich (Döner, Currywurst)</div></div>
 </div>
 <p><strong>Lucerna:</strong> Puente de la Capilla (madera, 1333) + León de Lucerna (tallado en roca).</p>
-<div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Chapel+Bridge+Lucerne" target="_blank">📷 Puente Capilla</a><a href="https://www.google.com/search?tbm=isch&q=Lion+Monument+Lucerne" target="_blank">📷 León Lucerna</a></div>
+<div class="gallery" id="gal-dia9"><div class="thumb" onclick="openGallery('gal-dia9',0)"><img src="img/lucerne.jpg" alt="Lucerna" loading="lazy"><div class="cap">Lucerna</div></div><div class="thumb" onclick="openGallery('gal-dia9',1)"><img src="img/swiss_alps.jpg" alt="Monte Titlis - Alpes Suizos" loading="lazy"><div class="cap">Monte Titlis - Alpes Suizos</div></div><div class="thumb" onclick="openGallery('gal-dia9',2)"><img src="img/munich.jpg" alt="Munich" loading="lazy"><div class="cap">Munich</div></div></div>
 <div style="background:#e8f5e9;border-radius:12px;padding:16px;margin:15px 0"><p><span class="exc-v v-must">✅ CONTRATAR</span> <strong>Monte Titlis — $175/pp ($875)</strong></p><p style="font-size:.82rem;color:#555;margin-top:6px">Teleférico GIRATORIO a 3,238m. Cueva de hielo. Puente colgante 500m altura. ÚNICO.</p></div>
-<div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Mount+Titlis+Rotair" target="_blank">📷 Teleférico giratorio</a><a href="https://www.google.com/search?tbm=isch&q=Titlis+Cliff+Walk" target="_blank">📷 Cliff Walk</a><a href="https://www.google.com/search?tbm=isch&q=Titlis+ice+cave" target="_blank">📷 Cueva hielo</a></div>
+
 <div class="tip t-warn"><div class="ti">🧥</div><div><strong>ROPA TITLIS:</strong> Cima -5°C a 0°C. Abrigo grueso + guantes + gorro + protector solar.</div></div>
 <div class="tip t-info"><div class="ti">⏱</div><div><strong>¿Aburrido?</strong> IMPOSIBLE. Teleférico gira 360°. Cueva azul fluorescente. Puente con 500m de caída. Probablemente el día más emocionante.</div></div>
 <p style="margin-top:12px"><strong>Vaduz (Liechtenstein):</strong> Capital del país más pequeño de la ruta. Pueden sellar el pasaporte como souvenir (~CHF 3) en la oficina de turismo.</p>
-<div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Vaduz+Castle+Liechtenstein" target="_blank">📷 Castillo Vaduz</a></div>
+
 <div class="tip t-info"><div class="ti">🍺</div><div><strong>Dato:</strong> El Oktoberfest de Munich (la fiesta de cerveza más grande del mundo) termina la primera semana de octubre. Para cuando ustedes llegan (12-13 oct) ya terminó, pero la ciudad puede seguir animada con decoraciones y ambiente festivo. Si ven carpas de cerveza todavía abiertas, el ambiente es familiar de día (peligroso de noche por borrachos).</div></div>
 <div class="pocket"><div class="pm-icon">💰</div><div><strong>Llevar: ~CHF 20 + ~€30 Munich.</strong> Titlis ya pagado. <strong>DOMINGO:</strong> Tiendas cerradas en Suiza/Alemania. Solo gasolineras y estaciones de tren abren.</div></div>
 <div class="logi"><h4>🧭 Logística del día</h4>
@@ -1078,7 +1104,7 @@ details.coll .coll-body{padding:18px}
 </div>
 <p><strong>🌅 Mañana — Munich:</strong> Desayuno. Que la cumpleañera sepa que hoy es SU día.</p>
 <p><strong>🏔 ~Mediodía — Innsbruck:</strong> Calle María-Theresien con Alpes de fondo = fotos espectaculares. Apfelstrudel (~€5).</p>
-<div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Innsbruck+Maria+Theresien+Alps" target="_blank">📷 Innsbruck</a><a href="https://www.google.com/search?tbm=isch&q=Golden+Roof+Innsbruck" target="_blank">📷 Tejadito de Oro</a></div>
+<div class="gallery" id="gal-dia10"><div class="thumb" onclick="openGallery('gal-dia10',0)"><img src="img/innsbruck.jpg" alt="Innsbruck con los Alpes" loading="lazy"><div class="cap">Innsbruck con los Alpes</div></div><div class="thumb" onclick="openGallery('gal-dia10',1)"><img src="img/verona.jpg" alt="Verona - Casa de Julieta" loading="lazy"><div class="cap">Verona - Casa de Julieta</div></div><div class="thumb" onclick="openGallery('gal-dia10',2)"><img src="img/gondola.jpg" alt="Góndola en Venecia" loading="lazy"><div class="cap">Góndola en Venecia</div></div><div class="thumb" onclick="openGallery('gal-dia10',3)"><img src="img/venice_canal.jpg" alt="Canales de Venecia" loading="lazy"><div class="cap">Canales de Venecia</div></div></div>
 
 <h4 style="margin-top:15px;color:var(--accent)">💕 ~2:30 PM — Verona</h4>
 <div class="vs">
@@ -1096,12 +1122,12 @@ details.coll .coll-body{padding:18px}
 </div>
 <div class="tip t-info"><div class="ti">🤔</div><div><strong>MI OPINIÓN:</strong> Háganlo solos. Especialmente porque es el CUMPLEAÑOS. En un tour grupal tienen horario fijo y van con 30 extraños. Solos pueden quedarse 30 minutos en el balcón de Julieta tomando fotos, escribir la carta con calma, comerse un helado sin prisa. Verona es tan pequeña que es imposible perderse. Se ahorran $275 y la experiencia es mucho más personal para la quinceañera.</div></div>
 </div>
-<div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Juliet+balcony+Verona" target="_blank">📷 Balcón Julieta</a><a href="https://www.google.com/search?tbm=isch&q=Arena+di+Verona" target="_blank">📷 Arena Verona</a><a href="https://www.google.com/search?tbm=isch&q=Piazza+delle+Erbe+Verona" target="_blank">📷 Piazza Erbe</a></div>
+
 
 <h4 style="margin-top:15px;color:var(--accent)">🌙 Noche — Venecia: Cena de Quinceañera</h4>
 <p style="font-size:.85rem;color:#555">Hotel en Mestre. Tren a Venezia Santa Lucia: 10 min, ~€1.50/pp.</p>
 <p style="font-size:.85rem;color:#555"><strong>6:30 PM →</strong> Góndola privada al atardecer. €80-100 toda la familia (caben 5). NO negocien en San Marco, busquen paradas tranquilas.<br><strong>7:30 PM →</strong> Cena especial. <strong>Trattoria alla Madonna</strong> (Rialto, desde 1954, €15-28/plato) o cualquier restaurante bonito LEJOS de San Marco.<br><strong>8:30 PM →</strong> Torta. Encarguen con anticipación en pasticceria. <strong>Pasticceria Tonolo</strong> o <strong>Rosa Salva</strong>. Digan: "Torta di compleanno per una ragazza che compie quindici anni". €30-50.<br><strong>9:30 PM →</strong> <strong>Caffè Florian</strong> en Piazza San Marco (café más antiguo del mundo, 1720). Chocolate caliente. Orquesta en vivo. Basílica iluminada. MÁGICO. ~€15-20/pp.</p>
-<div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Venice+gondola+sunset" target="_blank">📷 Góndola atardecer</a><a href="https://www.google.com/search?tbm=isch&q=Caffe+Florian+Venice+night" target="_blank">📷 Caffè Florian</a><a href="https://www.google.com/search?tbm=isch&q=Venice+night+canal" target="_blank">📷 Venecia noche</a></div>
+
 <div class="tip t-info"><div class="ti">🎀</div><div><strong>Tiara:</strong> Compren una en cualquier tienda de accesorios en Verona o Venecia (~€5-15). Los italianos AMAN las celebraciones — si dicen al restaurante que es quinceañera, van a hacer de todo para que sea especial.</div></div>
 
 <details class="coll"><summary>🎀 Dónde comprar decoración para el cumpleaños en Venecia</summary><div class="coll-body"><p style="font-size:.85rem;color:var(--ink-2);line-height:1.7">
@@ -1150,7 +1176,7 @@ details.coll .coll-body{padding:18px}
 <div class="hr-row"><div class="hr-time meal">9:00 PM</div><div class="hr-desc"><strong>Cena</strong> cerca del hotel (pizza rápida, trattoria)</div></div>
 </div>
 <p><span class="tag tag-inc">✅ INCLUIDO</span> Mañana en Venecia: Puente Suspiros, San Marcos, Basílica (gratis). Tarde: bus a Roma.</p>
-<div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Bridge+of+Sighs+Venice" target="_blank">📷 Puente Suspiros</a><a href="https://www.google.com/search?tbm=isch&q=St+Marks+Square+Venice" target="_blank">📷 San Marcos</a></div>
+<div class="gallery" id="gal-dia11"><div class="thumb" onclick="openGallery('gal-dia11',0)"><img src="img/san_marco.jpg" alt="Plaza San Marcos" loading="lazy"><div class="cap">Plaza San Marcos</div></div><div class="thumb" onclick="openGallery('gal-dia11',1)"><img src="img/venice1.jpg" alt="Venecia" loading="lazy"><div class="cap">Venecia</div></div></div>
 <div class="tip t-info"><div class="ti">💡</div><div><strong>Ya hicieron góndola ayer (para la quinceañera).</strong> No necesitan repetir.<br><br>
 <strong>¿Qué es un "Traghetto"?</strong> Es una góndola grande que cruza el Gran Canal (el canal principal de Venecia, como un río ancho) de un lado a otro. Cuesta solo €2 por persona. Dura 2 minutos. Es como un "taxi-bote" rápido. Hay estaciones de traghetto marcadas a lo largo del canal. No es romántico como la góndola privada, pero les da la experiencia de subirse a una góndola por casi nada.<br><br>
 <strong>¿Qué son los "cicchetti"?</strong> Son como tapas (bocaditos pequeños) venecianas. Se venden en barcitos llamados "bacari" (pronunciado: ba-CA-ri). Cuestan €1-3 cada uno. Son: tostaditas con pescado, bolitas de arroz, camarones fritos, etc. Piden varios, los ponen en un plato, y los comen de pie en el mostrador. Es la comida más barata y rica de Venecia. Busquen los bacari cerca del Puente Rialto — hay muchos.</div></div>
@@ -1218,7 +1244,7 @@ details.coll .coll-body{padding:18px}
 <div class="hr-row"><div class="hr-time">10:00 PM</div><div class="hr-desc"><strong>Regreso al hotel</strong> por su cuenta (taxi/Uber)</div></div>
 </div>
 <p><span class="tag tag-inc">✅ INCLUIDO</span> Mañana: Coliseo (exterior), Circo Máximo, Santa María la Mayor, Vaticano (exterior).</p>
-<div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Colosseum+Rome" target="_blank">📷 Coliseo</a><a href="https://www.google.com/search?tbm=isch&q=Vatican+St+Peters+Square" target="_blank">📷 Vaticano</a></div>
+<div class="gallery" id="gal-dia12"><div class="thumb" onclick="openGallery('gal-dia12',0)"><img src="img/colosseum.jpg" alt="Coliseo Romano" loading="lazy"><div class="cap">Coliseo Romano</div></div><div class="thumb" onclick="openGallery('gal-dia12',1)"><img src="img/trevi.jpg" alt="Fontana di Trevi" loading="lazy"><div class="cap">Fontana di Trevi</div></div><div class="thumb" onclick="openGallery('gal-dia12',2)"><img src="img/pantheon_rome.jpg" alt="Panteón" loading="lazy"><div class="cap">Panteón</div></div><div class="thumb" onclick="openGallery('gal-dia12',3)"><img src="img/vatican.jpg" alt="Vaticano" loading="lazy"><div class="cap">Vaticano</div></div></div>
 <h4 style="margin-top:15px">🕐 Tarde</h4>
 <p style="font-size:.85rem;color:#555;margin-bottom:8px"><strong>El tour "Roma Barroca" cuesta $73/pp ($365 familia).</strong> Incluye: bus + caminar por Trevi, Panteón, Piazza Navona con guía. 5 horas.</p>
 <p style="font-size:.85rem;color:#555;margin-bottom:8px"><strong>¿Por qué NO contratarlo?</strong> Porque estos 3 lugares son GRATIS, están PEGADOS uno al otro (5 minutos caminando entre cada uno), y no necesitan guía para disfrutarlos. Es como si les cobraran $73 por llevarlos de la Plaza de Armas a la Catedral de Lima — pueden ir caminando solos.</p>
@@ -1227,10 +1253,10 @@ details.coll .coll-body{padding:18px}
 2:30 PM → <strong>Fontana di Trevi</strong>: Fuente gigante con esculturas, GRATIS. Tradición: tiren una moneda con la mano derecha sobre el hombro izquierdo = según la leyenda, volverán a Roma. Probablemente la fuente más famosa del mundo.<br>
 3 PM → Caminar 5 min al <strong>Panteón</strong>: Templo romano de 2000 años con un agujero circular en el techo por donde entra la luz del sol. Cuando llueve, el agua entra por el agujero y hay drenes en el piso. Entrada €5 (gratis menores de 18).<br>
 3:30 PM → Caminar 5 min a <strong>Piazza Navona</strong>: Plaza ovalada con 3 fuentes enormes del escultor Bernini. Hay artistas callejeros, pintores. Pueden sentarse en una terraza a tomar algo (~€4-5 un café).</p>
-<div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Trevi+Fountain+Rome" target="_blank">📷 Fontana di Trevi</a><a href="https://www.google.com/search?tbm=isch&q=Pantheon+Rome+interior+dome" target="_blank">📷 Panteón interior</a><a href="https://www.google.com/search?tbm=isch&q=Piazza+Navona+Rome" target="_blank">📷 Piazza Navona</a></div>
+
 <div class="tip t-crowd"><div class="ti">👥</div><div><strong>Trevi SIEMPRE llena.</strong> Vayan temprano (antes 9 AM) o de noche (después 9 PM) para menos gente.</div></div>
 <div style="background:#e8f5e9;border-radius:12px;padding:16px;margin:15px 0"><p><span class="exc-v v-must">✅ CONTRATAR</span> <strong>Museos Vaticanos + Capilla Sixtina — $114/pp ($570)</strong></p><p style="font-size:.82rem;color:#555;margin-top:6px">Sin cola (normal: 2-4 HORAS). Miguel Ángel pintó la bóveda con 33 años y El Juicio Final con 60. Silencio obligatorio. Miren ARRIBA al entrar.</p></div>
-<div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Sistine+Chapel+ceiling" target="_blank">📷 Capilla Sixtina</a><a href="https://www.google.com/search?tbm=isch&q=Vatican+Museums+gallery" target="_blank">📷 Museos Vaticanos</a></div>
+
 <div class="scam"><h4>⚠️ Gladiadores falsos en el Coliseo</h4><div class="sw">📍 Coliseo</div><p>Disfrazados piden foto "gratis", luego cobran €5-20.</p><div class="sd">🛡️ No fotos con disfrazados. Si quieren, pregunten precio ANTES.</div></div>
 <div class="scam"><h4>⚠️ Rosas "gratis"</h4><div class="sw">📍 Trevi, Piazza di Spagna</div><p>Dan rosa "de regalo", luego exigen €5-10.</p><div class="sd">🛡️ "No, grazie" y sigan. NO acepten nada.</div></div>
 <div class="pocket"><div class="pm-icon">💰</div><div><strong>Llevar: ~€60-80/persona.</strong> Pizza (~€5), Panteón (€5), cena Trastevere (~€12-15). Vaticano ya pagado.</div></div>
@@ -1272,7 +1298,7 @@ details.coll .coll-body{padding:18px}
 </div>
 <div class="tip t-info"><div class="ti">🤔</div><div><strong>MI OPINIÓN:</strong> Depende del presupuesto. <strong>Si les sobra dinero:</strong> Capri es una experiencia ÚNICA — la isla, el mar turquesa, el barco, el almuerzo italiano frente al mar. No van a encontrar nada igual en el resto del viaje. <strong>Si el presupuesto está justo:</strong> Roma por su cuenta es increíble y casi gratis. Trastevere y Villa Borghese son hermosos. No se van a sentir que "perdieron" algo — Roma tiene suficiente para llenar 3 días. El ahorro es de $1,260 para la familia, que es bastante. Yo diría: si pueden pagarlo sin que les falte para el resto del viaje, HÁGANLO. Si no, Roma es fantástica.</div></div>
 </div>
-<div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Capri+island+blue+sea" target="_blank">📷 Capri</a><a href="https://www.google.com/search?tbm=isch&q=Trastevere+Rome" target="_blank">📷 Trastevere</a><a href="https://www.google.com/search?tbm=isch&q=Villa+Borghese+Rome" target="_blank">📷 Villa Borghese</a></div>
+<div class="gallery" id="gal-dia13"><div class="thumb" onclick="openGallery('gal-dia13',0)"><img src="img/capri.jpg" alt="Isla de Capri" loading="lazy"><div class="cap">Isla de Capri</div></div><div class="thumb" onclick="openGallery('gal-dia13',1)"><img src="img/rome1.jpg" alt="Roma" loading="lazy"><div class="cap">Roma</div></div></div>
 <div class="pocket"><div class="pm-icon">💰</div><div><strong>Capri:</strong> tour ya pagado + ~€20 extras. <strong>Roma libre:</strong> ~€40-50/persona.</div></div>
 <div class="logi"><h4>🧭 Logística del día</h4>
 <div class="logi-row"><div class="logi-icon">📍</div><div class="logi-text"><strong>Día libre:</strong> No hay tour obligatorio hoy. Si van a Capri: los recogen a las 7 AM del hotel y los devuelven ~8:30 PM. Si se quedan en Roma: salen y vuelven por su cuenta.</div></div>
@@ -1294,11 +1320,11 @@ details.coll .coll-body{padding:18px}
 <div class="hr-row"><div class="hr-time">9:30 PM</div><div class="hr-desc"><strong>Regreso al hotel</strong> a pie o taxi (~€8-10)</div></div>
 </div>
 <p><span class="tag tag-inc">✅ INCLUIDO</span> Tour a pie: Duomo, Campanario Giotto, Baptisterio, Ponte Vecchio, Santa Croce.</p>
-<div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Florence+Duomo" target="_blank">📷 Duomo</a><a href="https://www.google.com/search?tbm=isch&q=Ponte+Vecchio+Florence" target="_blank">📷 Ponte Vecchio</a><a href="https://www.google.com/search?tbm=isch&q=Baptistery+Gates+Paradise+Florence" target="_blank">📷 Puertas Paraíso</a></div>
+<div class="gallery" id="gal-dia14"><div class="thumb" onclick="openGallery('gal-dia14',0)"><img src="img/florence_duomo.jpg" alt="Duomo de Florencia" loading="lazy"><div class="cap">Duomo de Florencia</div></div><div class="thumb" onclick="openGallery('gal-dia14',1)"><img src="img/florence.jpg" alt="Florencia" loading="lazy"><div class="cap">Florencia</div></div></div>
 <div class="tip t-info"><div class="ti">⏱</div><div><strong>¿Aburrido?</strong> PARA NADA. Duomo = una de las iglesias más impresionantes del mundo. Ponte Vecchio = puente con joyerías encima. Florencia entera es museo al aire libre. Se camina todo a pie.</div></div>
 <h4 style="margin-top:15px">🕐 Tarde libre</h4>
 <p style="font-size:.85rem;color:#555">1 PM → Lampredotto (sándwich florentino ~€5) o Trattoria Mario (€8-12)<br>2:30 PM → 🛍 <strong>CUERO en Mercado San Lorenzo.</strong> Chaquetas €80-150, bolsos €30-60. REGATEEN (ofrezcan 50%). Etiqueta "Vera Pelle" = cuero real.<br>4 PM → <strong>Piazzale Michelangelo</strong>: MEJOR vista panorámica Florencia. GRATIS. Fotos atardecer.</p>
-<div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=San+Lorenzo+Market+leather" target="_blank">📷 Cuero San Lorenzo</a><a href="https://www.google.com/search?tbm=isch&q=Piazzale+Michelangelo+view" target="_blank">📷 Vista Piazzale</a></div>
+
 <div class="tip t-food"><div class="ti">🍽</div><div><strong>Cena:</strong> Compartan <strong>Bistecca alla Fiorentina</strong> (chuletón 1kg+, ~€45-50 para 3-4). Experiencia única.</div></div>
 <div class="pocket"><div class="pm-icon">💰</div><div><strong>Llevar: ~€50-80/persona.</strong> Almuerzo (~€8), compras cuero, cena (~€15-20).</div></div>
 <div class="logi"><h4>🧭 Logística del día</h4>
@@ -1323,11 +1349,11 @@ details.coll .coll-body{padding:18px}
 <div class="hr-row"><div class="hr-time tour">8 PM-12:30 AM</div><div class="hr-desc">Mónaco + Montecarlo de noche (4 horas). Vuelven al hotel ~12:30 AM</div></div>
 </div>
 <p><strong>Pisa:</strong> LA FOTO "sosteniendo" la Torre. Cámara baja mirando arriba = mejor ángulo.</p>
-<div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Pisa+leaning+tower+holding+pose" target="_blank">📷 Pose Torre Pisa</a></div>
+<div class="gallery" id="gal-dia15"><div class="thumb" onclick="openGallery('gal-dia15',0)"><img src="img/pisa.jpg" alt="Torre de Pisa" loading="lazy"><div class="cap">Torre de Pisa</div></div><div class="thumb" onclick="openGallery('gal-dia15',1)"><img src="img/monaco.jpg" alt="Mónaco y Montecarlo" loading="lazy"><div class="cap">Mónaco y Montecarlo</div></div></div>
 <div class="tip t-info"><div class="ti">⏱</div><div><strong>¿Aburrido?</strong> Pisa = ~1 hora. Foto y listo. La torre, catedral y baptisterio se ven en 30-40 min.</div></div>
 <p style="margin-top:12px"><strong>Tarde:</strong> Bus a la Costa Azul.</p>
 <div class="tip t-info"><div class="ti">🏖</div><div><strong>¿Qué es la "Costa Azul"?</strong> Es la zona de playa del sur de Francia, sobre el mar Mediterráneo. Incluye ciudades como <strong>Niza</strong> (la más grande), <strong>Cannes</strong> (donde hacen el festival de cine), y <strong>Mónaco</strong>. Se llama "Azul" por el color del mar. Es donde vacacionan los europeos ricos. En octubre ya no es temporada de playa pero el clima es agradable (~18°C) y la zona es hermosa. El hotel estará por esta zona.</div></div>
-<div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Nice+France+Cote+dAzur+promenade" target="_blank">📷 Niza (Costa Azul)</a><a href="https://www.google.com/search?tbm=isch&q=French+Riviera+coast+blue+sea" target="_blank">📷 Mar Mediterráneo Costa Azul</a></div>
+
 <h4 style="margin-top:15px">🌙 Noche — Mónaco</h4>
 <div class="vs">
 <div class="vs-tour"><h4>🎟 Tour: Mónaco y Montecarlo — $93/pp ($465 familia)</h4>
@@ -1342,7 +1368,7 @@ details.coll .coll-body{padding:18px}
 </div>
 <div class="tip t-info"><div class="ti">🤔</div><div><strong>MI OPINIÓN:</strong> Háganlo solos. Siendo BRUTALMENTE honesto: Mónaco de noche es bonito pero lo ven en 2 horas caminando. No hay actividades, no hay museo abierto de noche, no hay show. Es básicamente: ver el Casino iluminado, ver los yates, decir "wow qué lindo", y volver. El tour cobra $465 por esto. El tren cuesta €4-5 por persona. Es el ahorro más claro de todo el viaje. Si les da pereza ir solos de noche, honestamente pueden SALTARSE Mónaco por completo y descansar en el hotel — no se pierden nada esencial.</div></div>
 </div>
-<div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Monte+Carlo+Casino+night" target="_blank">📷 Casino Montecarlo</a><a href="https://www.google.com/search?tbm=isch&q=Monaco+harbor+yachts" target="_blank">📷 Puerto Mónaco</a></div>
+
 <div class="pocket"><div class="pm-icon">💰</div><div><strong>Llevar: ~€40-50/persona.</strong> Almuerzo Pisa (~€8), tren Mónaco (~€5), cena (~€15).</div></div>
 <div class="logi"><h4>🧭 Logística del día</h4>
 <div class="logi-row"><div class="logi-icon">🚌</div><div class="logi-text"><strong>Cómo viajan:</strong> Bus del tour: Florencia → Pisa (parada ~1h, caminan a la torre, fotos) → Costa Azul/Niza (varias horas de bus).</div></div>
@@ -1365,7 +1391,7 @@ details.coll .coll-body{padding:18px}
 <div class="hr-row"><div class="hr-time meal">8:30 PM</div><div class="hr-desc"><strong>Cena tapas</strong> en Poble Sec o Gràcia (¡ESPAÑA BARATA!)</div></div>
 </div>
 <p><span class="tag tag-inc">✅ INCLUIDO</span> Bus largo. Llegada Barcelona: Sagrada Familia (exterior), Plaza Cataluña, Colón.</p>
-<div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Sagrada+Familia+Barcelona" target="_blank">📷 Sagrada Familia</a></div>
+<div class="gallery" id="gal-dia16"><div class="thumb" onclick="openGallery('gal-dia16',0)"><img src="img/sagrada_familia.jpg" alt="Sagrada Familia" loading="lazy"><div class="cap">Sagrada Familia</div></div><div class="thumb" onclick="openGallery('gal-dia16',1)"><img src="img/barcelona.jpg" alt="Barcelona" loading="lazy"><div class="cap">Barcelona</div></div></div>
 <div class="tip t-info"><div class="ti">🎉</div><div><strong>¡ESPAÑA!</strong> Hablan español. Diferencias: "vale"=OK, "tío"=amigo, "móvil"=celular, "patatas"=papas. Se entienden perfecto.</div></div>
 <div class="tip t-warn"><div class="ti">⚠️</div><div><strong>DOMINGO:</strong> Tiendas grandes SÍ abren en Barcelona (horario reducido).</div></div>
 <div class="tip t-food"><div class="ti">🍽</div><div><strong>TAPAS:</strong> España es BARATA. Patatas bravas €4, croquetas €5, jamón ibérico €8. 8-10 tapas entre 5 = cena por €40-50. O <strong>menú del día</strong>: entrada+plato+postre+bebida+pan por €11-15/pp. MEJOR deal de Europa.</div></div>
@@ -1421,7 +1447,7 @@ details.coll .coll-body{padding:18px}
 <div class="hr-row"><div class="hr-time meal">9:00 PM</div><div class="hr-desc"><strong>Cena:</strong> 100 Montaditos o bocadillo de calamares en Plaza Mayor</div></div>
 </div>
 <p><span class="tag tag-inc">✅ INCLUIDO</span> Zaragoza: Basílica del Pilar (impresionante, gratis). Bus a Madrid.</p>
-<div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Basilica+del+Pilar+Zaragoza" target="_blank">📷 Basílica Pilar</a></div>
+<div class="gallery" id="gal-dia17"><div class="thumb" onclick="openGallery('gal-dia17',0)"><img src="img/madrid.jpg" alt="Madrid - Plaza Mayor" loading="lazy"><div class="cap">Madrid - Plaza Mayor</div></div></div>
 <div class="tip t-info"><div class="ti">⏱</div><div><strong>Zaragoza:</strong> Parada corta ~45 min. Basílica enorme e impresionante. Fotos y paseo rápido.</div></div>
 <div class="tip t-food"><div class="ti">🍽</div><div><strong>Cena Madrid:</strong> 100 Montaditos (mini-sándwiches €1-2 c/u) o bocadillo de calamares en Plaza Mayor (~€3.50).</div></div>
 <div class="tip t-save"><div class="ti">🛍</div><div><strong>COMPRAS AQUÍ:</strong> Zara, Mango, Bershka son ESPAÑOLAS = 20-30% más barato. <strong>Primark Gran Vía</strong> = 5 pisos, ropa desde €3.</div></div>
@@ -1450,9 +1476,9 @@ details.coll .coll-body{padding:18px}
 <div class="hr-row"><div class="hr-time travel">10:30 PM</div><div class="hr-desc">🚨 <strong>SALIDA AL AEROPUERTO</strong> de Madrid Barajas (traslado incluido en el tour)</div></div>
 </div>
 <p><span class="tag tag-inc">✅ INCLUIDO</span> Tour: Plaza España, Gran Vía, Cibeles, Puerta Alcalá, Plaza Mayor.</p>
-<div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Plaza+Mayor+Madrid" target="_blank">📷 Plaza Mayor</a><a href="https://www.google.com/search?tbm=isch&q=Gran+Via+Madrid" target="_blank">📷 Gran Vía</a></div>
+<div class="gallery" id="gal-dia18"><div class="thumb" onclick="openGallery('gal-dia18',0)"><img src="img/madrid2.jpg" alt="Madrid - Gran Vía" loading="lazy"><div class="cap">Madrid - Gran Vía</div></div><div class="thumb" onclick="openGallery('gal-dia18',1)"><img src="img/toledo.jpg" alt="Toledo medieval" loading="lazy"><div class="cap">Toledo medieval</div></div></div>
 <div style="background:#e8f5e9;border-radius:12px;padding:16px;margin:15px 0"><p><span class="exc-v v-must">✅ CONTRATAR</span> <strong>Toledo — $83/pp ($415)</strong></p><p style="font-size:.82rem;color:#555;margin-top:6px">6h. Ciudad medieval Patrimonio Humanidad. 3 culturas. Catedral espectacular. Guía hace la diferencia. Broche de oro del viaje.</p></div>
-<div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Toledo+Spain+panoramic" target="_blank">📷 Toledo</a><a href="https://www.google.com/search?tbm=isch&q=Toledo+Cathedral+interior" target="_blank">📷 Catedral Toledo</a></div>
+
 <div class="tip t-info"><div class="ti">⏱</div><div><strong>¿Aburrido?</strong> NO. Toledo es como película medieval. Calles de piedra, catedral llena de arte, 3 culturas. 6h pasan rápido.</div></div>
 <div class="tip t-food"><div class="ti">🍽</div><div><strong>Última cena:</strong> Menú del día en La Latina/Lavapiés (€11-14/pp con TODO) o Mercado San Miguel (tapas gourmet €3-8).</div></div>
 <div class="tip t-save"><div class="ti">💰</div><div><strong>Tax Free:</strong> Compras > €90.16 en una tienda → pidan formulario. Mañana en aeropuerto recuperan 10-15%. Busquen mostrador DIVA/Global Blue ANTES de despachar maletas.</div></div>
@@ -1631,10 +1657,14 @@ details.coll .coll-body{padding:18px}
 <p class="sub">Próxima revisión programada: Mayo 2026 (verificar tipo de cambio, precios excursiones, estado ETIAS)</p>
 <p class="sub">Plan generado con Claude • Precios estimados en USD/EUR de abril 2026 • Sujetos a variación</p>
 </div>
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" onclick="this.classList.remove('open')">
-<button class="lightbox-close">✕</button>
-<img id="lightboxImg" src="" alt="">
+<!-- LIGHTBOX CAROUSEL -->
+<div class="lightbox" id="lightbox">
+<div class="lightbox-counter" id="lbCounter">1 / 1</div>
+<button class="lightbox-close" onclick="closeLightbox()">✕</button>
+<button class="lightbox-arrow prev" onclick="navLightbox(-1)">‹</button>
+<div class="lightbox-img-wrap"><img id="lightboxImg" src="" alt=""></div>
+<button class="lightbox-arrow next" onclick="navLightbox(1)">›</button>
+<div class="lightbox-caption" id="lbCaption">—</div>
 </div>
 
 <script>
@@ -1679,15 +1709,64 @@ function shareDay(num) {
   window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
 }
 
-// Lightbox para fotos
-function openLightbox(src) {
-  document.getElementById('lightboxImg').src = src;
+// LIGHTBOX CAROUSEL
+let lbImages = [];
+let lbIndex = 0;
+
+function openGallery(galleryId, startIndex) {
+  const gallery = document.getElementById(galleryId);
+  if (!gallery) return;
+  const thumbs = gallery.querySelectorAll('.thumb');
+  lbImages = Array.from(thumbs).map(t => ({
+    src: t.querySelector('img').src,
+    cap: t.querySelector('.cap')?.textContent || ''
+  }));
+  lbIndex = startIndex || 0;
+  showLightbox();
+}
+
+function showLightbox() {
+  if (lbImages.length === 0) return;
+  const img = lbImages[lbIndex];
+  document.getElementById('lightboxImg').src = img.src;
+  document.getElementById('lbCaption').textContent = img.cap;
+  document.getElementById('lbCounter').textContent = `${lbIndex + 1} / ${lbImages.length}`;
   document.getElementById('lightbox').classList.add('open');
 }
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+}
+
+function navLightbox(dir) {
+  lbIndex = (lbIndex + dir + lbImages.length) % lbImages.length;
+  showLightbox();
+}
+
+// Close lightbox by clicking outside image
+document.getElementById('lightbox').addEventListener('click', (e) => {
+  if (e.target.id === 'lightbox' || e.target.className === 'lightbox-img-wrap') closeLightbox();
+});
+
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
-    document.querySelectorAll('.modal-overlay.open, .lightbox.open').forEach(m => m.classList.remove('open'));
+    document.querySelectorAll('.modal-overlay.open').forEach(m => m.classList.remove('open'));
+    closeLightbox();
   }
+  if (document.getElementById('lightbox').classList.contains('open')) {
+    if (e.key === 'ArrowLeft') navLightbox(-1);
+    if (e.key === 'ArrowRight') navLightbox(1);
+  }
+});
+
+// Swipe support for mobile
+let touchStartX = 0;
+document.getElementById('lightbox').addEventListener('touchstart', (e) => {
+  touchStartX = e.changedTouches[0].screenX;
+});
+document.getElementById('lightbox').addEventListener('touchend', (e) => {
+  const diff = e.changedTouches[0].screenX - touchStartX;
+  if (Math.abs(diff) > 50) navLightbox(diff > 0 ? -1 : 1);
 });
 </script>
 
