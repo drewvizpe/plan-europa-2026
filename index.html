@@ -120,6 +120,19 @@ body{padding-bottom:46px}
 .do h4{color:var(--green);margin-bottom:6px}
 .dont h4{color:#c62828;margin-bottom:6px}
 @media(max-width:768px){.day-body{padding:16px}.sec{padding:35px 12px}.curr{position:static;margin-top:8px}.hero{padding:40px 15px}.menu-btn{width:55px;height:55px;font-size:1.3rem;bottom:15px;right:15px}.sidebar{width:280px}}
+/* HORARIO VISUAL */
+.horario{background:linear-gradient(135deg,#fff9e6,#ffe4b5);border-radius:14px;padding:16px;margin:15px 0;border:1px solid #f0c060}
+.horario h4{color:#8b4513;font-size:.9rem;margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.hr-row{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px dashed rgba(139,69,19,.2);font-size:.82rem}
+.hr-row:last-child{border-bottom:none}
+.hr-time{background:#8b4513;color:#fff;border-radius:8px;padding:4px 8px;font-weight:700;font-size:.75rem;min-width:65px;text-align:center;flex-shrink:0;font-family:'Courier New',monospace}
+.hr-time.free{background:#2d6a4f}
+.hr-time.tour{background:#1a1a2e}
+.hr-time.travel{background:#457b9d}
+.hr-time.meal{background:#e91e63}
+.hr-desc{color:#444;flex:1;padding-top:3px}
+.hr-desc strong{color:#8b4513}
+.hr-free{color:#2d6a4f;font-weight:600;font-size:.7rem;background:#e8f5e9;padding:2px 6px;border-radius:4px;margin-left:4px}
 .logi{background:linear-gradient(135deg,#e8eaf6,#e3f2fd);border-radius:14px;padding:16px;margin:15px 0;font-size:.82rem;border:1px solid #c5cae9}
 .logi h4{color:#283593;font-size:.85rem;margin-bottom:10px;display:flex;align-items:center;gap:6px}
 .logi-row{display:flex;gap:8px;padding:6px 0;border-bottom:1px solid rgba(0,0,0,.06);align-items:flex-start}
@@ -386,7 +399,14 @@ body{padding-bottom:46px}
 
 <div class="day" id="dia1"><div class="day-head bg-flight"><div class="day-n">1</div><div class="day-info"><h2>✈️ Lima → Madrid → Londres</h2><div class="date">📅 Sábado 4 de Octubre • Noche a bordo</div></div></div>
 <div class="day-body">
-<p><strong>11:00 AM</strong> — Vuelo Lima → Madrid (11h 40min). <strong>9:30 AM +1</strong> — Madrid → Londres Gatwick (2h 20min). Llegan 10:50 AM.</p>
+<div class="horario">
+<h4>⏰ Horario del día</h4>
+<div class="hr-row"><div class="hr-time travel">8:00 AM</div><div class="hr-desc"><strong>Llegar al Jorge Chávez</strong> (3 horas antes del vuelo)</div></div>
+<div class="hr-row"><div class="hr-time travel">11:00 AM</div><div class="hr-desc"><strong>Vuelo IB0124</strong> Lima → Madrid (11h 40min)</div></div>
+<div class="hr-row"><div class="hr-time travel">05:40 AM +1</div><div class="hr-desc"><strong>Llegada a Madrid T4S</strong> (domingo 5 oct) - ESCALA 3h 50min</div></div>
+<div class="hr-row"><div class="hr-time travel">09:35 AM</div><div class="hr-desc"><strong>Vuelo IB1861</strong> Madrid → Londres Gatwick (Iberia Express, 2h 20min)</div></div>
+<div class="hr-row"><div class="hr-time travel">10:55 AM</div><div class="hr-desc"><strong>Llegada a Londres Gatwick</strong> (ver Día 2)</div></div>
+</div>
 <div class="pocket"><div class="pm-icon">💰</div><div><strong>No necesitan dinero hoy.</strong> Comida incluida en avión. En Madrid aceptan tarjeta.</div></div>
 <div class="tip t-info"><div class="ti">💡</div><div><strong>Avión largo:</strong> Almohada de cuello, snacks, películas descargadas. Duerman Lima→Madrid para llegar activos.</div></div>
 <div class="logi"><h4>🧭 Logística del día</h4>
@@ -398,9 +418,17 @@ body{padding-bottom:46px}
 
 <div class="day" id="dia2"><div class="day-head bg-uk"><div class="day-n">2</div><div class="day-info"><h2>🇬🇧 Llegada a Londres</h2><div class="date">📅 Domingo 5 de Octubre</div></div><div class="curr">🇬🇧 LIBRA £ • £1 ≈ $1.26 ≈ S/4.80</div></div>
 <div class="day-body">
-<p><strong>10:50 AM</strong> — Gatwick. Migraciones: cola "Other Passports". Muestren pasaporte (con ETA ya tramitada online). Si preguntan: "Tourism, 2 days".</p>
-<div class="tip t-danger"><div class="ti">🚨</div><div><strong>IMPORTANTE — Recargo traslado Gatwick:</strong> Su vuelo llega a Gatwick, PERO el paquete solo incluye traslado gratis si llegan a Heathrow (otro aeropuerto de Londres). Para que alguien los recoja en Gatwick <strong>TIENEN que pagar $31 por persona ($155 familia)</strong>. Llamen a Anahí (agente Atrápalo, tel: 0810-345-0014) y digan: "Llegamos a Gatwick, queremos agregar el traslado". Háganlo ANTES del viaje, no en el aeropuerto. Si no lo contratan, nadie los recoge y tendrían que tomar un tren solos con maletas sin conocer Londres.</div></div>
-<p><strong>~2 PM</strong> — Hotel. Descanso. <strong>3:30-6 PM</strong> — Paseo suave. Busquen supermercado <strong>Tesco</strong> o <strong>Sainsbury's</strong>.</p>
+<div class="horario">
+<h4>⏰ Horario del día</h4>
+<div class="hr-row"><div class="hr-time travel">10:55 AM</div><div class="hr-desc"><strong>Llegada a Gatwick.</strong> Migraciones, recoger maletas (~45 min)</div></div>
+<div class="hr-row"><div class="hr-time travel">11:45 AM</div><div class="hr-desc"><strong>Salen del aeropuerto.</strong> El tour los recoge (si pagaron el recargo de Gatwick)</div></div>
+<div class="hr-row"><div class="hr-time travel">~1:00 PM</div><div class="hr-desc"><strong>Llegan al hotel.</strong> Traslado ~1h desde Gatwick</div></div>
+<div class="hr-row"><div class="hr-time">2:00 PM</div><div class="hr-desc"><strong>Check-in hotel.</strong> Antes de las 2 PM probablemente no puedan entrar a la habitación. Dejen maletas en recepción</div></div>
+<div class="hr-row"><div class="hr-time free">2:00-6:00 PM</div><div class="hr-desc"><strong>TIEMPO LIBRE</strong> <span class="hr-free">4 HORAS</span> Paseo suave cerca del hotel, supermercado, descansar del vuelo</div></div>
+<div class="hr-row"><div class="hr-time meal">6:30 PM</div><div class="hr-desc"><strong>Cena</strong> cerca del hotel (Nando's, pub, kebab)</div></div>
+<div class="hr-row"><div class="hr-time">9:30 PM</div><div class="hr-desc"><strong>A dormir</strong> (NO antes — para ajustar jet lag)</div></div>
+</div>
+<div class="tip t-danger"><div class="ti">🚨</div><div><strong>IMPORTANTE — Recargo traslado Gatwick:</strong> Su vuelo llega a Gatwick, PERO el paquete solo incluye traslado gratis si llegan a Heathrow. Para que los recojan en Gatwick <strong>TIENEN que pagar $31 por persona ($155 familia)</strong>. Llamen a Anahí (0810-345-0014). Si no lo contratan, nadie los recoge.</div></div>
 <div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=London+autumn+october" target="_blank">📷 Londres en octubre</a></div>
 <div class="pocket"><div class="pm-icon">💰</div><div><strong>Llevar: ~£30-40/persona (~$40-50).</strong> Cena + supermercado.</div></div>
 <div class="tip t-food"><div class="ti">🍽</div><div><strong>Cena:</strong> Nando's (~£12-15/pp) o pub Fish & Chips (~£10-12). Meal Deal en supermercado: £3.50-5 (sandwich+bebida+snack).</div></div>
@@ -416,6 +444,16 @@ body{padding-bottom:46px}
 
 <div class="day" id="dia3"><div class="day-head bg-uk"><div class="day-n">3</div><div class="day-info"><h2>🇬🇧 Londres - Tour + Tarde libre</h2><div class="date">📅 Lunes 6 de Octubre</div></div><div class="curr">🇬🇧 LIBRA £</div></div>
 <div class="day-body">
+<div class="horario">
+<h4>⏰ Horario del día</h4>
+<div class="hr-row"><div class="hr-time meal">7:30 AM</div><div class="hr-desc"><strong>Desayuno</strong> en el hotel (incluido)</div></div>
+<div class="hr-row"><div class="hr-time tour">9:00 AM</div><div class="hr-desc"><strong>Bus del tour los recoge</strong> del hotel</div></div>
+<div class="hr-row"><div class="hr-time tour">9:30-12:30</div><div class="hr-desc"><strong>TOUR PANORÁMICO INCLUIDO:</strong> Hyde Park, Piccadilly, Big Ben, Buckingham (cambio de guardia), Westminster. ~3 horas</div></div>
+<div class="hr-row"><div class="hr-time">12:30 PM</div><div class="hr-desc"><strong>Fin del tour.</strong> Los dejan en el centro de Londres</div></div>
+<div class="hr-row"><div class="hr-time free">12:30-8:00 PM</div><div class="hr-desc"><strong>TIEMPO LIBRE</strong> <span class="hr-free">~7 HORAS</span> Almuerzo + tour opcional o hacer el recorrido solos (Covent Garden → St. Paul → Tower Bridge)</div></div>
+<div class="hr-row"><div class="hr-time meal">7:00-8:00 PM</div><div class="hr-desc"><strong>Cena</strong> en Chinatown o cerca del hotel</div></div>
+<div class="hr-row"><div class="hr-time">9:00 PM</div><div class="hr-desc"><strong>Regreso al hotel</strong> (metro o Uber, por su cuenta)</div></div>
+</div>
 <p><span class="tag tag-inc">✅ INCLUIDO</span> Tour mañana: Hyde Park, Piccadilly Circus, Big Ben, Buckingham (cambio de guardia), Westminster.</p>
 <div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Big+Ben+London" target="_blank">📷 Big Ben</a><a href="https://www.google.com/search?tbm=isch&q=Buckingham+Palace+changing+guard" target="_blank">📷 Cambio Guardia</a><a href="https://www.google.com/search?tbm=isch&q=Westminster+Abbey" target="_blank">📷 Westminster</a></div>
 <h4 style="margin-top:18px;color:var(--primary)">🕐 Tarde libre</h4>
@@ -449,6 +487,18 @@ body{padding-bottom:46px}
 
 <div class="day" id="dia4"><div class="day-head bg-fr"><div class="day-n">4</div><div class="day-info"><h2>🇬🇧→🇫🇷 Londres → Ferry → París</h2><div class="date">📅 Martes 7 de Octubre • Traslado</div></div><div class="curr">💱 CAMBIO: EURO € • €1 ≈ $1.08 ≈ S/4.10</div></div>
 <div class="day-body">
+<div class="horario">
+<h4>⏰ Horario del día (470 km)</h4>
+<div class="hr-row"><div class="hr-time meal">7:00 AM</div><div class="hr-desc"><strong>Desayuno</strong> en el hotel (EMPACAR TODO antes)</div></div>
+<div class="hr-row"><div class="hr-time travel">8:00 AM</div><div class="hr-desc"><strong>Sale el bus del tour</strong> hacia Dover (~2h de viaje)</div></div>
+<div class="hr-row"><div class="hr-time travel">~10:30 AM</div><div class="hr-desc"><strong>Llegan al puerto de Dover</strong></div></div>
+<div class="hr-row"><div class="hr-time travel">~12:00 PM</div><div class="hr-desc"><strong>Ferry cruza el Canal de la Mancha</strong> (75 min). Pueden subir a cubierta</div></div>
+<div class="hr-row"><div class="hr-time travel">~1:15 PM</div><div class="hr-desc"><strong>Llegan a Calais (Francia).</strong> Vuelven al bus, salen hacia París (~3h)</div></div>
+<div class="hr-row"><div class="hr-time travel">~5:00 PM</div><div class="hr-desc"><strong>Llegan al hotel en París.</strong> Check-in, descanso</div></div>
+<div class="hr-row"><div class="hr-time free">5:30-8:00 PM</div><div class="hr-desc"><strong>TIEMPO LIBRE</strong> <span class="hr-free">2.5 HORAS</span> (si no hacen el crucero nocturno). Paseo + cena</div></div>
+<div class="hr-row"><div class="hr-time tour">8:00 PM</div><div class="hr-desc"><strong>Si contratan Crucero del Sena:</strong> Bus los recoge del hotel</div></div>
+<div class="hr-row"><div class="hr-time tour">8-1 AM</div><div class="hr-desc">Crucero por el Sena + París iluminado. Vuelven al hotel ~1 AM</div></div>
+</div>
 <p><span class="tag tag-inc">✅ INCLUIDO</span> Bus a Dover, ferry 75 min cruzando el Canal de la Mancha a Calais (Francia), bus a París.</p>
 <div class="tip t-info"><div class="ti">🚢</div><div><strong>¿Qué es un ferry?</strong> Es un barco ENORME donde sube el bus entero con ustedes adentro (o bajan del bus y suben al barco a pie, depende del tour). Tiene varios pisos: cafetería, tienda libre de impuestos, asientos, cubierta abierta (terraza arriba). No es un botecito, es como un edificio flotante. Dura 75 minutos cruzar de Inglaterra a Francia por el Canal de la Mancha (el mar que separa a los dos países). NO se marean normalmente, el mar es tranquilo.<br><br>
 <strong>Tip importante:</strong> Suban a la cubierta (terraza de arriba, al aire libre) cuando estén saliendo de Dover. Van a ver los famosos <strong>acantilados blancos de Dover</strong> — paredes de roca blanca enormes que se ven desde el mar. Es una imagen icónica. Lleven la chaqueta porque arriba hace viento y frío.</div></div>
@@ -480,6 +530,16 @@ body{padding-bottom:46px}
 
 <div class="day" id="dia5"><div class="day-head bg-fr"><div class="day-n">5</div><div class="day-info"><h2>🇫🇷 París - Tour + Montmartre</h2><div class="date">📅 Miércoles 8 de Octubre</div></div><div class="curr">🇪🇺 EURO €</div></div>
 <div class="day-body">
+<div class="horario">
+<h4>⏰ Horario del día</h4>
+<div class="hr-row"><div class="hr-time meal">7:30 AM</div><div class="hr-desc"><strong>Desayuno</strong> en hotel</div></div>
+<div class="hr-row"><div class="hr-time tour">9:00 AM</div><div class="hr-desc"><strong>Bus del tour los recoge</strong> del hotel</div></div>
+<div class="hr-row"><div class="hr-time tour">9:30-12:30</div><div class="hr-desc"><strong>TOUR PANORÁMICO INCLUIDO:</strong> Campos Elíseos, Torre Eiffel, avenidas, monumentos. ~3 horas</div></div>
+<div class="hr-row"><div class="hr-time">12:30 PM</div><div class="hr-desc"><strong>Fin del tour</strong> en el centro de París</div></div>
+<div class="hr-row"><div class="hr-time free">12:30-8:00 PM</div><div class="hr-desc"><strong>TIEMPO LIBRE</strong> <span class="hr-free">~7.5 HORAS</span> Almuerzo + tour Montmartre (opcional) o hacerlo solos (Sacré-Cœur → Barrio Latino → Notre Dame)</div></div>
+<div class="hr-row"><div class="hr-time meal">7:30 PM</div><div class="hr-desc"><strong>Cena</strong> en restaurante del Barrio Latino o cerca del hotel</div></div>
+<div class="hr-row"><div class="hr-time">9:30 PM</div><div class="hr-desc"><strong>Regreso al hotel</strong> (por su cuenta en metro)</div></div>
+</div>
 <p><span class="tag tag-inc">✅ INCLUIDO</span> Tour mañana: Campos Elíseos, Torre Eiffel, etc.</p>
 <div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Champs+Elysees+Paris" target="_blank">📷 Campos Elíseos</a><a href="https://www.google.com/search?tbm=isch&q=Eiffel+Tower+daytime" target="_blank">📷 Torre Eiffel</a></div>
 <h4 style="margin-top:15px;color:var(--primary)">🕐 Tarde</h4>
@@ -516,6 +576,16 @@ body{padding-bottom:46px}
 
 <div class="day" id="dia6"><div class="day-head bg-fr"><div class="day-n">6</div><div class="day-info"><h2>🇫🇷 París - Versalles + Tarde libre</h2><div class="date">📅 Jueves 9 de Octubre</div></div><div class="curr">🇪🇺 EURO €</div></div>
 <div class="day-body">
+<div class="horario">
+<h4>⏰ Horario del día</h4>
+<div class="hr-row"><div class="hr-time meal">7:00 AM</div><div class="hr-desc"><strong>Desayuno</strong> temprano en hotel</div></div>
+<div class="hr-row"><div class="hr-time tour">8:30 AM</div><div class="hr-desc"><strong>Si contratan Versalles:</strong> Bus los recoge del hotel</div></div>
+<div class="hr-row"><div class="hr-time tour">9:30 AM-1:30 PM</div><div class="hr-desc"><strong>EXCURSIÓN VERSALLES:</strong> Visita al palacio + jardines con guía. Skip-the-line incluido</div></div>
+<div class="hr-row"><div class="hr-time">2:00 PM</div><div class="hr-desc"><strong>Fin de Versalles.</strong> Los dejan en el centro de París o en el hotel (eligen ustedes)</div></div>
+<div class="hr-row"><div class="hr-time free">2:00-8:00 PM</div><div class="hr-desc"><strong>TARDE LIBRE</strong> <span class="hr-free">6 HORAS</span> Almuerzo → Trocadéro (foto Torre Eiffel) → compras Primark/Galeries Lafayette</div></div>
+<div class="hr-row"><div class="hr-time meal">7:30 PM</div><div class="hr-desc"><strong>Cena</strong> por su cuenta</div></div>
+<div class="hr-row"><div class="hr-time">9:00 PM</div><div class="hr-desc"><strong>Regreso al hotel.</strong> Mañana EMPACAR TODO (salen hacia Frankfurt)</div></div>
+</div>
 <div style="background:#e8f5e9;border-radius:12px;padding:16px;margin-bottom:15px"><p><span class="exc-v v-must">✅ CONTRATAR</span> <strong>Versalles — $114/pp ($570)</strong></p><p style="font-size:.82rem;color:#555;margin-top:6px">8:30 AM-2 PM. Sin cola + guía + transporte. Solos: 2-3 HORAS de cola. Vale cada centavo.</p></div>
 <div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Versailles+Hall+of+Mirrors" target="_blank">📷 Salón de Espejos</a><a href="https://www.google.com/search?tbm=isch&q=Versailles+gardens" target="_blank">📷 Jardines</a><a href="https://www.google.com/search?tbm=isch&q=Palace+Versailles+exterior" target="_blank">📷 Palacio</a></div>
 <div class="tip t-info"><div class="ti">⏱</div><div><strong>¿Aburrido?</strong> PARA NADA. El Salón de los Espejos (357 espejos) es impresionante. Los jardines son ENORMES. Con guía la historia cobra vida. 5h pasan volando.</div></div>
@@ -533,6 +603,16 @@ body{padding-bottom:46px}
 
 <div class="day" id="dia7"><div class="day-head bg-de"><div class="day-n">7</div><div class="day-info"><h2>🇫🇷→🇱🇺→🇩🇪 París → Luxemburgo → Valle del Rin → Frankfurt</h2><div class="date">📅 Viernes 10 de Octubre • 607 km</div></div><div class="curr">🇪🇺 EURO €</div></div>
 <div class="day-body">
+<div class="horario">
+<h4>⏰ Horario del día (607 km - ruta larga)</h4>
+<div class="hr-row"><div class="hr-time meal">6:30 AM</div><div class="hr-desc"><strong>Desayuno TEMPRANO</strong> + EMPACAR TODO</div></div>
+<div class="hr-row"><div class="hr-time travel">7:30 AM</div><div class="hr-desc"><strong>Sale el bus</strong> hacia Luxemburgo (~4h)</div></div>
+<div class="hr-row"><div class="hr-time free">~12:00 PM</div><div class="hr-desc"><strong>Parada Luxemburgo</strong> <span class="hr-free">~1.5 HORAS libres</span> Paseo + almuerzo rápido</div></div>
+<div class="hr-row"><div class="hr-time travel">1:30 PM</div><div class="hr-desc"><strong>Bus hacia Valle del Rin</strong></div></div>
+<div class="hr-row"><div class="hr-time">3:00-5:00 PM</div><div class="hr-desc"><strong>Valle del Rin (desde el bus):</strong> Castillos medievales + Roca de Loreley</div></div>
+<div class="hr-row"><div class="hr-time travel">~7:00 PM</div><div class="hr-desc"><strong>Llegan a Frankfurt.</strong> Check-in hotel</div></div>
+<div class="hr-row"><div class="hr-time meal">8:00 PM</div><div class="hr-desc"><strong>Cena</strong> cerca del hotel</div></div>
+</div>
 <p><span class="tag tag-inc">✅ INCLUIDO</span> Luxemburgo (tiempo libre) + Valle del Rin (castillos desde bus) + Frankfurt.</p>
 <div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Luxembourg+city+old+town" target="_blank">📷 Luxemburgo</a><a href="https://www.google.com/search?tbm=isch&q=Rhine+Valley+castles" target="_blank">📷 Castillos del Rin</a></div>
 <div class="tip t-info"><div class="ti">⏱</div><div><strong>¿Aburrido?</strong> El Valle del Rin se ve desde el bus — castillos sobre colinas con viñedos. Bonito pero es ventana. Luxemburgo es parada corta. Si les gusta naturaleza, disfruten. Si no, buena siesta.</div></div>
@@ -546,6 +626,18 @@ body{padding-bottom:46px}
 
 <div class="day" id="dia8"><div class="day-head bg-de"><div class="day-n">8</div><div class="day-info"><h2>🇩🇪→🇨🇭 Frankfurt → Heidelberg → Selva Negra → Zurich</h2><div class="date">📅 Sábado 11 de Octubre • 422 km</div></div><div class="curr">💱 CAMBIO: FRANCO SUIZO CHF • CHF 1 ≈ $1.13 ≈ S/4.30</div></div>
 <div class="day-body">
+<div class="horario">
+<h4>⏰ Horario del día (422 km - día de paradas)</h4>
+<div class="hr-row"><div class="hr-time meal">7:00 AM</div><div class="hr-desc"><strong>Desayuno</strong> + EMPACAR TODO</div></div>
+<div class="hr-row"><div class="hr-time travel">8:00 AM</div><div class="hr-desc"><strong>Sale el bus</strong> hacia Heidelberg (~1h)</div></div>
+<div class="hr-row"><div class="hr-time free">~9:30 AM</div><div class="hr-desc"><strong>Heidelberg</strong> <span class="hr-free">~1-1.5 HORAS libres</span> Puente viejo + casco histórico</div></div>
+<div class="hr-row"><div class="hr-time travel">11:00 AM</div><div class="hr-desc"><strong>Bus hacia Titisee (Selva Negra)</strong> (~2.5h)</div></div>
+<div class="hr-row"><div class="hr-time free">~1:30 PM</div><div class="hr-desc"><strong>Titisee</strong> <span class="hr-free">~1.5 HORAS libres</span> Lago + almuerzo + probar tarta Selva Negra (€5)</div></div>
+<div class="hr-row"><div class="hr-time travel">3:00 PM</div><div class="hr-desc"><strong>Bus hacia Cataratas del Rin</strong></div></div>
+<div class="hr-row"><div class="hr-time">~4:00 PM</div><div class="hr-desc"><strong>Cataratas del Rin</strong> <span class="hr-free">~30 min parada</span> Fotos</div></div>
+<div class="hr-row"><div class="hr-time travel">~6:00 PM</div><div class="hr-desc"><strong>Llegan a Zurich.</strong> Check-in hotel. <strong>¡SUIZA = CARÍSIMO!</strong></div></div>
+<div class="hr-row"><div class="hr-time meal">7:30 PM</div><div class="hr-desc"><strong>Cena</strong> (comprar en supermercado Migros/Coop, NO restaurante)</div></div>
+</div>
 <p><span class="tag tag-inc">✅ INCLUIDO</span> Heidelberg + Titisee (Selva Negra) + Cataratas del Rin + Zurich.</p>
 <div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Heidelberg+old+bridge+castle" target="_blank">📷 Heidelberg</a><a href="https://www.google.com/search?tbm=isch&q=Titisee+Black+Forest" target="_blank">📷 Titisee</a><a href="https://www.google.com/search?tbm=isch&q=Rhine+Falls+Schaffhausen" target="_blank">📷 Cataratas del Rin</a></div>
 <div class="tip t-info"><div class="ti">⏱</div><div><strong>¿Aburrido?</strong> NO. Día variado: ciudad bonita + lago en bosque + cascadas enormes. Paradas cortas 30-60 min.</div></div>
@@ -561,6 +653,19 @@ body{padding-bottom:46px}
 
 <div class="day" id="dia9"><div class="day-head bg-ch"><div class="day-n">9</div><div class="day-info"><h2>🇨🇭→🇱🇮→🇩🇪 Zurich → Lucerna → Titlis → Vaduz → Munich</h2><div class="date">📅 Domingo 12 de Octubre • 423 km</div></div><div class="curr">🇨🇭 CHF mañana → 🇪🇺 € tarde (Alemania)</div></div>
 <div class="day-body">
+<div class="horario">
+<h4>⏰ Horario del día (423 km)</h4>
+<div class="hr-row"><div class="hr-time meal">7:00 AM</div><div class="hr-desc"><strong>Desayuno</strong> + EMPACAR TODO</div></div>
+<div class="hr-row"><div class="hr-time travel">8:00 AM</div><div class="hr-desc"><strong>Sale el bus</strong> hacia Lucerna (~1h)</div></div>
+<div class="hr-row"><div class="hr-time">9:30 AM</div><div class="hr-desc"><strong>Llegan a Lucerna</strong></div></div>
+<div class="hr-row"><div class="hr-time tour">10:00 AM-2:00 PM</div><div class="hr-desc"><strong>EXCURSIÓN MONTE TITLIS</strong> (si la contratan): Funicular + teleférico giratorio + cueva hielo + Cliff Walk. ~4 horas</div></div>
+<div class="hr-row"><div class="hr-time free">10:00 AM-2:00 PM</div><div class="hr-desc"><strong>SI NO van a Titlis:</strong> <span class="hr-free">4 HORAS libres en Lucerna</span> Puente Capilla + León + paseo lago</div></div>
+<div class="hr-row"><div class="hr-time travel">2:30 PM</div><div class="hr-desc"><strong>Bus hacia Vaduz (Liechtenstein)</strong> (~1.5h)</div></div>
+<div class="hr-row"><div class="hr-time">~4:00 PM</div><div class="hr-desc"><strong>Vaduz</strong> <span class="hr-free">~30 min</span> Sellar pasaporte como souvenir</div></div>
+<div class="hr-row"><div class="hr-time travel">4:30 PM</div><div class="hr-desc"><strong>Bus hacia Munich</strong> (~3.5h)</div></div>
+<div class="hr-row"><div class="hr-time travel">~8:00 PM</div><div class="hr-desc"><strong>Llegan a Munich.</strong> Check-in hotel</div></div>
+<div class="hr-row"><div class="hr-time meal">8:30 PM</div><div class="hr-desc"><strong>Cena</strong> en Munich (Döner, Currywurst)</div></div>
+</div>
 <p><strong>Lucerna:</strong> Puente de la Capilla (madera, 1333) + León de Lucerna (tallado en roca).</p>
 <div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Chapel+Bridge+Lucerne" target="_blank">📷 Puente Capilla</a><a href="https://www.google.com/search?tbm=isch&q=Lion+Monument+Lucerne" target="_blank">📷 León Lucerna</a></div>
 <div style="background:#e8f5e9;border-radius:12px;padding:16px;margin:15px 0"><p><span class="exc-v v-must">✅ CONTRATAR</span> <strong>Monte Titlis — $175/pp ($875)</strong></p><p style="font-size:.82rem;color:#555;margin-top:6px">Teleférico GIRATORIO a 3,238m. Cueva de hielo. Puente colgante 500m altura. ÚNICO.</p></div>
@@ -583,6 +688,21 @@ body{padding-bottom:46px}
 <div class="day" id="dia10" style="border:3px solid var(--accent)"><div class="day-head bg-bday"><div class="day-n" style="background:rgba(255,255,255,.3)">10</div><div class="day-info"><h2>🎂 Munich → Innsbruck → Verona → Venecia</h2><div class="date">📅 Lunes 13 de Octubre • 🎉 QUINCEAÑERA • 550 km</div></div><div class="curr">🇪🇺 EURO € (todo el día)</div></div>
 <div class="day-body">
 <div style="text-align:center;font-family:'Dancing Script',cursive;font-size:1.6rem;color:var(--accent);margin-bottom:18px">🎀 Feliz Quinceañera en Verona & Venecia 🎀</div>
+<div class="horario">
+<h4>⏰ Horario del día (550 km - EL DÍA MÁS ESPECIAL)</h4>
+<div class="hr-row"><div class="hr-time meal">6:30 AM</div><div class="hr-desc"><strong>Desayuno</strong> + EMPACAR. Celebración matutina con la cumpleañera 🎂</div></div>
+<div class="hr-row"><div class="hr-time travel">7:30 AM</div><div class="hr-desc"><strong>Sale el bus</strong> hacia Innsbruck (~2h)</div></div>
+<div class="hr-row"><div class="hr-time free">~11:00 AM</div><div class="hr-desc"><strong>Innsbruck</strong> <span class="hr-free">~1-1.5 HORAS libres</span> Fotos con los Alpes + Apfelstrudel (€5)</div></div>
+<div class="hr-row"><div class="hr-time travel">12:30 PM</div><div class="hr-desc"><strong>Bus hacia Verona</strong> (cruzan frontera Austria→Italia, ~2h)</div></div>
+<div class="hr-row"><div class="hr-time free">~2:30 PM</div><div class="hr-desc"><strong>VERONA</strong> <span class="hr-free">~2 HORAS libres</span> 💕 Casa de Julieta (balcón €6) + carta + Piazza Erbe + Arena</div></div>
+<div class="hr-row"><div class="hr-time travel">4:30 PM</div><div class="hr-desc"><strong>Bus hacia Venecia/Mestre</strong> (~2h)</div></div>
+<div class="hr-row"><div class="hr-time travel">~6:30 PM</div><div class="hr-desc"><strong>Llegan al hotel en Mestre.</strong> Check-in RÁPIDO, ducha, arreglarse</div></div>
+<div class="hr-row"><div class="hr-time travel">7:00 PM</div><div class="hr-desc"><strong>Tren Mestre → Venezia Santa Lucia</strong> (10 min, €1.50/pp)</div></div>
+<div class="hr-row"><div class="hr-time tour">7:30 PM</div><div class="hr-desc">🛶 <strong>Góndola privada al atardecer</strong> (~30 min, €90 en efectivo, toda la familia)</div></div>
+<div class="hr-row"><div class="hr-time meal">8:30 PM</div><div class="hr-desc">🍽 <strong>CENA DE QUINCEAÑERA</strong> en restaurante de Venecia + torta encargada</div></div>
+<div class="hr-row"><div class="hr-time">10:30 PM</div><div class="hr-desc">☕ <strong>Caffè Florian</strong> en Plaza San Marco (orquesta en vivo)</div></div>
+<div class="hr-row"><div class="hr-time travel">~11:30 PM</div><div class="hr-desc"><strong>Último tren</strong> Venecia → Mestre (o Uber si ya cerraron)</div></div>
+</div>
 <p><strong>🌅 Mañana — Munich:</strong> Desayuno. Que la cumpleañera sepa que hoy es SU día.</p>
 <p><strong>🏔 ~Mediodía — Innsbruck:</strong> Calle María-Theresien con Alpes de fondo = fotos espectaculares. Apfelstrudel (~€5).</p>
 <div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Innsbruck+Maria+Theresien+Alps" target="_blank">📷 Innsbruck</a><a href="https://www.google.com/search?tbm=isch&q=Golden+Roof+Innsbruck" target="_blank">📷 Tejadito de Oro</a></div>
@@ -623,6 +743,18 @@ body{padding-bottom:46px}
 
 <div class="day" id="dia11"><div class="day-head bg-it"><div class="day-n">11</div><div class="day-info"><h2>🇮🇹 Venecia → Roma</h2><div class="date">📅 Martes 14 de Octubre • 527 km</div></div><div class="curr">🇪🇺 EURO €</div></div>
 <div class="day-body">
+<div class="horario">
+<h4>⏰ Horario del día (527 km)</h4>
+<div class="hr-row"><div class="hr-time meal">7:30 AM</div><div class="hr-desc"><strong>Desayuno</strong> + EMPACAR TODO</div></div>
+<div class="hr-row"><div class="hr-time travel">8:30 AM</div><div class="hr-desc"><strong>Bus al estacionamiento de Venecia</strong> (Piazzale Roma)</div></div>
+<div class="hr-row"><div class="hr-time">9:00 AM</div><div class="hr-desc"><strong>Caminar/vaporetto a Plaza San Marcos</strong></div></div>
+<div class="hr-row"><div class="hr-time free">9:30 AM-12:30 PM</div><div class="hr-desc"><strong>MAÑANA LIBRE en Venecia</strong> <span class="hr-free">3 HORAS</span> Puente Suspiros, San Marcos, Basílica (gratis), callejones, cicchetti en Rialto</div></div>
+<div class="hr-row"><div class="hr-time meal">12:30 PM</div><div class="hr-desc"><strong>Almuerzo:</strong> Cicchetti en bacari (€1-3 cada uno)</div></div>
+<div class="hr-row"><div class="hr-time">1:30 PM</div><div class="hr-desc"><strong>Reunión con el grupo</strong> (el guía les dice el punto exacto)</div></div>
+<div class="hr-row"><div class="hr-time travel">2:00 PM</div><div class="hr-desc"><strong>Sale el bus hacia Roma</strong> (~5-6h)</div></div>
+<div class="hr-row"><div class="hr-time travel">~8:00 PM</div><div class="hr-desc"><strong>Llegan al hotel en Roma.</strong> Check-in</div></div>
+<div class="hr-row"><div class="hr-time meal">9:00 PM</div><div class="hr-desc"><strong>Cena</strong> cerca del hotel (pizza rápida, trattoria)</div></div>
+</div>
 <p><span class="tag tag-inc">✅ INCLUIDO</span> Mañana en Venecia: Puente Suspiros, San Marcos, Basílica (gratis). Tarde: bus a Roma.</p>
 <div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Bridge+of+Sighs+Venice" target="_blank">📷 Puente Suspiros</a><a href="https://www.google.com/search?tbm=isch&q=St+Marks+Square+Venice" target="_blank">📷 San Marcos</a></div>
 <div class="tip t-info"><div class="ti">💡</div><div><strong>Ya hicieron góndola ayer (para la quinceañera).</strong> No necesitan repetir.<br><br>
@@ -641,6 +773,18 @@ body{padding-bottom:46px}
 
 <div class="day" id="dia12"><div class="day-head bg-it"><div class="day-n">12</div><div class="day-info"><h2>🇮🇹 Roma - Tour + Vaticano</h2><div class="date">📅 Miércoles 15 de Octubre</div></div><div class="curr">🇪🇺 EURO €</div></div>
 <div class="day-body">
+<div class="horario">
+<h4>⏰ Horario del día (DÍA MUY INTENSO)</h4>
+<div class="hr-row"><div class="hr-time meal">7:30 AM</div><div class="hr-desc"><strong>Desayuno</strong> en hotel</div></div>
+<div class="hr-row"><div class="hr-time tour">9:00 AM</div><div class="hr-desc"><strong>Bus del tour los recoge</strong> del hotel</div></div>
+<div class="hr-row"><div class="hr-time tour">9:30-12:30</div><div class="hr-desc"><strong>TOUR PANORÁMICO ROMA:</strong> Coliseo (exterior), Circo Máximo, Santa María la Mayor, Vaticano (exterior)</div></div>
+<div class="hr-row"><div class="hr-time">12:30 PM</div><div class="hr-desc"><strong>Fin tour panorámico.</strong> Los dejan en el centro</div></div>
+<div class="hr-row"><div class="hr-time free">12:30-4:30 PM</div><div class="hr-desc"><strong>TARDE LIBRE</strong> <span class="hr-free">4 HORAS</span> Almuerzo + Roma Barroca por su cuenta (Trevi, Panteón, Navona)</div></div>
+<div class="hr-row"><div class="hr-time tour">~4:30 PM</div><div class="hr-desc">⛪ <strong>EXCURSIÓN MUSEOS VATICANOS</strong> (si la contratan). ~2-3 horas dentro</div></div>
+<div class="hr-row"><div class="hr-time">~7:30 PM</div><div class="hr-desc"><strong>Fin Vaticano.</strong> Vuelven al hotel o cenan cerca</div></div>
+<div class="hr-row"><div class="hr-time meal">8:00 PM</div><div class="hr-desc"><strong>Cena</strong> en Trastevere (el barrio más bonito de Roma)</div></div>
+<div class="hr-row"><div class="hr-time">10:00 PM</div><div class="hr-desc"><strong>Regreso al hotel</strong> por su cuenta (taxi/Uber)</div></div>
+</div>
 <p><span class="tag tag-inc">✅ INCLUIDO</span> Mañana: Coliseo (exterior), Circo Máximo, Santa María la Mayor, Vaticano (exterior).</p>
 <div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Colosseum+Rome" target="_blank">📷 Coliseo</a><a href="https://www.google.com/search?tbm=isch&q=Vatican+St+Peters+Square" target="_blank">📷 Vaticano</a></div>
 <h4 style="margin-top:15px">🕐 Tarde</h4>
@@ -669,6 +813,14 @@ body{padding-bottom:46px}
 
 <div class="day" id="dia13"><div class="day-head bg-it"><div class="day-n">13</div><div class="day-info"><h2>🇮🇹 Roma - Día libre</h2><div class="date">📅 Jueves 16 de Octubre</div></div><div class="curr">🇪🇺 EURO €</div></div>
 <div class="day-body">
+<div class="horario">
+<h4>⏰ Horario del día (DÍA LIBRE)</h4>
+<div class="hr-row"><div class="hr-time meal">7:00 AM</div><div class="hr-desc"><strong>Desayuno temprano</strong> (SI van a Capri)</div></div>
+<div class="hr-row"><div class="hr-time tour">7:00 AM-8:30 PM</div><div class="hr-desc"><strong>SI contratan Nápoles y Capri:</strong> Día COMPLETO fuera. Bus + ferry + barco + Capri + almuerzo incluido</div></div>
+<div class="hr-row"><div class="hr-time meal">8:30 AM</div><div class="hr-desc"><strong>Desayuno normal</strong> (SI se quedan en Roma)</div></div>
+<div class="hr-row"><div class="hr-time free">9:00 AM-7:00 PM</div><div class="hr-desc"><strong>DÍA COMPLETO LIBRE EN ROMA</strong> <span class="hr-free">10 HORAS</span> Trastevere + Villa Borghese + almuerzo Testaccio + compras + Piazza di Spagna</div></div>
+<div class="hr-row"><div class="hr-time meal">8:00 PM</div><div class="hr-desc"><strong>Cena</strong> (si no fueron a Capri)</div></div>
+</div>
 <div class="vs">
 <div class="vs-tour"><h4>🎟 Opción A: Nápoles y Capri — $252/pp ($1,260 familia)</h4>
 <p><strong>¿Qué es?</strong> Día completo (7 AM - 8:30 PM). Los llevan en bus de Roma a Nápoles (2.5h), ven el centro histórico. Luego toman un ferry (barco grande) a la isla de Capri (1h). En Capri suben a un barco privado pequeño que rodea la isla por el mar (ven las cuevas y acantilados desde el agua). Luego suben a Capri pueblo, almuerzan (INCLUIDO en el precio), y tienen tiempo libre. Regresan en ferry a Nápoles y bus a Roma.<br>
@@ -699,6 +851,16 @@ body{padding-bottom:46px}
 
 <div class="day" id="dia14"><div class="day-head bg-it"><div class="day-n">14</div><div class="day-info"><h2>🇮🇹 Roma → Florencia</h2><div class="date">📅 Viernes 17 de Octubre • 345 km</div></div><div class="curr">🇪🇺 EURO €</div></div>
 <div class="day-body">
+<div class="horario">
+<h4>⏰ Horario del día (345 km)</h4>
+<div class="hr-row"><div class="hr-time meal">7:30 AM</div><div class="hr-desc"><strong>Desayuno</strong> + EMPACAR TODO</div></div>
+<div class="hr-row"><div class="hr-time travel">8:30 AM</div><div class="hr-desc"><strong>Sale el bus</strong> hacia Florencia (~3.5h)</div></div>
+<div class="hr-row"><div class="hr-time travel">~12:00 PM</div><div class="hr-desc"><strong>Llegan a Florencia</strong></div></div>
+<div class="hr-row"><div class="hr-time tour">12:30-2:30 PM</div><div class="hr-desc"><strong>TOUR A PIE INCLUIDO:</strong> Duomo, Campanario Giotto, Baptisterio, Ponte Vecchio, Santa Croce (~2h)</div></div>
+<div class="hr-row"><div class="hr-time free">2:30-7:30 PM</div><div class="hr-desc"><strong>TARDE LIBRE</strong> <span class="hr-free">5 HORAS</span> Almuerzo (Lampredotto/Trattoria Mario) + Mercado San Lorenzo (CUERO) + Piazzale Michelangelo (vista)</div></div>
+<div class="hr-row"><div class="hr-time meal">7:30 PM</div><div class="hr-desc"><strong>Cena:</strong> Compartir Bistecca alla Fiorentina (~€45-50 para 3-4 personas)</div></div>
+<div class="hr-row"><div class="hr-time">9:30 PM</div><div class="hr-desc"><strong>Regreso al hotel</strong> a pie o taxi (~€8-10)</div></div>
+</div>
 <p><span class="tag tag-inc">✅ INCLUIDO</span> Tour a pie: Duomo, Campanario Giotto, Baptisterio, Ponte Vecchio, Santa Croce.</p>
 <div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Florence+Duomo" target="_blank">📷 Duomo</a><a href="https://www.google.com/search?tbm=isch&q=Ponte+Vecchio+Florence" target="_blank">📷 Ponte Vecchio</a><a href="https://www.google.com/search?tbm=isch&q=Baptistery+Gates+Paradise+Florence" target="_blank">📷 Puertas Paraíso</a></div>
 <div class="tip t-info"><div class="ti">⏱</div><div><strong>¿Aburrido?</strong> PARA NADA. Duomo = una de las iglesias más impresionantes del mundo. Ponte Vecchio = puente con joyerías encima. Florencia entera es museo al aire libre. Se camina todo a pie.</div></div>
@@ -717,6 +879,17 @@ body{padding-bottom:46px}
 
 <div class="day" id="dia15"><div class="day-head bg-mc"><div class="day-n">15</div><div class="day-info"><h2>🇮🇹→🇲🇨 Florencia → Pisa → Costa Azul</h2><div class="date">📅 Sábado 18 de Octubre • 451 km</div></div><div class="curr">🇪🇺 EURO €</div></div>
 <div class="day-body">
+<div class="horario">
+<h4>⏰ Horario del día (451 km)</h4>
+<div class="hr-row"><div class="hr-time meal">7:00 AM</div><div class="hr-desc"><strong>Desayuno</strong> + EMPACAR TODO</div></div>
+<div class="hr-row"><div class="hr-time travel">8:00 AM</div><div class="hr-desc"><strong>Sale el bus</strong> hacia Pisa (~1.5h)</div></div>
+<div class="hr-row"><div class="hr-time free">~9:30 AM</div><div class="hr-desc"><strong>Pisa</strong> <span class="hr-free">~1 HORA libre</span> Foto con la Torre (practiquen la pose)</div></div>
+<div class="hr-row"><div class="hr-time travel">10:30 AM</div><div class="hr-desc"><strong>Bus hacia Costa Azul</strong> (~5-6h - ruta larga, aprovechen para dormir)</div></div>
+<div class="hr-row"><div class="hr-time travel">~5:00 PM</div><div class="hr-desc"><strong>Llegan al hotel en Costa Azul</strong> (Niza o alrededores). Check-in</div></div>
+<div class="hr-row"><div class="hr-time free">5:30-8:00 PM</div><div class="hr-desc"><strong>TIEMPO LIBRE</strong> <span class="hr-free">2.5 HORAS</span> Paseo + cena</div></div>
+<div class="hr-row"><div class="hr-time tour">8:00 PM</div><div class="hr-desc"><strong>Si contratan Mónaco:</strong> Bus los recoge del hotel</div></div>
+<div class="hr-row"><div class="hr-time tour">8 PM-12:30 AM</div><div class="hr-desc">Mónaco + Montecarlo de noche (4 horas). Vuelven al hotel ~12:30 AM</div></div>
+</div>
 <p><strong>Pisa:</strong> LA FOTO "sosteniendo" la Torre. Cámara baja mirando arriba = mejor ángulo.</p>
 <div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Pisa+leaning+tower+holding+pose" target="_blank">📷 Pose Torre Pisa</a></div>
 <div class="tip t-info"><div class="ti">⏱</div><div><strong>¿Aburrido?</strong> Pisa = ~1 hora. Foto y listo. La torre, catedral y baptisterio se ven en 30-40 min.</div></div>
@@ -749,6 +922,16 @@ body{padding-bottom:46px}
 
 <div class="day" id="dia16"><div class="day-head bg-es"><div class="day-n">16</div><div class="day-info"><h2>🇫🇷→🇪🇸 Costa Azul → Barcelona</h2><div class="date">📅 Domingo 19 de Octubre • 660 km</div></div><div class="curr">🇪🇺 EURO € (España también)</div></div>
 <div class="day-body">
+<div class="horario">
+<h4>⏰ Horario del día (660 km - RUTA MUY LARGA)</h4>
+<div class="hr-row"><div class="hr-time meal">6:30 AM</div><div class="hr-desc"><strong>Desayuno TEMPRANO</strong> + EMPACAR TODO</div></div>
+<div class="hr-row"><div class="hr-time travel">7:30 AM</div><div class="hr-desc"><strong>Sale el bus</strong> hacia Barcelona (~8-9h de viaje)</div></div>
+<div class="hr-row"><div class="hr-time travel">~1:00 PM</div><div class="hr-desc"><strong>Parada técnica</strong> almuerzo rápido en área de servicio</div></div>
+<div class="hr-row"><div class="hr-time travel">~5:00 PM</div><div class="hr-desc"><strong>Llegan a Barcelona</strong></div></div>
+<div class="hr-row"><div class="hr-time tour">5:30-7:00 PM</div><div class="hr-desc"><strong>BREVE VISITA INCLUIDA:</strong> Sagrada Familia (exterior), Plaza Cataluña, Colón (~1.5h)</div></div>
+<div class="hr-row"><div class="hr-time">7:30 PM</div><div class="hr-desc"><strong>Check-in hotel</strong></div></div>
+<div class="hr-row"><div class="hr-time meal">8:30 PM</div><div class="hr-desc"><strong>Cena tapas</strong> en Poble Sec o Gràcia (¡ESPAÑA BARATA!)</div></div>
+</div>
 <p><span class="tag tag-inc">✅ INCLUIDO</span> Bus largo. Llegada Barcelona: Sagrada Familia (exterior), Plaza Cataluña, Colón.</p>
 <div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Sagrada+Familia+Barcelona" target="_blank">📷 Sagrada Familia</a></div>
 <div class="tip t-info"><div class="ti">🎉</div><div><strong>¡ESPAÑA!</strong> Hablan español. Diferencias: "vale"=OK, "tío"=amigo, "móvil"=celular, "patatas"=papas. Se entienden perfecto.</div></div>
@@ -766,6 +949,16 @@ body{padding-bottom:46px}
 
 <div class="day" id="dia17"><div class="day-head bg-es"><div class="day-n">17</div><div class="day-info"><h2>🇪🇸 Barcelona → Zaragoza → Madrid</h2><div class="date">📅 Lunes 20 de Octubre • 620 km</div></div><div class="curr">🇪🇺 EURO €</div></div>
 <div class="day-body">
+<div class="horario">
+<h4>⏰ Horario del día (620 km)</h4>
+<div class="hr-row"><div class="hr-time meal">7:00 AM</div><div class="hr-desc"><strong>Desayuno</strong> + EMPACAR TODO</div></div>
+<div class="hr-row"><div class="hr-time travel">8:00 AM</div><div class="hr-desc"><strong>Sale el bus</strong> hacia Zaragoza (~3.5h)</div></div>
+<div class="hr-row"><div class="hr-time free">~11:30 AM</div><div class="hr-desc"><strong>Zaragoza - Basílica del Pilar</strong> <span class="hr-free">~45 MIN</span> Paseo + fotos</div></div>
+<div class="hr-row"><div class="hr-time travel">12:15 PM</div><div class="hr-desc"><strong>Bus hacia Madrid</strong> (~3.5h)</div></div>
+<div class="hr-row"><div class="hr-time travel">~4:00 PM</div><div class="hr-desc"><strong>Llegan al hotel en Madrid.</strong> Check-in</div></div>
+<div class="hr-row"><div class="hr-time free">4:30-9:00 PM</div><div class="hr-desc"><strong>NOCHE LIBRE</strong> <span class="hr-free">4.5 HORAS</span> Primark Gran Vía (5 pisos), Zara, compras</div></div>
+<div class="hr-row"><div class="hr-time meal">9:00 PM</div><div class="hr-desc"><strong>Cena:</strong> 100 Montaditos o bocadillo de calamares en Plaza Mayor</div></div>
+</div>
 <p><span class="tag tag-inc">✅ INCLUIDO</span> Zaragoza: Basílica del Pilar (impresionante, gratis). Bus a Madrid.</p>
 <div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Basilica+del+Pilar+Zaragoza" target="_blank">📷 Basílica Pilar</a></div>
 <div class="tip t-info"><div class="ti">⏱</div><div><strong>Zaragoza:</strong> Parada corta ~45 min. Basílica enorme e impresionante. Fotos y paseo rápido.</div></div>
@@ -782,6 +975,19 @@ body{padding-bottom:46px}
 
 <div class="day" id="dia18"><div class="day-head bg-es"><div class="day-n">18</div><div class="day-info"><h2>🇪🇸 Madrid - Tour + Toledo</h2><div class="date">📅 Martes 21 de Octubre • ÚLTIMO DÍA</div></div><div class="curr">🇪🇺 EURO €</div></div>
 <div class="day-body">
+<div class="horario">
+<h4>⏰ Horario del día (ÚLTIMO DÍA COMPLETO - CRÍTICO)</h4>
+<div class="hr-row"><div class="hr-time meal">7:30 AM</div><div class="hr-desc"><strong>Desayuno</strong> en hotel</div></div>
+<div class="hr-row"><div class="hr-time tour">9:00 AM</div><div class="hr-desc"><strong>Bus del tour los recoge</strong> del hotel</div></div>
+<div class="hr-row"><div class="hr-time tour">9:30-12:30</div><div class="hr-desc"><strong>TOUR PANORÁMICO MADRID:</strong> Plaza España, Gran Vía, Cibeles, Puerta Alcalá, Plaza Mayor</div></div>
+<div class="hr-row"><div class="hr-time free">12:30-1:30 PM</div><div class="hr-desc"><strong>Almuerzo rápido</strong> <span class="hr-free">1 HORA</span> Menú del día en La Latina (~€12)</div></div>
+<div class="hr-row"><div class="hr-time tour">1:30 PM</div><div class="hr-desc"><strong>EXCURSIÓN TOLEDO:</strong> Bus los recoge desde el centro de Madrid</div></div>
+<div class="hr-row"><div class="hr-time tour">2:30-7:30 PM</div><div class="hr-desc">Toledo con guía: paseo + Catedral + damasquinado (6 horas total incluyendo viaje)</div></div>
+<div class="hr-row"><div class="hr-time">7:30 PM</div><div class="hr-desc"><strong>Fin Toledo.</strong> Los devuelven al hotel en Madrid</div></div>
+<div class="hr-row"><div class="hr-time meal">8:00 PM</div><div class="hr-desc">🍽 <strong>ÚLTIMA CENA</strong> cerca del hotel (NO lejos, tienen que empacar)</div></div>
+<div class="hr-row"><div class="hr-time">9:30 PM</div><div class="hr-desc"><strong>Al hotel - EMPACAR TODO</strong></div></div>
+<div class="hr-row"><div class="hr-time travel">10:30 PM</div><div class="hr-desc">🚨 <strong>SALIDA AL AEROPUERTO</strong> de Madrid Barajas (traslado incluido en el tour)</div></div>
+</div>
 <p><span class="tag tag-inc">✅ INCLUIDO</span> Tour: Plaza España, Gran Vía, Cibeles, Puerta Alcalá, Plaza Mayor.</p>
 <div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Plaza+Mayor+Madrid" target="_blank">📷 Plaza Mayor</a><a href="https://www.google.com/search?tbm=isch&q=Gran+Via+Madrid" target="_blank">📷 Gran Vía</a></div>
 <div style="background:#e8f5e9;border-radius:12px;padding:16px;margin:15px 0"><p><span class="exc-v v-must">✅ CONTRATAR</span> <strong>Toledo — $83/pp ($415)</strong></p><p style="font-size:.82rem;color:#555;margin-top:6px">6h. Ciudad medieval Patrimonio Humanidad. 3 culturas. Catedral espectacular. Guía hace la diferencia. Broche de oro del viaje.</p></div>
@@ -800,7 +1006,16 @@ body{padding-bottom:46px}
 
 <div class="day" id="dia19"><div class="day-head bg-flight"><div class="day-n">19</div><div class="day-info"><h2>✈️ Madrid → Lima</h2><div class="date">📅 Miércoles 22 de Octubre • Vuelta a casa</div></div></div>
 <div class="day-body">
-<div class="tip t-danger"><div class="ti">⚠️</div><div><strong>OJO CON EL HORARIO:</strong> El vuelo sale a la <strong>01:45 AM del miércoles 22</strong>. Eso significa que tienen que estar en el aeropuerto a las <strong>~10:00-10:30 PM del MARTES 21</strong> (Día 18). El tour de Toledo termina a las 7:30 PM → vuelven al hotel → recogen maletas → van al aeropuerto. Es justo pero alcanza. NO se demoren en Toledo, no vayan a comprar cosas de último minuto en Madrid después de Toledo. Directo al hotel y al aeropuerto.</div></div>
+<div class="horario">
+<h4>⏰ Horario del día</h4>
+<div class="hr-row"><div class="hr-time travel">10:30 PM (Día 18)</div><div class="hr-desc"><strong>Salen del hotel</strong> hacia aeropuerto Barajas</div></div>
+<div class="hr-row"><div class="hr-time travel">~11:00 PM</div><div class="hr-desc"><strong>Llegan al aeropuerto</strong> Madrid Barajas T4S</div></div>
+<div class="hr-row"><div class="hr-time">11:00-11:30 PM</div><div class="hr-desc"><strong>Tax Free:</strong> Mostrador DIVA/Global Blue ANTES de despachar maletas</div></div>
+<div class="hr-row"><div class="hr-time">11:30 PM</div><div class="hr-desc"><strong>Check-in + despacho maletas + migraciones</strong></div></div>
+<div class="hr-row"><div class="hr-time travel">01:45 AM</div><div class="hr-desc">✈️ <strong>Vuelo IB6660</strong> Madrid → Lima (directo, 11h 45min, operado por LATAM)</div></div>
+<div class="hr-row"><div class="hr-time travel">06:30 AM</div><div class="hr-desc">🏠 <strong>Llegada a Lima</strong> Jorge Chávez. ¡EN CASA!</div></div>
+</div>
+<div class="tip t-danger"><div class="ti">⚠️</div><div><strong>OJO CON EL HORARIO:</strong> El vuelo sale a la <strong>01:45 AM del miércoles 22</strong>. Eso significa que tienen que estar en el aeropuerto a las <strong>~11:00 PM del MARTES 21</strong> (Día 18). El tour de Toledo termina a las 7:30 PM → vuelven al hotel → recogen maletas → van al aeropuerto. Es justo pero alcanza. NO se demoren en Toledo, no vayan a comprar cosas de último minuto en Madrid después de Toledo. Directo al hotel y al aeropuerto.</div></div>
 <p><strong>01:45 AM</strong> — Vuelo IB6660 Madrid → Lima (directo, 11h 45min, operado por LATAM). <strong>06:30 AM</strong> — Lima. 🏠</p>
 <div class="tip t-save"><div class="ti">💰</div><div><strong>Tax Free:</strong> Mostrador DIVA/Global Blue en aeropuerto ANTES de despachar maletas. Gasten euros sobrantes en Duty Free.</div></div>
 <div class="pocket"><div class="pm-icon">💰</div><div><strong>Llevar: ~€20-30/persona.</strong> Café o snack en aeropuerto. Gasten euros sobrantes en el Duty Free.</div></div>
