@@ -31,8 +31,9 @@
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
+img{max-width:100%;height:auto;display:block}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;font-size:15px;font-weight:400;-webkit-font-smoothing:antialiased;letter-spacing:-0.01em;padding-right:70px}
+body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;font-size:15px;font-weight:400;-webkit-font-smoothing:antialiased;letter-spacing:-0.01em;padding-right:70px;overflow-x:hidden}
 @media(max-width:768px){body{padding-right:0}}
 
 /* TYPOGRAPHY */
@@ -85,7 +86,7 @@ p{color:var(--ink-2)}
 .sec-sub{text-align:center;color:var(--mute);margin-bottom:48px;font-size:.95rem;max-width:600px;margin-left:auto;margin-right:auto}
 
 /* DAY CARD - refined */
-.day{background:var(--card);border-radius:8px;overflow:hidden;margin-bottom:32px;border:1px solid var(--line);transition:all .3s;box-shadow:0 1px 3px rgba(0,0,0,.03)}
+.day{background:var(--card);border-radius:8px;overflow:hidden;margin-bottom:32px;border:1px solid var(--line);transition:all .3s;box-shadow:0 1px 3px rgba(0,0,0,.03);width:100%;max-width:100%;box-sizing:border-box;word-wrap:break-word}
 .day:hover{box-shadow:0 8px 30px rgba(0,0,0,.08);transform:translateY(-2px)}
 .day-head{padding:28px 32px;color:#fff;position:relative;display:flex;align-items:center;gap:20px;flex-wrap:wrap;min-height:100px}
 .day-n{width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:1.4rem;font-weight:700;flex-shrink:0;letter-spacing:-.02em}
