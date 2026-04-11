@@ -306,13 +306,13 @@ p{color:var(--ink-2)}
 }
 
 /* GALLERY - thumbnails */
-.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin:16px 0}
-.gallery .thumb{position:relative;aspect-ratio:4/3;border-radius:8px;overflow:hidden;cursor:pointer;transition:all .25s;border:1px solid var(--line)}
-.gallery .thumb:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,.15)}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin:20px 0}
+.gallery .thumb{position:relative;aspect-ratio:4/3;border-radius:10px;overflow:hidden;cursor:pointer;transition:all .25s;border:1px solid var(--line);background:#f0f0f0}
+.gallery .thumb:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,.18)}
 .gallery .thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
 .gallery .thumb:hover img{transform:scale(1.08)}
-.gallery .thumb .cap{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.8));color:#fff;padding:20px 12px 10px;font-size:.72rem;font-weight:500;letter-spacing:.3px}
-@media(max-width:600px){.gallery{grid-template-columns:repeat(2,1fr);gap:8px}.gallery .thumb .cap{font-size:.68rem}}
+.gallery .thumb .cap{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.85));color:#fff;padding:24px 14px 12px;font-size:.82rem;font-weight:600;letter-spacing:.2px}
+@media(max-width:600px){.gallery{grid-template-columns:repeat(2,1fr);gap:10px}.gallery .thumb .cap{font-size:.75rem;padding:20px 10px 10px}}
 
 /* COUNTRY FLAG STRIPE on day cards */
 .day{position:relative}
@@ -739,7 +739,7 @@ details.coll .coll-body{padding:18px}
 <div class="hr-row"><div class="hr-time">9:30 PM</div><div class="hr-desc"><strong>A dormir</strong> (NO antes — para ajustar jet lag)</div></div>
 </div>
 <div class="tip t-danger"><div class="ti">🚨</div><div><strong>IMPORTANTE — Recargo traslado Gatwick:</strong> Su vuelo llega a Gatwick, PERO el paquete solo incluye traslado gratis si llegan a Heathrow. Para que los recojan en Gatwick <strong>TIENEN que pagar $31 por persona ($155 familia)</strong>. Llamen a Anahí (0810-345-0014). Si no lo contratan, nadie los recoge.</div></div>
-<div class="gallery" id="gal-dia2"><div class="thumb" onclick="openGallery('gal-dia2',0)"><img src="img/london1.jpg" alt="Londres" loading="lazy"><div class="cap">Londres</div></div><div class="thumb" onclick="openGallery('gal-dia2',1)"><img src="img/bigben.jpg" alt="Big Ben" loading="lazy"><div class="cap">Big Ben</div></div></div><div class="thumb" onclick="openGallery('gal-dia2',1)"><img src="img/london2.jpg" alt="Londres vista" loading="lazy"><div class="cap">Londres vista</div></div></div>
+<div class="gallery" id="gal-dia2"><div class="thumb" onclick="openGallery('gal-dia2',0)"><img src="img/london1.jpg" alt="Londres" loading="lazy"><div class="cap">Londres</div></div><div class="thumb" onclick="openGallery('gal-dia2',1)"><img src="img/bigben.jpg" alt="Big Ben" loading="lazy"><div class="cap">Big Ben</div></div></div>
 <div class="pocket"><div class="pm-icon">💰</div><div><strong>Llevar: ~£30-40/persona (~$40-50).</strong> Cena + supermercado.</div></div>
 <div class="tip t-food"><div class="ti">🍽</div><div><strong>Cena:</strong> Nando's (~£12-15/pp) o pub Fish & Chips (~£10-12). Meal Deal en supermercado: £3.50-5 (sandwich+bebida+snack).</div></div>
 <div class="tip t-warn"><div class="ti">⚠️</div><div><strong>DOMINGO:</strong> Tiendas con horario reducido (11 AM-5 PM). Supermercados sí abren normal.</div></div>
@@ -1066,7 +1066,7 @@ details.coll .coll-body{padding:18px}
 <div class="hr-row"><div class="hr-time meal">8:30 PM</div><div class="hr-desc"><strong>Cena</strong> en Munich (Döner, Currywurst)</div></div>
 </div>
 <p><strong>Lucerna:</strong> Puente de la Capilla (madera, 1333) + León de Lucerna (tallado en roca).</p>
-<div class="gallery" id="gal-dia9"><div class="thumb" onclick="openGallery('gal-dia9',0)"><img src="img/lucerne.jpg" alt="Lucerna" loading="lazy"><div class="cap">Lucerna</div></div><div class="thumb" onclick="openGallery('gal-dia9',1)"><img src="img/titlis.jpg" alt="Monte Titlis" loading="lazy"><div class="cap">Monte Titlis</div></div><div class="thumb" onclick="openGallery('gal-dia9',2)"><img src="img/vaduz.jpg" alt="Vaduz (Liechtenstein)" loading="lazy"><div class="cap">Vaduz (Liechtenstein)</div></div><div class="thumb" onclick="openGallery('gal-dia9',3)"><img src="img/munich.jpg" alt="Munich" loading="lazy"><div class="cap">Munich</div></div></div><div class="thumb" onclick="openGallery('gal-dia9',1)"><img src="img/swiss_alps.jpg" alt="Monte Titlis - Alpes Suizos" loading="lazy"><div class="cap">Monte Titlis - Alpes Suizos</div></div><div class="thumb" onclick="openGallery('gal-dia9',2)"><img src="img/munich.jpg" alt="Munich" loading="lazy"><div class="cap">Munich</div></div></div>
+<div class="gallery" id="gal-dia9"><div class="thumb" onclick="openGallery('gal-dia9',0)"><img src="img/lucerne.jpg" alt="Lucerna" loading="lazy"><div class="cap">Lucerna</div></div><div class="thumb" onclick="openGallery('gal-dia9',1)"><img src="img/titlis.jpg" alt="Monte Titlis" loading="lazy"><div class="cap">Monte Titlis</div></div><div class="thumb" onclick="openGallery('gal-dia9',2)"><img src="img/vaduz.jpg" alt="Vaduz (Liechtenstein)" loading="lazy"><div class="cap">Vaduz (Liechtenstein)</div></div><div class="thumb" onclick="openGallery('gal-dia9',3)"><img src="img/munich.jpg" alt="Munich" loading="lazy"><div class="cap">Munich</div></div></div>
 <div style="background:#e8f5e9;border-radius:12px;padding:16px;margin:15px 0"><p><span class="exc-v v-must">✅ CONTRATAR</span> <strong>Monte Titlis — $175/pp ($875)</strong></p><p style="font-size:.82rem;color:#555;margin-top:6px">Teleférico GIRATORIO a 3,238m. Cueva de hielo. Puente colgante 500m altura. ÚNICO.</p></div>
 
 <div class="tip t-warn"><div class="ti">🧥</div><div><strong>ROPA TITLIS:</strong> Cima -5°C a 0°C. Abrigo grueso + guantes + gorro + protector solar.</div></div>
@@ -1104,7 +1104,7 @@ details.coll .coll-body{padding:18px}
 </div>
 <p><strong>🌅 Mañana — Munich:</strong> Desayuno. Que la cumpleañera sepa que hoy es SU día.</p>
 <p><strong>🏔 ~Mediodía — Innsbruck:</strong> Calle María-Theresien con Alpes de fondo = fotos espectaculares. Apfelstrudel (~€5).</p>
-<div class="gallery" id="gal-dia10"><div class="thumb" onclick="openGallery('gal-dia10',0)"><img src="img/innsbruck.jpg" alt="Innsbruck - Austria" loading="lazy"><div class="cap">Innsbruck - Austria</div></div><div class="thumb" onclick="openGallery('gal-dia10',1)"><img src="img/verona.jpg" alt="Verona - Casa de Julieta" loading="lazy"><div class="cap">Verona - Casa de Julieta</div></div><div class="thumb" onclick="openGallery('gal-dia10',2)"><img src="img/gondola.jpg" alt="Góndola veneciana" loading="lazy"><div class="cap">Góndola veneciana</div></div><div class="thumb" onclick="openGallery('gal-dia10',3)"><img src="img/venice1.jpg" alt="Venecia" loading="lazy"><div class="cap">Venecia</div></div></div><div class="thumb" onclick="openGallery('gal-dia10',1)"><img src="img/verona.jpg" alt="Verona - Casa de Julieta" loading="lazy"><div class="cap">Verona - Casa de Julieta</div></div><div class="thumb" onclick="openGallery('gal-dia10',2)"><img src="img/gondola.jpg" alt="Góndola en Venecia" loading="lazy"><div class="cap">Góndola en Venecia</div></div><div class="thumb" onclick="openGallery('gal-dia10',3)"><img src="img/venice_canal.jpg" alt="Canales de Venecia" loading="lazy"><div class="cap">Canales de Venecia</div></div></div>
+<div class="gallery" id="gal-dia10"><div class="thumb" onclick="openGallery('gal-dia10',0)"><img src="img/innsbruck.jpg" alt="Innsbruck - Austria" loading="lazy"><div class="cap">Innsbruck - Austria</div></div><div class="thumb" onclick="openGallery('gal-dia10',1)"><img src="img/verona.jpg" alt="Verona - Casa de Julieta" loading="lazy"><div class="cap">Verona - Casa de Julieta</div></div><div class="thumb" onclick="openGallery('gal-dia10',2)"><img src="img/gondola.jpg" alt="Góndola veneciana" loading="lazy"><div class="cap">Góndola veneciana</div></div><div class="thumb" onclick="openGallery('gal-dia10',3)"><img src="img/venice1.jpg" alt="Venecia" loading="lazy"><div class="cap">Venecia</div></div></div><div class="thumb" onclick="openGallery('gal-dia10',1)"><img src="img/verona.jpg" alt="Verona - Casa de Julieta" loading="lazy"><div class="cap">Verona - Casa de Julieta</div></div><div class="thumb" onclick="openGallery('gal-dia10',2)"><img src="img/gondola.jpg" alt="Góndola en Venecia" loading="lazy"><div class="cap">Góndola en Venecia</div></div>
 
 <h4 style="margin-top:15px;color:var(--accent)">💕 ~2:30 PM — Verona</h4>
 <div class="vs">
@@ -1349,7 +1349,7 @@ details.coll .coll-body{padding:18px}
 <div class="hr-row"><div class="hr-time tour">8 PM-12:30 AM</div><div class="hr-desc">Mónaco + Montecarlo de noche (4 horas). Vuelven al hotel ~12:30 AM</div></div>
 </div>
 <p><strong>Pisa:</strong> LA FOTO "sosteniendo" la Torre. Cámara baja mirando arriba = mejor ángulo.</p>
-<div class="gallery" id="gal-dia15"><div class="thumb" onclick="openGallery('gal-dia15',0)"><img src="img/pisa.jpg" alt="Torre de Pisa" loading="lazy"><div class="cap">Torre de Pisa</div></div><div class="thumb" onclick="openGallery('gal-dia15',1)"><img src="img/monte_carlo.jpg" alt="Monte Carlo - Mónaco" loading="lazy"><div class="cap">Monte Carlo - Mónaco</div></div></div><div class="thumb" onclick="openGallery('gal-dia15',1)"><img src="img/monaco.jpg" alt="Mónaco y Montecarlo" loading="lazy"><div class="cap">Mónaco y Montecarlo</div></div></div>
+<div class="gallery" id="gal-dia15"><div class="thumb" onclick="openGallery('gal-dia15',0)"><img src="img/pisa.jpg" alt="Torre de Pisa" loading="lazy"><div class="cap">Torre de Pisa</div></div><div class="thumb" onclick="openGallery('gal-dia15',1)"><img src="img/monte_carlo.jpg" alt="Monte Carlo - Mónaco" loading="lazy"><div class="cap">Monte Carlo - Mónaco</div></div></div>
 <div class="tip t-info"><div class="ti">⏱</div><div><strong>¿Aburrido?</strong> Pisa = ~1 hora. Foto y listo. La torre, catedral y baptisterio se ven en 30-40 min.</div></div>
 <p style="margin-top:12px"><strong>Tarde:</strong> Bus a la Costa Azul.</p>
 <div class="tip t-info"><div class="ti">🏖</div><div><strong>¿Qué es la "Costa Azul"?</strong> Es la zona de playa del sur de Francia, sobre el mar Mediterráneo. Incluye ciudades como <strong>Niza</strong> (la más grande), <strong>Cannes</strong> (donde hacen el festival de cine), y <strong>Mónaco</strong>. Se llama "Azul" por el color del mar. Es donde vacacionan los europeos ricos. En octubre ya no es temporada de playa pero el clima es agradable (~18°C) y la zona es hermosa. El hotel estará por esta zona.</div></div>
