@@ -10,22 +10,17 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Inter',sans-serif;background:var(--light);color:#333;line-height:1.65;font-size:15px}
 html{scroll-behavior:smooth}
-/* MENU BUTTON */
-.menu-btn{position:fixed;bottom:20px;right:20px;z-index:1001;width:60px;height:60px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:1.5rem;cursor:pointer;box-shadow:0 4px 20px rgba(233,69,96,.4);display:flex;align-items:center;justify-content:center;transition:transform .2s}
-.menu-btn:hover{transform:scale(1.1)}
-/* SIDEBAR */
-.sidebar{position:fixed;top:0;right:-320px;width:300px;height:100vh;background:var(--primary);z-index:1002;transition:right .3s ease;overflow-y:auto;padding:20px;padding-top:70px;box-shadow:-5px 0 30px rgba(0,0,0,.3)}
-.sidebar.open{right:0}
-.sidebar-close{position:absolute;top:15px;right:15px;background:none;border:none;color:#fff;font-size:1.8rem;cursor:pointer}
-.sidebar h3{color:var(--gold);font-size:.85rem;text-transform:uppercase;letter-spacing:2px;margin:20px 0 10px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.1)}
-.sidebar h3:first-of-type{margin-top:0}
-.sidebar a{display:block;color:rgba(255,255,255,.85);text-decoration:none;font-size:.95rem;padding:10px 12px;border-radius:10px;margin:3px 0;transition:background .2s}
-.sidebar a:hover,.sidebar a:active{background:rgba(255,255,255,.1);color:var(--gold)}
-.sidebar a .nav-emoji{margin-right:8px;font-size:1.1rem}
-.overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);z-index:1001;display:none}
-.overlay.show{display:block}
-/* Hide old nav */
-.nav{display:none}
+/* SIDEBAR FIJA */
+.sidebar{position:fixed;top:0;right:0;width:48px;height:100vh;background:var(--primary);z-index:1000;display:flex;flex-direction:column;align-items:center;padding:8px 0;overflow-y:auto;overflow-x:hidden;gap:2px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.sidebar::-webkit-scrollbar{display:none}
+.sidebar a{display:flex;align-items:center;justify-content:center;width:40px;height:36px;border-radius:8px;color:rgba(255,255,255,.7);text-decoration:none;font-size:.6rem;font-weight:600;transition:all .2s;flex-shrink:0;text-align:center;line-height:1}
+.sidebar a:hover{background:rgba(255,255,255,.15);color:var(--gold)}
+.sidebar a.sep{height:1px;background:rgba(255,255,255,.1);width:32px;border-radius:0;pointer-events:none;margin:4px 0}
+.sidebar a.bday{background:rgba(233,69,96,.3);color:#ff9ab5}
+.sidebar a.bday:hover{background:rgba(233,69,96,.5)}
+/* Offset body for sidebar */
+body{margin-right:48px}
+@media(max-width:500px){.sidebar{width:38px}.sidebar a{width:32px;height:30px;font-size:.5rem}body{margin-right:38px}}
 .hero{min-height:100vh;background:linear-gradient(135deg,#0f3460 0%,#1a1a2e 40%,#16213e 70%,#e94560 100%);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#fff;padding:60px 20px}
 .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,6vw,4.5rem);font-weight:900;text-shadow:2px 4px 20px rgba(0,0,0,.3)}
 .hero .route{font-size:clamp(.8rem,2vw,1.1rem);margin-top:18px;opacity:.85;letter-spacing:2px}
@@ -129,41 +124,34 @@ html{scroll-behavior:smooth}
 </head>
 <body>
 
-<!-- MENU FLOTANTE -->
-<button class="menu-btn" onclick="document.querySelector('.sidebar').classList.add('open');document.querySelector('.overlay').classList.add('show')">☰</button>
-<div class="overlay" onclick="document.querySelector('.sidebar').classList.remove('open');this.classList.remove('show')"></div>
+<!-- SIDEBAR LATERAL DERECHO -->
 <div class="sidebar">
-<button class="sidebar-close" onclick="document.querySelector('.sidebar').classList.remove('open');document.querySelector('.overlay').classList.remove('show')">✕</button>
-
-<h3>📖 Información</h3>
-<a href="#guia" onclick="document.querySelector('.sidebar').classList.remove('open');document.querySelector('.overlay').classList.remove('show')"><span class="nav-emoji">📖</span>Guía Viajero Primerizo</a>
-<a href="#reglas" onclick="document.querySelector('.sidebar').classList.remove('open');document.querySelector('.overlay').classList.remove('show')"><span class="nav-emoji">📋</span>Reglas del Tour</a>
-<a href="#seguro" onclick="document.querySelector('.sidebar').classList.remove('open');document.querySelector('.overlay').classList.remove('show')"><span class="nav-emoji">🛡</span>Seguro de Viaje</a>
-
-<h3>📅 Itinerario</h3>
-<a href="#dia1" onclick="document.querySelector('.sidebar').classList.remove('open');document.querySelector('.overlay').classList.remove('show')"><span class="nav-emoji">✈️</span>Día 1 — Sáb 4 Oct — Lima → Londres</a>
-<a href="#dia2" onclick="document.querySelector('.sidebar').classList.remove('open');document.querySelector('.overlay').classList.remove('show')"><span class="nav-emoji">🇬🇧</span>Día 2 — Dom 5 — Llegada Londres</a>
-<a href="#dia3" onclick="document.querySelector('.sidebar').classList.remove('open');document.querySelector('.overlay').classList.remove('show')"><span class="nav-emoji">🇬🇧</span>Día 3 — Lun 6 — Londres Tour</a>
-<a href="#dia4" onclick="document.querySelector('.sidebar').classList.remove('open');document.querySelector('.overlay').classList.remove('show')"><span class="nav-emoji">🚢</span>Día 4 — Mar 7 — Ferry → París</a>
-<a href="#dia5" onclick="document.querySelector('.sidebar').classList.remove('open');document.querySelector('.overlay').classList.remove('show')"><span class="nav-emoji">🇫🇷</span>Día 5 — Mié 8 — París Tour</a>
-<a href="#dia6" onclick="document.querySelector('.sidebar').classList.remove('open');document.querySelector('.overlay').classList.remove('show')"><span class="nav-emoji">🏰</span>Día 6 — Jue 9 — Versalles</a>
-<a href="#dia7" onclick="document.querySelector('.sidebar').classList.remove('open');document.querySelector('.overlay').classList.remove('show')"><span class="nav-emoji">🇱🇺</span>Día 7 — Vie 10 — Luxemburgo → Frankfurt</a>
-<a href="#dia8" onclick="document.querySelector('.sidebar').classList.remove('open');document.querySelector('.overlay').classList.remove('show')"><span class="nav-emoji">🌲</span>Día 8 — Sáb 11 — Selva Negra → Zurich</a>
-<a href="#dia9" onclick="document.querySelector('.sidebar').classList.remove('open');document.querySelector('.overlay').classList.remove('show')"><span class="nav-emoji">🏔</span>Día 9 — Dom 12 — Titlis → Munich</a>
-<a href="#dia10" onclick="document.querySelector('.sidebar').classList.remove('open');document.querySelector('.overlay').classList.remove('show')" style="background:rgba(233,69,96,.15);border:1px solid var(--accent)"><span class="nav-emoji">🎂</span>Día 10 — Lun 13 — QUINCEAÑERA</a>
-<a href="#dia11" onclick="document.querySelector('.sidebar').classList.remove('open');document.querySelector('.overlay').classList.remove('show')"><span class="nav-emoji">🇮🇹</span>Día 11 — Mar 14 — Venecia → Roma</a>
-<a href="#dia12" onclick="document.querySelector('.sidebar').classList.remove('open');document.querySelector('.overlay').classList.remove('show')"><span class="nav-emoji">⛪</span>Día 12 — Mié 15 — Roma + Vaticano</a>
-<a href="#dia13" onclick="document.querySelector('.sidebar').classList.remove('open');document.querySelector('.overlay').classList.remove('show')"><span class="nav-emoji">🏖</span>Día 13 — Jue 16 — Roma libre / Capri</a>
-<a href="#dia14" onclick="document.querySelector('.sidebar').classList.remove('open');document.querySelector('.overlay').classList.remove('show')"><span class="nav-emoji">🎨</span>Día 14 — Vie 17 — Florencia</a>
-<a href="#dia15" onclick="document.querySelector('.sidebar').classList.remove('open');document.querySelector('.overlay').classList.remove('show')"><span class="nav-emoji">🗼</span>Día 15 — Sáb 18 — Pisa → Costa Azul</a>
-<a href="#dia16" onclick="document.querySelector('.sidebar').classList.remove('open');document.querySelector('.overlay').classList.remove('show')"><span class="nav-emoji">🇪🇸</span>Día 16 — Dom 19 — Barcelona</a>
-<a href="#dia17" onclick="document.querySelector('.sidebar').classList.remove('open');document.querySelector('.overlay').classList.remove('show')"><span class="nav-emoji">🇪🇸</span>Día 17 — Lun 20 — Zaragoza → Madrid</a>
-<a href="#dia18" onclick="document.querySelector('.sidebar').classList.remove('open');document.querySelector('.overlay').classList.remove('show')"><span class="nav-emoji">⚔️</span>Día 18 — Mar 21 — Madrid + Toledo</a>
-<a href="#dia19" onclick="document.querySelector('.sidebar').classList.remove('open');document.querySelector('.overlay').classList.remove('show')"><span class="nav-emoji">✈️</span>Día 19 — Mié 22 — Vuelta a Lima</a>
-
-<h3>📚 Extras</h3>
-<a href="#frases" onclick="document.querySelector('.sidebar').classList.remove('open');document.querySelector('.overlay').classList.remove('show')"><span class="nav-emoji">💬</span>Frases por Idioma</a>
-<a href="#check" onclick="document.querySelector('.sidebar').classList.remove('open');document.querySelector('.overlay').classList.remove('show')"><span class="nav-emoji">✅</span>Checklist Pre-Viaje</a>
+<a href="#guia" title="Guía">📖</a>
+<a href="#reglas" title="Reglas">📋</a>
+<a href="#seguro" title="Seguro">🛡</a>
+<a class="sep"></a>
+<a href="#dia1" title="Día 1 - Sáb 4 Oct">D1</a>
+<a href="#dia2" title="Día 2 - Dom 5 Oct - Londres">D2</a>
+<a href="#dia3" title="Día 3 - Lun 6 Oct - Londres">D3</a>
+<a href="#dia4" title="Día 4 - Mar 7 Oct - Ferry París">D4</a>
+<a href="#dia5" title="Día 5 - Mié 8 Oct - París">D5</a>
+<a href="#dia6" title="Día 6 - Jue 9 Oct - Versalles">D6</a>
+<a href="#dia7" title="Día 7 - Vie 10 Oct - Luxemburgo">D7</a>
+<a href="#dia8" title="Día 8 - Sáb 11 Oct - Selva Negra">D8</a>
+<a href="#dia9" title="Día 9 - Dom 12 Oct - Titlis">D9</a>
+<a href="#dia10" title="Día 10 - Lun 13 Oct - QUINCEAÑERA" class="bday">🎂</a>
+<a href="#dia11" title="Día 11 - Mar 14 Oct - Venecia Roma">D11</a>
+<a href="#dia12" title="Día 12 - Mié 15 Oct - Roma Vaticano">D12</a>
+<a href="#dia13" title="Día 13 - Jue 16 Oct - Roma libre">D13</a>
+<a href="#dia14" title="Día 14 - Vie 17 Oct - Florencia">D14</a>
+<a href="#dia15" title="Día 15 - Sáb 18 Oct - Pisa">D15</a>
+<a href="#dia16" title="Día 16 - Dom 19 Oct - Barcelona">D16</a>
+<a href="#dia17" title="Día 17 - Lun 20 Oct - Madrid">D17</a>
+<a href="#dia18" title="Día 18 - Mar 21 Oct - Toledo">D18</a>
+<a href="#dia19" title="Día 19 - Mié 22 Oct - Vuelta">D19</a>
+<a class="sep"></a>
+<a href="#frases" title="Frases">💬</a>
+<a href="#check" title="Checklist">✅</a>
 </div>
 
 <div class="hero">
