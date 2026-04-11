@@ -10,16 +10,25 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Inter',sans-serif;background:var(--light);color:#333;line-height:1.65;font-size:15px}
 html{scroll-behavior:smooth}
-/* SIDEBAR FIJA - flota encima del contenido, no empuja */
-.sidebar{position:fixed;top:50%;right:6px;transform:translateY(-50%);width:32px;max-height:90vh;background:rgba(26,26,46,.85);backdrop-filter:blur(8px);z-index:1000;display:flex;flex-direction:column;align-items:center;padding:6px 2px;overflow-y:auto;overflow-x:hidden;gap:1px;-webkit-overflow-scrolling:touch;scrollbar-width:none;border-radius:16px;box-shadow:0 2px 20px rgba(0,0,0,.3)}
+/* SIDEBAR - solo en desktop, en celular se oculta y se muestra un mini-nav horizontal abajo */
+.sidebar{position:fixed;top:50%;right:4px;transform:translateY(-50%);width:30px;max-height:92vh;background:rgba(26,26,46,.8);backdrop-filter:blur(6px);z-index:1000;display:flex;flex-direction:column;align-items:center;padding:5px 2px;overflow-y:auto;overflow-x:hidden;gap:1px;-webkit-overflow-scrolling:touch;scrollbar-width:none;border-radius:14px;box-shadow:0 2px 15px rgba(0,0,0,.25)}
 .sidebar::-webkit-scrollbar{display:none}
-.sidebar a{display:flex;align-items:center;justify-content:center;width:26px;height:24px;border-radius:6px;color:rgba(255,255,255,.7);text-decoration:none;font-size:.48rem;font-weight:700;transition:all .15s;flex-shrink:0;text-align:center;line-height:1}
-.sidebar a:hover,.sidebar a:active{background:rgba(255,255,255,.2);color:var(--gold);transform:scale(1.15)}
-.sidebar a.sep{height:1px;background:rgba(255,255,255,.15);width:20px;border-radius:0;pointer-events:none;margin:2px 0;transform:none}
-.sidebar a.bday{background:rgba(233,69,96,.35);color:#ff9ab5;font-size:.6rem}
-.sidebar a.bday:hover{background:rgba(233,69,96,.5)}
-/* NO margin-right en body - sidebar flota encima */
-@media(max-width:500px){.sidebar{right:3px;width:26px;padding:4px 1px;max-height:85vh;border-radius:12px}.sidebar a{width:22px;height:20px;font-size:.4rem;border-radius:4px}.sidebar a.bday{font-size:.5rem}}
+.sidebar a{display:flex;align-items:center;justify-content:center;width:24px;height:22px;border-radius:5px;color:rgba(255,255,255,.7);text-decoration:none;font-size:.45rem;font-weight:700;transition:all .15s;flex-shrink:0;text-align:center;line-height:1}
+.sidebar a:hover,.sidebar a:active{background:rgba(255,255,255,.2);color:var(--gold)}
+.sidebar a.sep{height:1px;background:rgba(255,255,255,.12);width:18px;border-radius:0;pointer-events:none;margin:2px 0}
+.sidebar a.bday{background:rgba(233,69,96,.35);color:#ff9ab5;font-size:.55rem}
+/* MOBILE: sidebar se convierte en barra horizontal abajo */
+.mobile-nav{display:none}
+@media(max-width:768px){
+.sidebar{display:none}
+.mobile-nav{display:flex;position:fixed;bottom:0;left:0;right:0;height:42px;background:rgba(26,26,46,.95);backdrop-filter:blur(8px);z-index:1000;align-items:center;padding:0 6px;gap:2px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;box-shadow:0 -2px 15px rgba(0,0,0,.2)}
+.mobile-nav::-webkit-scrollbar{display:none}
+.mobile-nav a{display:flex;align-items:center;justify-content:center;min-width:32px;height:32px;border-radius:8px;color:rgba(255,255,255,.7);text-decoration:none;font-size:.6rem;font-weight:700;flex-shrink:0;padding:0 4px}
+.mobile-nav a:active{background:rgba(255,255,255,.15);color:var(--gold)}
+.mobile-nav a.sep{display:none}
+.mobile-nav a.bday{background:rgba(233,69,96,.3);color:#ff9ab5;font-size:.7rem;border-radius:8px}
+body{padding-bottom:46px}
+}
 .hero{min-height:100vh;background:linear-gradient(135deg,#0f3460 0%,#1a1a2e 40%,#16213e 70%,#e94560 100%);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#fff;padding:60px 20px}
 .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,6vw,4.5rem);font-weight:900;text-shadow:2px 4px 20px rgba(0,0,0,.3)}
 .hero .route{font-size:clamp(.8rem,2vw,1.1rem);margin-top:18px;opacity:.85;letter-spacing:2px}
@@ -123,7 +132,35 @@ html{scroll-behavior:smooth}
 </head>
 <body>
 
-<!-- SIDEBAR LATERAL DERECHO -->
+<!-- MOBILE NAV (solo celular) -->
+<div class="mobile-nav">
+<a href="#guia">📖</a>
+<a href="#reglas">📋</a>
+<a href="#seguro">🛡</a>
+<a href="#dia1">D1</a>
+<a href="#dia2">D2</a>
+<a href="#dia3">D3</a>
+<a href="#dia4">D4</a>
+<a href="#dia5">D5</a>
+<a href="#dia6">D6</a>
+<a href="#dia7">D7</a>
+<a href="#dia8">D8</a>
+<a href="#dia9">D9</a>
+<a href="#dia10" class="bday">🎂</a>
+<a href="#dia11">D11</a>
+<a href="#dia12">D12</a>
+<a href="#dia13">D13</a>
+<a href="#dia14">D14</a>
+<a href="#dia15">D15</a>
+<a href="#dia16">D16</a>
+<a href="#dia17">D17</a>
+<a href="#dia18">D18</a>
+<a href="#dia19">D19</a>
+<a href="#frases">💬</a>
+<a href="#check">✅</a>
+</div>
+
+<!-- SIDEBAR LATERAL DERECHO (solo PC) -->
 <div class="sidebar">
 <a href="#guia" title="Guía">📖</a>
 <a href="#reglas" title="Reglas">📋</a>
