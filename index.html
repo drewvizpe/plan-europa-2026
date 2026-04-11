@@ -39,25 +39,28 @@ h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;font-weight:600;letter-spacing:
 strong{font-weight:600;color:var(--ink)}
 p{color:var(--ink-2)}
 
-/* SIDEBAR PC */
-.sidebar{position:fixed;top:50%;right:12px;transform:translateY(-50%);width:32px;max-height:88vh;background:rgba(26,29,46,.92);backdrop-filter:blur(12px);z-index:1000;display:flex;flex-direction:column;align-items:center;padding:8px 2px;overflow-y:auto;overflow-x:hidden;gap:2px;-webkit-overflow-scrolling:touch;scrollbar-width:none;border-radius:20px;box-shadow:0 10px 40px rgba(0,0,0,.15)}
+/* SIDEBAR PC - bigger with magnifier effect */
+.sidebar{position:fixed;top:50%;right:14px;transform:translateY(-50%);width:52px;max-height:90vh;background:rgba(26,29,46,.92);backdrop-filter:blur(14px);z-index:1000;display:flex;flex-direction:column;align-items:center;padding:10px 4px;overflow-y:auto;overflow-x:hidden;gap:3px;-webkit-overflow-scrolling:touch;scrollbar-width:none;border-radius:26px;box-shadow:0 10px 50px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.1)}
 .sidebar::-webkit-scrollbar{display:none}
-.sidebar a{display:flex;align-items:center;justify-content:center;width:26px;height:24px;border-radius:7px;color:rgba(255,255,255,.6);text-decoration:none;font-size:.5rem;font-weight:600;transition:all .2s;flex-shrink:0;text-align:center;line-height:1;font-family:'Inter',sans-serif;letter-spacing:.3px}
-.sidebar a:hover,.sidebar a:active{background:rgba(255,255,255,.15);color:#fff}
-.sidebar a.sep{height:1px;background:rgba(255,255,255,.1);width:18px;border-radius:0;pointer-events:none;margin:3px 0}
-.sidebar a.bday{background:rgba(184,65,122,.4);color:#fff;font-size:.65rem}
+.sidebar a{display:flex;align-items:center;justify-content:center;width:40px;height:36px;border-radius:12px;color:rgba(255,255,255,.7);text-decoration:none;font-size:.72rem;font-weight:600;transition:all .25s cubic-bezier(.4,0,.2,1);flex-shrink:0;text-align:center;line-height:1;font-family:'Inter',sans-serif;letter-spacing:.3px;transform-origin:right center}
+.sidebar a:hover{background:rgba(255,255,255,.18);color:#fff;transform:scale(1.35);z-index:2;box-shadow:0 4px 20px rgba(0,0,0,.3);margin-right:4px}
+.sidebar a:hover+a{transform:scale(1.1)}
+.sidebar a:has(+a:hover){transform:scale(1.1)}
+.sidebar a.sep{height:1px;background:rgba(255,255,255,.12);width:28px;border-radius:0;pointer-events:none;margin:5px 0}
+.sidebar a.sep:hover{transform:none}
+.sidebar a.bday{background:rgba(184,65,122,.45);color:#fff;font-size:1rem}
 
 /* MOBILE NAV */
 .mobile-nav{display:none}
 @media(max-width:768px){
   .sidebar{display:none}
-  .mobile-nav{display:flex;position:fixed;bottom:0;left:0;right:0;height:48px;background:rgba(26,29,46,.95);backdrop-filter:blur(12px);z-index:1000;align-items:center;padding:0 8px;gap:4px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;box-shadow:0 -4px 20px rgba(0,0,0,.12)}
+  .mobile-nav{display:flex;position:fixed;bottom:0;left:0;right:0;height:54px;background:rgba(26,29,46,.96);backdrop-filter:blur(14px);z-index:1000;align-items:center;padding:0 10px;gap:4px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;box-shadow:0 -6px 24px rgba(0,0,0,.15);border-top:1px solid rgba(255,255,255,.08)}
   .mobile-nav::-webkit-scrollbar{display:none}
-  .mobile-nav a{display:flex;align-items:center;justify-content:center;min-width:36px;height:36px;border-radius:10px;color:rgba(255,255,255,.7);text-decoration:none;font-size:.68rem;font-weight:600;flex-shrink:0;padding:0 6px;letter-spacing:.2px}
-  .mobile-nav a:active{background:rgba(255,255,255,.15);color:#fff}
+  .mobile-nav a{display:flex;align-items:center;justify-content:center;min-width:42px;height:42px;border-radius:12px;color:rgba(255,255,255,.75);text-decoration:none;font-size:.75rem;font-weight:600;flex-shrink:0;padding:0 8px;letter-spacing:.2px}
+  .mobile-nav a:active{background:rgba(255,255,255,.18);color:#fff;transform:scale(.95)}
   .mobile-nav a.sep{display:none}
-  .mobile-nav a.bday{background:rgba(184,65,122,.35);color:#fff}
-  body{padding-bottom:52px}
+  .mobile-nav a.bday{background:rgba(184,65,122,.4);color:#fff}
+  body{padding-bottom:58px}
 }
 
 /* HERO - clean elegant */
@@ -239,10 +242,180 @@ p{color:var(--ink-2)}
 .logi-text{color:var(--ink-2);line-height:1.6;flex:1}
 .logi-text strong{color:var(--ink)}
 
-@media print{.nav,.sidebar,.mobile-nav{display:none}.hero{min-height:auto;padding:30px}.day{break-inside:avoid;box-shadow:none;border:1px solid #ddd}body{padding-bottom:0}}
+/* PROGRESS BAR TOP */
+.progress-bar{position:fixed;top:0;left:0;right:0;height:3px;background:rgba(0,0,0,.05);z-index:999}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--gold));width:0%;transition:width .1s linear}
+
+/* FLOATING BUTTONS */
+.fab-group{position:fixed;left:20px;bottom:20px;z-index:999;display:flex;flex-direction:column;gap:10px}
+@media(max-width:768px){.fab-group{left:12px;bottom:68px}}
+.fab{width:46px;height:46px;border-radius:50%;background:var(--ink);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:0 6px 20px rgba(0,0,0,.25);transition:all .2s;position:relative}
+.fab:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(0,0,0,.3)}
+.fab.emergency{background:var(--danger);color:#fff}
+.fab.calc{background:var(--gold)}
+.fab.top{background:var(--ink-2)}
+.fab-label{position:absolute;left:54px;top:50%;transform:translateY(-50%);background:var(--ink);color:#fff;padding:6px 12px;border-radius:6px;font-size:.75rem;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s}
+.fab:hover .fab-label{opacity:1}
+.fab.top{opacity:0;pointer-events:none;transition:opacity .3s,transform .3s}
+.fab.top.show{opacity:1;pointer-events:auto}
+
+/* CURRENCY CALCULATOR MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(4px);z-index:2000;display:none;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.open{display:flex}
+.modal{background:#fff;border-radius:16px;padding:28px;max-width:420px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.3);position:relative}
+.modal h3{font-family:'Fraunces',serif;font-style:italic;font-size:1.6rem;margin-bottom:20px;color:var(--ink)}
+.modal-close{position:absolute;top:14px;right:14px;background:var(--line-2);border:none;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:1.1rem;color:var(--mute)}
+.modal-close:hover{background:var(--line)}
+.calc-row{display:grid;grid-template-columns:1fr 80px;gap:10px;margin-bottom:12px;align-items:center}
+.calc-row label{font-size:.8rem;color:var(--ink-2);font-weight:500}
+.calc-row input{padding:10px 14px;border:1px solid var(--line);border-radius:8px;font-size:.95rem;font-family:inherit;color:var(--ink);background:#fafafa;width:100%}
+.calc-row input:focus{outline:none;border-color:var(--accent);background:#fff}
+.calc-row select{padding:10px 12px;border:1px solid var(--line);border-radius:8px;font-size:.85rem;background:#fafafa;cursor:pointer;font-family:inherit}
+.calc-result{background:var(--accent-soft);border-radius:10px;padding:16px;margin-top:16px}
+.calc-result .row{display:flex;justify-content:space-between;padding:6px 0;font-size:.88rem;color:var(--ink-2)}
+.calc-result .row strong{color:var(--accent);font-size:1.1rem;font-family:'Fraunces',serif}
+
+/* EMERGENCY MODAL */
+.emergency-grid{display:grid;gap:10px;margin-top:16px}
+.em-item{background:var(--danger-soft);border-radius:10px;padding:14px 16px;border-left:3px solid var(--danger);font-size:.85rem}
+.em-item strong{display:block;color:var(--danger);margin-bottom:3px;font-weight:600}
+.em-item a{color:var(--ink);text-decoration:none;font-weight:600;font-size:1rem;font-family:'Fraunces',serif;font-style:italic}
+.em-item a:hover{text-decoration:underline}
+
+/* LIGHTBOX */
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:3000;display:none;align-items:center;justify-content:center;padding:20px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:95%;max-height:92vh;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.lightbox-close{position:absolute;top:20px;right:20px;background:rgba(255,255,255,.15);border:none;color:#fff;width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:1.4rem;backdrop-filter:blur(8px)}
+
+/* COUNTRY FLAG STRIPE on day cards */
+.day{position:relative}
+.day::before{content:'';position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--ink-2);z-index:1}
+.day.flag-uk::before{background:linear-gradient(180deg,#012169 0%,#012169 33%,#fff 33%,#fff 66%,#c8102e 66%)}
+.day.flag-fr::before{background:linear-gradient(90deg,#0055a4 0%,#0055a4 33%,#fff 33%,#fff 66%,#ef4135 66%);width:7px}
+.day.flag-de::before{background:linear-gradient(180deg,#000 0%,#000 33%,#dd0000 33%,#dd0000 66%,#ffce00 66%)}
+.day.flag-ch::before{background:#da291c}
+.day.flag-at::before{background:linear-gradient(180deg,#ed2939 0%,#ed2939 33%,#fff 33%,#fff 66%,#ed2939 66%)}
+.day.flag-it::before{background:linear-gradient(90deg,#008c45 0%,#008c45 33%,#f4f5f0 33%,#f4f5f0 66%,#cd212a 66%);width:7px}
+.day.flag-es::before{background:linear-gradient(180deg,#aa151b 0%,#aa151b 25%,#f1bf00 25%,#f1bf00 75%,#aa151b 75%)}
+.day.flag-mc::before{background:linear-gradient(180deg,#ce1126 0%,#ce1126 50%,#fff 50%)}
+.day.flag-multi::before{background:linear-gradient(180deg,#b8417a 0%,#c8553d 50%,#b8893a 100%)}
+
+/* COLLAPSIBLE */
+details.coll{background:var(--card);border:1px solid var(--line);border-radius:8px;margin:14px 0;overflow:hidden}
+details.coll>summary{padding:14px 18px;cursor:pointer;font-size:.88rem;font-weight:600;color:var(--ink);list-style:none;display:flex;align-items:center;gap:10px;transition:background .2s}
+details.coll>summary:hover{background:var(--line-2)}
+details.coll>summary::-webkit-details-marker{display:none}
+details.coll>summary::after{content:'▼';margin-left:auto;font-size:.6rem;color:var(--mute);transition:transform .2s}
+details.coll[open]>summary::after{transform:rotate(180deg)}
+details.coll[open]>summary{border-bottom:1px solid var(--line)}
+details.coll .coll-body{padding:18px}
+
+/* FRASES INLINE */
+.frases-inline{background:#f5f3ec;border-radius:8px;padding:18px 22px;margin:16px 0;border:1px solid #e8e4d4}
+.frases-inline h4{font-size:.7rem;text-transform:uppercase;letter-spacing:2.5px;color:var(--gold);margin-bottom:14px;font-weight:600;font-family:'Inter',sans-serif}
+.frases-inline .fr-row{display:grid;grid-template-columns:1fr 1fr auto;gap:14px;padding:8px 0;border-bottom:1px dashed rgba(184,137,58,.2);font-size:.82rem;align-items:center}
+.frases-inline .fr-row:last-child{border-bottom:none}
+@media(max-width:600px){.frases-inline .fr-row{grid-template-columns:1fr 1fr;gap:8px}.frases-inline .fr-row .pron{grid-column:1/-1;font-size:.72rem}}
+.frases-inline .fr-es{color:var(--ink)}
+.frases-inline .fr-local{color:var(--gold);font-weight:600}
+.frases-inline .pron{color:var(--mute);font-style:italic;font-size:.72rem;white-space:nowrap}
+
+/* CURIOSIDAD BLOCK */
+.curiosidad{background:linear-gradient(135deg,#f4f0e6,#ebe4cf);border-radius:8px;padding:18px 22px;margin:16px 0;border:1px solid #e0d5b5;display:flex;gap:14px;align-items:flex-start}
+.curiosidad .ci{font-size:1.3rem;flex-shrink:0}
+.curiosidad h4{font-size:.7rem;text-transform:uppercase;letter-spacing:2px;color:var(--gold);margin-bottom:6px;font-weight:600;font-family:'Inter',sans-serif}
+.curiosidad p{font-size:.85rem;color:var(--ink-2);line-height:1.65}
+
+/* CULTURAL TIPS */
+.cultural{background:#f0ebe2;border-radius:8px;padding:18px 22px;margin:16px 0;border-left:3px solid var(--gold);font-size:.85rem}
+.cultural h4{font-size:.7rem;text-transform:uppercase;letter-spacing:2px;color:var(--gold);margin-bottom:10px;font-weight:600;font-family:'Inter',sans-serif}
+.cultural ul{list-style:none;padding:0}
+.cultural li{padding:5px 0;padding-left:16px;position:relative;color:var(--ink-2)}
+.cultural li::before{content:'·';position:absolute;left:4px;color:var(--gold);font-weight:700;font-size:1rem}
+
+/* FOOD TYPICAL */
+.food-typical{background:var(--accent-soft);border-radius:8px;padding:18px 22px;margin:16px 0;border:1px solid #f0d6cc;font-size:.85rem}
+.food-typical h4{font-size:.7rem;text-transform:uppercase;letter-spacing:2px;color:var(--accent);margin-bottom:10px;font-weight:600;font-family:'Inter',sans-serif}
+.food-typical .food-item{display:inline-block;background:#fff;padding:4px 12px;border-radius:100px;margin:3px;font-size:.78rem;color:var(--ink-2);border:1px solid #f0d6cc}
+
+/* FOTO IDEAS */
+.foto-ideas{background:#eef5f3;border-radius:8px;padding:18px 22px;margin:16px 0;border:1px solid #d4e8df}
+.foto-ideas h4{font-size:.7rem;text-transform:uppercase;letter-spacing:2px;color:var(--green);margin-bottom:10px;font-weight:600;font-family:'Inter',sans-serif}
+.foto-ideas p{font-size:.82rem;color:var(--ink-2);line-height:1.7;margin-bottom:4px}
+.foto-ideas p::before{content:'📸 ';opacity:.6}
+
+/* SHARE BUTTON */
+.share-day{display:inline-flex;align-items:center;gap:6px;background:#25d366;color:#fff;padding:10px 18px;border-radius:100px;font-size:.8rem;font-weight:600;text-decoration:none;margin:16px 0 4px;border:none;cursor:pointer;transition:all .2s;font-family:inherit}
+.share-day:hover{background:#1da851;transform:translateY(-1px);box-shadow:0 4px 15px rgba(37,211,102,.3)}
+
+/* APPS SECTION */
+.apps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:20px 0}
+.app-card{background:var(--card);border-radius:8px;padding:20px;border:1px solid var(--line);transition:all .2s}
+.app-card:hover{box-shadow:0 4px 15px rgba(0,0,0,.06);transform:translateY(-2px)}
+.app-card h4{font-size:.95rem;color:var(--ink);margin-bottom:6px;font-weight:600;font-family:'Inter',sans-serif}
+.app-card .app-cat{font-size:.62rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--accent);font-weight:600;margin-bottom:8px}
+.app-card p{font-size:.82rem;color:var(--ink-2);line-height:1.65}
+
+@media print{.nav,.sidebar,.mobile-nav,.fab-group,.progress-bar{display:none}.hero{min-height:auto;padding:30px}.day{break-inside:avoid;box-shadow:none;border:1px solid #ddd}body{padding-bottom:0}details.coll{border:none}details.coll .coll-body{display:block!important}}
 </style>
 </head>
 <body>
+
+<!-- PROGRESS BAR -->
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<!-- BOTONES FLOTANTES -->
+<div class="fab-group">
+<button class="fab emergency" onclick="document.getElementById('modalEmergency').classList.add('open')" title="Emergencias"><span>🚨</span><span class="fab-label">Emergencias</span></button>
+<button class="fab calc" onclick="document.getElementById('modalCalc').classList.add('open')" title="Calculadora de divisas"><span>💱</span><span class="fab-label">Calculadora</span></button>
+<button class="fab top" id="btnTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Volver arriba"><span>↑</span><span class="fab-label">Arriba</span></button>
+</div>
+
+<!-- MODAL EMERGENCIAS -->
+<div class="modal-overlay" id="modalEmergency" onclick="if(event.target===this)this.classList.remove('open')">
+<div class="modal">
+<button class="modal-close" onclick="document.getElementById('modalEmergency').classList.remove('open')">✕</button>
+<h3>🚨 Emergencias</h3>
+<p style="font-size:.85rem;color:var(--mute);margin-bottom:12px">Toquen el número para llamar directo</p>
+<div class="emergency-grid">
+<div class="em-item"><strong>EMERGENCIA GENERAL (toda Europa)</strong><a href="tel:112">📞 112</a></div>
+<div class="em-item"><strong>Policía Reino Unido</strong><a href="tel:999">📞 999</a></div>
+<div class="em-item"><strong>Embajada Perú — Reino Unido</strong><a href="tel:+442072351917">📞 +44 20 7235 1917</a></div>
+<div class="em-item"><strong>Embajada Perú — Francia</strong><a href="tel:+33153104250">📞 +33 1 53 10 42 50</a></div>
+<div class="em-item"><strong>Embajada Perú — Italia</strong><a href="tel:+39068440158">📞 +39 06 8440 1581</a></div>
+<div class="em-item"><strong>Embajada Perú — España</strong><a href="tel:+34914314242">📞 +34 91 431 4242</a></div>
+<div class="em-item"><strong>Agente Atrápalo — Anahí</strong><a href="tel:08103450014">📞 0810-345-0014</a></div>
+</div>
+</div>
+</div>
+
+<!-- MODAL CALCULADORA DIVISAS -->
+<div class="modal-overlay" id="modalCalc" onclick="if(event.target===this)this.classList.remove('open')">
+<div class="modal">
+<button class="modal-close" onclick="document.getElementById('modalCalc').classList.remove('open')">✕</button>
+<h3>💱 Calculadora de divisas</h3>
+<p style="font-size:.85rem;color:var(--mute);margin-bottom:16px">Escribe el monto y elige la moneda</p>
+<div class="calc-row">
+<input type="number" id="calcInput" placeholder="100" oninput="updateCalc()">
+<select id="calcFrom" onchange="updateCalc()">
+<option value="EUR">€ EUR</option>
+<option value="GBP">£ GBP</option>
+<option value="CHF">CHF</option>
+<option value="USD">$ USD</option>
+<option value="PEN">S/ PEN</option>
+</select>
+</div>
+<div class="calc-result" id="calcResult">
+<div class="row"><span>En soles peruanos</span><strong id="resPEN">—</strong></div>
+<div class="row"><span>En dólares</span><strong id="resUSD">—</strong></div>
+<div class="row"><span>En euros</span><strong id="resEUR">—</strong></div>
+<div class="row"><span>En libras</span><strong id="resGBP">—</strong></div>
+<div class="row"><span>En francos suizos</span><strong id="resCHF">—</strong></div>
+</div>
+<p style="font-size:.7rem;color:var(--mute);margin-top:12px;text-align:center">Tasas aproximadas abril 2026</p>
+</div>
+</div>
 
 <!-- MOBILE NAV (solo celular) -->
 <div class="mobile-nav">
@@ -268,6 +441,7 @@ p{color:var(--ink-2)}
 <a href="#dia17">D17</a>
 <a href="#dia18">D18</a>
 <a href="#dia19">D19</a>
+<a href="#apps">📱</a>
 <a href="#frases">💬</a>
 <a href="#check">✅</a>
 </div>
@@ -298,6 +472,7 @@ p{color:var(--ink-2)}
 <a href="#dia18" title="Día 18 - Mar 21 Oct - Toledo">D18</a>
 <a href="#dia19" title="Día 19 - Mié 22 Oct - Vuelta">D19</a>
 <a class="sep"></a>
+<a href="#apps" title="Apps recomendadas">📱</a>
 <a href="#frases" title="Frases">💬</a>
 <a href="#check" title="Checklist">✅</a>
 </div>
@@ -506,7 +681,7 @@ p{color:var(--ink-2)}
 <h2 class="sec-title">Itinerario</h2>
 <p class="sec-sub">Cada día tiene todo: horario, logística, fotos, tips y estimado de gasto.</p>
 
-<div class="day" id="dia1"><div class="day-head bg-flight"><div class="day-n">1</div><div class="day-info"><h2>✈️ Lima → Madrid → Londres</h2><div class="date">📅 Sábado 4 de Octubre • Noche a bordo</div></div></div>
+<div class="day flag-multi" id="dia1"><div class="day-head bg-flight"><div class="day-n">1</div><div class="day-info"><h2>✈️ Lima → Madrid → Londres</h2><div class="date">📅 Sábado 4 de Octubre • Noche a bordo</div></div></div>
 <div class="day-body">
 <div class="horario">
 <h4>⏰ Horario del día</h4>
@@ -523,9 +698,9 @@ p{color:var(--ink-2)}
 <div class="logi-row"><div class="logi-icon">🏨</div><div class="logi-text"><strong>Dónde duermen:</strong> A bordo del avión (noche del sábado). No hay hotel este día.</div></div>
 <div class="logi-row"><div class="logi-icon">📍</div><div class="logi-text"><strong>Mañana siguiente:</strong> Llegan a Londres Gatwick a las 10:50 AM. ⚠️ Su vuelo llega a Gatwick, pero el traslado gratis del tour es solo para Heathrow. Para que los recojan en Gatwick TIENEN que pagar un recargo de <strong>$31/persona ($155 familia)</strong>. Contrátenlo con Anahí (agente Atrápalo). Si no lo pagan, nadie los recoge y tendrían que llegar solos al hotel en tren.</div></div>
 </div>
-</div></div>
+<button class="share-day" onclick="shareDay(1)">📱 Compartir este día por WhatsApp</button></div></div>
 
-<div class="day" id="dia2"><div class="day-head bg-uk"><div class="day-n">2</div><div class="day-info"><h2>🇬🇧 Llegada a Londres</h2><div class="date">📅 Domingo 5 de Octubre</div></div><div class="curr">🇬🇧 LIBRA £ • £1 ≈ $1.26 ≈ S/4.80</div></div>
+<div class="day flag-uk" id="dia2"><div class="day-head bg-uk"><div class="day-n">2</div><div class="day-info"><h2>🇬🇧 Llegada a Londres</h2><div class="date">📅 Domingo 5 de Octubre</div></div><div class="curr">🇬🇧 LIBRA £ • £1 ≈ $1.26 ≈ S/4.80</div></div>
 <div class="day-body">
 <div class="horario">
 <h4>⏰ Horario del día</h4>
@@ -543,15 +718,41 @@ p{color:var(--ink-2)}
 <div class="tip t-food"><div class="ti">🍽</div><div><strong>Cena:</strong> Nando's (~£12-15/pp) o pub Fish & Chips (~£10-12). Meal Deal en supermercado: £3.50-5 (sandwich+bebida+snack).</div></div>
 <div class="tip t-warn"><div class="ti">⚠️</div><div><strong>DOMINGO:</strong> Tiendas con horario reducido (11 AM-5 PM). Supermercados sí abren normal.</div></div>
 <div class="tip t-info"><div class="ti">⏰</div><div><strong>Jet lag:</strong> Perú está 5h atrás. NO se duerman hasta 9-10 PM local.</div></div>
+
+<details class="coll"><summary>💡 Dato curioso de Londres</summary><div class="coll-body"><p style="font-size:.85rem;color:var(--ink-2);line-height:1.7">El "Big Ben" no es la torre ni el reloj — es el nombre de la <strong>campana</strong> que está dentro. La torre se llama oficialmente <strong>Elizabeth Tower</strong> desde 2012. La campana pesa 13.7 toneladas y lleva sonando desde 1859. Otro dato: el metro de Londres es el MÁS ANTIGUO del mundo (1863).</p></div></details>
+
+<details class="coll"><summary>🎭 Etiqueta británica — muy importante</summary><div class="coll-body"><div class="cultural"><ul>
+<li><strong>Hacer cola es sagrado.</strong> NUNCA se cuelen. Los ingleses odian eso.</li>
+<li><strong>Dicen "Sorry" por todo</strong>, incluso si ustedes los pisan a ellos. Es cultural.</li>
+<li><strong>"Please" y "Thank you"</strong> en CADA pedido. Sin eso, les atienden mal.</li>
+<li><strong>Propina:</strong> 10-12% en restaurantes si no está incluida. En pubs no es necesario.</li>
+<li><strong>Caminen por la izquierda</strong> en aceras y estaciones. Contrario a Perú.</li>
+</ul></div></div></details>
+
+<details class="coll"><summary>💬 Frases en inglés</summary><div class="coll-body"><div class="frases-inline">
+<div class="fr-row"><div class="fr-es">Por favor</div><div class="fr-local">Please</div><div class="pron">pliis</div></div>
+<div class="fr-row"><div class="fr-es">Gracias</div><div class="fr-local">Thank you</div><div class="pron">zenk iu</div></div>
+<div class="fr-row"><div class="fr-es">¿Cuánto cuesta?</div><div class="fr-local">How much?</div><div class="pron">jao mach</div></div>
+<div class="fr-row"><div class="fr-es">¿Dónde está el baño?</div><div class="fr-local">Where is the toilet?</div><div class="pron">wer is de toilet</div></div>
+<div class="fr-row"><div class="fr-es">La cuenta, por favor</div><div class="fr-local">The bill, please</div><div class="pron">de bil pliis</div></div>
+<div class="fr-row"><div class="fr-es">Mesa para 5</div><div class="fr-local">Table for five</div><div class="pron">teibol for faiv</div></div>
+<div class="fr-row"><div class="fr-es">Agua del grifo (gratis)</div><div class="fr-local">Tap water, please</div><div class="pron">tap uoter pliis</div></div>
+<div class="fr-row"><div class="fr-es">Me robaron</div><div class="fr-local">I've been robbed</div><div class="pron">aiv bin robd</div></div>
+</div></div></details>
+
+<details class="coll"><summary>🍽 Platos típicos de Reino Unido</summary><div class="coll-body"><div class="food-typical">
+<span class="food-item">Fish & Chips</span><span class="food-item">English Breakfast</span><span class="food-item">Sunday Roast</span><span class="food-item">Shepherd's Pie</span><span class="food-item">Bangers & Mash</span><span class="food-item">Scones con té</span><span class="food-item">Pie and Mash</span>
+</div></div></details>
+
 <div class="logi"><h4>🧭 Logística del día</h4>
 <div class="logi-row"><div class="logi-icon">🚐</div><div class="logi-text"><strong>Cómo llegaron:</strong> Si pagaron el recargo de Gatwick ($31/pp), el tour los recogió y los trajo al hotel. Si no lo pagaron, llegaron por su cuenta.</div></div>
 <div class="logi-row"><div class="logi-icon">🏨</div><div class="logi-text"><strong>Dónde duermen:</strong> Hotel en Londres (zona aledaña, probablemente periferia de Londres). Los hoteles de estos tours suelen estar fuera del centro, a 20-40 min en metro. Pregunten al guía la dirección exacta y anótenla.</div></div>
 <div class="logi-row"><div class="logi-icon">🔙</div><div class="logi-text"><strong>Si salen a pasear:</strong> Vuelven al hotel POR SU CUENTA en metro o Uber. El tour NO los recoge. Anoten la dirección del hotel y la estación de metro más cercana.</div></div>
 <div class="logi-row"><div class="logi-icon">📍</div><div class="logi-text"><strong>Mañana siguiente:</strong> Desayuno en el hotel. El bus del tour los recoge en el hotel para el tour panorámico de Londres.</div></div>
 </div>
-</div></div>
+<button class="share-day" onclick="shareDay(2)">📱 Compartir este día por WhatsApp</button></div></div>
 
-<div class="day" id="dia3"><div class="day-head bg-uk"><div class="day-n">3</div><div class="day-info"><h2>🇬🇧 Londres - Tour + Tarde libre</h2><div class="date">📅 Lunes 6 de Octubre</div></div><div class="curr">🇬🇧 LIBRA £</div></div>
+<div class="day flag-uk" id="dia3"><div class="day-head bg-uk"><div class="day-n">3</div><div class="day-info"><h2>🇬🇧 Londres - Tour + Tarde libre</h2><div class="date">📅 Lunes 6 de Octubre</div></div><div class="curr">🇬🇧 LIBRA £</div></div>
 <div class="day-body">
 <div class="horario">
 <h4>⏰ Horario del día</h4>
@@ -591,10 +792,10 @@ p{color:var(--ink-2)}
 <div class="logi-row"><div class="logi-icon">🔙</div><div class="logi-text"><strong>¿Cómo vuelvo al hotel?</strong> POR SU CUENTA. Metro o Uber. Si hacen el tour opcional "Este de Londres", el tour los devuelve al hotel. Si lo hacen solos, regresan solos en metro. Recuerden la estación de metro más cercana al hotel.</div></div>
 <div class="logi-row"><div class="logi-icon">🏨</div><div class="logi-text"><strong>Dónde duermen:</strong> Mismo hotel de Londres que ayer.</div></div>
 <div class="logi-row"><div class="logi-icon">📍</div><div class="logi-text"><strong>Mañana siguiente:</strong> Desayuno temprano. El bus del tour los recoge del hotel y salen hacia Dover para tomar el ferry a Francia. EMPACAR TODO — no vuelven a este hotel.</div></div>
-</div>
+<button class="share-day" onclick="shareDay(3)">📱 Compartir este día por WhatsApp</button></div>
 </div></div>
 
-<div class="day" id="dia4"><div class="day-head bg-fr"><div class="day-n">4</div><div class="day-info"><h2>🇬🇧→🇫🇷 Londres → Ferry → París</h2><div class="date">📅 Martes 7 de Octubre • Traslado</div></div><div class="curr">💱 CAMBIO: EURO € • €1 ≈ $1.08 ≈ S/4.10</div></div>
+<div class="day flag-fr" id="dia4"><div class="day-head bg-fr"><div class="day-n">4</div><div class="day-info"><h2>🇬🇧→🇫🇷 Londres → Ferry → París</h2><div class="date">📅 Martes 7 de Octubre • Traslado</div></div><div class="curr">💱 CAMBIO: EURO € • €1 ≈ $1.08 ≈ S/4.10</div></div>
 <div class="day-body">
 <div class="horario">
 <h4>⏰ Horario del día (470 km)</h4>
@@ -634,10 +835,10 @@ p{color:var(--ink-2)}
 <div class="logi-row"><div class="logi-icon">🏨</div><div class="logi-text"><strong>Dónde duermen:</strong> Hotel en zona de París (probablemente periferia). Los hoteles de tours suelen estar fuera del centro, conectados por metro/RER. Pregunten al guía cómo volver si salen por su cuenta.</div></div>
 <div class="logi-row"><div class="logi-icon">🌙</div><div class="logi-text"><strong>Crucero nocturno:</strong> Si contratan el tour del Sena, los recogen del hotel en bus y los devuelven al hotel (~1 AM). Si NO lo hacen, la noche es libre, cenan por el barrio del hotel.</div></div>
 <div class="logi-row"><div class="logi-icon">📍</div><div class="logi-text"><strong>Mañana siguiente:</strong> Desayuno en hotel. Bus los recoge para el tour panorámico de París.</div></div>
-</div>
+<button class="share-day" onclick="shareDay(4)">📱 Compartir este día por WhatsApp</button></div>
 </div></div>
 
-<div class="day" id="dia5"><div class="day-head bg-fr"><div class="day-n">5</div><div class="day-info"><h2>🇫🇷 París - Tour + Montmartre</h2><div class="date">📅 Miércoles 8 de Octubre</div></div><div class="curr">🇪🇺 EURO €</div></div>
+<div class="day flag-fr" id="dia5"><div class="day-head bg-fr"><div class="day-n">5</div><div class="day-info"><h2>🇫🇷 París - Tour + Montmartre</h2><div class="date">📅 Miércoles 8 de Octubre</div></div><div class="curr">🇪🇺 EURO €</div></div>
 <div class="day-body">
 <div class="horario">
 <h4>⏰ Horario del día</h4>
@@ -675,15 +876,53 @@ p{color:var(--ink-2)}
 <div class="pocket"><div class="pm-icon">💰</div><div><strong>Llevar: ~€50-60/persona.</strong> Almuerzo (~€6), cena menú del día (~€13), metro.</div></div>
 <div class="scam"><h4>⚠️ ESTAFA: Pulseras en Montmartre</h4><div class="sw">📍 Escaleras del Sacré-Cœur</div><p>Hombres atan pulseras en la muñeca MUY rápido. Luego exigen €10-20.</p><div class="sd">🛡️ Manos en bolsillos. "NON" fuerte. NO extiendan la mano.</div></div>
 <div class="scam"><h4>⚠️ ESTAFA: Peticiones falsas</h4><div class="sw">📍 Sacré-Cœur, Ópera</div><p>Jóvenes con clipboard piden firmar "petición". Mientras firman, cómplice roba del bolsillo.</p><div class="sd">🛡️ NO firmen NADA en la calle. "Non, merci" sin detenerse.</div></div>
+
+<details class="coll"><summary>💡 Dato curioso de París</summary><div class="coll-body"><p style="font-size:.85rem;color:var(--ink-2);line-height:1.7">La Torre Eiffel iba a ser DESMONTADA 20 años después de construirla (1889). La salvaron porque sirvió como antena de radio. Hoy le cambian la pintura cada 7 años y usan <strong>60 toneladas de pintura</strong> cada vez. En verano la torre CRECE 15 cm por la dilatación del metal. Los parisinos la odiaban cuando se construyó, ahora es el símbolo del país.</p></div></details>
+
+<details class="coll"><summary>🎭 Etiqueta francesa — crítico para que te atiendan bien</summary><div class="coll-body"><div class="cultural"><ul>
+<li><strong>SIEMPRE digan "Bonjour"</strong> al entrar a cualquier tienda, restaurante o taxi. Sin eso, te atienden mal o te ignoran. Es casi obligatorio.</li>
+<li><strong>Al salir:</strong> "Au revoir" (o-revuar). Es de buena educación.</li>
+<li><strong>No pidan ketchup con papas fritas.</strong> Los franceses lo consideran una ofensa culinaria.</li>
+<li><strong>Coman despacio.</strong> Las comidas son sociales, no para apurarse.</li>
+<li><strong>Propina:</strong> No es obligatoria pero 5-10% si el servicio fue bueno.</li>
+<li><strong>Hablen bajo</strong> en restaurantes. Hablar fuerte es de mala educación.</li>
+</ul></div></div></details>
+
+<details class="coll"><summary>💬 Frases en francés</summary><div class="coll-body"><div class="frases-inline">
+<div class="fr-row"><div class="fr-es">Buen día (OBLIGATORIO)</div><div class="fr-local">Bonjour</div><div class="pron">bon-YUR</div></div>
+<div class="fr-row"><div class="fr-es">Adiós</div><div class="fr-local">Au revoir</div><div class="pron">o-re-VUAR</div></div>
+<div class="fr-row"><div class="fr-es">Por favor</div><div class="fr-local">S'il vous plaît</div><div class="pron">sil vu PLÉ</div></div>
+<div class="fr-row"><div class="fr-es">Gracias</div><div class="fr-local">Merci</div><div class="pron">mer-SÍ</div></div>
+<div class="fr-row"><div class="fr-es">No, gracias</div><div class="fr-local">Non, merci</div><div class="pron">non mer-SÍ</div></div>
+<div class="fr-row"><div class="fr-es">¿Habla español?</div><div class="fr-local">Parlez-vous espagnol?</div><div class="pron">parle-VÚ españól</div></div>
+<div class="fr-row"><div class="fr-es">¿Cuánto cuesta?</div><div class="fr-local">Combien?</div><div class="pron">com-BIEN</div></div>
+<div class="fr-row"><div class="fr-es">La cuenta</div><div class="fr-local">L'addition</div><div class="pron">la-di-SION</div></div>
+<div class="fr-row"><div class="fr-es">¿Dónde está el baño?</div><div class="fr-local">Où sont les toilettes?</div><div class="pron">u son le tua-LET</div></div>
+<div class="fr-row"><div class="fr-es">Déjeme en paz</div><div class="fr-local">Laissez-moi tranquille</div><div class="pron">le-SÉ muá tran-KÍL</div></div>
+</div></div></details>
+
+<details class="coll"><summary>🍽 Platos típicos franceses</summary><div class="coll-body"><div class="food-typical">
+<span class="food-item">Croissant</span><span class="food-item">Baguette</span><span class="food-item">Crêpe</span><span class="food-item">Jambon-beurre</span><span class="food-item">Escargots</span><span class="food-item">Coq au vin</span><span class="food-item">Ratatouille</span><span class="food-item">Macarons</span><span class="food-item">Quiche Lorraine</span>
+</div></div></details>
+
+<details class="coll"><summary>📸 Ideas de fotos en París</summary><div class="coll-body"><div class="foto-ideas">
+<p>Desde el <strong>Trocadéro</strong>: clásica foto frontal con la Torre Eiffel centrada. Al atardecer (cuando se enciende) es MÁGICO.</p>
+<p>En el <strong>Sacré-Cœur</strong>: panorámica de todo París a sus espaldas desde las escaleras.</p>
+<p>En la <strong>Place du Tertre</strong> (Montmartre): rodeados de artistas pintando, con calle empedrada.</p>
+<p>Frente a <strong>Notre Dame</strong>: con las torres góticas detrás.</p>
+<p><strong>Truco:</strong> Para la Torre Eiffel, usen la pose de "sostener la torre con la mano" (cámara baja, mano arriba).</p>
+<p><strong>Pont Alexandre III:</strong> el puente más bonito de París, con lámparas doradas.</p>
+</div></div></details>
+
 <div class="logi"><h4>🧭 Logística del día</h4>
 <div class="logi-row"><div class="logi-icon">🚌</div><div class="logi-text"><strong>Tour mañana:</strong> Bus los recoge del hotel, tour panorámico, los deja en el centro de París. Desde ahí TARDE LIBRE.</div></div>
 <div class="logi-row"><div class="logi-icon">🔙</div><div class="logi-text"><strong>¿Cómo vuelvo?</strong> Si hacen el tour de Montmartre: los devuelven al hotel. Si lo hacen solos: metro de vuelta al hotel. Usen Google Maps, pongan la dirección del hotel y les dice qué metro tomar.</div></div>
 <div class="logi-row"><div class="logi-icon">🏨</div><div class="logi-text"><strong>Dónde duermen:</strong> Mismo hotel en París (3 noches seguidas: Días 4, 5 y 6).</div></div>
 <div class="logi-row"><div class="logi-icon">📍</div><div class="logi-text"><strong>Mañana siguiente:</strong> Desayuno. Si contratan Versalles, salen del hotel a las 8:30 AM. Si no, día libre en París.</div></div>
-</div>
+<button class="share-day" onclick="shareDay(5)">📱 Compartir este día por WhatsApp</button></div>
 </div></div>
 
-<div class="day" id="dia6"><div class="day-head bg-fr"><div class="day-n">6</div><div class="day-info"><h2>🇫🇷 París - Versalles + Tarde libre</h2><div class="date">📅 Jueves 9 de Octubre</div></div><div class="curr">🇪🇺 EURO €</div></div>
+<div class="day flag-fr" id="dia6"><div class="day-head bg-fr"><div class="day-n">6</div><div class="day-info"><h2>🇫🇷 París - Versalles + Tarde libre</h2><div class="date">📅 Jueves 9 de Octubre</div></div><div class="curr">🇪🇺 EURO €</div></div>
 <div class="day-body">
 <div class="horario">
 <h4>⏰ Horario del día</h4>
@@ -708,9 +947,9 @@ p{color:var(--ink-2)}
 <div class="logi-row"><div class="logi-icon">🏨</div><div class="logi-text"><strong>Dónde duermen:</strong> Mismo hotel en París (última noche aquí).</div></div>
 <div class="logi-row"><div class="logi-icon">📍</div><div class="logi-text"><strong>Mañana siguiente:</strong> Desayuno TEMPRANO. EMPACAR TODO — no vuelven a este hotel. Bus del tour los recoge para salir hacia Luxemburgo. Día largo de ruta (607 km).</div></div>
 </div>
-</div></div>
+<button class="share-day" onclick="shareDay(6)">📱 Compartir este día por WhatsApp</button></div></div>
 
-<div class="day" id="dia7"><div class="day-head bg-de"><div class="day-n">7</div><div class="day-info"><h2>🇫🇷→🇱🇺→🇩🇪 París → Luxemburgo → Valle del Rin → Frankfurt</h2><div class="date">📅 Viernes 10 de Octubre • 607 km</div></div><div class="curr">🇪🇺 EURO €</div></div>
+<div class="day flag-de" id="dia7"><div class="day-head bg-de"><div class="day-n">7</div><div class="day-info"><h2>🇫🇷→🇱🇺→🇩🇪 París → Luxemburgo → Valle del Rin → Frankfurt</h2><div class="date">📅 Viernes 10 de Octubre • 607 km</div></div><div class="curr">🇪🇺 EURO €</div></div>
 <div class="day-body">
 <div class="horario">
 <h4>⏰ Horario del día (607 km - ruta larga)</h4>
@@ -725,15 +964,40 @@ p{color:var(--ink-2)}
 <p><span class="tag tag-inc">✅ INCLUIDO</span> Luxemburgo (tiempo libre) + Valle del Rin (castillos desde bus) + Frankfurt.</p>
 <div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Luxembourg+city+old+town" target="_blank">📷 Luxemburgo</a><a href="https://www.google.com/search?tbm=isch&q=Rhine+Valley+castles" target="_blank">📷 Castillos del Rin</a></div>
 <div class="tip t-info"><div class="ti">⏱</div><div><strong>¿Aburrido?</strong> El Valle del Rin se ve desde el bus — castillos sobre colinas con viñedos. Bonito pero es ventana. Luxemburgo es parada corta. Si les gusta naturaleza, disfruten. Si no, buena siesta.</div></div>
+
+<details class="coll"><summary>💡 Datos curiosos</summary><div class="coll-body"><p style="font-size:.85rem;color:var(--ink-2);line-height:1.7"><strong>Luxemburgo</strong> es el único Gran Ducado del mundo. Fue el PRIMER país en tener transporte público 100% gratis (2020). Hablan 3 idiomas oficiales.<br><br><strong>Loreley:</strong> Según la leyenda, una sirena cantaba desde esta roca (132m de altura) y distraía a los marineros que chocaban con las rocas del Rin.<br><br><strong>Frankfurt:</strong> Es la capital financiera de Europa. Aquí está el Banco Central Europeo.</p></div></details>
+
+<details class="coll"><summary>🎭 Etiqueta alemana — puntualidad obsesiva</summary><div class="coll-body"><div class="cultural"><ul>
+<li><strong>PUNTUALIDAD EXTREMA.</strong> Si el bus sale a las 7:30, llega a las 7:25. Llegar tarde es ofensa grave.</li>
+<li><strong>Respeten los semáforos peatonales.</strong> Cruzar en rojo está muy mal visto.</li>
+<li><strong>No hablen alto</strong> en transporte público o restaurantes.</li>
+<li><strong>Propina:</strong> 5-10%. Al pagar digan el total redondeado.</li>
+<li><strong>Saludar al entrar:</strong> "Guten Tag" en tiendas.</li>
+</ul></div></div></details>
+
+<details class="coll"><summary>💬 Frases en alemán</summary><div class="coll-body"><div class="frases-inline">
+<div class="fr-row"><div class="fr-es">Hola</div><div class="fr-local">Hallo</div><div class="pron">JA-lo</div></div>
+<div class="fr-row"><div class="fr-es">Buenos días</div><div class="fr-local">Guten Tag</div><div class="pron">guten TAG</div></div>
+<div class="fr-row"><div class="fr-es">Gracias</div><div class="fr-local">Danke</div><div class="pron">DAN-ke</div></div>
+<div class="fr-row"><div class="fr-es">Por favor</div><div class="fr-local">Bitte</div><div class="pron">BI-te</div></div>
+<div class="fr-row"><div class="fr-es">¿Habla inglés?</div><div class="fr-local">Sprechen Sie Englisch?</div><div class="pron">SHPRÉJEN si ÍNGLISH</div></div>
+<div class="fr-row"><div class="fr-es">¿Cuánto cuesta?</div><div class="fr-local">Wie viel?</div><div class="pron">vi FIL</div></div>
+<div class="fr-row"><div class="fr-es">¿Dónde está el baño?</div><div class="fr-local">Wo ist die Toilette?</div><div class="pron">vo ist di tua-LE-te</div></div>
+<div class="fr-row"><div class="fr-es">¡Ayuda!</div><div class="fr-local">Hilfe!</div><div class="pron">JÍL-fe</div></div>
+</div><p style="font-size:.78rem;color:var(--mute);margin-top:10px">Casi todos los alemanes jóvenes hablan inglés. Pregunten: "Do you speak English?"</p></div></details>
+
+<details class="coll"><summary>🍽 Platos típicos alemanes</summary><div class="coll-body"><div class="food-typical">
+<span class="food-item">Bratwurst</span><span class="food-item">Currywurst</span><span class="food-item">Schnitzel</span><span class="food-item">Döner Kebab</span><span class="food-item">Pretzel</span><span class="food-item">Sauerkraut</span><span class="food-item">Apfelstrudel</span>
+</div></div></details>
 <div class="pocket"><div class="pm-icon">💰</div><div><strong>Llevar: ~€30-40/persona.</strong> Traslado. Cena Frankfurt: Döner Kebab €5-7 (sándwich grande de carne, los MEJORES de Europa) o Currywurst €3-5.</div></div>
 <div class="logi"><h4>🧭 Logística del día</h4>
 <div class="logi-row"><div class="logi-icon">🚌</div><div class="logi-text"><strong>Cómo viajan:</strong> Bus del tour TODO el día. París → Luxemburgo (parada ~1h libre) → Valle del Rin (vistas desde el bus, no bajan) → Frankfurt. Ustedes solo se suben al bus.</div></div>
 <div class="logi-row"><div class="logi-icon">🏨</div><div class="logi-text"><strong>Dónde duermen:</strong> Hotel en zona de Frankfurt (1 noche). Llegan al atardecer. Cenan por el barrio del hotel o piden al guía recomendaciones cercanas.</div></div>
 <div class="logi-row"><div class="logi-icon">📍</div><div class="logi-text"><strong>Mañana siguiente:</strong> Desayuno. EMPACAR TODO. Bus sale hacia Heidelberg → Selva Negra → Zurich. Otro día largo de ruta.</div></div>
 </div>
-</div></div>
+<button class="share-day" onclick="shareDay(7)">📱 Compartir este día por WhatsApp</button></div></div>
 
-<div class="day" id="dia8"><div class="day-head bg-de"><div class="day-n">8</div><div class="day-info"><h2>🇩🇪→🇨🇭 Frankfurt → Heidelberg → Selva Negra → Zurich</h2><div class="date">📅 Sábado 11 de Octubre • 422 km</div></div><div class="curr">💱 CAMBIO: FRANCO SUIZO CHF • CHF 1 ≈ $1.13 ≈ S/4.30</div></div>
+<div class="day flag-de" id="dia8"><div class="day-head bg-de"><div class="day-n">8</div><div class="day-info"><h2>🇩🇪→🇨🇭 Frankfurt → Heidelberg → Selva Negra → Zurich</h2><div class="date">📅 Sábado 11 de Octubre • 422 km</div></div><div class="curr">💱 CAMBIO: FRANCO SUIZO CHF • CHF 1 ≈ $1.13 ≈ S/4.30</div></div>
 <div class="day-body">
 <div class="horario">
 <h4>⏰ Horario del día (422 km - día de paradas)</h4>
@@ -758,9 +1022,9 @@ p{color:var(--ink-2)}
 <div class="logi-row"><div class="logi-icon">🏨</div><div class="logi-text"><strong>Dónde duermen:</strong> Hotel en zona de Zurich (1 noche).</div></div>
 <div class="logi-row"><div class="logi-icon">📍</div><div class="logi-text"><strong>Mañana siguiente:</strong> Desayuno. EMPACAR. Bus a Lucerna → Monte Titlis → Vaduz → Munich.</div></div>
 </div>
-</div></div>
+<button class="share-day" onclick="shareDay(8)">📱 Compartir este día por WhatsApp</button></div></div>
 
-<div class="day" id="dia9"><div class="day-head bg-ch"><div class="day-n">9</div><div class="day-info"><h2>🇨🇭→🇱🇮→🇩🇪 Zurich → Lucerna → Titlis → Vaduz → Munich</h2><div class="date">📅 Domingo 12 de Octubre • 423 km</div></div><div class="curr">🇨🇭 CHF mañana → 🇪🇺 € tarde (Alemania)</div></div>
+<div class="day flag-ch" id="dia9"><div class="day-head bg-ch"><div class="day-n">9</div><div class="day-info"><h2>🇨🇭→🇱🇮→🇩🇪 Zurich → Lucerna → Titlis → Vaduz → Munich</h2><div class="date">📅 Domingo 12 de Octubre • 423 km</div></div><div class="curr">🇨🇭 CHF mañana → 🇪🇺 € tarde (Alemania)</div></div>
 <div class="day-body">
 <div class="horario">
 <h4>⏰ Horario del día (423 km)</h4>
@@ -792,9 +1056,9 @@ p{color:var(--ink-2)}
 <div class="logi-row"><div class="logi-icon">🏨</div><div class="logi-text"><strong>Dónde duermen:</strong> Hotel en zona de Munich (1 noche).</div></div>
 <div class="logi-row"><div class="logi-icon">📍</div><div class="logi-text"><strong>Mañana siguiente:</strong> 🎂 ¡CUMPLEAÑOS! Desayuno. EMPACAR. Bus a Innsbruck → Verona → Venecia.</div></div>
 </div>
-</div></div>
+<button class="share-day" onclick="shareDay(9)">📱 Compartir este día por WhatsApp</button></div></div>
 
-<div class="day" id="dia10" style="border:3px solid var(--accent)"><div class="day-head bg-bday"><div class="day-n" style="background:rgba(255,255,255,.3)">10</div><div class="day-info"><h2>🎂 Munich → Innsbruck → Verona → Venecia</h2><div class="date">📅 Lunes 13 de Octubre • 🎉 QUINCEAÑERA • 550 km</div></div><div class="curr">🇪🇺 EURO € (todo el día)</div></div>
+<div class="day flag-multi" id="dia10" style="box-shadow:0 0 0 2px var(--bday)"><div class="day-head bg-bday"><div class="day-n" style="background:rgba(255,255,255,.3)">10</div><div class="day-info"><h2>🎂 Munich → Innsbruck → Verona → Venecia</h2><div class="date">📅 Lunes 13 de Octubre • 🎉 QUINCEAÑERA • 550 km</div></div><div class="curr">🇪🇺 EURO € (todo el día)</div></div>
 <div class="day-body">
 <div style="text-align:center;font-family:'Dancing Script',cursive;font-size:1.6rem;color:var(--accent);margin-bottom:18px">🎀 Feliz Quinceañera en Verona & Venecia 🎀</div>
 <div class="horario">
@@ -839,6 +1103,27 @@ p{color:var(--ink-2)}
 <p style="font-size:.85rem;color:#555"><strong>6:30 PM →</strong> Góndola privada al atardecer. €80-100 toda la familia (caben 5). NO negocien en San Marco, busquen paradas tranquilas.<br><strong>7:30 PM →</strong> Cena especial. <strong>Trattoria alla Madonna</strong> (Rialto, desde 1954, €15-28/plato) o cualquier restaurante bonito LEJOS de San Marco.<br><strong>8:30 PM →</strong> Torta. Encarguen con anticipación en pasticceria. <strong>Pasticceria Tonolo</strong> o <strong>Rosa Salva</strong>. Digan: "Torta di compleanno per una ragazza che compie quindici anni". €30-50.<br><strong>9:30 PM →</strong> <strong>Caffè Florian</strong> en Piazza San Marco (café más antiguo del mundo, 1720). Chocolate caliente. Orquesta en vivo. Basílica iluminada. MÁGICO. ~€15-20/pp.</p>
 <div class="fotos"><a href="https://www.google.com/search?tbm=isch&q=Venice+gondola+sunset" target="_blank">📷 Góndola atardecer</a><a href="https://www.google.com/search?tbm=isch&q=Caffe+Florian+Venice+night" target="_blank">📷 Caffè Florian</a><a href="https://www.google.com/search?tbm=isch&q=Venice+night+canal" target="_blank">📷 Venecia noche</a></div>
 <div class="tip t-info"><div class="ti">🎀</div><div><strong>Tiara:</strong> Compren una en cualquier tienda de accesorios en Verona o Venecia (~€5-15). Los italianos AMAN las celebraciones — si dicen al restaurante que es quinceañera, van a hacer de todo para que sea especial.</div></div>
+
+<details class="coll"><summary>🎀 Dónde comprar decoración para el cumpleaños en Venecia</summary><div class="coll-body"><p style="font-size:.85rem;color:var(--ink-2);line-height:1.7">
+<strong>Tiaras y accesorios:</strong> Tiendas de bijouterie en el barrio Cannaregio (más baratas) o cerca del Rialto (más turísticas). Busquen "accessori" o "bigiotteria" en Google Maps.<br><br>
+<strong>Globos y flores:</strong> Hay florerías cerca de la estación Santa Lucia. Ramo pequeño: €10-20.<br><br>
+<strong>Tarjeta de cumpleaños:</strong> En cualquier tabaccheria (quiosco italiano).<br><br>
+<strong>Truco:</strong> Pídanle al restaurante donde cenan que decoren la mesa con velas, flores y un cartel de "Buon Compleanno" (feliz cumpleaños). Los italianos lo hacen encantados si se los piden con anticipación. Digan: <em>"È il compleanno di 15 anni di mia figlia. Potete decorare il tavolo?"</em> (Es el cumpleaños de 15 de mi hija. ¿Pueden decorar la mesa?)<br><br>
+<strong>Torta:</strong> Encárguenla con UN DÍA de anticipación en Pasticceria Tonolo o Rosa Salva. Pueden entregarla al restaurante si lo coordinan.
+</p></div></details>
+
+<details class="coll"><summary>📸 Ideas de fotos para la quinceañera</summary><div class="coll-body"><div class="foto-ideas">
+<p><strong>En Innsbruck:</strong> Caminando por María-Theresien-Straße con los Alpes nevados de fondo. Toma vertical.</p>
+<p><strong>Casa de Julieta (Verona):</strong> La cumpleañera SOLA en el balcón, mirando hacia abajo. Foto icónica de película.</p>
+<p><strong>Patio de Julieta:</strong> Tocando la estatua de bronce de Julieta (tradición).</p>
+<p><strong>Piazza delle Erbe (Verona):</strong> Con las sombrillas blancas del mercado medieval de fondo.</p>
+<p><strong>Arena de Verona:</strong> Saltando o girando con el anfiteatro de 2000 años atrás.</p>
+<p><strong>En la góndola:</strong> Acostada en los cojines rojos mirando al cielo.</p>
+<p><strong>Puente Rialto de noche:</strong> Con las luces reflejadas en el agua.</p>
+<p><strong>Piazza San Marco de noche:</strong> Vestida elegante con la basílica iluminada.</p>
+<p><strong>Caffè Florian:</strong> Tomando chocolate mientras la orquesta toca de fondo.</p>
+<p><strong>Truco:</strong> Lleven LA CÁMARA DEL CELULAR CARGADA desde la mañana. Van a tomar MUCHAS fotos.</p>
+</div></div></details>
 <div class="tip t-warn"><div class="ti">🌊</div><div><strong>¿Qué es "Acqua Alta"?</strong> A partir de octubre, Venecia puede tener inundaciones leves — el agua del mar sube y cubre algunas plazas y calles (5-20cm de agua en el piso). NO es peligroso ni raro, les pasa a los venecianos todo el año. Si ocurre: (1) La ciudad pone pasarelas elevadas de madera para caminar sin mojarse, (2) En cualquier tienda venden botas de plástico desechables por ~€10, (3) También sirven bolsas de plástico grandes sobre los zapatos. Revisen la app "Acqua Alta Venezia" o pregunten en el hotel. Normalmente dura pocas horas y baja.</div></div>
 <div class="tip t-warn"><div class="ti">💶</div><div><strong>Góndola: SOLO EFECTIVO.</strong> Los gondoleros NO aceptan tarjeta. Lleven €90-110 en EFECTIVO para la góndola. Precio oficial 2026: €90 de día (hasta 7 PM) o €110 de noche (después 7 PM). Para la quinceañera al atardecer (~6:30 PM) sería €90. Caben los 5.</div></div>
 <div class="pocket"><div class="pm-icon">💰</div><div><strong>Llevar: ~€100-150/persona.</strong> Día más caro del viaje. Góndola €90 de día / €110 de noche (en EFECTIVO, toda la familia), cena ~€25-40/pp, torta €30-50, Florian ~€15-20/pp. Total familia: ~€400-600.</div></div>
@@ -847,10 +1132,10 @@ p{color:var(--ink-2)}
 <div class="logi-row"><div class="logi-icon">🏨</div><div class="logi-text"><strong>Dónde duermen:</strong> Hotel en <strong>MESTRE</strong> (la parte de tierra firme de Venecia, no la isla). Esto es normal en todos los tours. Mestre es una ciudad normal con estación de tren. Para ir a Venecia isla toman el tren (~10 min, ~€1.50/pp).</div></div>
 <div class="logi-row"><div class="logi-icon">🚆</div><div class="logi-text"><strong>Para la cena de quinceañera en Venecia:</strong> Tren Mestre → Venezia Santa Lucia = 10 min. Los trenes salen cada 10-15 min. Compren ticket en la máquina de la estación (aceptan tarjeta). El último tren de vuelta es ~11:30 PM. Si salen del Florian a las 10:30 PM, llegan a la estación y toman el tren de vuelta. O Uber/taxi desde Piazzale Roma (~€20).</div></div>
 <div class="logi-row"><div class="logi-icon">📍</div><div class="logi-text"><strong>Mañana siguiente:</strong> Desayuno. Bus los lleva a Venecia isla para la mañana libre. Luego bus a Roma (tarde).</div></div>
-</div>
+<button class="share-day" onclick="shareDay(10)">📱 Compartir este día por WhatsApp</button></div>
 </div></div>
 
-<div class="day" id="dia11"><div class="day-head bg-it"><div class="day-n">11</div><div class="day-info"><h2>🇮🇹 Venecia → Roma</h2><div class="date">📅 Martes 14 de Octubre • 527 km</div></div><div class="curr">🇪🇺 EURO €</div></div>
+<div class="day flag-it" id="dia11"><div class="day-head bg-it"><div class="day-n">11</div><div class="day-info"><h2>🇮🇹 Venecia → Roma</h2><div class="date">📅 Martes 14 de Octubre • 527 km</div></div><div class="curr">🇪🇺 EURO €</div></div>
 <div class="day-body">
 <div class="horario">
 <h4>⏰ Horario del día (527 km)</h4>
@@ -870,6 +1155,44 @@ p{color:var(--ink-2)}
 <strong>¿Qué es un "Traghetto"?</strong> Es una góndola grande que cruza el Gran Canal (el canal principal de Venecia, como un río ancho) de un lado a otro. Cuesta solo €2 por persona. Dura 2 minutos. Es como un "taxi-bote" rápido. Hay estaciones de traghetto marcadas a lo largo del canal. No es romántico como la góndola privada, pero les da la experiencia de subirse a una góndola por casi nada.<br><br>
 <strong>¿Qué son los "cicchetti"?</strong> Son como tapas (bocaditos pequeños) venecianas. Se venden en barcitos llamados "bacari" (pronunciado: ba-CA-ri). Cuestan €1-3 cada uno. Son: tostaditas con pescado, bolitas de arroz, camarones fritos, etc. Piden varios, los ponen en un plato, y los comen de pie en el mostrador. Es la comida más barata y rica de Venecia. Busquen los bacari cerca del Puente Rialto — hay muchos.</div></div>
 <div class="tip t-crowd"><div class="ti">👥</div><div><strong>San Marco siempre lleno.</strong> Para escapar multitud: barrio <strong>Cannaregio</strong> (5 min de Rialto) — callejones tranquilos, precios más bajos.</div></div>
+
+<details class="coll"><summary>💡 Datos curiosos de Italia (Venecia y Roma)</summary><div class="coll-body"><p style="font-size:.85rem;color:var(--ink-2);line-height:1.7"><strong>Venecia</strong> tiene 118 islas, 400 puentes, 150 canales. Se hunde 1-2mm cada año. Los habitantes son solo ~50,000 (antes eran 175,000). La casa de Marco Polo estaba aquí.<br><br><strong>Roma:</strong> Tiene MÁS fuentes públicas que cualquier ciudad del mundo (~2,000). El Vaticano es el país más pequeño del mundo (44 hectáreas) y tiene su propio cajero automático con instrucciones en LATÍN. El Coliseo podía llenarse de agua para simular batallas navales.</p></div></details>
+
+<details class="coll"><summary>🎭 Etiqueta italiana</summary><div class="coll-body"><div class="cultural"><ul>
+<li><strong>Hablan FUERTE</strong> y con las manos. No están peleando, es normal.</li>
+<li><strong>Saludan con 2 besos</strong> en las mejillas (a conocidos).</li>
+<li><strong>Cappuccino SOLO en la mañana.</strong> Pedirlo después del almuerzo es raro (los italianos toman espresso).</li>
+<li><strong>No pidan queso parmesano con pescado.</strong> Es tabú.</li>
+<li><strong>"Coperto":</strong> Cargo por sentarse, €1-3/persona. Es legal y normal, no se sorprendan.</li>
+<li><strong>Propina:</strong> NO es obligatoria. El coperto ya lo cubre. Dejar 1-2€ si el servicio fue bueno.</li>
+<li><strong>Comer de pie en el mostrador</strong> siempre es más barato que sentarse.</li>
+</ul></div></div></details>
+
+<details class="coll"><summary>💬 Frases en italiano (el más fácil de aprender)</summary><div class="coll-body"><div class="frases-inline">
+<div class="fr-row"><div class="fr-es">Buenos días</div><div class="fr-local">Buongiorno</div><div class="pron">buon-YIOR-no</div></div>
+<div class="fr-row"><div class="fr-es">Buenas tardes/noches</div><div class="fr-local">Buonasera</div><div class="pron">buona-SE-ra</div></div>
+<div class="fr-row"><div class="fr-es">Gracias</div><div class="fr-local">Grazie</div><div class="pron">GRA-tsie</div></div>
+<div class="fr-row"><div class="fr-es">Por favor</div><div class="fr-local">Per favore</div><div class="pron">per fa-VO-re</div></div>
+<div class="fr-row"><div class="fr-es">¿Cuánto cuesta?</div><div class="fr-local">Quanto costa?</div><div class="pron">cuanto COS-ta</div></div>
+<div class="fr-row"><div class="fr-es">La cuenta</div><div class="fr-local">Il conto</div><div class="pron">il CON-to</div></div>
+<div class="fr-row"><div class="fr-es">¿Dónde está el baño?</div><div class="fr-local">Dov'è il bagno?</div><div class="pron">do-VÉ il BA-nio</div></div>
+<div class="fr-row"><div class="fr-es">Mesa para 5</div><div class="fr-local">Un tavolo per cinque</div><div class="pron">un TA-vo-lo per CHIN-que</div></div>
+<div class="fr-row"><div class="fr-es">Déjeme en paz</div><div class="fr-local">Mi lasci in pace</div><div class="pron">mi LA-shi in PA-che</div></div>
+<div class="fr-row"><div class="fr-es">Me robaron</div><div class="fr-local">Mi hanno rubato</div><div class="pron">mi AN-no ru-BA-to</div></div>
+</div><p style="font-size:.78rem;color:var(--mute);margin-top:10px">El italiano es casi igual al español. Van a entender mucho solo leyendo.</p></div></details>
+
+<details class="coll"><summary>🍽 Platos típicos italianos</summary><div class="coll-body"><div class="food-typical">
+<span class="food-item">Pasta Carbonara</span><span class="food-item">Cacio e Pepe</span><span class="food-item">Pizza Margherita</span><span class="food-item">Risotto</span><span class="food-item">Gelato</span><span class="food-item">Tiramisu</span><span class="food-item">Cicchetti</span><span class="food-item">Lasagna</span><span class="food-item">Bistecca Fiorentina</span><span class="food-item">Prosciutto</span>
+</div></div></details>
+
+<details class="coll"><summary>📸 Ideas de fotos en Venecia</summary><div class="coll-body"><div class="foto-ideas">
+<p><strong>Plaza San Marco:</strong> con la basílica de fondo y palomas volando (no les den de comer).</p>
+<p><strong>Puente Rialto:</strong> fotos desde el puente con góndolas pasando abajo.</p>
+<p><strong>Puente de los Suspiros:</strong> desde el Ponte della Paglia (el mejor ángulo).</p>
+<p><strong>Canales de Cannaregio:</strong> reflejo de las casas coloridas en el agua.</p>
+<p><strong>En góndola:</strong> foto de las manos de la cumpleañera con el agua de fondo.</p>
+<p><strong>Al atardecer:</strong> desde Zattere (Dorsoduro) con San Giorgio Maggiore al fondo.</p>
+</div></div></details>
 <div class="tip t-save"><div class="ti">🎉</div><div><strong>Buena noticia:</strong> La tasa turística de entrada a Venecia solo se cobra de abril a julio. En OCTUBRE no aplica. No tienen que pagar nada extra por entrar a la ciudad.</div></div>
 <div class="pocket"><div class="pm-icon">💰</div><div><strong>Llevar: ~€35-45/persona.</strong> Almuerzo cicchetti (~€10), algún souvenir.</div></div>
 <div class="logi"><h4>🧭 Logística del día</h4>
@@ -878,9 +1201,9 @@ p{color:var(--ink-2)}
 <div class="logi-row"><div class="logi-icon">🏨</div><div class="logi-text"><strong>Dónde duermen:</strong> Hotel en zona de Roma (3 noches seguidas: Días 11, 12 y 13). Llegan de noche.</div></div>
 <div class="logi-row"><div class="logi-icon">📍</div><div class="logi-text"><strong>Mañana siguiente:</strong> Desayuno. Bus los recoge para tour panorámico de Roma. DÍA INTENSO: tour + Roma Barroca por su cuenta + Vaticano.</div></div>
 </div>
-</div></div>
+<button class="share-day" onclick="shareDay(11)">📱 Compartir este día por WhatsApp</button></div></div>
 
-<div class="day" id="dia12"><div class="day-head bg-it"><div class="day-n">12</div><div class="day-info"><h2>🇮🇹 Roma - Tour + Vaticano</h2><div class="date">📅 Miércoles 15 de Octubre</div></div><div class="curr">🇪🇺 EURO €</div></div>
+<div class="day flag-it" id="dia12"><div class="day-head bg-it"><div class="day-n">12</div><div class="day-info"><h2>🇮🇹 Roma - Tour + Vaticano</h2><div class="date">📅 Miércoles 15 de Octubre</div></div><div class="curr">🇪🇺 EURO €</div></div>
 <div class="day-body">
 <div class="horario">
 <h4>⏰ Horario del día (DÍA MUY INTENSO)</h4>
@@ -918,9 +1241,9 @@ p{color:var(--ink-2)}
 <div class="logi-row"><div class="logi-icon">🏨</div><div class="logi-text"><strong>Dónde duermen:</strong> Mismo hotel en Roma.</div></div>
 <div class="logi-row"><div class="logi-icon">📍</div><div class="logi-text"><strong>Mañana siguiente:</strong> Desayuno. DÍA LIBRE completo. Si van a Nápoles/Capri: salen 7 AM, vuelven 8:30 PM. Si no, exploran Roma por su cuenta.</div></div>
 </div>
-</div></div>
+<button class="share-day" onclick="shareDay(12)">📱 Compartir este día por WhatsApp</button></div></div>
 
-<div class="day" id="dia13"><div class="day-head bg-it"><div class="day-n">13</div><div class="day-info"><h2>🇮🇹 Roma - Día libre</h2><div class="date">📅 Jueves 16 de Octubre</div></div><div class="curr">🇪🇺 EURO €</div></div>
+<div class="day flag-it" id="dia13"><div class="day-head bg-it"><div class="day-n">13</div><div class="day-info"><h2>🇮🇹 Roma - Día libre</h2><div class="date">📅 Jueves 16 de Octubre</div></div><div class="curr">🇪🇺 EURO €</div></div>
 <div class="day-body">
 <div class="horario">
 <h4>⏰ Horario del día (DÍA LIBRE)</h4>
@@ -955,10 +1278,10 @@ p{color:var(--ink-2)}
 <div class="logi-row"><div class="logi-icon">📍</div><div class="logi-text"><strong>Día libre:</strong> No hay tour obligatorio hoy. Si van a Capri: los recogen a las 7 AM del hotel y los devuelven ~8:30 PM. Si se quedan en Roma: salen y vuelven por su cuenta.</div></div>
 <div class="logi-row"><div class="logi-icon">🏨</div><div class="logi-text"><strong>Dónde duermen:</strong> Mismo hotel en Roma (última noche aquí).</div></div>
 <div class="logi-row"><div class="logi-icon">📍</div><div class="logi-text"><strong>Mañana siguiente:</strong> Desayuno. EMPACAR TODO. Bus a Florencia (345 km).</div></div>
-</div>
+<button class="share-day" onclick="shareDay(13)">📱 Compartir este día por WhatsApp</button></div>
 </div></div>
 
-<div class="day" id="dia14"><div class="day-head bg-it"><div class="day-n">14</div><div class="day-info"><h2>🇮🇹 Roma → Florencia</h2><div class="date">📅 Viernes 17 de Octubre • 345 km</div></div><div class="curr">🇪🇺 EURO €</div></div>
+<div class="day flag-it" id="dia14"><div class="day-head bg-it"><div class="day-n">14</div><div class="day-info"><h2>🇮🇹 Roma → Florencia</h2><div class="date">📅 Viernes 17 de Octubre • 345 km</div></div><div class="curr">🇪🇺 EURO €</div></div>
 <div class="day-body">
 <div class="horario">
 <h4>⏰ Horario del día (345 km)</h4>
@@ -984,9 +1307,9 @@ p{color:var(--ink-2)}
 <div class="logi-row"><div class="logi-icon">🏨</div><div class="logi-text"><strong>Dónde duermen:</strong> Hotel en zona de Florencia (1 noche).</div></div>
 <div class="logi-row"><div class="logi-icon">📍</div><div class="logi-text"><strong>Mañana siguiente:</strong> Desayuno. EMPACAR. Bus a Pisa → Costa Azul. Día largo de ruta.</div></div>
 </div>
-</div></div>
+<button class="share-day" onclick="shareDay(14)">📱 Compartir este día por WhatsApp</button></div></div>
 
-<div class="day" id="dia15"><div class="day-head bg-mc"><div class="day-n">15</div><div class="day-info"><h2>🇮🇹→🇲🇨 Florencia → Pisa → Costa Azul</h2><div class="date">📅 Sábado 18 de Octubre • 451 km</div></div><div class="curr">🇪🇺 EURO €</div></div>
+<div class="day flag-it" id="dia15"><div class="day-head bg-mc"><div class="day-n">15</div><div class="day-info"><h2>🇮🇹→🇲🇨 Florencia → Pisa → Costa Azul</h2><div class="date">📅 Sábado 18 de Octubre • 451 km</div></div><div class="curr">🇪🇺 EURO €</div></div>
 <div class="day-body">
 <div class="horario">
 <h4>⏰ Horario del día (451 km)</h4>
@@ -1026,10 +1349,10 @@ p{color:var(--ink-2)}
 <div class="logi-row"><div class="logi-icon">🏨</div><div class="logi-text"><strong>Dónde duermen:</strong> Hotel en zona de la Costa Azul (probablemente Niza o alrededores). 1 noche.</div></div>
 <div class="logi-row"><div class="logi-icon">🌙</div><div class="logi-text"><strong>Mónaco:</strong> Si contratan el tour nocturno: los recogen del hotel ~8 PM, los devuelven ~12:30 AM. Si van solos: tren desde Niza (~20 min, salen cada 15-30 min hasta ~11 PM). Último tren de vuelta ~11:30 PM.</div></div>
 <div class="logi-row"><div class="logi-icon">📍</div><div class="logi-text"><strong>Mañana siguiente:</strong> Desayuno. EMPACAR. Bus largo a Barcelona (~660 km, casi todo el día en bus).</div></div>
-</div>
+<button class="share-day" onclick="shareDay(15)">📱 Compartir este día por WhatsApp</button></div>
 </div></div>
 
-<div class="day" id="dia16"><div class="day-head bg-es"><div class="day-n">16</div><div class="day-info"><h2>🇫🇷→🇪🇸 Costa Azul → Barcelona</h2><div class="date">📅 Domingo 19 de Octubre • 660 km</div></div><div class="curr">🇪🇺 EURO € (España también)</div></div>
+<div class="day flag-es" id="dia16"><div class="day-head bg-es"><div class="day-n">16</div><div class="day-info"><h2>🇫🇷→🇪🇸 Costa Azul → Barcelona</h2><div class="date">📅 Domingo 19 de Octubre • 660 km</div></div><div class="curr">🇪🇺 EURO € (España también)</div></div>
 <div class="day-body">
 <div class="horario">
 <h4>⏰ Horario del día (660 km - RUTA MUY LARGA)</h4>
@@ -1047,6 +1370,35 @@ p{color:var(--ink-2)}
 <div class="tip t-warn"><div class="ti">⚠️</div><div><strong>DOMINGO:</strong> Tiendas grandes SÍ abren en Barcelona (horario reducido).</div></div>
 <div class="tip t-food"><div class="ti">🍽</div><div><strong>TAPAS:</strong> España es BARATA. Patatas bravas €4, croquetas €5, jamón ibérico €8. 8-10 tapas entre 5 = cena por €40-50. O <strong>menú del día</strong>: entrada+plato+postre+bebida+pan por €11-15/pp. MEJOR deal de Europa.</div></div>
 <div class="scam"><h4>🚨 Barcelona = #1 Europa en carteristas</h4><div class="sw">📍 Las Ramblas, metro L1/L3, Plaça Catalunya</div><p>Los peores de Europa. Trabajan en grupo: uno distrae, otro roba. Increíblemente rápidos.</p><div class="sd">🛡️ Riñonera BAJO ropa. Mochila adelante. Celular con cordón. NADA en respaldo silla. Celular NO en mesa restaurante.</div></div>
+
+<details class="coll"><summary>💡 Datos curiosos de España</summary><div class="coll-body"><p style="font-size:.85rem;color:var(--ink-2);line-height:1.7"><strong>Sagrada Familia:</strong> Lleva en construcción desde 1882 (140+ años). Se espera terminarla en 2026 — JUSTO cuando ustedes llegan. Gaudí, el arquitecto, fue atropellado por un tranvía y nadie lo reconoció porque parecía mendigo.<br><br><strong>Barcelona:</strong> Idioma oficial es catalán, no español. Los letreros están en catalán primero.<br><br><strong>Madrid:</strong> Es la capital EUROPEA más alta (667 msnm). Tiene el cielo más limpio de todas las capitales de Europa.<br><br><strong>Toledo:</strong> Fue capital de España antes que Madrid (hasta 1561). Aquí convivieron cristianos, musulmanes y judíos en armonía durante siglos.</p></div></details>
+
+<details class="coll"><summary>🎭 Etiqueta española</summary><div class="coll-body"><div class="cultural"><ul>
+<li><strong>Horarios TARDES:</strong> Almuerzan a las 2-3 PM. Cenan a las 9-10 PM. NO intenten cenar a las 7 PM, los restaurantes están vacíos o cerrados.</li>
+<li><strong>Siesta:</strong> Muchas tiendas cierran 2-5 PM (en pueblos pequeños). En Madrid/Barcelona turísticas siguen abiertas.</li>
+<li><strong>Hablan FUERTE y DIRECTO.</strong> No están enojados, es normal.</li>
+<li><strong>Dos besos</strong> al saludar conocidos (empezando por la mejilla derecha).</li>
+<li><strong>Propina:</strong> 5-10% si el servicio fue bueno. No es obligatorio.</li>
+<li><strong>"Vosotros"</strong> en vez de "ustedes" (solo cuando hablan entre amigos).</li>
+<li><strong>NO pidan Sangría</strong> en bares locales (es turístico). Pidan tinto de verano o vermut.</li>
+</ul></div></div></details>
+
+<details class="coll"><summary>🗣 Palabras españolas que son diferentes a Perú</summary><div class="coll-body"><div class="frases-inline">
+<div class="fr-row"><div class="fr-es">OK / De acuerdo</div><div class="fr-local">Vale</div><div class="pron">—</div></div>
+<div class="fr-row"><div class="fr-es">Chévere / cool</div><div class="fr-local">Mola</div><div class="pron">—</div></div>
+<div class="fr-row"><div class="fr-es">Amigo</div><div class="fr-local">Tío / Tía</div><div class="pron">—</div></div>
+<div class="fr-row"><div class="fr-es">Celular</div><div class="fr-local">Móvil</div><div class="pron">—</div></div>
+<div class="fr-row"><div class="fr-es">Jugo</div><div class="fr-local">Zumo</div><div class="pron">—</div></div>
+<div class="fr-row"><div class="fr-es">Papas</div><div class="fr-local">Patatas</div><div class="pron">—</div></div>
+<div class="fr-row"><div class="fr-es">Carro</div><div class="fr-local">Coche</div><div class="pron">—</div></div>
+<div class="fr-row"><div class="fr-es">Agarrar/tomar</div><div class="fr-local">Coger</div><div class="pron">—</div></div>
+<div class="fr-row"><div class="fr-es">Chamba / trabajo</div><div class="fr-local">Curro</div><div class="pron">—</div></div>
+<div class="fr-row"><div class="fr-es">¡Qué bacán!</div><div class="fr-local">¡Qué guay!</div><div class="pron">—</div></div>
+</div><p style="font-size:.78rem;color:var(--mute);margin-top:10px">Ojo: "coger" en España significa tomar/agarrar. Ej: "voy a coger el bus" = voy a tomar el bus. No tiene el doble sentido que tiene en Latinoamérica.</p></div></details>
+
+<details class="coll"><summary>🍽 Platos típicos españoles</summary><div class="coll-body"><div class="food-typical">
+<span class="food-item">Paella</span><span class="food-item">Tortilla Española</span><span class="food-item">Jamón Ibérico</span><span class="food-item">Patatas Bravas</span><span class="food-item">Croquetas</span><span class="food-item">Gazpacho</span><span class="food-item">Churros con chocolate</span><span class="food-item">Bocadillo de calamares</span><span class="food-item">Tinto de verano</span><span class="food-item">Pulpo a la gallega</span>
+</div></div></details>
 <div class="pocket"><div class="pm-icon">💰</div><div><strong>Llevar: ~€30-40/persona.</strong> Traslado. Cena tapas (~€10-15/pp).</div></div>
 <div class="logi"><h4>🧭 Logística del día</h4>
 <div class="logi-row"><div class="logi-icon">🚌</div><div class="logi-text"><strong>Cómo viajan:</strong> Bus largo Costa Azul → Barcelona (~660 km, casi todo el día en bus). Llegada tarde. Breve tour de Barcelona al llegar.</div></div>
@@ -1054,9 +1406,9 @@ p{color:var(--ink-2)}
 <div class="logi-row"><div class="logi-icon">🔙</div><div class="logi-text"><strong>Noche:</strong> Si salen a cenar tapas, vuelven al hotel por su cuenta en metro/taxi/Uber. CUIDADO con carteristas, especialmente en el metro de noche.</div></div>
 <div class="logi-row"><div class="logi-icon">📍</div><div class="logi-text"><strong>Mañana siguiente:</strong> Desayuno. EMPACAR. Bus a Zaragoza → Madrid.</div></div>
 </div>
-</div></div>
+<button class="share-day" onclick="shareDay(16)">📱 Compartir este día por WhatsApp</button></div></div>
 
-<div class="day" id="dia17"><div class="day-head bg-es"><div class="day-n">17</div><div class="day-info"><h2>🇪🇸 Barcelona → Zaragoza → Madrid</h2><div class="date">📅 Lunes 20 de Octubre • 620 km</div></div><div class="curr">🇪🇺 EURO €</div></div>
+<div class="day flag-es" id="dia17"><div class="day-head bg-es"><div class="day-n">17</div><div class="day-info"><h2>🇪🇸 Barcelona → Zaragoza → Madrid</h2><div class="date">📅 Lunes 20 de Octubre • 620 km</div></div><div class="curr">🇪🇺 EURO €</div></div>
 <div class="day-body">
 <div class="horario">
 <h4>⏰ Horario del día (620 km)</h4>
@@ -1080,9 +1432,9 @@ p{color:var(--ink-2)}
 <div class="logi-row"><div class="logi-icon">🔙</div><div class="logi-text"><strong>Noche:</strong> Si salen a cenar/comprar, vuelven al hotel por su cuenta en metro/Uber.</div></div>
 <div class="logi-row"><div class="logi-icon">📍</div><div class="logi-text"><strong>Mañana siguiente:</strong> Desayuno. Bus los recoge para tour panorámico de Madrid + Toledo (si lo contratan). ÚLTIMO DÍA COMPLETO.</div></div>
 </div>
-</div></div>
+<button class="share-day" onclick="shareDay(17)">📱 Compartir este día por WhatsApp</button></div></div>
 
-<div class="day" id="dia18"><div class="day-head bg-es"><div class="day-n">18</div><div class="day-info"><h2>🇪🇸 Madrid - Tour + Toledo</h2><div class="date">📅 Martes 21 de Octubre • ÚLTIMO DÍA</div></div><div class="curr">🇪🇺 EURO €</div></div>
+<div class="day flag-es" id="dia18"><div class="day-head bg-es"><div class="day-n">18</div><div class="day-info"><h2>🇪🇸 Madrid - Tour + Toledo</h2><div class="date">📅 Martes 21 de Octubre • ÚLTIMO DÍA</div></div><div class="curr">🇪🇺 EURO €</div></div>
 <div class="day-body">
 <div class="horario">
 <h4>⏰ Horario del día (ÚLTIMO DÍA COMPLETO - CRÍTICO)</h4>
@@ -1111,9 +1463,9 @@ p{color:var(--ink-2)}
 <div class="logi-row"><div class="logi-icon">🏨</div><div class="logi-text"><strong>Dónde duermen:</strong> Mismo hotel en Madrid. PERO: el vuelo sale a la 01:45 AM, así que tienen que ir al aeropuerto a las ~10 PM. Básicamente llegan de Toledo, recogen maletas del hotel, y van al aeropuerto.</div></div>
 <div class="logi-row"><div class="logi-icon">✈️</div><div class="logi-text"><strong>Traslado al aeropuerto:</strong> El tour incluye el traslado de salida al aeropuerto. Pregunten al guía a qué hora sale el bus/van al aeropuerto. Si no alcanza con el horario del tour, tomen Uber/taxi (~€30-40 al aeropuerto de Barajas).</div></div>
 </div>
-</div></div>
+<button class="share-day" onclick="shareDay(18)">📱 Compartir este día por WhatsApp</button></div></div>
 
-<div class="day" id="dia19"><div class="day-head bg-flight"><div class="day-n">19</div><div class="day-info"><h2>✈️ Madrid → Lima</h2><div class="date">📅 Miércoles 22 de Octubre • Vuelta a casa</div></div></div>
+<div class="day flag-multi" id="dia19"><div class="day-head bg-flight"><div class="day-n">19</div><div class="day-info"><h2>✈️ Madrid → Lima</h2><div class="date">📅 Miércoles 22 de Octubre • Vuelta a casa</div></div></div>
 <div class="day-body">
 <div class="horario">
 <h4>⏰ Horario del día</h4>
@@ -1133,7 +1485,7 @@ p{color:var(--ink-2)}
 <div class="logi-row"><div class="logi-icon">🛃</div><div class="logi-text"><strong>En el aeropuerto:</strong> (1) Tax Free: busquen mostrador DIVA/Global Blue ANTES de despachar maletas. (2) Check-in y despacho de maletas. (3) Migraciones de salida (les sellan el pasaporte de salida de España). (4) Duty Free para gastar euros sobrantes. (5) Puerta de embarque.</div></div>
 <div class="logi-row"><div class="logi-icon">🏠</div><div class="logi-text"><strong>Llegada a Lima:</strong> 6:30 AM hora de Lima. Migraciones de entrada a Perú (cola "Nacionales/Peruanos"). Recogen maletas. ¡ESTÁN EN CASA! 🇵🇪</div></div>
 </div>
-</div></div>
+<button class="share-day" onclick="shareDay(19)">📱 Compartir este día por WhatsApp</button></div></div>
 </div>
 
 <!-- FRASES -->
@@ -1230,6 +1582,48 @@ p{color:var(--ink-2)}
 </div>
 </div>
 
+<!-- APPS RECOMENDADAS -->
+<div class="sec" id="apps">
+<div class="sec-label">Tecnología</div>
+<h2 class="sec-title">Apps Recomendadas</h2>
+<p class="sec-sub">Descarguen estas aplicaciones ANTES de viajar. Les van a ahorrar dinero, tiempo y estrés.</p>
+
+<h3 style="margin-top:30px;margin-bottom:16px;font-size:1.2rem;color:var(--ink);font-weight:600;font-family:'Inter',sans-serif">🗺 Navegación y mapas</h3>
+<div class="apps-grid">
+<div class="app-card"><div class="app-cat">ESENCIAL</div><h4>Google Maps</h4><p>Su app principal. Descarguen los mapas OFFLINE de cada ciudad ANTES de viajar. Funciona sin internet. Búsqueda de metros, restaurantes, todo.</p></div>
+<div class="app-card"><div class="app-cat">RECOMENDADA</div><h4>Citymapper</h4><p>Mejor que Google Maps para transporte público en Londres, París, Roma, Madrid, Barcelona. Les dice exactamente qué línea tomar, dónde cambiar, cuánto cuesta.</p></div>
+<div class="app-card"><div class="app-cat">BACKUP</div><h4>Maps.me</h4><p>Mapas offline detallados para emergencias. Si Google Maps falla, este funciona.</p></div>
+</div>
+
+<h3 style="margin-top:30px;margin-bottom:16px;font-size:1.2rem;color:var(--ink);font-weight:600;font-family:'Inter',sans-serif">💰 Dinero y traducción</h3>
+<div class="apps-grid">
+<div class="app-card"><div class="app-cat">ESENCIAL</div><h4>Google Translate</h4><p>Traduce en tiempo real apuntando la cámara a menús o letreros. Descarguen los idiomas OFFLINE (EN, FR, IT, DE).</p></div>
+<div class="app-card"><div class="app-cat">RECOMENDADA</div><h4>XE Currency</h4><p>Conversor de divisas offline. Escriben €15 y les dice cuánto es en soles al tipo de cambio real.</p></div>
+<div class="app-card"><div class="app-cat">OPCIONAL</div><h4>Revolut</h4><p>Tarjeta digital que maneja múltiples monedas sin comisiones. Úsenla si no quieren perder dinero en cambios.</p></div>
+</div>
+
+<h3 style="margin-top:30px;margin-bottom:16px;font-size:1.2rem;color:var(--ink);font-weight:600;font-family:'Inter',sans-serif">🍽 Comida con descuentos</h3>
+<div class="apps-grid">
+<div class="app-card"><div class="app-cat">MUCHO AHORRO</div><h4>Too Good To Go</h4><p>⭐ Les recomiendo DESCARGAR ESTA. Restaurantes venden comida del día que no vendieron a precio muy bajo (€3-5 por una cena que costaría €15). Pagan por la app y pasan a recoger. Funciona en TODAS las ciudades del viaje.</p></div>
+<div class="app-card"><div class="app-cat">OPCIONAL</div><h4>TheFork</h4><p>Reservas en restaurantes con descuentos de hasta 50%. Bueno para cenas especiales (como la quinceañera).</p></div>
+</div>
+
+<h3 style="margin-top:30px;margin-bottom:16px;font-size:1.2rem;color:var(--ink);font-weight:600;font-family:'Inter',sans-serif">🚌 Transporte y tours</h3>
+<div class="apps-grid">
+<div class="app-card"><div class="app-cat">RECOMENDADA</div><h4>Uber</h4><p>Funciona en casi todas las ciudades. Más seguro que taxis porque ven el precio antes y queda registro.</p></div>
+<div class="app-card"><div class="app-cat">ALTERNATIVA</div><h4>Bolt</h4><p>Como Uber pero más barato. Funciona bien en Madrid, Barcelona, Roma.</p></div>
+<div class="app-card"><div class="app-cat">GRATIS</div><h4>GuruWalk</h4><p>Tours a pie GRATIS por guías locales. Solo pagas lo que quieras al final de propina. Perfecto para Londres, París, Roma.</p></div>
+</div>
+
+<h3 style="margin-top:30px;margin-bottom:16px;font-size:1.2rem;color:var(--ink);font-weight:600;font-family:'Inter',sans-serif">📱 Comunicación y datos</h3>
+<div class="apps-grid">
+<div class="app-card"><div class="app-cat">ESENCIAL</div><h4>Holafly o Airalo</h4><p>eSIM para tener datos en Europa. Se instala en el celular sin chip físico. ~$30-45 USD por 19 días de datos. COMPRAR ANTES DE VIAJAR.</p></div>
+<div class="app-card"><div class="app-cat">ESENCIAL</div><h4>WhatsApp</h4><p>Ya la tienen. Verifiquen que funcione con la eSIM. Es su principal forma de comunicación con familia en Perú.</p></div>
+</div>
+
+<div class="tip t-save" style="margin-top:30px"><div class="ti">⭐</div><div><strong>Mi top 5 imperdibles:</strong> <strong>Google Maps</strong> (navegación) + <strong>Google Translate</strong> (idiomas) + <strong>Too Good To Go</strong> (comida barata) + <strong>XE Currency</strong> (conversión) + <strong>Holafly/Airalo</strong> (eSIM). Con estas 5 ya la hacen.</div></div>
+</div>
+
 <div class="footer">
 <p>🌟 Familia • 19 Días • 9 Países • 1 Quinceañera Inolvidable 🌟</p>
 <p style="font-family:'Dancing Script',cursive;font-size:1.4rem;color:var(--gold);margin-top:10px">¡Que sea el viaje de sus vidas!</p>
@@ -1237,5 +1631,65 @@ p{color:var(--ink-2)}
 <p class="sub">Próxima revisión programada: Mayo 2026 (verificar tipo de cambio, precios excursiones, estado ETIAS)</p>
 <p class="sub">Plan generado con Claude • Precios estimados en USD/EUR de abril 2026 • Sujetos a variación</p>
 </div>
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="this.classList.remove('open')">
+<button class="lightbox-close">✕</button>
+<img id="lightboxImg" src="" alt="">
+</div>
+
+<script>
+// Progress bar
+const fill = document.getElementById('progressFill');
+const btnTop = document.getElementById('btnTop');
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+  fill.style.width = pct + '%';
+  if (h.scrollTop > 500) btnTop.classList.add('show');
+  else btnTop.classList.remove('show');
+});
+
+// Currency calculator
+const rates = {
+  EUR: { PEN: 4.10, USD: 1.08, EUR: 1, GBP: 0.85, CHF: 0.96 },
+  GBP: { PEN: 4.82, USD: 1.26, EUR: 1.17, GBP: 1, CHF: 1.12 },
+  CHF: { PEN: 4.27, USD: 1.13, EUR: 1.04, GBP: 0.89, CHF: 1 },
+  USD: { PEN: 3.80, USD: 1, EUR: 0.92, GBP: 0.79, CHF: 0.89 },
+  PEN: { PEN: 1, USD: 0.26, EUR: 0.24, GBP: 0.21, CHF: 0.23 }
+};
+function updateCalc() {
+  const val = parseFloat(document.getElementById('calcInput').value) || 0;
+  const from = document.getElementById('calcFrom').value;
+  const r = rates[from];
+  document.getElementById('resPEN').textContent = 'S/ ' + (val * r.PEN).toFixed(2);
+  document.getElementById('resUSD').textContent = '$ ' + (val * r.USD).toFixed(2);
+  document.getElementById('resEUR').textContent = '€ ' + (val * r.EUR).toFixed(2);
+  document.getElementById('resGBP').textContent = '£ ' + (val * r.GBP).toFixed(2);
+  document.getElementById('resCHF').textContent = 'CHF ' + (val * r.CHF).toFixed(2);
+}
+
+// Share day via WhatsApp
+function shareDay(num) {
+  const day = document.getElementById('dia' + num);
+  if (!day) return;
+  const title = day.querySelector('.day-info h2')?.textContent || `Día ${num}`;
+  const date = day.querySelector('.date')?.textContent || '';
+  const url = window.location.origin + window.location.pathname + '#dia' + num;
+  const text = `🌍 *Plan Europa 2026 — Día ${num}*\n\n*${title}*\n${date}\n\n📖 Ver detalles completos:\n${url}`;
+  window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+}
+
+// Lightbox para fotos
+function openLightbox(src) {
+  document.getElementById('lightboxImg').src = src;
+  document.getElementById('lightbox').classList.add('open');
+}
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-overlay.open, .lightbox.open').forEach(m => m.classList.remove('open'));
+  }
+});
+</script>
+
 </body>
 </html>
