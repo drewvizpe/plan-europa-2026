@@ -87,14 +87,27 @@ El MD de correcciones tenía cuatro imprecisiones:
 
 Marcados en el sitio, con su fecha límite:
 
+### Ya resueltos por la familia (30 de julio)
+
+| Punto | Decisión |
+|---|---|
+| **Góndola** | ✅ Góndola **privada familiar**. Primero la foto de la quinceañera **sola** en la góndola, después suben los 5 y pasean juntos. Se recomienda hacerla la **mañana del Día 11** para pagar €90 en vez de €110 y tener luz. |
+| **Notre Dame** | ✅ **NO entran.** Solo por fuera. Se reemplazó todo el bloque de reservas por los mejores ángulos de foto exteriores. |
+| **Torre de Pisa** | ✅ **NO suben.** Además era inviable: requiere reserva con hora fija y solo tienen 1 hora de parada. |
+| **Noche del Día 10** | ✅ Se **separan del grupo** y hacen la cena de quinceañera por su cuenta. |
+| **Titlis** | 🟡 Queda **pendiente de confirmar con Anahí**, que es quien vende la excursión. Tres preguntas concretas ya escritas en el sitio. No pagar los $875 antes. |
+| **Privacidad / casa vacía** | ✅ **No es un problema.** La casa no queda sola: la tía vive al lado y se queda a dormir, está la abuelita, y ella cuida al perro, al gato y al conejo. Se retira esta bandera. |
+| **Oktoberfest** | ✅ Saben que llegan 8 días tarde. Se dejó una nota equilibrada: no habrá carpas, pero puede quedar algo de ambiente, y el Hofbräuhaus funciona todo el año. |
+
+### Siguen abiertos
+
 | Pendiente | Fecha límite | Nota |
 |---|---|---|
-| Horario de la góndola | antes de comprar | Las 4 versiones eran incompatibles entre sí y con el tren de las 7 PM |
-| ¿Suben a la Torre Eiffel? | **10 de agosto** (se habilita la venta) | ~$190-210 los 5 a la cima |
-| Coliseo vs. Capri (día 13) | **16 de septiembre** | Son excluyentes. Coliseo ~$72, Capri ~$1.260 |
+| ¿Suben a la Torre Eiffel? | **10 de agosto** — la venta abre ~5-8 de agosto | €165,20 los 5 a la cima (la quinceañera paga tarifa joven) |
+| Coliseo por dentro vs. Capri (día 13) | **16 de septiembre** | Excluyentes. Coliseo **€72 el grupo** (la quinceañera entra gratis pero necesita reserva nominativa igual); Capri ~$1.260. Se contempló que el grupo se divida. |
 | Ventana para que la quinceañera se cambie (día 10) | reunión familiar | 30 minutos no alcanzan |
 | Ropa barata: ¿Londres o París? | día 8 es el corte duro | En el Titlis hay nieve |
-| Privacidad del sitio publicado | — | El itinerario dice que la casa está vacía del 4 al 22 de octubre |
+| Edades exactas de los dos adultos mayores | antes de cotizar el seguro | Sin eso no se puede cotizar ni verificar topes de edad |
 | Presupuesto | — | No cierra: déficit de $200-400 por persona |
 
 ---
