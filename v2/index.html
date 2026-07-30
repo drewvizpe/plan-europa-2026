@@ -1,0 +1,1831 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="theme-color" content="#1a1d2e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Plan Europa 2026 — Bitácora</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{
+  --ink:#15182a; --ink2:#3b4054; --mute:#767c8f;
+  --bg:#f7f6f3; --card:#fff; --line:#e6e4df;
+  --accent:#c8553d; --accent-soft:#fdf0ec;
+  --gold:#b0842f; --green:#2f7d5c; --green-soft:#eaf5ef;
+  --danger:#c0392b; --danger-soft:#fdecea;
+  --warn:#b8791b; --warn-soft:#fdf4e5;
+  --bday:#b5427c;
+  --nav-h:64px;
+  --safe-b:env(safe-area-inset-bottom,0px);
+}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  background:var(--bg); color:var(--ink);
+  font-size:17px; line-height:1.6;
+  padding-bottom:calc(var(--nav-h) + var(--safe-b) + 8px);
+  overflow-x:hidden;
+}
+/* ---------- TOP BAR ---------- */
+.topbar{
+  position:sticky; top:0; z-index:50;
+  background:rgba(247,246,243,.94); backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+  display:flex; align-items:center; gap:10px;
+  padding:10px 14px; padding-top:calc(10px + env(safe-area-inset-top,0px));
+}
+.topbar .tb-day{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.topbar .tb-title{font-size:.95rem;font-weight:700;line-height:1.25;color:var(--ink)}
+.topbar .tb-txt{flex:1;min-width:0}
+.topbar .tb-txt div{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.icon-btn{
+  width:44px;height:44px;flex:0 0 44px;border:none;background:var(--card);
+  border:1px solid var(--line); border-radius:14px;
+  font-size:1.15rem; display:grid;place-items:center; cursor:pointer; color:var(--ink);
+}
+.icon-btn:active{background:var(--accent-soft)}
+/* ---------- SCREENS ---------- */
+.screen{display:none;padding:16px 14px 24px;animation:fade .18s ease}
+.screen.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+/* ---------- DAY HERO ---------- */
+.hero{
+  border-radius:20px;padding:20px 18px;margin-bottom:18px;color:#fff;
+  background:linear-gradient(135deg,#2d3142,#4a5068);
+}
+.hero.bday{background:linear-gradient(135deg,#b5427c,#e0669b)}
+.hero .h-n{font-size:.72rem;font-weight:800;letter-spacing:.12em;opacity:.85;text-transform:uppercase}
+.hero h1{font-size:1.5rem;line-height:1.2;margin:6px 0 8px;font-weight:800}
+.hero .h-date{font-size:.92rem;opacity:.95;font-weight:600}
+.hero .h-meta{font-size:.8rem;opacity:.8;margin-top:6px}
+/* ---------- BLOCKS ---------- */
+.block{background:var(--card);border:1px solid var(--line);border-radius:18px;margin-bottom:14px;overflow:hidden}
+.block>h2{font-size:1.05rem;padding:16px 18px 4px;font-weight:800}
+.block-body{padding:6px 18px 18px}
+details.block>summary{
+  list-style:none;padding:17px 18px;font-weight:700;font-size:1rem;
+  cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px;
+  min-height:56px;
+}
+details.block>summary::-webkit-details-marker{display:none}
+details.block>summary::after{content:'▾';font-size:1.1rem;color:var(--mute);transition:transform .2s}
+details.block[open]>summary::after{transform:rotate(180deg)}
+details.block[open]>summary{border-bottom:1px solid var(--line)}
+details.block .block-body{padding-top:14px}
+/* ---------- TIMELINE ---------- */
+.tl{list-style:none;display:flex;flex-direction:column;gap:2px}
+.tl li{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid var(--line)}
+.tl li:last-child{border-bottom:none}
+.tl time{
+  flex:0 0 74px;font-size:.78rem;font-weight:800;color:var(--ink2);
+  background:var(--bg);border-radius:9px;padding:5px 6px;text-align:center;height:fit-content;line-height:1.25;
+}
+.tl time.go{background:#e8eef7;color:#2a4a7a}
+.tl time.eat{background:#fdf0e5;color:#9a5a1c}
+.tl time.free{background:var(--green-soft);color:var(--green)}
+.tl time.tour{background:#f2ecfa;color:#5b3a91}
+.tl .tl-c{flex:1;min-width:0;font-size:.92rem}
+.tl .tl-c strong{display:block;margin-bottom:2px}
+.tl .tl-c p{font-size:.87rem;color:var(--ink2);margin-top:3px}
+/* ---------- NOTES ---------- */
+.note{border-radius:14px;padding:13px 15px;font-size:.87rem;line-height:1.6;margin:12px 0;border-left:4px solid}
+.note strong{font-weight:700}
+.note.info{background:#eef3fa;border-color:#4a76b8}
+.note.save{background:var(--green-soft);border-color:var(--green)}
+.note.warn{background:var(--warn-soft);border-color:var(--warn)}
+.note.danger{background:var(--danger-soft);border-color:var(--danger)}
+.note.food{background:#fdf0e5;border-color:#c47a2c}
+.note.pend{background:#fff8e1;border-color:var(--gold)}
+.note ul{margin:8px 0 0 18px}
+.note li{margin-bottom:5px}
+.money{background:#fffbe9;border:1px dashed var(--gold);border-radius:14px;padding:13px 15px;font-size:.88rem;margin:12px 0}
+/* ---------- VOCAB ---------- */
+.vocab{display:flex;flex-direction:column;gap:9px}
+.vocab .v{background:var(--bg);border-radius:12px;padding:11px 13px}
+.vocab .v b{display:block;font-size:.97rem}
+.vocab .v i{display:block;font-size:.83rem;color:var(--accent);font-style:normal;margin-top:2px}
+.vocab .v span{display:block;font-size:.83rem;color:var(--mute);margin-top:1px}
+/* ---------- PHOTOS ---------- */
+.shots{display:flex;flex-direction:column;gap:10px}
+.shot{background:var(--bg);border-radius:12px;padding:11px 13px;font-size:.88rem}
+.shot b{color:var(--accent)}
+/* ---------- GALLERY ---------- */
+.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:12px 0}
+.gal img{width:100%;height:110px;object-fit:cover;border-radius:12px;display:block;background:var(--line)}
+/* ---------- HOME ---------- */
+.home-hero{text-align:center;padding:26px 16px 22px}
+.home-hero .hh-k{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:800}
+.home-hero h1{font-size:2rem;line-height:1.1;margin:10px 0 8px;font-weight:800}
+.home-hero p{color:var(--mute);font-size:.92rem}
+.cta{
+  display:block;width:100%;background:var(--accent);color:#fff;border:none;
+  border-radius:16px;padding:17px;font-size:1.02rem;font-weight:700;margin:14px 0;
+  cursor:pointer;font-family:inherit;text-align:center;text-decoration:none;
+}
+.cta.ghost{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+.checklist{list-style:none;display:flex;flex-direction:column;gap:9px}
+.checklist li{display:flex;gap:11px;align-items:flex-start;background:var(--bg);border-radius:12px;padding:12px 13px;font-size:.89rem}
+.checklist input{width:22px;height:22px;flex:0 0 22px;margin-top:1px;accent-color:var(--green)}
+.checklist label{flex:1;cursor:pointer}
+.checklist li.done label{opacity:.5;text-decoration:line-through}
+.deadline{font-size:.74rem;font-weight:800;color:var(--danger);display:block;margin-top:3px}
+/* ---------- BOTTOM NAV ---------- */
+.botnav{
+  position:fixed;left:0;right:0;bottom:0;z-index:60;
+  height:calc(var(--nav-h) + var(--safe-b));padding-bottom:var(--safe-b);
+  background:rgba(255,255,255,.96);backdrop-filter:blur(14px);
+  border-top:1px solid var(--line);
+  display:flex;align-items:center;gap:8px;padding-left:10px;padding-right:10px;
+}
+.botnav button{
+  border:none;background:transparent;font-family:inherit;cursor:pointer;color:var(--ink);
+  display:grid;place-items:center;border-radius:14px;
+}
+.botnav .arrow{width:56px;height:48px;flex:0 0 56px;font-size:1.5rem;background:var(--bg)}
+.botnav .arrow:disabled{opacity:.3}
+.botnav .arrow:active{background:var(--accent-soft)}
+.botnav .picker{flex:1;height:48px;background:var(--bg);font-size:.9rem;font-weight:800;padding:0 8px}
+.botnav .lost{width:56px;height:48px;flex:0 0 56px;background:var(--danger-soft);color:var(--danger);font-size:1.25rem}
+/* ---------- OVERLAY ---------- */
+.ov{position:fixed;inset:0;z-index:100;background:rgba(20,22,34,.55);backdrop-filter:blur(3px);display:none}
+.ov.on{display:block}
+.sheet{
+  position:absolute;left:0;right:0;bottom:0;max-height:88vh;overflow-y:auto;
+  background:var(--bg);border-radius:22px 22px 0 0;padding:8px 14px calc(20px + var(--safe-b));
+  animation:up .22s cubic-bezier(.2,.9,.3,1);
+}
+@keyframes up{from{transform:translateY(100%)}to{transform:none}}
+.grab{width:42px;height:5px;background:var(--line);border-radius:3px;margin:8px auto 14px}
+.sheet h2{font-size:1.15rem;margin-bottom:12px;font-weight:800}
+.daygrid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}
+.daygrid a{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:12px 4px;text-align:center;text-decoration:none;color:var(--ink);
+  font-weight:800;font-size:.95rem;min-height:58px;display:grid;place-items:center;
+}
+.daygrid a small{display:block;font-size:.62rem;color:var(--mute);font-weight:600;margin-top:2px}
+.daygrid a.here{background:var(--accent);color:#fff;border-color:var(--accent)}
+.daygrid a.here small{color:rgba(255,255,255,.85)}
+.daygrid a.bd{border-color:var(--bday);border-width:2px}
+/* ---------- SEARCH ---------- */
+.searchbar{display:flex;gap:8px;margin-bottom:14px}
+.searchbar input{
+  flex:1;font-family:inherit;font-size:1.05rem;padding:15px 16px;
+  border:2px solid var(--line);border-radius:15px;background:var(--card);color:var(--ink);
+}
+.searchbar input:focus{outline:none;border-color:var(--accent)}
+.res{display:flex;flex-direction:column;gap:9px}
+.res a{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 15px;
+  text-decoration:none;color:var(--ink);display:block;
+}
+.res a .r-day{font-size:.7rem;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:.06em}
+.res a .r-txt{font-size:.87rem;color:var(--ink2);margin-top:4px;line-height:1.5}
+.res mark{background:#ffe9a8;color:var(--ink);padding:0 2px;border-radius:3px}
+.res .empty{text-align:center;color:var(--mute);padding:26px 10px;font-size:.9rem}
+.hint{font-size:.8rem;color:var(--mute);margin-bottom:12px}
+/* ---------- LOST ---------- */
+.lostfield{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:10px}
+.lostfield label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--mute);display:block;margin-bottom:5px}
+.lostfield input{width:100%;font-family:inherit;font-size:1.05rem;border:none;background:transparent;color:var(--ink);padding:2px 0}
+.lostfield input:focus{outline:none}
+.bigcall{
+  display:block;background:var(--danger);color:#fff;text-decoration:none;text-align:center;
+  border-radius:16px;padding:19px;font-size:1.3rem;font-weight:800;margin-bottom:10px;letter-spacing:.02em;
+}
+.phrase{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 15px;margin-bottom:10px;font-size:.9rem}
+.phrase b{display:block;color:var(--accent);font-size:1rem;margin-bottom:3px}
+mark.jump{background:#ffe9a8;animation:pulse 2.2s ease}
+@keyframes pulse{0%,100%{background:#ffe9a8}50%{background:#ffd35e}}
+/* ---------- DESKTOP (secundario) ---------- */
+@media(min-width:820px){
+  body{font-size:18px}
+  .screen{max-width:720px;margin:0 auto;padding:26px 24px 40px}
+  .topbar{justify-content:center}
+  .topbar .tb-txt{max-width:660px}
+  .botnav{max-width:720px;margin:0 auto;border-radius:20px 20px 0 0;border:1px solid var(--line);border-bottom:none}
+  .gal img{height:150px}
+  .sheet{max-width:720px;margin:0 auto;border-radius:22px;bottom:20px;left:14px;right:14px}
+}
+@media print{.topbar,.botnav,.ov{display:none!important}.screen{display:block!important}details{open:true}}
+</style>
+</head>
+<body>
+<!-- ================= TOP BAR ================= -->
+<div class="topbar">
+  <button class="icon-btn" id="btnHome" aria-label="Inicio">🏠</button>
+  <div class="tb-txt">
+    <div class="tb-day" id="tbDay">Antes de viajar</div>
+    <div class="tb-title" id="tbTitle">Plan Europa 2026</div>
+  </div>
+  <button class="icon-btn" id="btnSearch" aria-label="Buscar">🔍</button>
+</div>
+
+<!-- ================= INICIO ================= -->
+<section class="screen on" id="inicio">
+  <div class="home-hero">
+    <div class="hh-k">4 al 22 de octubre 2026</div>
+    <h1>Europa</h1>
+    <p>19 días · 9 países · 5 personas · 1 quinceañera</p>
+  </div>
+
+  <div class="note danger">
+    <strong>Esta pantalla es solo para PREPARAR el viaje.</strong> Todo lo del día a día está en cada día — usen la barra de abajo o el buscador 🔍.
+  </div>
+
+  <a class="cta" href="#dia1">Ver el itinerario día por día →</a>
+
+  <!-- ---------- ANTES DE VIAJAR ---------- -->
+  <div class="block"><h2>📅 Lo que hay que hacer antes</h2><div class="block-body">
+    <p style="font-size:.87rem;color:var(--mute);margin-bottom:12px">Ordenado por urgencia. Toquen para marcar lo que ya hicieron — queda guardado en este celular.</p>
+    <ul class="checklist" id="prep">
+      <li><input type="checkbox" id="p1"><label for="p1"><strong>Decidir si suben a la Torre Eiffel</strong><br>La venta abre 60 días antes, o sea alrededor del <strong>5 al 8 de agosto</strong>. Cima en ascensor: <strong>€165,20 los 5</strong> (la quinceañera paga tarifa joven). Solo en <strong>ticket.toureiffel.paris</strong>. Entradas nominativas y no reembolsables.<span class="deadline">⏰ Decidir antes del 10 de agosto</span></label></li>
+
+      <li><input type="checkbox" id="p2"><label for="p2"><strong>Mandarle a Anahí las 3 preguntas urgentes</strong><br>(1) ¿La tarifa incluye <strong>maleta facturada</strong> o solo equipaje de mano? (2) ¿El <strong>traslado del último día</strong> existe a las 21:45, si el vuelo sale 01:45? (3) Confirmar el <strong>recargo de Gatwick</strong> por escrito y pedir el WhatsApp del conductor.<span class="deadline">⏰ Cuanto antes — pueden costar dinero o el vuelo</span></label></li>
+
+      <li><input type="checkbox" id="p3"><label for="p3"><strong>Contratar el seguro médico</strong><br>Primero hace falta un dato: las <strong>edades exactas</strong> de todos. Recomendado <strong>IATI Estrella</strong> si los mayores tienen ≤74; <strong>Assist Card</strong> si alguno pasa de 75 o tiene enfermedades previas. <strong>Mínimo €100.000</strong>, nunca €30.000. Y que el certificado diga <strong>REINO UNIDO</strong> por escrito.<span class="deadline">⏰ Agosto</span></label></li>
+
+      <li><input type="checkbox" id="p4"><label for="p4"><strong>Revisar si los celulares soportan eSIM</strong><br>Marquen <strong>*#06#</strong> en cada uno. Si aparece un código <strong>EID</strong>, sirve. El que no, va colgado del hotspot.<span class="deadline">⏰ Ahora, toma 2 minutos</span></label></li>
+
+      <li><input type="checkbox" id="p5"><label for="p5"><strong>Tramitar el ETA de Reino Unido</strong><br><strong>£20 por persona</strong> (£100 los 5, sin descuento familiar). También los menores. En <strong>gov.uk</strong> o la app oficial "UK ETA" — nada de intermediarios. Suele salir en minutos pero pidan <strong>3 días hábiles</strong> de margen.<br>⚠️ Sin ETA aprobado <strong>no los dejan embarcar en Madrid</strong>.<span class="deadline">⏰ Antes del 15 de septiembre</span></label></li>
+
+      <li><input type="checkbox" id="p6"><label for="p6"><strong>Comprar las eSIM</strong><br><strong>Airalo "Europe eSIM · Unlimited · 30 Days"</strong>, el de <strong>42 países</strong>, US$71. ⚠️ El de <strong>28 países no incluye Suiza</strong> — si dice 28, es el equivocado. Con <strong>2 líneas alcanza</strong> (US$142): comparten por hotspot.<br>Comprar no gasta días: el QR espera en el correo.<span class="deadline">⏰ ~15 de septiembre</span></label></li>
+
+      <li><input type="checkbox" id="p7"><label for="p7"><strong>Cerrar las excursiones con Anahí</strong><br>Después de esta fecha ya <strong>no se puede agregar nada</strong> (son 18 días antes de salir). Incluye decidir <strong>Coliseo o Capri</strong>, que son excluyentes.<span class="deadline">⏰ 16 de septiembre — fecha límite dura</span></label></li>
+
+      <li><input type="checkbox" id="p8"><label for="p8"><strong>Comprar las entradas del Coliseo</strong> (si eligen Coliseo)<br>Se habilitan justo <strong>30 días antes</strong>. <strong>€72 el grupo</strong> — la quinceañera entra gratis pero <strong>igual necesita su entrada nominativa</strong>. Solo en <strong>ticketing.colosseo.it</strong>.<span class="deadline">⏰ Se abre el 16 de septiembre</span></label></li>
+
+      <li><input type="checkbox" id="p9"><label for="p9"><strong>Comprar la Casa de Julieta</strong> (Verona, día del cumpleaños)<br>Compra <strong>online obligatoria</strong> en <strong>verona.midaticket.it</strong>, con <strong>hora fija</strong>. €5 (teatro + patio) o €12 (con interior). No hay tarifa juvenil. No se cambia ni se reembolsa.<br>⚠️ Antes pídanle a Anahí el horario real del día 10 para elegir bien la hora.<span class="deadline">⏰ Antes del 20 de septiembre</span></label></li>
+
+      <li><input type="checkbox" id="p10"><label for="p10"><strong>Instalar las eSIM en Lima, con el WiFi de casa</strong><br>Esto es lo más importante de todo: <strong>instalar requiere internet</strong>. Si llegan a Londres sin instalarla, van a necesitar internet para conseguir internet. Instálenla y déjenla <strong>apagada</strong>.<span class="deadline">⏰ 1 de octubre</span></label></li>
+
+      <li><input type="checkbox" id="p11"><label for="p11"><strong>Avisar al banco + descargar mapas y traductor offline</strong><br>Google Maps de cada ciudad y Google Translate en inglés, francés, italiano y alemán. Prueben en modo avión que funcionen.<span class="deadline">⏰ Septiembre</span></label></li>
+
+      <li><input type="checkbox" id="p12"><label for="p12"><strong>Ropa de abrigo — el corte es el día 8</strong><br>En el Titlis hay nieve. Lo que no tengan para ese día, no lo tienen. Conviene comprarla en <strong>Londres (Primark de Oxford Street)</strong>, más barato que Francia o Suiza. Rinden más <strong>guantes, gorro y medias térmicas</strong> que una casaca gruesa.<span class="deadline">⏰ Comprar allá, días 2-3</span></label></li>
+    </ul>
+
+    <div class="note save"><strong>✅ ETIAS: no hagan nada.</strong> No existe todavía y no tiene fecha. Si alguna web les ofrece tramitarlo, es un intermediario que cobra por algo que no necesitan. El único sitio oficial es <strong>travel-europe.europa.eu/etias</strong>.</div>
+  </div></div>
+
+  <!-- ---------- AEROPUERTO ---------- -->
+  <div class="block"><h2>🛫 El día del vuelo</h2><div class="block-body">
+    <div class="note danger"><strong>Sin el ETA aprobado no los dejan embarcar en Madrid.</strong> No es algo que se arregle llegando a Londres. Revísenlo la noche antes.</div>
+
+    <h3 style="font-size:.95rem;font-weight:800;margin:14px 0 8px">Qué llevar en la mano</h3>
+    <ul class="checklist" id="apt">
+      <li><input type="checkbox" id="a1"><label for="a1">Los 5 pasaportes (vigentes al menos hasta abril 2027)</label></li>
+      <li><input type="checkbox" id="a2"><label for="a2">ETA de Reino Unido aprobado (llega por correo, guárdenlo en el celular)</label></li>
+      <li><input type="checkbox" id="a3"><label for="a3">Póliza del seguro <strong>impresa</strong> + número de asistencia grabado en los 5 celulares</label></li>
+      <li><input type="checkbox" id="a4"><label for="a4">Reserva del tour y tickets de vuelo <strong>impresos</strong></label></li>
+      <li><input type="checkbox" id="a5"><label for="a5">Fotos de los pasaportes en el celular de cada uno <strong>y</strong> en Google Drive</label></li>
+      <li><input type="checkbox" id="a6"><label for="a6">Efectivo + 2 tarjetas (avisadas al banco)</label></li>
+      <li><input type="checkbox" id="a7"><label for="a7">Medicinas en el equipaje de mano, no en la bodega</label></li>
+      <li><input type="checkbox" id="a8"><label for="a8">Cargador y power bank (el power bank <strong>siempre</strong> en cabina)</label></li>
+    </ul>
+
+    <div class="note info"><strong>Los tres tramos</strong><br>
+    <strong>1.</strong> Lima 11:00 → Madrid 05:40 del día siguiente (11h40, Iberia).<br>
+    <strong>2.</strong> Escala en Madrid de 3h50. <strong>Buena noticia:</strong> llegan y salen de la misma terminal (T4S), no cambian de edificio y <strong>no pasan migraciones españolas</strong> — siguen en tránsito internacional.<br>
+    <strong>3.</strong> Madrid 09:30 → Londres Gatwick 10:50, <strong>Terminal Sur</strong>.</div>
+
+    <div class="note warn"><strong>Al llegar a Gatwick: este es el punto más justo del viaje.</strong><br>
+    El chofer del traslado espera <strong>90 minutos desde que aterriza el avión</strong>, o sea hasta las <strong>12:20</strong>. Y migraciones puede tomar entre 45 y 90 minutos, porque los peruanos <strong>no pueden usar las máquinas automáticas</strong> y las 10-12 del día es hora pico.<br><br>
+    <strong>Qué hacer:</strong> sentarse adelante en el avión si se puede, bajar rápido, ir los 5 juntos y directo a migraciones sin pasar por baños ni tiendas. Y tener el <strong>WhatsApp del conductor</strong> guardado para avisarle si se demoran.</div>
+
+    <div class="note info"><strong>Plan B si el chofer ya se fue:</strong> del aeropuerto sale el tren <strong>Gatwick Express / Thameslink</strong> al centro de Londres. Lleven la <strong>dirección del hotel impresa</strong> por si se quedan sin batería.</div>
+  </div></div>
+
+  <div class="block"><h2>🕐 La hora, que cambia dos veces</h2><div class="block-body">
+    <div class="note info">
+    En octubre Europa está en horario de verano, así que la diferencia es mayor de lo que uno cree:<br><br>
+    🇬🇧 <strong>Londres: 6 horas</strong> adelantado a Lima (días 1-3)<br>
+    🇪🇺 <strong>Resto de Europa: 7 horas</strong> adelantado (días 4-19)<br><br>
+    Cuando en Madrid son las 3 de la tarde, en Lima son las 8 de la mañana.<br>
+    <strong>Para llamar a la familia:</strong> de noche allá (9-11 PM) = media tarde en Perú.<br><br>
+    ⚠️ <strong>Ojo el día 4:</strong> al cruzar en ferry de Inglaterra a Francia el reloj salta <strong>1 hora más</strong>. Adelántenlo al bajar del barco.</div>
+  </div></div>
+
+  <p style="text-align:center;color:var(--mute);font-size:.78rem;margin-top:20px">Versión 2 · bitácora para el celular<br>Datos verificados el 30 de julio de 2026</p>
+</section>
+<section class="screen day" id="dia1" data-day="1" data-date="Domingo 4 de octubre" data-short="Lima→Londres">
+<div class="hero"><div class="h-n">Día 1 de 19</div><h1>✈️ Lima → Madrid → Londres</h1><div class="h-date">Domingo 4 de octubre</div><div class="h-meta">Noche a bordo</div></div>
+
+<div class="block"><h2>⏰ El día</h2><div class="block-body">
+<ul class="tl">
+<li><time class="go">8:00 AM</time><div class="tl-c"><strong>Llegar al Jorge Chávez</strong><p>3 horas antes del vuelo.</p></div></li>
+<li><time class="go">11:00 AM</time><div class="tl-c"><strong>Vuelo IB0124 Lima → Madrid</strong><p>11h 40min de vuelo.</p></div></li>
+<li><time class="go">05:40 AM +1</time><div class="tl-c"><strong>Llegada a Madrid T4S</strong><p>Lunes 5 oct. ESCALA de 3h 50min.</p></div></li>
+<li><time class="go">09:30 AM</time><div class="tl-c"><strong>Vuelo IB1861 Madrid (T4S) → Londres Gatwick</strong><p>Iberia Express, 2h 20min.</p></div></li>
+<li><time class="go">10:50 AM</time><div class="tl-c"><strong>Llegada a Londres Gatwick — Terminal Sur</strong><p>Ver Día 2.</p></div></li>
+</ul>
+</div></div>
+
+<details class="block"><summary>💡 Tips prácticos y dinero</summary><div class="block-body">
+<div class="note warn"><strong>⚠️ Traslado desde Gatwick:</strong> Su vuelo llega a Gatwick, pero el traslado gratis del tour es solo para Heathrow. Para que los recojan en Gatwick TIENEN que pagar un recargo de <strong>$31/persona ($155 familia)</strong>. Contrátenlo con Anahí (agente Atrápalo). Si no lo pagan, nadie los recoge y tendrían que llegar solos al hotel en tren.</div>
+<div class="note info"><strong>Avión largo:</strong> Almohada de cuello, snacks, películas descargadas. Duerman Lima→Madrid para llegar activos.</div>
+<div class="note info"><strong>🧭 Logística del día</strong><ul>
+<li><strong>Cómo viajan:</strong> Avión Lima→Madrid (Iberia). Luego avión Madrid→Londres Gatwick (Iberia).</li>
+<li><strong>Dónde duermen:</strong> A bordo del avión (noche del domingo). No hay hotel este día.</li>
+<li><strong>Mañana siguiente:</strong> Llegan a Londres Gatwick a las 10:50 AM.</li>
+</ul></div>
+<div class="money"><strong>💰 No necesitan dinero hoy.</strong> Comida incluida en avión. En Madrid aceptan tarjeta.</div>
+</div></details>
+
+<details class="block"><summary>🗣 Cómo se dice</summary><div class="block-body">
+<div class="vocab">
+<div class="v"><b>Por favor</b><i>Please</i><span>pliis</span></div>
+<div class="v"><b>Gracias</b><i>Thank you</i><span>zenk iu</span></div>
+<div class="v"><b>No, gracias</b><i>No, thank you</i><span>nou, zenk iu</span></div>
+<div class="v"><b>¿Dónde está el baño?</b><i>Where is the toilet?</i><span>wer is de toilet?</span></div>
+<div class="v"><b>Necesito ayuda</b><i>I need help</i><span>ai niid jelp</span></div>
+<div class="v"><b>Mesa para 5</b><i>Table for five</i><span>teibol for faiv</span></div>
+</div>
+</div></details>
+</section>
+
+<section class="screen day" id="dia2" data-day="2" data-date="Lunes 5 de octubre" data-short="Londres">
+<div class="hero"><div class="h-n">Día 2 de 19</div><h1>🇬🇧 Llegada a Londres</h1><div class="h-date">Lunes 5 de octubre</div><div class="h-meta">🇬🇧 LIBRA £ • £1 ≈ $1.33 ≈ S/4.55</div></div>
+
+<div class="block"><h2>⏰ El día</h2><div class="block-body">
+<ul class="tl">
+<li><time class="go">10:50 AM</time><div class="tl-c"><strong>Llegada a Gatwick (Terminal Sur)</strong><p>Migraciones + maletas: calculen <strong>45 a 90 min</strong>, no 45.</p></div></li>
+<li><time class="go">11:45 AM</time><div class="tl-c"><strong>Salen del aeropuerto</strong><p>El tour los recoge (si pagaron el recargo de Gatwick).</p></div></li>
+<li><time class="go">~1:00 PM</time><div class="tl-c"><strong>Llegan al hotel</strong><p>Traslado ~1h desde Gatwick.</p></div></li>
+<li><time>2:00 PM</time><div class="tl-c"><strong>Check-in hotel</strong><p>Antes de las 2 PM probablemente no puedan entrar a la habitación. Dejen maletas en recepción.</p></div></li>
+<li><time class="free">2:00-6:00 PM</time><div class="tl-c"><strong>TIEMPO LIBRE — 4 HORAS</strong><p>Paseo suave cerca del hotel, supermercado, descansar del vuelo.</p></div></li>
+<li><time class="eat">6:30 PM</time><div class="tl-c"><strong>Cena</strong><p>Cerca del hotel (Nando's, pub, kebab).</p></div></li>
+<li><time>9:30 PM</time><div class="tl-c"><strong>A dormir</strong><p>NO antes — para ajustar jet lag.</p></div></li>
+</ul>
+</div></div>
+
+<details class="block"><summary>💡 Tips prácticos y dinero</summary><div class="block-body">
+<div class="note danger"><strong>🚨 IMPORTANTE — Recargo traslado Gatwick:</strong> Su vuelo llega a Gatwick, PERO el paquete solo incluye traslado gratis si llegan a Heathrow. Para que los recojan en Gatwick <strong>TIENEN que pagar $31 por persona ($155 familia)</strong>. Contáctenla por WhatsApp (el 0810-345-0014 solo funciona desde Argentina). Si no lo contratan, nadie los recoge.</div>
+<div class="note food"><strong>🍽 Cena:</strong> Nando's (~£12-15/pp) o pub Fish &amp; Chips (~£10-12). Meal Deal en supermercado: £3.50-5 (sandwich+bebida+snack).</div>
+<div class="note warn"><strong>⚠️ LUNES:</strong> Tiendas y supermercados abren con horario normal.</div>
+<div class="note info"><strong>⏰ Jet lag y diferencia horaria (corregido):</strong> en octubre Europa todavía está en horario de verano, así que la diferencia es mayor de lo que suele decirse.<ul>
+<li><strong>Londres: 6 horas adelantado</strong> respecto a Lima (días 2-3)</li>
+<li><strong>Resto de Europa (París, Roma, Madrid…): 7 horas adelantado</strong> (días 4-19)</li>
+</ul>O sea: cuando en Madrid son las 3 de la tarde, en Lima son las 8 de la mañana. <strong>Para llamar a la familia:</strong> si quieren agarrarlos despiertos en Perú, llamen de noche europea (9-11 PM = 2-4 PM en Lima).<br><strong>Contra el jet lag:</strong> NO se duerman hasta las 9-10 PM hora local del primer día.</div>
+<div class="note info"><strong>🧭 Logística del día</strong><ul>
+<li><strong>Cómo llegaron:</strong> Si pagaron el recargo de Gatwick ($31/pp), el tour los recogió y los trajo al hotel. Si no lo pagaron, llegaron por su cuenta.</li>
+<li><strong>Dónde duermen:</strong> Hotel en Londres (zona aledaña, probablemente periferia). Los hoteles de estos tours suelen estar fuera del centro, a 20-40 min en metro. Pregunten al guía la dirección exacta y anótenla.</li>
+<li><strong>Si salen a pasear:</strong> Vuelven al hotel POR SU CUENTA en metro o Uber. El tour NO los recoge. Anoten la dirección del hotel y la estación de metro más cercana.</li>
+<li><strong>Mañana siguiente:</strong> Desayuno en el hotel. El bus del tour los recoge para el tour panorámico de Londres.</li>
+</ul></div>
+<div class="money"><strong>💰 Llevar: ~£30-40/persona (~$40-50).</strong> Cena + supermercado.</div>
+</div></details>
+
+<details class="block"><summary>🎲 Datos curiosos</summary><div class="block-body">
+<div class="note info"><strong>💡 Dato curioso de Londres:</strong> El "Big Ben" no es la torre ni el reloj — es el nombre de la <strong>campana</strong> que está dentro. La torre se llama oficialmente <strong>Elizabeth Tower</strong> desde 2012. La campana pesa 13.7 toneladas y lleva sonando desde 1859. Otro dato: el metro de Londres es el MÁS ANTIGUO del mundo (1863).</div>
+<div class="note warn"><strong>🎭 Etiqueta británica — muy importante</strong><ul>
+<li><strong>Hacer cola es sagrado.</strong> NUNCA se cuelen. Los ingleses odian eso.</li>
+<li><strong>Dicen "Sorry" por todo</strong>, incluso si ustedes los pisan a ellos. Es cultural.</li>
+<li><strong>"Please" y "Thank you"</strong> en CADA pedido. Sin eso, les atienden mal.</li>
+<li><strong>Propina:</strong> 10-12% en restaurantes si no está incluida. En pubs no es necesario.</li>
+<li><strong>Caminen por la izquierda</strong> en aceras y estaciones. Contrario a Perú.</li>
+</ul></div>
+<div class="note food"><strong>🍽 Platos típicos de Reino Unido:</strong> Fish &amp; Chips · English Breakfast · Sunday Roast · Shepherd's Pie · Bangers &amp; Mash · Scones con té · Pie and Mash.</div>
+</div></details>
+
+<details class="block"><summary>🗣 Cómo se dice</summary><div class="block-body">
+<div class="vocab">
+<div class="v"><b>Por favor</b><i>Please</i><span>pliis</span></div>
+<div class="v"><b>Gracias</b><i>Thank you</i><span>zenk iu</span></div>
+<div class="v"><b>¿Cuánto cuesta?</b><i>How much?</i><span>jao mach</span></div>
+<div class="v"><b>¿Dónde está el baño?</b><i>Where is the toilet?</i><span>wer is de toilet</span></div>
+<div class="v"><b>La cuenta, por favor</b><i>The bill, please</i><span>de bil pliis</span></div>
+<div class="v"><b>Mesa para 5</b><i>Table for five</i><span>teibol for faiv</span></div>
+<div class="v"><b>Agua del grifo (gratis)</b><i>Tap water, please</i><span>tap uoter pliis</span></div>
+<div class="v"><b>Me robaron</b><i>I've been robbed</i><span>aiv bin robd</span></div>
+</div>
+</div></details>
+
+<details class="block"><summary>📸 Fotos que valen la pena</summary><div class="block-body">
+<div class="gal">
+<img src="../img/london1.jpg" alt="Londres" loading="lazy">
+<img src="../img/bigben.jpg" alt="Big Ben" loading="lazy">
+</div>
+</div></details>
+</section>
+
+<section class="screen day" id="dia3" data-day="3" data-date="Martes 6 de octubre" data-short="Londres">
+<div class="hero"><div class="h-n">Día 3 de 19</div><h1>🇬🇧 Londres — Tour + Tarde libre</h1><div class="h-date">Martes 6 de octubre</div><div class="h-meta">🇬🇧 LIBRA £</div></div>
+
+<div class="block"><h2>⏰ El día</h2><div class="block-body">
+<ul class="tl">
+<li><time class="eat">7:30 AM</time><div class="tl-c"><strong>Desayuno</strong><p>En el hotel (incluido).</p></div></li>
+<li><time class="tour">9:00 AM</time><div class="tl-c"><strong>Bus del tour los recoge</strong><p>Del hotel.</p></div></li>
+<li><time class="tour">9:30-12:30</time><div class="tl-c"><strong>TOUR PANORÁMICO INCLUIDO</strong><p>Hyde Park, Piccadilly, Big Ben, Buckingham (cambio de guardia), Westminster. ~3 horas.</p></div></li>
+<li><time>12:30 PM</time><div class="tl-c"><strong>Fin del tour</strong><p>Los dejan en el centro de Londres.</p></div></li>
+<li><time class="free">12:30-8:00 PM</time><div class="tl-c"><strong>TIEMPO LIBRE — ~7.5 HORAS</strong><p>Almuerzo + tour opcional o hacer el recorrido solos (Covent Garden → St. Paul → Tower Bridge).</p></div></li>
+<li><time class="eat">7:00-8:00 PM</time><div class="tl-c"><strong>Cena</strong><p>En Chinatown o cerca del hotel.</p></div></li>
+<li><time>9:00 PM</time><div class="tl-c"><strong>Regreso al hotel</strong><p>Metro o Uber, por su cuenta.</p></div></li>
+</ul>
+</div></div>
+
+<details class="block"><summary>💡 Tips prácticos y dinero</summary><div class="block-body">
+<div class="note save"><strong>✅ INCLUIDO</strong> Tour mañana: Hyde Park, Piccadilly Circus, Big Ben, Buckingham (cambio de guardia), Westminster.</div>
+<div class="note info"><strong>🎟 Opcional — Tour Este de Londres: $73/pp ($365 familia)</strong><br><strong>¿Qué es?</strong> Un guía los lleva en bus y a pie por la zona este de Londres durante 5 horas.<br><strong>¿Qué ven?</strong> Covent Garden (plaza con artistas callejeros y puestos de comida), Catedral de St. Paul (iglesia enorme donde se casó la princesa Diana), Millennium Bridge (puente peatonal que sale en Harry Potter), Borough Market (mercado de comida famoso), Torre de Londres (castillo medieval, solo exterior), Tower Bridge (el puente más famoso de Londres).<br><strong>Ventaja:</strong> El guía les explica la historia de cada lugar en español. No tienen que pensar en cómo llegar.</div>
+<div class="note save"><strong>🚶 Hacerlo solos — Ahorro: $290.</strong> TODOS estos lugares son GRATIS (excepto entrar a St. Paul, £18) y están uno al lado del otro: caminan de uno a otro en 10-15 minutos. Google Maps los guía paso a paso.<ul>
+<li><strong>1:30 PM → Covent Garden:</strong> plaza abierta con artistas, músicos, puestos de comida. Almuerzan aquí ~£8-12/pp.</li>
+<li><strong>2:30 PM → St. Paul:</strong> catedral gigante, exterior gratis, fotos. Si quieren entrar: £18/adulto.</li>
+<li><strong>3:30 PM → Millennium Bridge</strong> (puente peatonal con vista del río) → <strong>Tate Modern</strong> (arte moderno, GRATIS; con 20 min en la sala principal alcanza).</li>
+<li><strong>4:30 PM → Borough Market</strong> (quesos, brownies, pasteles) → <strong>Tower Bridge</strong> (cruzar es gratis).</li>
+</ul><strong>¿Cómo llego?</strong> Metro a estación "Covent Garden" (línea Piccadilly, azul oscuro). Desde ahí todo es a pie.</div>
+<div class="note info"><strong>🤔 MI OPINIÓN:</strong> Háganlo solos. Este recorrido es básicamente caminar por lugares que son gratis y que están pegados uno al otro. NO necesitan guía para esto. Con Google Maps llegan perfecto. Se ahorran $290 y además tienen libertad de quedarse más tiempo donde les guste (Borough Market es genial para comer y pasear). El tour vale la pena cuando hay colas largas o cuando la historia es compleja — aquí no es el caso.</div>
+<div class="note warn"><strong>👥 Multitudes:</strong> Covent Garden y Borough Market populares pero manejables un martes. Tower Bridge: vayan al lado sur para fotos con menos gente.</div>
+<div class="note danger"><strong>🔒 Carteristas:</strong> Oxford Street y metro 5-7 PM. Mochila adelante. Celular con cordón.</div>
+<div class="note info"><strong>🧭 Logística del día</strong><ul>
+<li><strong>Tour de la mañana:</strong> El bus los recoge en el hotel, hace el recorrido panorámico y los deja en el centro (probablemente zona de Westminster/Buckingham). Desde ahí tienen la TARDE LIBRE.</li>
+<li><strong>¿Cómo vuelvo al hotel?</strong> POR SU CUENTA, metro o Uber. Si hacen el tour opcional "Este de Londres", el tour los devuelve al hotel. Recuerden la estación de metro más cercana al hotel.</li>
+<li><strong>Dónde duermen:</strong> Mismo hotel de Londres que ayer.</li>
+<li><strong>Mañana siguiente:</strong> Desayuno temprano. El bus los recoge y salen hacia Dover para tomar el ferry a Francia. EMPACAR TODO — no vuelven a este hotel.</li>
+</ul></div>
+<div class="money"><strong>💰 Llevar: ~£50-70/persona.</strong> Almuerzo (~£10), cena (~£12-15), metro.</div>
+</div></details>
+
+<details class="block"><summary>🎲 Datos curiosos</summary><div class="block-body">
+<div class="note info"><strong>💡 Dato curioso de Londres:</strong> El "Big Ben" no es la torre ni el reloj — es el nombre de la <strong>campana</strong> que está dentro. La torre se llama oficialmente <strong>Elizabeth Tower</strong> desde 2012. La campana pesa 13.7 toneladas y lleva sonando desde 1859. Otro dato: el metro de Londres es el MÁS ANTIGUO del mundo (1863).</div>
+<div class="note food"><strong>🍽 Platos típicos de Reino Unido:</strong> Fish &amp; Chips · English Breakfast · Sunday Roast · Shepherd's Pie · Bangers &amp; Mash · Scones con té · Pie and Mash.</div>
+</div></details>
+
+<details class="block"><summary>🗣 Cómo se dice</summary><div class="block-body">
+<div class="vocab">
+<div class="v"><b>Por favor</b><i>Please</i><span>pliis</span></div>
+<div class="v"><b>Gracias</b><i>Thank you</i><span>zenk iu</span></div>
+<div class="v"><b>¿Cuánto cuesta?</b><i>How much?</i><span>jao mach</span></div>
+<div class="v"><b>¿Dónde está el baño?</b><i>Where is the toilet?</i><span>wer is de toilet</span></div>
+<div class="v"><b>La cuenta, por favor</b><i>The bill, please</i><span>de bil pliis</span></div>
+<div class="v"><b>Agua del grifo (gratis)</b><i>Tap water, please</i><span>tap uoter pliis</span></div>
+<div class="v"><b>Me robaron</b><i>I've been robbed</i><span>aiv bin robd</span></div>
+</div>
+</div></details>
+
+<details class="block"><summary>📸 Fotos que valen la pena</summary><div class="block-body">
+<div class="gal">
+<img src="../img/bigben.jpg" alt="Big Ben" loading="lazy">
+<img src="../img/buckingham.jpg" alt="Buckingham Palace" loading="lazy">
+<img src="../img/westminster.jpg" alt="Westminster Abbey" loading="lazy">
+<img src="../img/hyde_park.jpg" alt="Hyde Park" loading="lazy">
+</div>
+</div></details>
+</section>
+
+<section class="screen day" id="dia4" data-day="4" data-date="Miércoles 7 de octubre" data-short="Ferry→París">
+<div class="hero"><div class="h-n">Día 4 de 19</div><h1>🇬🇧→🇫🇷 Londres → Ferry → París</h1><div class="h-date">Miércoles 7 de octubre</div><div class="h-meta">Traslado 470 km • 💱 CAMBIO: EURO € • €1 ≈ $1.14 ≈ S/3.90</div></div>
+
+<div class="block"><h2>⏰ El día</h2><div class="block-body">
+<ul class="tl">
+<li><time class="eat">7:00 AM</time><div class="tl-c"><strong>Desayuno en el hotel</strong><p>EMPACAR TODO antes.</p></div></li>
+<li><time class="go">8:00 AM</time><div class="tl-c"><strong>Sale el bus del tour hacia Dover</strong><p>~2h de viaje.</p></div></li>
+<li><time class="go">~10:30 AM</time><div class="tl-c"><strong>Llegan al puerto de Dover</strong></div></li>
+<li><time class="go">~12:00 PM</time><div class="tl-c"><strong>Ferry cruza el Canal de la Mancha</strong><p>Hora UK. ~90 min, no 75. Pueden subir a cubierta.</p></div></li>
+<li><time class="go">~2:30 PM</time><div class="tl-c"><strong>Llegan a Calais (Francia)</strong><p>Hora Francia. ⚠️ Francia va <strong>1 hora adelantada</strong> respecto a Inglaterra: adelanten el reloj. Vuelven al bus, salen hacia París (~3h).</p></div></li>
+<li><time class="go">~5:00 PM</time><div class="tl-c"><strong>Llegan al hotel en París</strong><p>Check-in, descanso.</p></div></li>
+<li><time class="free">5:30-8:00 PM</time><div class="tl-c"><strong>TIEMPO LIBRE — 2.5 HORAS</strong><p>Si no hacen el crucero nocturno. Paseo + cena.</p></div></li>
+<li><time class="tour">8:00 PM</time><div class="tl-c"><strong>Si contratan Crucero del Sena</strong><p>El bus los recoge del hotel.</p></div></li>
+<li><time class="tour">8-1 AM</time><div class="tl-c"><strong>Crucero por el Sena + París iluminado</strong><p>Vuelven al hotel ~1 AM.</p></div></li>
+</ul>
+</div></div>
+
+<details class="block"><summary>💡 Tips prácticos y dinero</summary><div class="block-body">
+<div class="note save"><strong>✅ INCLUIDO</strong> Bus a Dover, ferry ~90 min cruzando el Canal de la Mancha a Calais (Francia), bus a París.</div>
+<div class="note warn"><strong>🛂 CONTROL DE FRONTERA + REGISTRO BIOMÉTRICO (EES):</strong> En Dover pasan el control de salida de UK y el de entrada a Francia (Europa). Como es su PRIMERA entrada al espacio Schengen, les tocará el registro biométrico nuevo <strong>EES</strong>: foto + huellas digitales. Es gratis y automático, pero la cola puede demorar más de lo normal. Tengan los 5 pasaportes a la mano y háganle caso al guía del tour — él conoce el proceso. En las siguientes fronteras del viaje ya no hay control (dentro de Schengen no piden pasaporte).</div>
+<div class="note info"><strong>🚢 ¿Qué es un ferry?</strong> Es un barco ENORME donde sube el bus entero con ustedes adentro (o bajan del bus y suben al barco a pie, depende del tour). Tiene varios pisos: cafetería, tienda libre de impuestos, asientos, cubierta abierta (terraza arriba). No es un botecito, es como un edificio flotante. Cruzar de Inglaterra a Francia toma ~90 minutos por el Canal de la Mancha (el mar que separa a los dos países). NO se marean normalmente, el mar es tranquilo.<br><br><strong>Tip importante:</strong> Suban a la cubierta (terraza de arriba, al aire libre) cuando estén saliendo de Dover. Van a ver los famosos <strong>acantilados blancos de Dover</strong> — paredes de roca blanca enormes que se ven desde el mar. Es una imagen icónica. Lleven la chaqueta porque arriba hace viento y frío.</div>
+<div class="note info"><strong>🎟 Opcional — Crucero Sena + París Iluminado: $93/pp ($465 familia)</strong><br><strong>¿Qué es?</strong> Los recogen del hotel en bus. Primero navegan en un barco por el río Sena durante ~1 hora viendo los monumentos iluminados desde el agua. Después el guía los lleva en bus por todo París de noche: Torre Eiffel brillando, Campos Elíseos, Arco del Triunfo, Ópera. Los devuelven al hotel.<br><strong>Duración:</strong> 5 horas (8 PM - 1 AM).<br><strong>Ventaja:</strong> Es su primera noche en París y no conocen nada. Los recogen y devuelven del hotel. Es cómodo, seguro, y París iluminado es genuinamente ESPECTACULAR.</div>
+<div class="note save"><strong>🚶 Solos — Ahorro: $340.</strong> <strong>Bateaux Mouches</strong> hace cruceros turísticos por el Sena: barcos grandes, abiertos, con asientos. Salen <strong>cada 30 minutos entre las 10:00 y las 22:30</strong> desde el <strong>Port de la Conférence, junto al Pont de l'Alma</strong> (cerca de la Torre Eiffel). Cuesta <strong>€20 en taquilla o €17 comprando online</strong> (conviene online, son €3 menos por persona) y dura <strong>~1h10</strong>. NO incluye el recorrido en bus por París, es SOLO el barco.<br><br><strong>Trocadéro:</strong> mirador/plaza FRENTE a la Torre Eiffel, al otro lado del río — el lugar donde todos se toman LA foto. Del muelle del crucero al Trocadéro son ~15 min caminando.<br><br><strong>La Torre brillando:</strong> tiene luces doradas toda la noche, y durante <strong>5 minutos al inicio de CADA hora en punto</strong> BRILLA con luces parpadeantes. Empieza <strong>al anochecer</strong> — en octubre eso es alrededor de las 8 PM a principios de mes y cerca de las 7 PM a fin de mes, así que hay más pases de los que uno cree. Se ve gratis desde cualquier punto de París.</div>
+<div class="note warn"><strong>⚠️ El problema de hacerlo solos:</strong> Ese día vienen de Londres (bus + ferry + bus). Van a estar CANSADOS. Si encima tienen que buscar el muelle solos en una ciudad que no conocen, de noche, comprar tickets, y luego caminar de vuelta o buscar metro/Uber… puede ser estresante y agotador para la primera noche.</div>
+<div class="note info"><strong>🤔 MI OPINIÓN:</strong> Este es de los pocos tours que SÍ les recomiendo contratar. Razones: (1) Es su PRIMERA noche en París, no conocen nada, (2) vienen agotados de un día de viaje largo, (3) París de noche es una experiencia única y el tour la hace cómoda y segura, (4) no quieren estar buscando cómo volver al hotel a la 1 AM en una ciudad desconocida. Los $465 suenan mucho pero es una noche que van a recordar para siempre. Si de todas formas quieren ahorrar, mejor descansen esa noche y hagan el crucero por su cuenta OTRO día libre — pero no tienen otro día libre en París por la noche.</div>
+<div class="note info"><strong>🧭 Logística del día</strong><ul>
+<li><strong>Cómo viajan:</strong> Bus del tour todo el día: Londres → Dover → ferry → Calais → París. Ustedes NO manejan nada.</li>
+<li><strong>Ferry:</strong> El bus sube al ferry o bajan y suben al barco a pie. Cruzan en ~90 min (P&amp;O e Irish Ferries tardan 90; DFDS, 100). <strong>Ojo:</strong> al desembarcar en Francia el reloj va 1 hora adelante.</li>
+<li><strong>Dónde duermen:</strong> Hotel en zona de París (probablemente periferia), conectado por metro/RER. Pregunten al guía cómo volver si salen por su cuenta.</li>
+<li><strong>Crucero nocturno:</strong> Si lo contratan, los recogen y devuelven al hotel (~1 AM). Si NO, la noche es libre y cenan por el barrio del hotel.</li>
+<li><strong>Mañana siguiente:</strong> Desayuno en hotel. Bus los recoge para el tour panorámico de París.</li>
+</ul></div>
+<div class="money"><strong>💰 Llevar: ~€30-40/persona.</strong> Día de traslado. Si hacen el crucero del tour: ya pagado.</div>
+</div></details>
+
+<details class="block"><summary>🗣 Cómo se dice</summary><div class="block-body">
+<div class="vocab">
+<div class="v"><b>Buen día (DECIR AL ENTRAR a tiendas)</b><i>Bonjour</i><span>bon-YUUR</span></div>
+<div class="v"><b>Por favor</b><i>S'il vous plaît</i><span>sil vu PLÉ</span></div>
+<div class="v"><b>Gracias</b><i>Merci</i><span>mer-SÍ</span></div>
+<div class="v"><b>No, gracias</b><i>Non, merci</i><span>non, mer-SÍ</span></div>
+<div class="v"><b>¿Cuánto cuesta?</b><i>Combien?</i><span>combién?</span></div>
+<div class="v"><b>Déjeme en paz</b><i>Laissez-moi tranquille</i><span>lesé-muá tran-KÍL</span></div>
+</div>
+</div></details>
+
+<details class="block"><summary>📸 Fotos que valen la pena</summary><div class="block-body">
+<div class="shots">
+<div class="shot"><b>Acantilados blancos de Dover:</b> desde la cubierta del ferry al salir del puerto. Lleven chaqueta, arriba hace viento.</div>
+</div>
+<div class="gal">
+<img src="../img/ferry_dover.jpg" alt="Acantilados de Dover" loading="lazy">
+<img src="../img/seine.jpg" alt="Río Sena" loading="lazy">
+<img src="../img/paris1.jpg" alt="París" loading="lazy">
+</div>
+</div></details>
+</section>
+
+<section class="screen day" id="dia5" data-day="5" data-date="Jueves 8 de octubre" data-short="París">
+<div class="hero"><div class="h-n">Día 5 de 19</div><h1>🇫🇷 París — Tour + Montmartre</h1><div class="h-date">Jueves 8 de octubre</div><div class="h-meta">🇪🇺 EURO €</div></div>
+
+<div class="block"><h2>⏰ El día</h2><div class="block-body">
+<ul class="tl">
+<li><time class="eat">7:30 AM</time><div class="tl-c"><strong>Desayuno</strong><p>En el hotel.</p></div></li>
+<li><time class="tour">9:00 AM</time><div class="tl-c"><strong>Bus del tour los recoge</strong><p>Del hotel.</p></div></li>
+<li><time class="tour">9:30-12:30</time><div class="tl-c"><strong>TOUR PANORÁMICO INCLUIDO</strong><p>Campos Elíseos, Torre Eiffel, avenidas, monumentos. ~3 horas.</p></div></li>
+<li><time>12:30 PM</time><div class="tl-c"><strong>Fin del tour</strong><p>En el centro de París.</p></div></li>
+<li><time class="free">12:30-8:00 PM</time><div class="tl-c"><strong>TIEMPO LIBRE — ~7.5 HORAS</strong><p>Almuerzo + tour Montmartre (opcional) o hacerlo solos (Sacré-Cœur → Barrio Latino → Notre Dame).</p></div></li>
+<li><time class="eat">7:30 PM</time><div class="tl-c"><strong>Cena</strong><p>En restaurante del Barrio Latino o cerca del hotel.</p></div></li>
+<li><time>9:30 PM</time><div class="tl-c"><strong>Regreso al hotel</strong><p>Por su cuenta en metro.</p></div></li>
+</ul>
+</div></div>
+
+<details class="block"><summary>💡 Tips prácticos y dinero</summary><div class="block-body">
+<div class="note save"><strong>✅ INCLUIDO</strong> Tour mañana: Campos Elíseos, Torre Eiffel, etc.</div>
+<div class="note info"><strong>🎟 Opcional — Montmartre + Barrio Latino + Notre Dame: $78/pp ($390 familia)</strong><br><strong>¿Qué es?</strong> Un guía los lleva durante 5 horas por 3 barrios famosos de París.<br><strong>¿Qué ven?</strong> Montmartre (barrio bohemio en una colina, artistas pintando), Sacré-Cœur (iglesia blanca enorme en la cima), Barrio Latino (zona de estudiantes, callejuelas con restaurantes), Notre Dame (la catedral famosa que se incendió en 2019 y ya reabrió).<br><strong>Ventaja:</strong> El guía explica historia y anécdotas.</div>
+<div class="note save"><strong>🚶 Hacerlo solos — Ahorro: $320.</strong> Estos son barrios para CAMINAR y DISFRUTAR a su ritmo. No hay entradas que comprar (todo es gratis).<br><strong>Montmartre:</strong> barrio en una colina, calles empinadas con cafés, artistas pintando retratos en la Place du Tertre, y en la cima el Sacré-Cœur — iglesia blanca gigante con la MEJOR vista panorámica de París. Entrar es GRATIS.<br><strong>Barrio Latino:</strong> restaurantes baratos, librerías, vida universitaria. La "Rue Mouffetard" tiene mercado callejero con quesos, frutas, crêpes.<br><strong>Notre Dame:</strong> se incendió en 2019 pero ya reabrió restaurada (diciembre 2024).<ul>
+<li><strong>1 PM →</strong> Metro a "Anvers" → subir la colina a pie o en funicular (ascensor inclinado, cuesta 1 ticket de metro) → Sacré-Cœur (entren, es gratis y hermoso por dentro).</li>
+<li><strong>2 PM →</strong> Place du Tertre (los artistas; un retrato cuesta ~€20-50).</li>
+<li><strong>2:30 PM →</strong> Almuerzo: una crêpe (panqueque francés con jamón+queso o Nutella+banana, ~€5) en puesto callejero.</li>
+<li><strong>3:30 PM →</strong> Metro a "Maubert-Mutualité" → caminar por Rue Mouffetard.</li>
+<li><strong>5 PM →</strong> Caminar a Notre Dame (~10 min) → <strong>verla por fuera</strong>: fachada desde la explanada, y rodearla hasta el Pont de l'Archevêché para la foto de los arbotantes. Sin colas, sin reservas, sin gastar nada.</li>
+</ul></div>
+<div class="note save"><strong>✅ DECIDIDO EN FAMILIA: Notre Dame la ven SOLO POR FUERA. No van a entrar.</strong> Y está perfectamente bien — por fuera es donde está lo impresionante: la fachada con las torres gemelas, el rosetón, las gárgolas y los arbotantes de la parte de atrás. Entrar significa cola y tiempo que prefieren usar en otra cosa.<br><br><strong>Los mejores ángulos, ya que no entran:</strong> la fachada principal desde el <strong>parvis</strong> (la explanada de adelante), y sobre todo la parte trasera desde el <strong>Pont de l'Archevêché</strong> o los jardines del <strong>Square Jean XXIII</strong>, donde se ven los arbotantes y la aguja reconstruida. Al atardecer la piedra se pone dorada.<br><br>(Dato por si cambian de opinión estando allá: entrar es gratis y no hace falta reserva; si quisieran reservar, los cupos se abren solo unas horas antes y hay que hacerlo desde el celular esa misma mañana, nunca desde Perú con anticipación.)</div>
+<div class="note info"><strong>🤔 MI OPINIÓN:</strong> Háganlo solos. Estos barrios son para PASEAR, sentarse en un café, comer una crêpe, ver artistas, dar la vuelta a Notre Dame sin apuro. Un tour grupal los apura: "vamos, vamos, siguiente parada". Pierden lo mejor que es el ambiente. Con Google Maps van de un punto a otro sin problema. Se ahorran $320 y disfrutan MÁS. Lo único que pierden es la explicación histórica del guía, pero pueden leer sobre Notre Dame en Wikipedia 5 minutos antes de entrar y listo.</div>
+<div class="note danger"><strong>⚠️ ESTAFA: Pulseras en Montmartre.</strong> 📍 Escaleras del Sacré-Cœur. Hombres atan pulseras en la muñeca MUY rápido. Luego exigen €10-20.<br>🛡️ Manos en bolsillos. "NON" fuerte. NO extiendan la mano.</div>
+<div class="note danger"><strong>⚠️ ESTAFA: Peticiones falsas.</strong> 📍 Sacré-Cœur, Ópera. Jóvenes con clipboard piden firmar "petición". Mientras firman, cómplice roba del bolsillo.<br>🛡️ NO firmen NADA en la calle. "Non, merci" sin detenerse.</div>
+<div class="note info"><strong>🧭 Logística del día</strong><ul>
+<li><strong>Tour mañana:</strong> Bus los recoge del hotel, tour panorámico, los deja en el centro de París. Desde ahí TARDE LIBRE.</li>
+<li><strong>¿Cómo vuelvo?</strong> Si hacen el tour de Montmartre: los devuelven al hotel. Si lo hacen solos: metro de vuelta. Usen Google Maps con la dirección del hotel.</li>
+<li><strong>Dónde duermen:</strong> Mismo hotel en París (3 noches seguidas: Días 4, 5 y 6).</li>
+<li><strong>Mañana siguiente:</strong> Desayuno. Si contratan Versalles, salen del hotel a las 8:30 AM. Si no, día libre en París.</li>
+</ul></div>
+<div class="money"><strong>💰 Llevar: ~€50-60/persona.</strong> Almuerzo (~€6), cena menú del día (~€13), metro.</div>
+</div></details>
+
+<details class="block"><summary>🎲 Datos curiosos</summary><div class="block-body">
+<div class="note info"><strong>💡 Dato curioso de París:</strong> La Torre Eiffel iba a ser DESMONTADA 20 años después de construirla (1889). La salvaron porque sirvió como antena de radio. Hoy le cambian la pintura cada 7 años y usan <strong>60 toneladas de pintura</strong> cada vez. En verano la torre CRECE 15 cm por la dilatación del metal. Los parisinos la odiaban cuando se construyó, ahora es el símbolo del país.</div>
+<div class="note warn"><strong>🎭 Etiqueta francesa — crítico para que los atiendan bien</strong><ul>
+<li><strong>SIEMPRE digan "Bonjour"</strong> al entrar a cualquier tienda, restaurante o taxi. Sin eso, te atienden mal o te ignoran. Es casi obligatorio.</li>
+<li><strong>Al salir:</strong> "Au revoir" (o-revuar). Es de buena educación.</li>
+<li><strong>No pidan ketchup con papas fritas.</strong> Los franceses lo consideran una ofensa culinaria.</li>
+<li><strong>Coman despacio.</strong> Las comidas son sociales, no para apurarse.</li>
+<li><strong>Propina:</strong> No es obligatoria pero 5-10% si el servicio fue bueno.</li>
+<li><strong>Hablen bajo</strong> en restaurantes. Hablar fuerte es de mala educación.</li>
+</ul></div>
+<div class="note food"><strong>🍽 Platos típicos franceses:</strong> Croissant · Baguette · Crêpe · Jambon-beurre · Escargots · Coq au vin · Ratatouille · Macarons · Quiche Lorraine.</div>
+</div></details>
+
+<details class="block"><summary>🗣 Cómo se dice</summary><div class="block-body">
+<div class="vocab">
+<div class="v"><b>Buen día (OBLIGATORIO)</b><i>Bonjour</i><span>bon-YUR</span></div>
+<div class="v"><b>Adiós</b><i>Au revoir</i><span>o-re-VUAR</span></div>
+<div class="v"><b>Por favor</b><i>S'il vous plaît</i><span>sil vu PLÉ</span></div>
+<div class="v"><b>Gracias</b><i>Merci</i><span>mer-SÍ</span></div>
+<div class="v"><b>No, gracias</b><i>Non, merci</i><span>non mer-SÍ</span></div>
+<div class="v"><b>¿Habla español?</b><i>Parlez-vous espagnol?</i><span>parle-VÚ españól</span></div>
+<div class="v"><b>¿Cuánto cuesta?</b><i>Combien?</i><span>com-BIEN</span></div>
+<div class="v"><b>La cuenta</b><i>L'addition</i><span>la-di-SION</span></div>
+<div class="v"><b>¿Dónde está el baño?</b><i>Où sont les toilettes?</i><span>u son le tua-LET</span></div>
+<div class="v"><b>Déjeme en paz</b><i>Laissez-moi tranquille</i><span>le-SÉ muá tran-KÍL</span></div>
+</div>
+</div></details>
+
+<details class="block"><summary>📸 Fotos que valen la pena</summary><div class="block-body">
+<div class="shots">
+<div class="shot"><b>Trocadéro:</b> clásica foto frontal con la Torre Eiffel centrada. Al atardecer (cuando se enciende) es MÁGICO.</div>
+<div class="shot"><b>Sacré-Cœur:</b> panorámica de todo París a sus espaldas desde las escaleras.</div>
+<div class="shot"><b>Place du Tertre (Montmartre):</b> rodeados de artistas pintando, con calle empedrada.</div>
+<div class="shot"><b>Notre Dame:</b> con las torres góticas detrás.</div>
+<div class="shot"><b>Pont Alexandre III:</b> el puente más bonito de París, con lámparas doradas.</div>
+<div class="shot"><b>Truco:</b> Para la Torre Eiffel, usen la pose de "sostener la torre con la mano" (cámara baja, mano arriba).</div>
+</div>
+<div class="gal">
+<img src="../img/eiffel.jpg" alt="Torre Eiffel" loading="lazy">
+<img src="../img/champs_elysees.jpg" alt="Campos Elíseos" loading="lazy">
+<img src="../img/arc_triomphe.jpg" alt="Arco del Triunfo" loading="lazy">
+<img src="../img/montmartre.jpg" alt="Montmartre" loading="lazy">
+</div>
+</div></details>
+</section>
+
+<section class="screen day" id="dia6" data-day="6" data-date="Viernes 9 de octubre" data-short="Versalles">
+<div class="hero"><div class="h-n">Día 6 de 19</div><h1>🇫🇷 París — Versalles + tarde libre</h1><div class="h-date">Viernes 9 de octubre</div><div class="h-meta">🇪🇺 EURO € · Última noche en París</div></div>
+
+<div class="block"><h2>⏰ El día</h2><div class="block-body">
+<ul class="tl">
+<li><time class="eat">7:00 AM</time><div class="tl-c"><strong>Desayuno</strong><p>Temprano en el hotel.</p></div></li>
+<li><time class="tour">8:30 AM</time><div class="tl-c"><strong>Si contratan Versalles</strong><p>El bus los recoge del hotel.</p></div></li>
+<li><time class="tour">9:30 AM-1:30 PM</time><div class="tl-c"><strong>EXCURSIÓN VERSALLES</strong><p>Visita al palacio + jardines con guía. Skip-the-line incluido.</p></div></li>
+<li><time>2:00 PM</time><div class="tl-c"><strong>Fin de Versalles</strong><p>Los dejan en el centro de París o en el hotel (eligen ustedes).</p></div></li>
+<li><time class="free">2:00-8:00 PM</time><div class="tl-c"><strong>TARDE LIBRE — 6 HORAS</strong><p>Almuerzo → Trocadéro (foto Torre Eiffel) → compras Primark / Galeries Lafayette.</p></div></li>
+<li><time class="eat">7:30 PM</time><div class="tl-c"><strong>Cena</strong><p>Por su cuenta.</p></div></li>
+<li><time>9:00 PM</time><div class="tl-c"><strong>Regreso al hotel</strong><p>Mañana EMPACAR TODO (salen hacia Frankfurt).</p></div></li>
+</ul>
+<div class="gal">
+<img src="../img/versailles.jpg" alt="Palacio de Versalles" loading="lazy">
+<img src="../img/eiffel.jpg" alt="Torre Eiffel" loading="lazy">
+</div>
+</div></div>
+
+<details class="block"><summary>💡 Tips prácticos y dinero</summary><div class="block-body">
+<div class="note save"><strong>✅ CONTRATAR — Versalles $114/pp ($570).</strong> 8:30 AM-2 PM. Sin cola + guía + transporte. Solos: 2-3 HORAS de cola. Vale cada centavo.</div>
+<div class="note info"><strong>¿Aburrido?</strong> PARA NADA. El Salón de los Espejos (357 espejos) es impresionante. Los jardines son ENORMES. Con guía la historia cobra vida. 5h pasan volando.</div>
+<div class="note info"><strong>🕐 2:30 PM — Tarde libre.</strong><br>3 PM → Almuerzo boulangerie: baguette €4 + croissant €1.50<br>4 PM → <strong>Trocadéro</strong> = MEJOR foto Torre Eiffel (metro línea 6)<br>5 PM → <strong>Primark Rue de Rivoli</strong> (ropa barata) o <strong>Galeries Lafayette</strong> (cúpula de vidrio gratis, terraza con vista)</div>
+<div class="money"><strong>💰 Llevar: ~€40-50/persona.</strong> Versalles ya pagado. Almuerzo, metro, alguna compra.</div>
+<div class="note info"><strong>🧭 Logística del día</strong>
+<ul>
+<li><strong>🚌 Versalles:</strong> el tour los recoge del hotel a las 8:30 AM, los lleva a Versalles (~45 min), los trae de vuelta a París centro ~2 PM. Desde ahí TARDE LIBRE.</li>
+<li><strong>🔙 ¿Cómo vuelvo?</strong> Por su cuenta en metro. Aprovechan la tarde para pasear y vuelven al hotel para cenar.</li>
+<li><strong>🏨 Dónde duermen:</strong> mismo hotel en París (última noche aquí).</li>
+<li><strong>📍 Mañana siguiente:</strong> desayuno TEMPRANO. EMPACAR TODO — no vuelven a este hotel. Bus del tour los recoge para salir hacia Luxemburgo. Día largo de ruta (607 km).</li>
+</ul></div>
+</div></details>
+
+<details class="block"><summary>🎲 Datos curiosos</summary><div class="block-body">
+<p>La Torre Eiffel iba a ser DESMONTADA 20 años después de construirla (1889). La salvaron porque sirvió como antena de radio. Hoy le cambian la pintura cada 7 años y usan <strong>60 toneladas de pintura</strong> cada vez. En verano la torre CRECE 15 cm por la dilatación del metal. Los parisinos la odiaban cuando se construyó, ahora es el símbolo del país.</p>
+<div class="note info"><strong>🎭 Etiqueta francesa — crítico para que los atiendan bien</strong>
+<ul>
+<li><strong>SIEMPRE digan "Bonjour"</strong> al entrar a cualquier tienda, restaurante o taxi. Sin eso, te atienden mal o te ignoran. Es casi obligatorio.</li>
+<li><strong>Al salir:</strong> "Au revoir" (o-revuar). Es de buena educación.</li>
+<li><strong>No pidan ketchup con papas fritas.</strong> Los franceses lo consideran una ofensa culinaria.</li>
+<li><strong>Coman despacio.</strong> Las comidas son sociales, no para apurarse.</li>
+<li><strong>Propina:</strong> no es obligatoria pero 5-10% si el servicio fue bueno.</li>
+<li><strong>Hablen bajo</strong> en restaurantes. Hablar fuerte es de mala educación.</li>
+</ul></div>
+<div class="note food"><strong>🍽 Platos típicos franceses:</strong> Croissant · Baguette · Crêpe · Jambon-beurre · Escargots · Coq au vin · Ratatouille · Macarons · Quiche Lorraine</div>
+</div></details>
+
+<details class="block"><summary>🗣 Cómo se dice</summary><div class="block-body"><div class="vocab">
+<div class="v"><b>Buen día (OBLIGATORIO)</b><i>Bonjour</i><span>bon-YUR</span></div>
+<div class="v"><b>Adiós</b><i>Au revoir</i><span>o-re-VUAR</span></div>
+<div class="v"><b>Por favor</b><i>S'il vous plaît</i><span>sil vu PLÉ</span></div>
+<div class="v"><b>Gracias</b><i>Merci</i><span>mer-SÍ</span></div>
+<div class="v"><b>No, gracias</b><i>Non, merci</i><span>non mer-SÍ</span></div>
+<div class="v"><b>¿Habla español?</b><i>Parlez-vous espagnol?</i><span>parle-VÚ españól</span></div>
+<div class="v"><b>¿Cuánto cuesta?</b><i>Combien?</i><span>com-BIEN</span></div>
+<div class="v"><b>La cuenta</b><i>L'addition</i><span>la-di-SION</span></div>
+<div class="v"><b>¿Dónde está el baño?</b><i>Où sont les toilettes?</i><span>u son le tua-LET</span></div>
+<div class="v"><b>Déjeme en paz</b><i>Laissez-moi tranquille</i><span>le-SÉ muá tran-KÍL</span></div>
+</div></div></details>
+
+<details class="block"><summary>📸 Fotos que valen la pena</summary><div class="block-body"><div class="shots">
+<div class="shot"><b>Trocadéro:</b> clásica foto frontal con la Torre Eiffel centrada. Al atardecer (cuando se enciende) es MÁGICO.</div>
+<div class="shot"><b>Pont Alexandre III:</b> el puente más bonito de París, con lámparas doradas.</div>
+<div class="shot"><b>Truco:</b> para la Torre Eiffel, usen la pose de "sostener la torre con la mano" (cámara baja, mano arriba).</div>
+</div></div></details>
+</section>
+
+<section class="screen day" id="dia7" data-day="7" data-date="Sábado 10 de octubre" data-short="Rin y Frankfurt">
+<div class="hero"><div class="h-n">Día 7 de 19</div><h1>🇫🇷→🇱🇺→🇩🇪 París → Luxemburgo → Valle del Rin → Frankfurt</h1><div class="h-date">Sábado 10 de octubre</div><div class="h-meta">607 km · 🇪🇺 EURO €</div></div>
+
+<div class="block"><h2>⏰ El día</h2><div class="block-body">
+<ul class="tl">
+<li><time class="eat">6:30 AM</time><div class="tl-c"><strong>Desayuno TEMPRANO</strong><p>+ EMPACAR TODO.</p></div></li>
+<li><time class="go">7:30 AM</time><div class="tl-c"><strong>Sale el bus</strong><p>Hacia Luxemburgo (~4h).</p></div></li>
+<li><time class="free">~12:00 PM</time><div class="tl-c"><strong>Parada Luxemburgo — ~1.5 HORAS libres</strong><p>Paseo + almuerzo rápido.</p></div></li>
+<li><time class="go">1:30 PM</time><div class="tl-c"><strong>Bus hacia Valle del Rin</strong></div></li>
+<li><time>3:00-5:00 PM</time><div class="tl-c"><strong>Valle del Rin (desde el bus)</strong><p>Castillos medievales + Roca de Loreley.</p></div></li>
+<li><time class="go">~7:00 PM</time><div class="tl-c"><strong>Llegan a Frankfurt</strong><p>Check-in hotel.</p></div></li>
+<li><time class="eat">8:00 PM</time><div class="tl-c"><strong>Cena</strong><p>Cerca del hotel.</p></div></li>
+</ul>
+<div class="gal">
+<img src="../img/luxembourg.jpg" alt="Luxemburgo" loading="lazy">
+<img src="../img/rhine.jpg" alt="Valle del Rin" loading="lazy">
+<img src="../img/loreley.jpg" alt="Roca de Loreley" loading="lazy">
+<img src="../img/frankfurt.jpg" alt="Frankfurt" loading="lazy">
+</div>
+</div></div>
+
+<details class="block"><summary>💡 Tips prácticos y dinero</summary><div class="block-body">
+<div class="note save"><strong>✅ INCLUIDO:</strong> Luxemburgo (tiempo libre) + Valle del Rin (castillos desde bus) + Frankfurt.</div>
+<div class="note info"><strong>¿Aburrido?</strong> El Valle del Rin se ve desde el bus — castillos sobre colinas con viñedos. Bonito pero es ventana. Luxemburgo es parada corta. Si les gusta naturaleza, disfruten. Si no, buena siesta.</div>
+<div class="note info"><strong>🎭 Etiqueta alemana — puntualidad obsesiva</strong>
+<ul>
+<li><strong>PUNTUALIDAD EXTREMA.</strong> Si el bus sale a las 7:30, llega a las 7:25. Llegar tarde es ofensa grave.</li>
+<li><strong>Respeten los semáforos peatonales.</strong> Cruzar en rojo está muy mal visto.</li>
+<li><strong>No hablen alto</strong> en transporte público o restaurantes.</li>
+<li><strong>Propina:</strong> 5-10%. Al pagar digan el total redondeado.</li>
+<li><strong>Saludar al entrar:</strong> "Guten Tag" en tiendas.</li>
+</ul></div>
+<div class="note food"><strong>🍽 Platos típicos alemanes:</strong> Bratwurst · Currywurst · Schnitzel · Döner Kebab · Pretzel · Sauerkraut · Apfelstrudel</div>
+<div class="money"><strong>💰 Llevar: ~€30-40/persona.</strong> Traslado. Cena Frankfurt: Döner Kebab €5-7 (sándwich grande de carne, los MEJORES de Europa) o Currywurst €3-5.</div>
+<div class="note info"><strong>🧭 Logística del día</strong>
+<ul>
+<li><strong>🚌 Cómo viajan:</strong> bus del tour TODO el día. París → Luxemburgo (parada ~1h libre) → Valle del Rin (vistas desde el bus, no bajan) → Frankfurt. Ustedes solo se suben al bus.</li>
+<li><strong>🏨 Dónde duermen:</strong> hotel en zona de Frankfurt (1 noche). Llegan al atardecer. Cenan por el barrio del hotel o piden al guía recomendaciones cercanas.</li>
+<li><strong>📍 Mañana siguiente:</strong> desayuno. EMPACAR TODO. Bus sale hacia Heidelberg → Selva Negra → Zurich. Otro día largo de ruta.</li>
+</ul></div>
+</div></details>
+
+<details class="block"><summary>🎲 Datos curiosos</summary><div class="block-body">
+<p><strong>Luxemburgo</strong> es el único Gran Ducado del mundo. Fue el PRIMER país en tener transporte público 100% gratis (2020). Hablan 3 idiomas oficiales.</p>
+<p><strong>Loreley:</strong> según la leyenda, una sirena cantaba desde esta roca (132 m de altura) y distraía a los marineros que chocaban con las rocas del Rin.</p>
+<p><strong>Frankfurt:</strong> es la capital financiera de Europa. Aquí está el Banco Central Europeo.</p>
+</div></details>
+
+<details class="block"><summary>🗣 Cómo se dice</summary><div class="block-body"><div class="vocab">
+<div class="v"><b>Hola</b><i>Hallo</i><span>JA-lo</span></div>
+<div class="v"><b>Buenos días</b><i>Guten Tag</i><span>guten TAG</span></div>
+<div class="v"><b>Gracias</b><i>Danke</i><span>DAN-ke</span></div>
+<div class="v"><b>Por favor</b><i>Bitte</i><span>BI-te</span></div>
+<div class="v"><b>¿Habla inglés?</b><i>Sprechen Sie Englisch?</i><span>SHPRÉJEN si ÍNGLISH</span></div>
+<div class="v"><b>¿Cuánto cuesta?</b><i>Wie viel?</i><span>vi FIL</span></div>
+<div class="v"><b>¿Dónde está el baño?</b><i>Wo ist die Toilette?</i><span>vo ist di tua-LE-te</span></div>
+<div class="v"><b>¡Ayuda!</b><i>Hilfe!</i><span>JÍL-fe</span></div>
+</div>
+<p>Casi todos los alemanes jóvenes hablan inglés. Pregunten: "Do you speak English?"</p>
+</div></details>
+</section>
+
+<section class="screen day" id="dia8" data-day="8" data-date="Domingo 11 de octubre" data-short="Selva Negra">
+<div class="hero"><div class="h-n">Día 8 de 19</div><h1>🇩🇪→🇨🇭 Frankfurt → Heidelberg → Selva Negra → Zurich</h1><div class="h-date">Domingo 11 de octubre</div><div class="h-meta">422 km · 💱 CAMBIO: FRANCO SUIZO CHF · CHF 1 ≈ $1.24 ≈ S/4.20</div></div>
+
+<div class="block"><h2>⏰ El día</h2><div class="block-body">
+<ul class="tl">
+<li><time class="eat">7:00 AM</time><div class="tl-c"><strong>Desayuno</strong><p>+ EMPACAR TODO.</p></div></li>
+<li><time class="go">8:00 AM</time><div class="tl-c"><strong>Sale el bus</strong><p>Hacia Heidelberg (~1h).</p></div></li>
+<li><time class="free">~9:30 AM</time><div class="tl-c"><strong>Heidelberg — ~1-1.5 HORAS libres</strong><p>Puente viejo + casco histórico.</p></div></li>
+<li><time class="go">11:00 AM</time><div class="tl-c"><strong>Bus hacia Titisee (Selva Negra)</strong><p>~2.5h.</p></div></li>
+<li><time class="free">~1:30 PM</time><div class="tl-c"><strong>Titisee — ~1.5 HORAS libres</strong><p>Lago + almuerzo + probar tarta Selva Negra (€5).</p></div></li>
+<li><time class="go">3:00 PM</time><div class="tl-c"><strong>Bus hacia Cataratas del Rin</strong></div></li>
+<li><time>~4:00 PM</time><div class="tl-c"><strong>Cataratas del Rin — ~30 min parada</strong><p>Fotos.</p></div></li>
+<li><time class="go">~6:00 PM</time><div class="tl-c"><strong>Llegan a Zurich</strong><p>Check-in hotel. ¡SUIZA = CARÍSIMO!</p></div></li>
+<li><time class="eat">7:30 PM</time><div class="tl-c"><strong>Cena</strong><p>Comprar en supermercado Migros/Coop, NO restaurante.</p></div></li>
+</ul>
+<div class="gal">
+<img src="../img/heidelberg.jpg" alt="Heidelberg" loading="lazy">
+<img src="../img/titisee.jpg" alt="Titisee - Selva Negra" loading="lazy">
+<img src="../img/rhine_falls.jpg" alt="Cataratas del Rin" loading="lazy">
+<img src="../img/zurich.jpg" alt="Zurich" loading="lazy">
+</div>
+</div></div>
+
+<details class="block"><summary>💡 Tips prácticos y dinero</summary><div class="block-body">
+<div class="note save"><strong>✅ INCLUIDO:</strong> Heidelberg + Titisee (Selva Negra) + Cataratas del Rin + Zurich.</div>
+<div class="note info"><strong>¿Aburrido?</strong> NO. Día variado: ciudad bonita + lago en bosque + cascadas enormes. Paradas cortas 30-60 min.</div>
+<div class="note warn"><strong>🚨 SUIZA ES CARÍSIMA.</strong> Café CHF 5-6 (~$6). Comida en restaurante CHF 25-40/pp. Compren en supermercados <strong>Migros</strong> o <strong>Coop</strong> (comida preparada CHF 8-12). Coman fuerte en desayuno del hotel.</div>
+<div class="note warn"><strong>⚠️ ESTE DÍA ES DOMINGO:</strong> en Alemania y Suiza las tiendas y supermercados normales CIERRAN los domingos. Las que SÍ abren: tiendas turísticas de la Selva Negra (Titisee), y en Zurich los supermercados de la <strong>estación central de tren (Hauptbahnhof)</strong> y gasolineras. Para la cena en Zurich: vayan al Migros/Coop de la estación Hauptbahnhof, que abre todos los días.</div>
+<div class="money"><strong>💰 Llevar: ~€30 para Alemania + ~CHF 20-30 para Suiza.</strong> Mínimo gasto en Suiza.</div>
+<div class="note info"><strong>🧭 Logística del día</strong>
+<ul>
+<li><strong>🚌 Cómo viajan:</strong> bus del tour todo el día. Frankfurt → Heidelberg (parada ~1h) → Titisee/Selva Negra (parada ~45min) → Cataratas del Rin (parada breve) → Zurich.</li>
+<li><strong>💱 Cambio de moneda:</strong> empiezan con EUROS en Alemania. Al cruzar a Suiza cambian a FRANCOS SUIZOS (CHF). Muchos lugares en Suiza aceptan euros pero les dan cambio en francos, así que mejor paguen con tarjeta.</li>
+<li><strong>🏨 Dónde duermen:</strong> hotel en zona de Zurich (1 noche).</li>
+<li><strong>📍 Mañana siguiente:</strong> desayuno. EMPACAR. Bus a Lucerna → Monte Titlis → Vaduz → Munich.</li>
+</ul></div>
+</div></details>
+
+<details class="block"><summary>🗣 Cómo se dice</summary><div class="block-body"><div class="vocab">
+<div class="v"><b>Hola</b><i>Hallo</i><span>JA-lo</span></div>
+<div class="v"><b>Buenos días</b><i>Guten Tag</i><span>guten TAG</span></div>
+<div class="v"><b>Gracias</b><i>Danke</i><span>DAN-ke</span></div>
+<div class="v"><b>Por favor</b><i>Bitte</i><span>BI-te</span></div>
+<div class="v"><b>¿Habla inglés?</b><i>Sprechen Sie Englisch?</i><span>SHPRÉJEN si ÍNGLISH</span></div>
+<div class="v"><b>¿Cuánto cuesta?</b><i>Wie viel?</i><span>vi FIL</span></div>
+<div class="v"><b>¿Dónde está el baño?</b><i>Wo ist die Toilette?</i><span>vo ist di tua-LE-te</span></div>
+<div class="v"><b>¡Ayuda!</b><i>Hilfe!</i><span>JÍL-fe</span></div>
+</div>
+<p>Casi todos los alemanes jóvenes hablan inglés. Pregunten: "Do you speak English?"</p>
+</div></details>
+</section>
+
+<section class="screen day" id="dia9" data-day="9" data-date="Lunes 12 de octubre" data-short="Titlis">
+<div class="hero"><div class="h-n">Día 9 de 19</div><h1>🇨🇭→🇱🇮→🇩🇪 Zurich → Lucerna → Titlis → Vaduz → Munich</h1><div class="h-date">Lunes 12 de octubre</div><div class="h-meta">423 km · 🇨🇭 CHF mañana → 🇪🇺 € tarde (Alemania)</div></div>
+
+<div class="block"><h2>⏰ El día</h2><div class="block-body">
+<ul class="tl">
+<li><time class="eat">7:00 AM</time><div class="tl-c"><strong>Desayuno</strong><p>+ EMPACAR TODO.</p></div></li>
+<li><time class="go">8:00 AM</time><div class="tl-c"><strong>Sale el bus</strong><p>Hacia Lucerna (~1h).</p></div></li>
+<li><time>9:30 AM</time><div class="tl-c"><strong>Llegan a Lucerna</strong></div></li>
+<li><time class="tour">10:00 AM-2:00 PM</time><div class="tl-c"><strong>EXCURSIÓN MONTE TITLIS (si la contratan)</strong><p>Teleférico a Klein Titlis (3.020 m) + cueva de hielo + Cliff Walk. ~4 horas. ⚠️ ver aviso del Rotair abajo.</p></div></li>
+<li><time class="free">10:00 AM-2:00 PM</time><div class="tl-c"><strong>SI NO van a Titlis: 4 HORAS libres en Lucerna</strong><p>Puente Capilla + León + paseo lago.</p></div></li>
+<li><time class="go">2:30 PM</time><div class="tl-c"><strong>Bus hacia Vaduz (Liechtenstein)</strong><p>~1.5h.</p></div></li>
+<li><time>~4:00 PM</time><div class="tl-c"><strong>Vaduz — ~30 min</strong><p>Sellar pasaporte como souvenir.</p></div></li>
+<li><time class="go">4:30 PM</time><div class="tl-c"><strong>Bus hacia Munich</strong><p>~3.5h.</p></div></li>
+<li><time class="go">~8:00 PM</time><div class="tl-c"><strong>Llegan a Munich</strong><p>Check-in hotel.</p></div></li>
+<li><time class="eat">8:30 PM</time><div class="tl-c"><strong>Cena en Munich</strong><p>Döner, Currywurst.</p></div></li>
+</ul>
+<div class="gal">
+<img src="../img/lucerne.jpg" alt="Lucerna" loading="lazy">
+<img src="../img/titlis.jpg" alt="Monte Titlis" loading="lazy">
+<img src="../img/vaduz.jpg" alt="Vaduz - Liechtenstein" loading="lazy">
+<img src="../img/munich.jpg" alt="Munich" loading="lazy">
+</div>
+</div></div>
+
+<details class="block"><summary>💡 Tips prácticos y dinero</summary><div class="block-body">
+<div class="note save"><strong>✅ CONTRATAR — Monte Titlis $175/pp ($875).</strong> Suben a <strong>Klein Titlis (3.020 m)</strong>. Cueva de hielo, Cliff Walk (puente colgante), nieve en octubre. ÚNICO.</div>
+<div class="note danger"><strong>🚨 PREGUNTA URGENTE PARA LA AGENCIA — antes de pagar los $875.</strong> El teleférico giratorio <strong>Rotair está cerrado por mantenimiento del 17 de agosto al 11 de diciembre de 2026</strong>, según la web oficial de Engelberg. Su viaje cae justo en medio de ese cierre.<br><br>
+Eso <strong>no significa</strong> que no puedan subir: existe el teleférico nuevo <strong>TITLIS Connect</strong>, que opera a diario durante el cierre y también llega arriba. La cueva de hielo, el Cliff Walk y el Ice Flyer siguen funcionando.<br><br>
+<strong>🟡 ESTADO: PENDIENTE DE CONFIRMAR CON ANAHÍ.</strong> Ella es quien les vende la excursión, así que es la que tiene que responder. Las tres preguntas exactas:<br>
+<strong>1.</strong> ¿La excursión se realiza igual en octubre, subiendo con el TITLIS Connect en vez del Rotair?<br>
+<strong>2.</strong> ¿El precio sigue siendo $175 por persona, o cambia al no operar el giratorio?<br>
+<strong>3.</strong> ¿Qué incluye exactamente ese día: cueva de hielo, Cliff Walk, Ice Flyer?<br><br>
+<strong>No paguen los $875 hasta tener esas tres respuestas.</strong> Y reconfirmen en engelberg.ch en septiembre, porque las fechas de mantenimiento se pueden mover.</div>
+<div class="note pend"><strong>🟡 PENDIENTE DE CONFIRMAR CON ANAHÍ:</strong> las 3 preguntas del Titlis (arriba). No paguen los $875 hasta tener esas tres respuestas. Reconfirmar en engelberg.ch en septiembre.</div>
+<div class="note warn"><strong>🏔 Ojo con la altura que les prometan:</strong> el teleférico llega a <strong>Klein Titlis, 3.020 metros</strong>. La cumbre del Titlis está a 3.238 m, unos 218 metros más arriba, y <strong>no se llega con el teleférico</strong>. Si un folleto dice "teleférico a 3.238 m", está confundiendo la cumbre con la estación.</div>
+<div class="note warn"><strong>🧥 ROPA TITLIS:</strong> cima -5 °C a 0 °C. Abrigo grueso + guantes + gorro + protector solar.</div>
+<div class="note info"><strong>¿Aburrido?</strong> IMPOSIBLE. Teleférico gira 360°. Cueva azul fluorescente. Puente con 500 m de caída. Probablemente el día más emocionante.</div>
+<div class="note info"><strong>🍺 Oktoberfest: llegan 8 días tarde, pero no del todo.</strong> El Oktoberfest 2026 va del <strong>19 de septiembre al 4 de octubre</strong>, así que cuando lleguen (12 de octubre) la Theresienwiese ya estará desmontada — <strong>no cuenten con ver las carpas grandes</strong>.<br><br>
+Dicho eso, <strong>algo de ambiente puede quedar</strong>: no es lo común, pero a veces sobreviven decoraciones, cerveceras con menú de temporada y gente todavía con Dirndl y Lederhosen los fines de semana siguientes. Y hay un plan que <strong>sí funciona todo el año</strong>: el <strong>Hofbräuhaus</strong>, la cervecería tradicional del centro, con música en vivo, mesas largas y ambiente bávaro auténtico. Sumado a la Marienplatz y el centro histórico, Munich se defiende sola aunque el festival haya terminado.</div>
+<div class="money"><strong>💰 Llevar: ~CHF 20 + ~€30 Munich.</strong> Titlis: ⚠️ no lo paguen hasta que Anahí confirme lo del teleférico. <strong>LUNES:</strong> tiendas abren con horario normal en Suiza y Alemania.</div>
+<div class="note info"><strong>🧭 Logística del día</strong>
+<ul>
+<li><strong>🚌 Cómo viajan:</strong> bus del tour. Zurich → Lucerna (parada, Monte Titlis si lo contratan) → Vaduz, Liechtenstein (parada breve) → Munich, Alemania.</li>
+<li><strong>🚡 Monte Titlis:</strong> si contratan la excursión, salen del grupo en Lucerna, suben en teleférico (~45 min subida), pasan ~2h arriba, bajan, y se reencuentran con el bus. Si NO contratan, tienen tiempo libre en Lucerna (ciudad hermosa, no se aburren).</li>
+<li><strong>💱 Moneda:</strong> mañana en FRANCOS SUIZOS. Al llegar a Munich (Alemania) vuelven a EUROS.</li>
+<li><strong>🏨 Dónde duermen:</strong> hotel en zona de Munich (1 noche).</li>
+<li><strong>📍 Mañana siguiente:</strong> 🎂 ¡CUMPLEAÑOS! Desayuno. EMPACAR. Bus a Innsbruck → Verona → Venecia.</li>
+</ul></div>
+</div></details>
+
+<details class="block"><summary>🎲 Datos curiosos</summary><div class="block-body">
+<p><strong>Lucerna:</strong> Puente de la Capilla (madera, 1333) + León de Lucerna (tallado en roca).</p>
+<p><strong>Vaduz (Liechtenstein):</strong> capital del país más pequeño de la ruta. Pueden sellar el pasaporte como souvenir (~CHF 3) en la oficina de turismo.</p>
+</div></details>
+
+<details class="block"><summary>🗣 Cómo se dice</summary><div class="block-body"><div class="vocab">
+<div class="v"><b>Hola</b><i>Hallo</i><span>JA-lo</span></div>
+<div class="v"><b>Buenos días</b><i>Guten Tag</i><span>guten TAG</span></div>
+<div class="v"><b>Gracias</b><i>Danke</i><span>DAN-ke</span></div>
+<div class="v"><b>Por favor</b><i>Bitte</i><span>BI-te</span></div>
+<div class="v"><b>¿Habla inglés?</b><i>Sprechen Sie Englisch?</i><span>SHPRÉJEN si ÍNGLISH</span></div>
+<div class="v"><b>¿Cuánto cuesta?</b><i>Wie viel?</i><span>vi FIL</span></div>
+<div class="v"><b>¿Dónde está el baño?</b><i>Wo ist die Toilette?</i><span>vo ist di tua-LE-te</span></div>
+<div class="v"><b>¡Ayuda!</b><i>Hilfe!</i><span>JÍL-fe</span></div>
+</div>
+<p>Casi todos los alemanes jóvenes hablan inglés. Pregunten: "Do you speak English?"</p>
+</div></details>
+</section>
+
+<section class="screen day" id="dia10" data-day="10" data-date="Martes 13 de octubre" data-short="🎂 Venecia">
+<div class="hero bday"><div class="h-n">Día 10 de 19</div><h1>🎂 Munich → Innsbruck → Verona → Venecia</h1><div class="h-date">Martes 13 de octubre</div><div class="h-meta">🎉 QUINCEAÑERA · 550 km · 🇪🇺 EURO € (todo el día) · 🎀 Feliz Quinceañera en Verona &amp; Venecia 🎀</div></div>
+
+<div class="block"><h2>⏰ El día</h2><div class="block-body">
+<ul class="tl">
+<li><time class="eat">6:30 AM</time><div class="tl-c"><strong>Desayuno + EMPACAR</strong><p>Celebración matutina con la cumpleañera 🎂. Que sepa que hoy es SU día.</p></div></li>
+<li><time class="go">7:30 AM</time><div class="tl-c"><strong>Sale el bus</strong><p>Hacia Innsbruck (~2h).</p></div></li>
+<li><time class="free">~11:00 AM</time><div class="tl-c"><strong>Innsbruck — ~1-1.5 HORAS libres</strong><p>Fotos con los Alpes + Apfelstrudel (€5). Calle María-Theresien con Alpes de fondo = fotos espectaculares.</p></div></li>
+<li><time class="go">12:30 PM</time><div class="tl-c"><strong>Bus hacia Verona</strong><p>Cruzan frontera Austria→Italia, ~2h.</p></div></li>
+<li><time class="free">~2:30 PM</time><div class="tl-c"><strong>VERONA — ~2 HORAS libres</strong><p>💕 Casa de Julieta (€5 o €12, comprar ONLINE antes) + carta + Piazza Erbe + Arena.</p></div></li>
+<li><time class="go">4:30 PM</time><div class="tl-c"><strong>Bus hacia Venecia/Mestre</strong><p>~2h.</p></div></li>
+<li><time class="go">~6:30 PM</time><div class="tl-c"><strong>Llegan al hotel en Mestre</strong><p>Check-in RÁPIDO, ducha, arreglarse.</p></div></li>
+<li><time class="go">7:00 PM</time><div class="tl-c"><strong>Tren Mestre → Venezia Santa Lucia</strong><p>10 min, €1.50/pp.</p></div></li>
+<li><time class="tour">🟡 por<br>decidir</time><div class="tl-c"><strong>🛶 Góndola privada familiar</strong><p>Una sola tarifa para los 5. Antes de las 19:00 son €90 y hay luz; después son €110 y ya es de noche. Ver el recuadro más abajo.</p></div></li>
+<li><time class="eat">8:30 PM</time><div class="tl-c"><strong>🍽 CENA DE QUINCEAÑERA</strong><p>Restaurante de Venecia + torta encargada.</p></div></li>
+<li><time>10:30 PM</time><div class="tl-c"><strong>☕ Caffè Florian</strong><p>Plaza San Marco, orquesta en vivo.</p></div></li>
+<li><time class="go">~11:00 PM</time><div class="tl-c"><strong>⚠️ Último tren</strong><p>Venecia S. Lucia → Mestre (~23:11). Si lo pierden: bus nocturno ACTV <strong>N1/N2</strong> desde Piazzale Roma.</p></div></li>
+</ul>
+<div class="gal">
+<img src="../img/innsbruck.jpg" alt="Innsbruck" loading="lazy">
+<img src="../img/verona.jpg" alt="Verona" loading="lazy">
+<img src="../img/gondola.jpg" alt="Góndola veneciana" loading="lazy">
+<img src="../img/venice1.jpg" alt="Venecia" loading="lazy">
+</div>
+</div></div>
+
+<div class="block"><h2>🎂 El cumpleaños</h2><div class="block-body">
+
+<p><strong>💕 ~2:30 PM — Verona, la Casa de Julieta</strong></p>
+<p><strong>¿Qué es la Casa de Julieta?</strong> Una casa medieval con un balcón famoso. La leyenda dice que es el balcón donde Romeo le declaró su amor a Julieta (la historia de Shakespeare). Hay una tradición de escribir cartas a Julieta sobre el amor y los sueños — las dejan en buzones y voluntarios las responden.</p>
+<div class="note danger"><strong>⚠️ CAMBIÓ TODO EN ABRIL DE 2026 — lean esto con atención:</strong> ya <strong>no</strong> se entra por Via Cappello ni el patio es gratis. Ahora el acceso es por el <strong>Teatro Nuovo (Piazzetta Navona)</strong> y hay dos entradas posibles:<br>
+• <strong>€5</strong> = Teatro + patio (el balcón se ve y se fotografía perfectamente desde abajo, que es donde salen las fotos igual)<br>
+• <strong>€12</strong> = Teatro + patio + interior de la Casa<br>
+<strong>La compra es ONLINE OBLIGATORIA</strong> en <strong>verona.midaticket.it</strong>, con <strong>hora fija de entrada</strong>. No venden en taquilla. Las entradas no se cambian, no se cancelan y no se reembolsan.<br>
+<strong>NO hay tarifa juvenil:</strong> la cumpleañera paga entrada completa igual que los adultos (solo es gratis para menores de 5 años).<br>
+Costo del grupo: <strong>€25</strong> los 5 con la entrada de €5, o <strong>€60</strong> los 5 con la de €12.</div>
+<p><strong>¿Qué es la Arena?</strong> Un anfiteatro romano como un mini-Coliseo. Tiene 2000 años y todavía se usa para conciertos y ópera. Por fuera es gratis.</p>
+<div class="note info"><strong>Plan cumpleañero en Verona</strong><br>
+<strong>2:30 PM →</strong> Directo a la <strong>Casa de Julieta</strong>. ⚠️ La entrada ahora es por el <strong>Teatro Nuovo (Piazzetta Navona)</strong>, NO por Via Cappello — la salida sí es por Via Cappello 23. <strong>Tienen que haber comprado online antes</strong> (verona.midaticket.it) y llegar en la hora exacta que reservaron. Tómense TODO el tiempo que quieran para fotos. Escriban una carta.<br>
+<strong>3:30 PM →</strong> Helado en Piazza delle Erbe (~€3). Plaza medieval hermosa, ideal para fotos.<br>
+<strong>4 PM →</strong> Caminen a la Arena (5 min). Fotos desde afuera.</div>
+<div class="note info"><strong>🎟 Tour "Visita Verona" — $55/pp ($275 familia).</strong> Tour guiado de 2.5 horas: primero en bus viendo murallas y puertas, luego a pie por el centro: Piazza delle Erbe (plaza medieval), Casa de Julieta, Arena (anfiteatro romano).<br>
+<strong>Desventaja para el cumpleaños:</strong> en un tour grupal no pueden quedarse más tiempo en el balcón de Julieta ni hacer las cosas al ritmo de la cumpleañera. El guía dice "tienen 10 minutos" y se van.<br><br>
+<strong>🚶 Solos (RECOMENDADO — es el cumpleaños):</strong> Verona es PEQUEÑA. Todo el centro histórico se camina en 20 minutos de punta a punta. No necesitan guía ni bus.</div>
+<div class="note save"><strong>🤔 MI OPINIÓN:</strong> háganlo solos. Especialmente porque es el CUMPLEAÑOS. En un tour grupal tienen horario fijo y van con 30 extraños. Solos pueden quedarse 30 minutos en el balcón de Julieta tomando fotos, escribir la carta con calma, comerse un helado sin prisa. Verona es tan pequeña que es imposible perderse. Se ahorran $275 y la experiencia es mucho más personal para la quinceañera.</div>
+
+<p><strong>🌙 Noche — Venecia: Cena de Quinceañera</strong></p>
+<p>Hotel en Mestre. Tren a Venezia Santa Lucia: 10 min, ~€1.50/pp.</p>
+<div class="note info"><strong>6:30 PM →</strong> Góndola privada familiar — hora por decidir (antes de 19:00 son €90; después, €110). €80-100 toda la familia (caben 5). NO negocien en San Marco, busquen paradas tranquilas.<br>
+<strong>7:30 PM →</strong> Cena especial. <strong>Trattoria alla Madonna</strong> (Rialto, desde 1954, €15-28/plato) o cualquier restaurante bonito LEJOS de San Marco.<br>
+<strong>8:30 PM →</strong> Torta. Encarguen con anticipación en pasticceria. <strong>Pasticceria Tonolo</strong> o <strong>Rosa Salva</strong>. Digan: "Torta di compleanno per una ragazza che compie quindici anni". €30-50.<br>
+<strong>9:30 PM →</strong> <strong>Caffè Florian</strong> en Piazza San Marco (café más antiguo del mundo, 1720). Chocolate caliente. Orquesta en vivo. Basílica iluminada. MÁGICO. ~€15-20/pp.</div>
+
+<div class="note warn"><strong>💶 Góndola: SOLO EFECTIVO.</strong> Los gondoleros NO aceptan tarjeta.<br><br>
+<strong>Tarifa oficial regulada por el Ayuntamiento de Venecia (verificada):</strong> el precio es <strong>por góndola, no por persona</strong>, y caben <strong>hasta 5 pasajeros</strong> — o sea entran los 5 en una sola.<br>
+• <strong>De día: €90</strong> · 30 minutos · de 9:00 a 19:00<br>
+• <strong>De noche: €110</strong> · 35 minutos · de 19:00 a 4:00<br>
+Si les piden otro precio, ese gondolero no está respetando la tarifa oficial.<br><br>
+🌅 <strong>Dato clave:</strong> el <strong>13 de octubre el sol se pone a las 18:31</strong> en Venecia. Para que sea de verdad "al atardecer" —y para pagar €90 en vez de €110— la góndola tiene que <strong>empezar antes de las 19:00</strong>.</div>
+
+<div class="note save"><strong>🛶 EL PLAN DE LA GÓNDOLA — decidido en familia.</strong><br><br>
+Es una <strong>góndola privada solo para la familia</strong>, no compartida con desconocidos. Caben los 5, así que van todos en la misma y pagan <strong>una sola tarifa</strong>, no una por persona.<br><br>
+<strong>Cómo hacerlo para que salgan las dos fotos:</strong><br>
+<strong>1.</strong> Primero sube <strong>solo la quinceañera</strong> a la góndola, todavía amarrada o recién saliendo. Los demás se quedan en el muelle y le toman <em>la</em> foto: ella sola, con el vestido, en la góndola. Esa es la foto del año.<br>
+<strong>2.</strong> Después suben los otros cuatro y hacen el paseo completo los 5 juntos, con fotos de todos.<br><br>
+<strong>Díganselo al gondolero antes de subir</strong> — están acostumbrados y no cobran extra por esperar dos minutos. En italiano: <em>"È il suo compleanno di 15 anni. Possiamo fare qualche foto con lei da sola prima di salire tutti?"</em><br><br>
+⚠️ <strong>Ojo con la hora, que define el precio:</strong> antes de las 19:00 son <strong>€90</strong>; a partir de las 19:00 son <strong>€110</strong> y ya es de noche cerrada. Como el sol se pone 18:31, si quieren luz para las fotos <strong>tiene que ser bastante antes de las 19:00</strong> — lo que choca con el tren de las 7 PM. <strong>Solución recomendada: hacer la góndola la mañana del Día 11</strong>, antes de salir a Roma: pagan €90, hay luz plena para las fotos, y el Día 10 deja de estar apretado.</div>
+
+<div class="note info"><strong>🎀 Tiara:</strong> compren una en cualquier tienda de accesorios en Verona o Venecia (~€5-15). Los italianos AMAN las celebraciones — si dicen al restaurante que es quinceañera, van a hacer de todo para que sea especial.</div>
+
+<div class="note info"><strong>🎀 Dónde comprar decoración para el cumpleaños en Venecia</strong><br>
+<strong>Tiaras y accesorios:</strong> tiendas de bijouterie en el barrio Cannaregio (más baratas) o cerca del Rialto (más turísticas). Busquen "accessori" o "bigiotteria" en Google Maps.<br><br>
+<strong>Globos y flores:</strong> hay florerías cerca de la estación Santa Lucia. Ramo pequeño: €10-20.<br><br>
+<strong>Tarjeta de cumpleaños:</strong> en cualquier tabaccheria (quiosco italiano).<br><br>
+<strong>Truco:</strong> pídanle al restaurante donde cenan que decoren la mesa con velas, flores y un cartel de "Buon Compleanno" (feliz cumpleaños). Los italianos lo hacen encantados si se los piden con anticipación. Digan: <em>"È il compleanno di 15 anni di mia figlia. Potete decorare il tavolo?"</em> (Es el cumpleaños de 15 de mi hija. ¿Pueden decorar la mesa?)<br><br>
+<strong>Torta:</strong> encárguenla con UN DÍA de anticipación en Pasticceria Tonolo o Rosa Salva. Pueden entregarla al restaurante si lo coordinan.</div>
+</div></div>
+
+<details class="block"><summary>💡 Tips prácticos y dinero</summary><div class="block-body">
+<div class="note warn"><strong>🌊 ¿Qué es "Acqua Alta"?</strong> A partir de octubre, Venecia puede tener inundaciones leves — el agua del mar sube y cubre algunas plazas y calles (5-20 cm de agua en el piso). NO es peligroso ni raro, les pasa a los venecianos todo el año. Si ocurre: (1) la ciudad pone pasarelas elevadas de madera para caminar sin mojarse, (2) en cualquier tienda venden botas de plástico desechables por ~€10, (3) también sirven bolsas de plástico grandes sobre los zapatos. Revisen la app "Acqua Alta Venezia" o pregunten en el hotel. Normalmente dura pocas horas y baja.</div>
+<div class="money"><strong>💰 Llevar: ~€100-150/persona.</strong> Día más caro del viaje. Góndola €90 de día / €110 de noche (en EFECTIVO, toda la familia), cena ~€25-40/pp, torta €30-50, Florian ~€15-20/pp (⚠️ el espresso sentado son €6,50-7 y hay <strong>suplemento de orquesta de €6 por persona</strong> cuando toca la banda — de pie en la barra el café baja a ~€3). Total familia: ~€400-600.</div>
+<div class="note info"><strong>🧭 Logística del día</strong>
+<ul>
+<li><strong>🚌 Cómo viajan:</strong> bus del tour: Munich → Innsbruck (parada ~1h) → Verona (parada ~1.5-2h TIEMPO LIBRE) → Venecia/Mestre.</li>
+<li><strong>🏨 Dónde duermen:</strong> hotel en <strong>MESTRE</strong> (la parte de tierra firme de Venecia, no la isla). Esto es normal en todos los tours. Mestre es una ciudad normal con estación de tren. Para ir a Venecia isla toman el tren (~10 min, ~€1.50/pp).</li>
+<li><strong>📍 Mañana siguiente:</strong> desayuno. Bus los lleva a Venecia isla para la mañana libre. Luego bus a Roma (tarde).</li>
+</ul></div>
+<div class="note warn"><strong>🚆 Para la cena de quinceañera en Venecia:</strong> tren Mestre → Venezia Santa Lucia = 10 min. Los trenes salen cada 10-15 min. Compren ticket en la máquina de la estación (aceptan tarjeta). ⚠️ <strong>El último tren regular de vuelta sale alrededor de las 23:11, no 11:30 PM</strong> — verifiquen el horario exacto ese día en la estación, y pongan alarma 30 minutos antes.<br><br>
+<strong>Si pierden el tren</strong> (plan B verificado): el bus nocturno de ACTV, líneas <strong>N1 y N2</strong>, sale de <strong>Piazzale Roma</strong> hacia Mestre entre medianoche y las 5 AM. Es la opción barata y confiable de madrugada.<br><br>
+🚩 <strong>NO cuenten con Uber.</strong> En Italia no existe UberX; solo hay Uber Black, Van y Taxi, que son caros y de disponibilidad irregular de noche. Y sobre todo: <strong>ningún auto puede entrar al centro histórico de Venecia</strong> — como mucho llegan a Piazzale Roma, adonde ustedes tienen que caminar igual. Un taxi terrestre de Piazzale Roma a Mestre sale más bien <strong>€23-28 más recargo nocturno (~€11)</strong>, no los €20 que decíamos.</div>
+</div></details>
+
+<details class="block"><summary>🎲 Datos curiosos</summary><div class="block-body">
+<p><strong>Venecia</strong> tiene 118 islas, 400 puentes, 150 canales. Se hunde 1-2 mm cada año. Los habitantes son solo ~50,000 (antes eran 175,000). La casa de Marco Polo estaba aquí.</p>
+<div class="note info"><strong>🎭 Etiqueta italiana</strong>
+<ul>
+<li><strong>Hablan FUERTE</strong> y con las manos. No están peleando, es normal.</li>
+<li><strong>Saludan con 2 besos</strong> en las mejillas (a conocidos).</li>
+<li><strong>Cappuccino SOLO en la mañana.</strong> Pedirlo después del almuerzo es raro (los italianos toman espresso).</li>
+<li><strong>No pidan queso parmesano con pescado.</strong> Es tabú.</li>
+<li><strong>"Coperto":</strong> cargo por sentarse, €1-3/persona. Es legal y normal, no se sorprendan.</li>
+<li><strong>Propina:</strong> NO es obligatoria. El coperto ya lo cubre. Dejar 1-2 € si el servicio fue bueno.</li>
+<li><strong>Comer de pie en el mostrador</strong> siempre es más barato que sentarse.</li>
+</ul></div>
+<div class="note food"><strong>🍽 Platos típicos italianos:</strong> Pasta Carbonara · Cacio e Pepe · Pizza Margherita · Risotto · Gelato · Tiramisu · Cicchetti · Lasagna · Bistecca Fiorentina · Prosciutto</div>
+</div></details>
+
+<details class="block"><summary>🗣 Cómo se dice</summary><div class="block-body"><div class="vocab">
+<div class="v"><b>Buenos días</b><i>Buongiorno</i><span>buon-YIOR-no</span></div>
+<div class="v"><b>Buenas tardes/noches</b><i>Buonasera</i><span>buona-SE-ra</span></div>
+<div class="v"><b>Gracias</b><i>Grazie</i><span>GRA-tsie</span></div>
+<div class="v"><b>Por favor</b><i>Per favore</i><span>per fa-VO-re</span></div>
+<div class="v"><b>¿Cuánto cuesta?</b><i>Quanto costa?</i><span>cuanto COS-ta</span></div>
+<div class="v"><b>La cuenta</b><i>Il conto</i><span>il CON-to</span></div>
+<div class="v"><b>¿Dónde está el baño?</b><i>Dov'è il bagno?</i><span>do-VÉ il BA-nio</span></div>
+<div class="v"><b>Mesa para 5</b><i>Un tavolo per cinque</i><span>un TA-vo-lo per CHIN-que</span></div>
+<div class="v"><b>Déjeme en paz</b><i>Mi lasci in pace</i><span>mi LA-shi in PA-che</span></div>
+<div class="v"><b>Me robaron</b><i>Mi hanno rubato</i><span>mi AN-no ru-BA-to</span></div>
+<div class="v"><b>Es el cumpleaños de 15 de mi hija. ¿Pueden decorar la mesa?</b><i>È il compleanno di 15 anni di mia figlia. Potete decorare il tavolo?</i><span>para el restaurante</span></div>
+<div class="v"><b>Es su cumpleaños de 15. ¿Podemos hacer fotos con ella sola antes de subir todos?</b><i>È il suo compleanno di 15 anni. Possiamo fare qualche foto con lei da sola prima di salire tutti?</i><span>para el gondolero</span></div>
+<div class="v"><b>Torta de cumpleaños para una chica que cumple quince años</b><i>Torta di compleanno per una ragazza che compie quindici anni</i><span>para la pasticceria</span></div>
+</div>
+<p>El italiano es casi igual al español. Van a entender mucho solo leyendo.</p>
+</div></details>
+
+<details class="block"><summary>📸 Fotos que valen la pena</summary><div class="block-body"><div class="shots">
+<div class="shot"><b>En Innsbruck:</b> caminando por María-Theresien-Straße con los Alpes nevados de fondo. Toma vertical.</div>
+<div class="shot"><b>Casa de Julieta (Verona):</b> la cumpleañera SOLA en el balcón, mirando hacia abajo. Foto icónica de película.</div>
+<div class="shot"><b>Patio de Julieta:</b> tocando la estatua de bronce de Julieta (tradición).</div>
+<div class="shot"><b>Piazza delle Erbe (Verona):</b> con las sombrillas blancas del mercado medieval de fondo.</div>
+<div class="shot"><b>Arena de Verona:</b> saltando o girando con el anfiteatro de 2000 años atrás.</div>
+<div class="shot"><b>En la góndola:</b> acostada en los cojines rojos mirando al cielo.</div>
+<div class="shot"><b>Puente Rialto de noche:</b> con las luces reflejadas en el agua.</div>
+<div class="shot"><b>Piazza San Marco de noche:</b> vestida elegante con la basílica iluminada.</div>
+<div class="shot"><b>Caffè Florian:</b> tomando chocolate mientras la orquesta toca de fondo.</div>
+<div class="shot"><b>Truco:</b> lleven LA CÁMARA DEL CELULAR CARGADA desde la mañana. Van a tomar MUCHAS fotos.</div>
+</div></div></details>
+</section>
+
+<section class="screen day" id="dia11" data-day="11" data-date="Miércoles 14 de octubre" data-short="Venecia→Roma">
+<div class="hero"><div class="h-n">Día 11 de 19</div><h1>🇮🇹 Venecia → Roma</h1><div class="h-date">Miércoles 14 de octubre</div><div class="h-meta">527 km · 🇪🇺 EURO €</div></div>
+
+<div class="block"><h2>⏰ El día</h2><div class="block-body">
+<ul class="tl">
+<li><time class="eat">7:30 AM</time><div class="tl-c"><strong>Desayuno</strong><p>+ EMPACAR TODO.</p></div></li>
+<li><time class="go">8:30 AM</time><div class="tl-c"><strong>Bus al estacionamiento de Venecia</strong><p>Piazzale Roma.</p></div></li>
+<li><time>9:00 AM</time><div class="tl-c"><strong>Caminar/vaporetto a Plaza San Marcos</strong></div></li>
+<li><time class="free">9:30 AM–12:30 PM</time><div class="tl-c"><strong>MAÑANA LIBRE en Venecia — 3 HORAS</strong><p>Puente Suspiros, San Marcos, Basílica (⚠️ YA NO ES GRATIS: €10, solo online), callejones, cicchetti en Rialto.</p></div></li>
+<li><time class="eat">12:30 PM</time><div class="tl-c"><strong>Almuerzo: cicchetti en bacari</strong><p>€1-3 cada uno.</p></div></li>
+<li><time>1:30 PM</time><div class="tl-c"><strong>Reunión con el grupo</strong><p>El guía les dice el punto exacto.</p></div></li>
+<li><time class="go">2:00 PM</time><div class="tl-c"><strong>Sale el bus hacia Roma</strong><p>~5-6h.</p></div></li>
+<li><time class="go">~8:00 PM</time><div class="tl-c"><strong>Llegan al hotel en Roma</strong><p>Check-in.</p></div></li>
+<li><time class="eat">9:00 PM</time><div class="tl-c"><strong>Cena cerca del hotel</strong><p>Pizza rápida, trattoria.</p></div></li>
+</ul>
+<div class="note info"><strong>✅ INCLUIDO.</strong> Mañana en Venecia: Puente Suspiros, San Marcos, Basílica (⚠️ YA NO ES GRATIS: €10, solo online). Tarde: bus a Roma.</div>
+<div class="gal">
+<img src="../img/san_marco.jpg" alt="Plaza San Marcos" loading="lazy">
+<img src="../img/venice_bridge_sighs.jpg" alt="Puente de los Suspiros" loading="lazy">
+<img src="../img/rialto.jpg" alt="Puente Rialto" loading="lazy">
+<img src="../img/venice1.jpg" alt="Venecia - Gran Canal" loading="lazy">
+</div>
+</div></div>
+
+<details class="block"><summary>💡 Tips prácticos y dinero</summary><div class="block-body">
+<div class="money"><strong>💰 Llevar: ~€35-45/persona.</strong> Almuerzo cicchetti (~€10), algún souvenir.</div>
+<div class="note save"><strong>🎉 Buena noticia — mejor de lo que decíamos:</strong> la tasa de acceso a Venecia (<em>contributo di accesso</em>) <strong>ya no está vigente</strong>. El periodo de prueba de 2026 terminó el 26 de julio y desde entonces se entra sin pagar ni tramitar exención. En octubre no pagan nada por entrar a la ciudad. (Reconfirmar en cda.ve.it en septiembre por si la reactivan para 2027.)</div>
+<div class="note info"><strong>La góndola:</strong> si la hicieron ayer, no necesitan repetir. Si decidieron pasarla a hoy (recomendado: hay luz y cuesta €90 en vez de €110), <strong>esta mañana es el momento</strong>.<br><br>
+<strong>¿Qué es un "Traghetto"?</strong> Es una góndola grande que cruza el Gran Canal (el canal principal de Venecia, como un río ancho) de un lado a otro. Cuesta solo €2 por persona. Dura 2 minutos. Es como un "taxi-bote" rápido. Hay estaciones de traghetto marcadas a lo largo del canal. No es romántico como la góndola privada, pero les da la experiencia de subirse a una góndola por casi nada.<br><br>
+<strong>¿Qué son los "cicchetti"?</strong> Son como tapas (bocaditos pequeños) venecianas. Se venden en barcitos llamados "bacari" (pronunciado: ba-CA-ri). Cuestan €1-3 cada uno. Son: tostaditas con pescado, bolitas de arroz, camarones fritos, etc. Piden varios, los ponen en un plato, y los comen de pie en el mostrador. Es la comida más barata y rica de Venecia. Busquen los bacari cerca del Puente Rialto — hay muchos.</div>
+<div class="note warn"><strong>👥 San Marco siempre lleno.</strong> Para escapar multitud: barrio <strong>Cannaregio</strong> (5 min de Rialto) — callejones tranquilos, precios más bajos.</div>
+<div class="note info"><strong>🎭 Etiqueta italiana</strong>
+<ul>
+<li><strong>Hablan FUERTE</strong> y con las manos. No están peleando, es normal.</li>
+<li><strong>Saludan con 2 besos</strong> en las mejillas (a conocidos).</li>
+<li><strong>Cappuccino SOLO en la mañana.</strong> Pedirlo después del almuerzo es raro (los italianos toman espresso).</li>
+<li><strong>No pidan queso parmesano con pescado.</strong> Es tabú.</li>
+<li><strong>"Coperto":</strong> Cargo por sentarse, €1-3/persona. Es legal y normal, no se sorprendan.</li>
+<li><strong>Propina:</strong> NO es obligatoria. El coperto ya lo cubre. Dejar 1-2€ si el servicio fue bueno.</li>
+<li><strong>Comer de pie en el mostrador</strong> siempre es más barato que sentarse.</li>
+</ul></div>
+<div class="note food"><strong>🍽 Platos típicos italianos:</strong> Pasta Carbonara · Cacio e Pepe · Pizza Margherita · Risotto · Gelato · Tiramisu · Cicchetti · Lasagna · Bistecca Fiorentina · Prosciutto.</div>
+<div class="note info"><strong>🧭 Logística del día.</strong> <strong>Mañana:</strong> el bus los lleva del hotel en Mestre a Venecia isla (estacionamiento de Piazzale Roma o Tronchetto). Desde ahí caminan o toman vaporetto (barco-bus) a la zona de San Marcos. MAÑANA LIBRE en Venecia. A una hora determinada (el guía les dice) se juntan para volver al bus.<br><br>
+<strong>Tarde:</strong> bus del tour Venecia → Roma (~5-6 horas de viaje). Aprovechen para dormir.<br><br>
+<strong>Dónde duermen:</strong> hotel en zona de Roma (3 noches seguidas: Días 11, 12 y 13). Llegan de noche.<br><br>
+<strong>Mañana siguiente:</strong> desayuno. Bus los recoge para tour panorámico de Roma. DÍA INTENSO: tour + Roma Barroca por su cuenta + Vaticano.</div>
+</div></details>
+
+<details class="block"><summary>🎲 Datos curiosos</summary><div class="block-body">
+<p><strong>Venecia</strong> tiene 118 islas, 400 puentes, 150 canales. Se hunde 1-2mm cada año. Los habitantes son solo ~50,000 (antes eran 175,000). La casa de Marco Polo estaba aquí.</p>
+<p><strong>Roma:</strong> tiene unos <strong>3.000 "nasoni"</strong> — fuentes públicas de agua potable gratis, más de 200 solo en el centro histórico. Lleven botella y rellénenla: el agua es buena y ahorran varios euros al día. El Vaticano es el país más pequeño del mundo (44 hectáreas) y tiene su propio cajero automático con instrucciones en LATÍN. El Coliseo podía llenarse de agua para simular batallas navales.</p>
+</div></details>
+
+<details class="block"><summary>🗣 Cómo se dice</summary><div class="block-body"><div class="vocab">
+<div class="v"><b>Buenos días</b><i>Buongiorno</i><span>buon-YIOR-no</span></div>
+<div class="v"><b>Buenas tardes/noches</b><i>Buonasera</i><span>buona-SE-ra</span></div>
+<div class="v"><b>Gracias</b><i>Grazie</i><span>GRA-tsie</span></div>
+<div class="v"><b>Por favor</b><i>Per favore</i><span>per fa-VO-re</span></div>
+<div class="v"><b>¿Cuánto cuesta?</b><i>Quanto costa?</i><span>cuanto COS-ta</span></div>
+<div class="v"><b>La cuenta</b><i>Il conto</i><span>il CON-to</span></div>
+<div class="v"><b>¿Dónde está el baño?</b><i>Dov'è il bagno?</i><span>do-VÉ il BA-nio</span></div>
+<div class="v"><b>Mesa para 5</b><i>Un tavolo per cinque</i><span>un TA-vo-lo per CHIN-que</span></div>
+<div class="v"><b>Déjeme en paz</b><i>Mi lasci in pace</i><span>mi LA-shi in PA-che</span></div>
+<div class="v"><b>Me robaron</b><i>Mi hanno rubato</i><span>mi AN-no ru-BA-to</span></div>
+</div>
+<p>El italiano es casi igual al español. Van a entender mucho solo leyendo.</p>
+</div></details>
+
+<details class="block"><summary>📸 Fotos que valen la pena</summary><div class="block-body"><div class="shots">
+<div class="shot"><b>Plaza San Marco:</b> con la basílica de fondo y palomas volando (no les den de comer).</div>
+<div class="shot"><b>Puente Rialto:</b> fotos desde el puente con góndolas pasando abajo.</div>
+<div class="shot"><b>Puente de los Suspiros:</b> desde el Ponte della Paglia (el mejor ángulo).</div>
+<div class="shot"><b>Canales de Cannaregio:</b> reflejo de las casas coloridas en el agua.</div>
+<div class="shot"><b>En góndola:</b> foto de las manos de la cumpleañera con el agua de fondo.</div>
+<div class="shot"><b>Al atardecer:</b> desde Zattere (Dorsoduro) con San Giorgio Maggiore al fondo.</div>
+</div></div></details>
+</section>
+
+<section class="screen day" id="dia12" data-day="12" data-date="Jueves 15 de octubre" data-short="Roma + Vaticano">
+<div class="hero"><div class="h-n">Día 12 de 19</div><h1>🇮🇹 Roma — Tour + Vaticano</h1><div class="h-date">Jueves 15 de octubre</div><div class="h-meta">DÍA MUY INTENSO · 🇪🇺 EURO €</div></div>
+
+<div class="block"><h2>⏰ El día</h2><div class="block-body">
+<ul class="tl">
+<li><time class="eat">7:30 AM</time><div class="tl-c"><strong>Desayuno en hotel</strong></div></li>
+<li><time class="tour">9:00 AM</time><div class="tl-c"><strong>Bus del tour los recoge del hotel</strong></div></li>
+<li><time class="tour">9:30–12:30</time><div class="tl-c"><strong>TOUR PANORÁMICO ROMA</strong><p>Coliseo (exterior), Circo Máximo, Santa María la Mayor, Vaticano (exterior).</p></div></li>
+<li><time>12:30 PM</time><div class="tl-c"><strong>Fin tour panorámico</strong><p>Los dejan en el centro.</p></div></li>
+<li><time class="free">12:30–4:30 PM</time><div class="tl-c"><strong>TARDE LIBRE — 4 HORAS</strong><p>Almuerzo + Roma Barroca por su cuenta (Trevi, Panteón, Navona).</p></div></li>
+<li><time class="tour">~4:30 PM</time><div class="tl-c"><strong>⛪ EXCURSIÓN MUSEOS VATICANOS</strong><p>Si la contratan. ~2-3 horas dentro.</p></div></li>
+<li><time>~7:30 PM</time><div class="tl-c"><strong>Fin Vaticano</strong><p>Vuelven al hotel o cenan cerca.</p></div></li>
+<li><time class="eat">8:00 PM</time><div class="tl-c"><strong>Cena en Trastevere</strong><p>El barrio más bonito de Roma.</p></div></li>
+<li><time>10:00 PM</time><div class="tl-c"><strong>Regreso al hotel</strong><p>Por su cuenta (taxi/Uber).</p></div></li>
+</ul>
+<div class="note info"><strong>✅ INCLUIDO.</strong> Mañana: Coliseo (exterior), Circo Máximo, Santa María la Mayor, Vaticano (exterior).</div>
+<div class="gal">
+<img src="../img/colosseum.jpg" alt="Coliseo" loading="lazy">
+<img src="../img/roman_forum.jpg" alt="Foro Romano" loading="lazy">
+<img src="../img/trevi.jpg" alt="Fontana di Trevi" loading="lazy">
+<img src="../img/pantheon_rome.jpg" alt="Panteón" loading="lazy">
+</div>
+</div></div>
+
+<details class="block"><summary>💡 Tips prácticos y dinero</summary><div class="block-body">
+<div class="money"><strong>💰 Llevar: ~€60-80/persona.</strong> Pizza (~€5), Panteón (€7), cena Trastevere (~€12-15). Vaticano ya pagado.</div>
+<div class="note info"><strong>✅ CONTRATAR — Museos Vaticanos + Capilla Sixtina: $114/pp ($570 familia).</strong><br>Sin cola (normal: 2-4 HORAS). Miguel Ángel empezó la bóveda con 33 años y pintó El Juicio Final entre los 61 y los 66. Silencio obligatorio. Miren ARRIBA al entrar.</div>
+<div class="note info"><strong>🎟 Tour "Roma Barroca": $73/pp ($365 familia).</strong> Incluye: bus + caminar por Trevi, Panteón, Piazza Navona con guía. 5 horas.<br><br>
+<strong>¿Por qué NO contratarlo?</strong> Porque estos 3 lugares son GRATIS, están PEGADOS uno al otro (5 minutos caminando entre cada uno), y no necesitan guía para disfrutarlos. Es como si les cobraran $73 por llevarlos de la Plaza de Armas a la Catedral de Lima — pueden ir caminando solos.</div>
+<div class="note save"><strong>🚶 Plan por su cuenta (ahorro $310)</strong><br>
+<strong>2 PM → Almuerzo: pizza al taglio</strong> (= pizza vendida por porción/peso, la cortan con tijera y la pesan. Pidan la que les guste, cuesta ~€2-4 por porción. Es comida rápida italiana real, no Pizza Hut. Cualquier local con pizza en vitrina sirve.)<br>
+<strong>2:30 PM → Fontana di Trevi:</strong> fuente gigante con esculturas, GRATIS. Tradición: tiren una moneda con la mano derecha sobre el hombro izquierdo = según la leyenda, volverán a Roma. Probablemente la fuente más famosa del mundo.<br>
+<strong>3 PM → Caminar 5 min al Panteón:</strong> templo romano de 2000 años con un agujero circular en el techo por donde entra la luz del sol. Cuando llueve, el agua entra por el agujero y hay drenes en el piso. Entrada <strong>€7</strong> (subió en julio de 2026), <strong>gratis para menores de 18</strong> — pero incluso con entrada gratuita hay que <strong>reservar franja horaria online</strong>.<br>
+<strong>3:30 PM → Caminar 5 min a Piazza Navona:</strong> plaza ovalada con 3 fuentes monumentales. La del centro, la <strong>Fontana dei Quattro Fiumi, sí es de Bernini</strong>; las otras dos son de Giacomo della Porta (Bernini solo diseñó la estatua del Moro en una de ellas). Hay artistas callejeros, pintores. Pueden sentarse en una terraza a tomar algo (~€4-5 un café).</div>
+<div class="note warn"><strong>👥 Trevi SIEMPRE llena.</strong> Vayan temprano (antes 9 AM) o de noche (después 9 PM) para menos gente.</div>
+<div class="note danger"><strong>⚠️ Gladiadores falsos en el Coliseo.</strong> 📍 Coliseo. Disfrazados piden foto "gratis", luego cobran €5-20. 🛡️ No fotos con disfrazados. Si quieren, pregunten precio ANTES.</div>
+<div class="note danger"><strong>⚠️ Rosas "gratis".</strong> 📍 Trevi, Piazza di Spagna. Dan rosa "de regalo", luego exigen €5-10. 🛡️ "No, grazie" y sigan. NO acepten nada.</div>
+<div class="note food"><strong>🍽 Cena en Trastevere.</strong> Barrio más bonito. Prueben <strong>cacio e pepe</strong> (~€10) o <strong>carbonara</strong> (~€12). EVITEN restaurantes pegados al Coliseo o Trevi (doble precio, comida mediocre).</div>
+<div class="note info"><strong>🧭 Logística del día.</strong> <strong>Tour mañana:</strong> el bus los recoge del hotel. Tour panorámico por Roma. Los deja cerca del centro/Vaticano. Desde ahí TARDE LIBRE.<br><br>
+<strong>¿Cómo vuelvo?</strong> Si hacen Roma Barroca por su cuenta: metro/bus/Uber al hotel. Si contratan Vaticano: el tour los devuelve al hotel (~10 PM). Roma tiene solo 3 líneas de metro (A, B, C) — es simple. Google Maps les dice cuál tomar.<br><br>
+<strong>Dónde duermen:</strong> mismo hotel en Roma.<br><br>
+<strong>Mañana siguiente:</strong> desayuno. DÍA LIBRE completo. Si van a Nápoles/Capri: salen 7 AM, vuelven 8:30 PM. Si no, exploran Roma por su cuenta.</div>
+</div></details>
+
+<details class="block"><summary>🎲 Datos curiosos</summary><div class="block-body">
+<p><strong>Roma</strong> tiene unos <strong>3.000 "nasoni"</strong> — fuentes públicas de agua potable gratis, más de 200 solo en el centro histórico. Lleven botella y rellénenla: el agua es buena y ahorran varios euros al día. El Vaticano es el país más pequeño del mundo (44 hectáreas) y tiene su propio cajero automático con instrucciones en LATÍN. El Coliseo podía llenarse de agua para simular batallas navales.</p>
+</div></details>
+
+<details class="block"><summary>🗣 Cómo se dice</summary><div class="block-body"><div class="vocab">
+<div class="v"><b>Buenos días</b><i>Buongiorno</i><span>buon-YIOR-no</span></div>
+<div class="v"><b>Buenas tardes/noches</b><i>Buonasera</i><span>buona-SE-ra</span></div>
+<div class="v"><b>Gracias</b><i>Grazie</i><span>GRA-tsie</span></div>
+<div class="v"><b>Por favor</b><i>Per favore</i><span>per fa-VO-re</span></div>
+<div class="v"><b>¿Cuánto cuesta?</b><i>Quanto costa?</i><span>cuanto COS-ta</span></div>
+<div class="v"><b>La cuenta</b><i>Il conto</i><span>il CON-to</span></div>
+<div class="v"><b>¿Dónde está el baño?</b><i>Dov'è il bagno?</i><span>do-VÉ il BA-nio</span></div>
+<div class="v"><b>Mesa para 5</b><i>Un tavolo per cinque</i><span>un TA-vo-lo per CHIN-que</span></div>
+<div class="v"><b>Déjeme en paz</b><i>Mi lasci in pace</i><span>mi LA-shi in PA-che</span></div>
+<div class="v"><b>Me robaron</b><i>Mi hanno rubato</i><span>mi AN-no ru-BA-to</span></div>
+</div></div></details>
+</section>
+
+<section class="screen day" id="dia13" data-day="13" data-date="Viernes 16 de octubre" data-short="Roma libre">
+<div class="hero"><div class="h-n">Día 13 de 19</div><h1>🇮🇹 Roma — Día libre</h1><div class="h-date">Viernes 16 de octubre</div><div class="h-meta">DÍA LIBRE · 🇪🇺 EURO €</div></div>
+
+<div class="block"><h2>⏰ El día</h2><div class="block-body">
+<ul class="tl">
+<li><time class="eat">7:00 AM</time><div class="tl-c"><strong>Desayuno temprano</strong><p>SI van a Capri.</p></div></li>
+<li><time class="tour">7:00 AM–8:30 PM</time><div class="tl-c"><strong>SI contratan Nápoles y Capri</strong><p>Día COMPLETO fuera. Bus + ferry + barco + Capri + almuerzo incluido.</p></div></li>
+<li><time class="eat">8:30 AM</time><div class="tl-c"><strong>Desayuno normal</strong><p>SI se quedan en Roma.</p></div></li>
+<li><time class="free">9:00 AM–7:00 PM</time><div class="tl-c"><strong>DÍA COMPLETO LIBRE EN ROMA — 10 HORAS</strong><p>Trastevere + Villa Borghese + almuerzo Testaccio + compras + Piazza di Spagna.</p></div></li>
+<li><time class="eat">8:00 PM</time><div class="tl-c"><strong>Cena</strong><p>Si no fueron a Capri.</p></div></li>
+</ul>
+<div class="note pend"><strong>🟡 PENDIENTE DE DECIDIR — Coliseo por dentro vs. Capri. Son excluyentes: este es el único día libre.</strong><br><br>
+<strong>Si eligen el COLISEO por dentro (datos verificados):</strong><br>
+• <strong>€18</strong> por adulto · <strong>GRATIS para menores de 18</strong> → la quinceañera <strong>no paga</strong><br>
+• <strong>Total del grupo: €72</strong> (4 adultos). Muy lejos de los "$90 por persona" que decía este plan antes.<br>
+• Se compra <strong>solo en ticketing.colosseo.it</strong>. Entradas <strong>nominativas</strong>: van los 5 nombres exactamente como en el pasaporte, y controlan documento en la puerta.<br>
+• ⚠️ <strong>Incluso la entrada gratuita de la quinceañera hay que reservarla</strong>, no basta con presentarse.<br>
+• Se habilitan <strong>30 días antes</strong> → para el 16 de octubre, el <strong>16 de septiembre</strong>. El ticket incluye Foro Romano y Palatino, y vale 24 horas.<br><br>
+<strong>La conversación honesta que tuvieron:</strong> el Coliseo por dentro son, en buena medida, ruinas — a papá y a Andrew les atrae, al resto de la familia menos. Vale la pena saber que <strong>el exterior ya lo ven gratis</strong> en el tour panorámico del Día 12, y que la foto icónica es desde afuera. Entrar suma el Foro Romano y el Palatino, que es donde está el grueso de lo que se camina.<br><br>
+<strong>Alternativa si el grupo se divide:</strong> nada impide que los que quieren entren (€36 por dos adultos) y el resto pase esas 2-3 horas en Villa Borghese o de compras, y se junten después. No tiene que ser todo o nada.<br><br>
+<strong>Capri, para comparar:</strong> día completo fuera, ~$1.260 el grupo. <strong>Fecha límite de la decisión: 16 de septiembre</strong>, que es el mismo día en que se cierra la ventana para agregar excursiones con Anahí.</div>
+<div class="gal">
+<img src="../img/capri.jpg" alt="Isla de Capri" loading="lazy">
+<img src="../img/rome1.jpg" alt="Roma" loading="lazy">
+</div>
+</div></div>
+
+<details class="block"><summary>💡 Tips prácticos y dinero</summary><div class="block-body">
+<div class="money"><strong>💰 Capri:</strong> tour ya pagado + ~€20 extras. <strong>Roma libre:</strong> ~€40-50/persona.</div>
+<div class="note info"><strong>🎟 Opción A: Nápoles y Capri — $252/pp ($1,260 familia).</strong><br>
+<strong>¿Qué es?</strong> Día completo (7 AM - 8:30 PM). Los llevan en bus de Roma a Nápoles (2.5h), ven el centro histórico. Luego toman un ferry (barco grande) a la isla de Capri (1h). En Capri suben a un barco privado pequeño que rodea la isla por el mar (ven las cuevas y acantilados desde el agua). Luego suben a Capri pueblo, almuerzan (INCLUIDO en el precio), y tienen tiempo libre. Regresan en ferry a Nápoles y bus a Roma.<br>
+<strong>¿Qué es Capri?</strong> Una isla en el sur de Italia con agua turquesa, acantilados, vegetación exuberante. Es como un paraíso del Mediterráneo. Es donde vacacionan las celebridades europeas.<br>
+<strong>Precio:</strong> $252/persona es CARO pero incluye transporte ida/vuelta + ferry + barco privado + almuerzo + guía. Hacerlo solos cuesta ~$100-130/pp pero tienen que coordinar trenes, ferries, y todo en italiano sin ayuda.<br>
+<strong>¿Vale la pena?</strong> Capri es una de las islas más hermosas de Europa. Si el presupuesto lo permite, es una experiencia increíble.</div>
+<div class="note save"><strong>🚶 Opción B: Día libre en Roma (presupuesto: ~€40-50/pp).</strong><br>
+<strong>Si no van a Capri, Roma tiene MUCHO que hacer gratis:</strong><br><br>
+<strong>¿Qué es Trastevere?</strong> El barrio más bonito de Roma. Callejuelas estrechas cubiertas de hiedra, plazas escondidas, restaurantes con mesas afuera. Es como el Barranco de Lima pero más antiguo y con mucha más vida.<br><br>
+<strong>¿Qué es Villa Borghese?</strong> Un parque enorme en el centro de Roma (como el Parque Kennedy pero 10 veces más grande). Pueden alquilar bicicletas (~€5/hora) o botes en un lago. Hay un mirador llamado "Pincio" con vista panorámica de toda Roma. Todo GRATIS (excepto bici/bote).<br><br>
+<strong>Plan:</strong><br>
+9 AM → Trastevere: caminar, ver la iglesia Santa María (mosaicos dorados, gratis), tomar café<br>
+11 AM → Villa Borghese: pasear, bicicletas, mirador del Pincio<br>
+1 PM → Almuerzo en Testaccio (barrio de comida auténtica, trattoria ~€12/pp)<br>
+3 PM → Compras: Via del Corso (Zara, H&M a precios italianos), tienda OVS (ropa barata italiana)<br>
+5 PM → Piazza di Spagna: la escalinata más famosa de Roma (gratis, fotos)</div>
+<div class="note info"><strong>🤔 MI OPINIÓN:</strong> Depende del presupuesto. <strong>Si les sobra dinero:</strong> Capri es una experiencia ÚNICA — la isla, el mar turquesa, el barco, el almuerzo italiano frente al mar. No van a encontrar nada igual en el resto del viaje. <strong>Si el presupuesto está justo:</strong> Roma por su cuenta es increíble y casi gratis. Trastevere y Villa Borghese son hermosos. No se van a sentir que "perdieron" algo — Roma tiene suficiente para llenar 3 días. El ahorro es de $1,260 para la familia, que es bastante. Yo diría: si pueden pagarlo sin que les falte para el resto del viaje, HÁGANLO. Si no, Roma es fantástica.</div>
+<div class="note info"><strong>🧭 Logística del día.</strong> <strong>Día libre:</strong> no hay tour obligatorio hoy. Si van a Capri: los recogen a las 7 AM del hotel y los devuelven ~8:30 PM. Si se quedan en Roma: salen y vuelven por su cuenta.<br><br>
+<strong>Dónde duermen:</strong> mismo hotel en Roma (última noche aquí).<br><br>
+<strong>Mañana siguiente:</strong> desayuno. EMPACAR TODO. Bus a Florencia (~275 km).</div>
+</div></details>
+
+<details class="block"><summary>🎲 Datos curiosos</summary><div class="block-body">
+<p><strong>Roma</strong> tiene unos <strong>3.000 "nasoni"</strong> — fuentes públicas de agua potable gratis, más de 200 solo en el centro histórico. Lleven botella y rellénenla: el agua es buena y ahorran varios euros al día. El Vaticano es el país más pequeño del mundo (44 hectáreas) y tiene su propio cajero automático con instrucciones en LATÍN. El Coliseo podía llenarse de agua para simular batallas navales.</p>
+</div></details>
+
+<details class="block"><summary>🗣 Cómo se dice</summary><div class="block-body"><div class="vocab">
+<div class="v"><b>Buenos días</b><i>Buongiorno</i><span>buon-YIOR-no</span></div>
+<div class="v"><b>Buenas tardes/noches</b><i>Buonasera</i><span>buona-SE-ra</span></div>
+<div class="v"><b>Gracias</b><i>Grazie</i><span>GRA-tsie</span></div>
+<div class="v"><b>Por favor</b><i>Per favore</i><span>per fa-VO-re</span></div>
+<div class="v"><b>¿Cuánto cuesta?</b><i>Quanto costa?</i><span>cuanto COS-ta</span></div>
+<div class="v"><b>La cuenta</b><i>Il conto</i><span>il CON-to</span></div>
+<div class="v"><b>¿Dónde está el baño?</b><i>Dov'è il bagno?</i><span>do-VÉ il BA-nio</span></div>
+<div class="v"><b>Mesa para 5</b><i>Un tavolo per cinque</i><span>un TA-vo-lo per CHIN-que</span></div>
+<div class="v"><b>Déjeme en paz</b><i>Mi lasci in pace</i><span>mi LA-shi in PA-che</span></div>
+<div class="v"><b>Me robaron</b><i>Mi hanno rubato</i><span>mi AN-no ru-BA-to</span></div>
+</div></div></details>
+</section>
+
+<section class="screen day" id="dia14" data-day="14" data-date="Sábado 17 de octubre" data-short="Roma→Florencia">
+<div class="hero"><div class="h-n">Día 14 de 19</div><h1>🇮🇹 Roma → Florencia</h1><div class="h-date">Sábado 17 de octubre</div><div class="h-meta">~275 km · 🇪🇺 EURO €</div></div>
+
+<div class="block"><h2>⏰ El día</h2><div class="block-body">
+<ul class="tl">
+<li><time class="eat">7:30 AM</time><div class="tl-c"><strong>Desayuno</strong><p>+ EMPACAR TODO.</p></div></li>
+<li><time class="go">8:30 AM</time><div class="tl-c"><strong>Sale el bus hacia Florencia</strong><p>~3.5h.</p></div></li>
+<li><time class="go">~12:00 PM</time><div class="tl-c"><strong>Llegan a Florencia</strong></div></li>
+<li><time class="tour">12:30–2:30 PM</time><div class="tl-c"><strong>TOUR A PIE INCLUIDO</strong><p>Duomo, Campanario Giotto, Baptisterio, Ponte Vecchio, Santa Croce (~2h).</p></div></li>
+<li><time class="free">2:30–7:30 PM</time><div class="tl-c"><strong>TARDE LIBRE — 5 HORAS</strong><p>Almuerzo (Lampredotto/Trattoria Mario) + Mercado San Lorenzo (CUERO) + Piazzale Michelangelo (vista).</p></div></li>
+<li><time class="eat">7:30 PM</time><div class="tl-c"><strong>Cena: compartir Bistecca alla Fiorentina</strong><p>~€45-50 para 3-4 personas.</p></div></li>
+<li><time>9:30 PM</time><div class="tl-c"><strong>Regreso al hotel</strong><p>A pie o taxi (~€8-10).</p></div></li>
+</ul>
+<div class="note info"><strong>✅ INCLUIDO.</strong> Tour a pie: Duomo, Campanario Giotto, Baptisterio, Ponte Vecchio, Santa Croce.</div>
+<div class="gal">
+<img src="../img/florence_duomo.jpg" alt="Duomo de Florencia" loading="lazy">
+<img src="../img/ponte_vecchio.jpg" alt="Ponte Vecchio" loading="lazy">
+<img src="../img/uffizi.jpg" alt="Galería Uffizi" loading="lazy">
+<img src="../img/florence.jpg" alt="Florencia" loading="lazy">
+</div>
+</div></div>
+
+<details class="block"><summary>💡 Tips prácticos y dinero</summary><div class="block-body">
+<div class="money"><strong>💰 Llevar: ~€50-80/persona.</strong> Almuerzo (~€8), compras cuero, cena (~€15-20).</div>
+<div class="note save"><strong>🕐 Tarde libre — plan por su cuenta.</strong><br>
+1 PM → Lampredotto (sándwich florentino ~€5) o Trattoria Mario (€8-12)<br>
+2:30 PM → 🛍 <strong>CUERO en Mercado San Lorenzo.</strong> Chaquetas €80-150, bolsos €30-60. REGATEEN (ofrezcan 50%). Etiqueta "Vera Pelle" = cuero real.<br>
+4 PM → <strong>Piazzale Michelangelo</strong>: MEJOR vista panorámica Florencia. GRATIS. Fotos atardecer.</div>
+<div class="note info"><strong>⏱ ¿Aburrido?</strong> PARA NADA. Duomo = una de las iglesias más impresionantes del mundo. Ponte Vecchio = puente con joyerías encima. Florencia entera es museo al aire libre. Se camina todo a pie.</div>
+<div class="note food"><strong>🍽 Cena.</strong> Compartan <strong>Bistecca alla Fiorentina</strong> (chuletón 1kg+, ~€45-50 para 3-4). Experiencia única.</div>
+<div class="note info"><strong>🧭 Logística del día.</strong> <strong>Cómo llegan:</strong> bus del tour Roma → Florencia. A la llegada, tour a pie incluido por el centro.<br><br>
+<strong>Tarde libre:</strong> después del tour a pie se quedan en el centro. Florencia es TODA peatonal y compacta — todo se camina en 15-20 min. Vuelven al hotel caminando o en taxi (~€8-10).<br><br>
+<strong>Dónde duermen:</strong> hotel en zona de Florencia (1 noche).<br><br>
+<strong>Mañana siguiente:</strong> desayuno. EMPACAR. Bus a Pisa → Costa Azul. Día largo de ruta.</div>
+</div></details>
+
+<details class="block"><summary>🗣 Cómo se dice</summary><div class="block-body"><div class="vocab">
+<div class="v"><b>Buenos días</b><i>Buongiorno</i><span>buon-YIOR-no</span></div>
+<div class="v"><b>Buenas tardes/noches</b><i>Buonasera</i><span>buona-SE-ra</span></div>
+<div class="v"><b>Gracias</b><i>Grazie</i><span>GRA-tsie</span></div>
+<div class="v"><b>Por favor</b><i>Per favore</i><span>per fa-VO-re</span></div>
+<div class="v"><b>¿Cuánto cuesta?</b><i>Quanto costa?</i><span>cuanto COS-ta</span></div>
+<div class="v"><b>La cuenta</b><i>Il conto</i><span>il CON-to</span></div>
+<div class="v"><b>¿Dónde está el baño?</b><i>Dov'è il bagno?</i><span>do-VÉ il BA-nio</span></div>
+<div class="v"><b>Mesa para 5</b><i>Un tavolo per cinque</i><span>un TA-vo-lo per CHIN-que</span></div>
+<div class="v"><b>Déjeme en paz</b><i>Mi lasci in pace</i><span>mi LA-shi in PA-che</span></div>
+<div class="v"><b>Me robaron</b><i>Mi hanno rubato</i><span>mi AN-no ru-BA-to</span></div>
+</div></div></details>
+
+<details class="block"><summary>📸 Fotos que valen la pena</summary><div class="block-body"><div class="shots">
+<div class="shot"><b>Piazzale Michelangelo:</b> MEJOR vista panorámica de Florencia. GRATIS. Fotos al atardecer.</div>
+</div></div></details>
+</section>
+
+<section class="screen day" id="dia15" data-day="15" data-date="Domingo 18 de octubre" data-short="Pisa→Costa Azul">
+<div class="hero"><div class="h-n">Día 15 de 19</div><h1>🇮🇹→🇲🇨 Florencia → Pisa → Costa Azul</h1><div class="h-date">Domingo 18 de octubre</div><div class="h-meta">451 km · 🇪🇺 EURO €</div></div>
+
+<div class="block"><h2>⏰ El día</h2><div class="block-body">
+<ul class="tl">
+<li><time class="eat">7:00 AM</time><div class="tl-c"><strong>Desayuno</strong><p>+ EMPACAR TODO.</p></div></li>
+<li><time class="go">8:00 AM</time><div class="tl-c"><strong>Sale el bus hacia Pisa</strong><p>~1.5h.</p></div></li>
+<li><time class="free">~9:30 AM</time><div class="tl-c"><strong>Pisa — ~1 HORA libre</strong><p>Foto con la Torre (practiquen la pose).</p></div></li>
+<li><time class="go">10:30 AM</time><div class="tl-c"><strong>Bus hacia Costa Azul</strong><p>~5-6h — ruta larga, aprovechen para dormir.</p></div></li>
+<li><time class="go">~5:00 PM</time><div class="tl-c"><strong>Llegan al hotel en Costa Azul</strong><p>Niza o alrededores. Check-in.</p></div></li>
+<li><time class="free">5:30–8:00 PM</time><div class="tl-c"><strong>TIEMPO LIBRE — 2.5 HORAS</strong><p>Paseo + cena.</p></div></li>
+<li><time class="tour">8:00 PM</time><div class="tl-c"><strong>Si contratan Mónaco</strong><p>Bus los recoge del hotel.</p></div></li>
+<li><time class="tour">8 PM–12:30 AM</time><div class="tl-c"><strong>Mónaco + Montecarlo de noche</strong><p>4 horas. Vuelven al hotel ~12:30 AM.</p></div></li>
+</ul>
+<div class="note save"><strong>✅ DECIDIDO: no suben a la Torre de Pisa.</strong> Y es la decisión correcta por logística, no solo por gusto: subir requiere <strong>reserva con franja horaria fija</strong> comprada por adelantado en opapisa.it, y ustedes solo tienen <strong>~1 hora</strong> de parada con el bus del tour. No entra. Además los menores de 8 años no pueden subir y los de 8 a 18 solo acompañados.<br><br>
+<strong>Lo que sí hacen:</strong> la foto clásica "sosteniendo" la torre en la Piazza dei Miracoli, que es gratis y es la que todo el mundo recuerda. (Nota: el precio de subir no lo pudimos confirmar en fuente oficial — la web de Pisa publica las tarifas como imagen y no como texto. Como no van a subir, da igual.)</div>
+<div class="gal">
+<img src="../img/pisa.jpg" alt="Torre de Pisa" loading="lazy">
+<img src="../img/monaco_port.jpg" alt="Puerto de Mónaco" loading="lazy">
+<img src="../img/monte_carlo.jpg" alt="Monte Carlo" loading="lazy">
+</div>
+</div></div>
+
+<details class="block"><summary>💡 Tips prácticos y dinero</summary><div class="block-body">
+<div class="money"><strong>💰 Llevar: ~€40-50/persona.</strong> Almuerzo Pisa (~€8), tren Mónaco (~€5), cena (~€15).</div>
+<div class="note info"><strong>⏱ ¿Aburrido?</strong> Pisa = ~1 hora. Foto y listo. La torre, catedral y baptisterio se ven en 30-40 min.</div>
+<div class="note info"><strong>🏖 ¿Qué es la "Costa Azul"?</strong> Es la zona de playa del sur de Francia, sobre el mar Mediterráneo. Incluye ciudades como <strong>Niza</strong> (la más grande), <strong>Cannes</strong> (donde hacen el festival de cine), y <strong>Mónaco</strong>. Se llama "Azul" por el color del mar. Es donde vacacionan los europeos ricos. En octubre ya no es temporada de playa pero el clima es agradable (~18°C) y la zona es hermosa. El hotel estará por esta zona.</div>
+<div class="note info"><strong>🎟 Tour: Mónaco y Montecarlo — $93/pp ($465 familia).</strong><br>
+<strong>¿Qué es?</strong> Los llevan en bus de noche al Principado de Mónaco (un país diminuto al lado de Francia donde viven millonarios y la familia real Grimaldi). Ven: Museo Oceanográfico, Catedral, Palacio del Príncipe, Casino de Montecarlo, circuito de Fórmula 1.<br>
+<strong>Duración:</strong> 4 horas (8 PM - 12:30 AM)<br>
+<strong>¿Qué es Mónaco?</strong> Un país de 2 km² (más pequeño que un barrio de Lima). Es famoso por ser ultra-lujoso: yates enormes, carros de lujo, el Casino de Montecarlo, y el Gran Premio de F1.</div>
+<div class="note save"><strong>🚶 Solos — Ahorro: $410.</strong><br>
+<strong>¿Se puede hacer solo?</strong> SÍ, SÚPER fácil. Desde donde están (Costa Azul/Niza), toman un tren que cuesta ~€4-5 por persona y tarda 20 minutos. Mónaco es TAN pequeño que lo caminan ENTERO en 2 horas. No necesitan guía.<br><br>
+<strong>¿Qué es el Casino de Montecarlo?</strong> El casino más famoso del mundo. Por fuera es un edificio espectacular iluminado de noche (gratis verlo). Por dentro se puede entrar a la parte del lobby gratis, pero las salas de juego cuestan <strong>€20</strong> de entrada (que incluyen €10 de crédito para consumo o máquinas) y abren <strong>desde las 14:00</strong>. ⚠️ <strong>Es solo para mayores de 18</strong>, así que la quinceañera no puede entrar a las salas de juego, y exigen <strong>pasaporte o DNI físico</strong> (no valen fotos ni documento digital). Después de las 14:00 el código de vestimenta prohíbe shorts, jeans rotos, ropa deportiva, zapatillas y camisetas sin mangas; después de las 19:00 tampoco admiten camisetas ni sudaderas.<br><br>
+<strong>Plan:</strong> Tren a Mónaco → caminar por el puerto (yates gigantes) → subir al Palacio (vista panorámica gratis) → bajar al Casino (fotos) → tren de vuelta a Niza → cenar en Niza (mucho más barato que Mónaco).<br><br>
+<strong>¿Qué se pierden?</strong> Siendo sincero: NADA importante. El Museo Oceanográfico es bonito pero no imperdible. La Catedral es pequeña. El tour básicamente los pasea por los mismos lugares que pueden caminar solos.</div>
+<div class="note info"><strong>🤔 MI OPINIÓN:</strong> Háganlo solos. Siendo BRUTALMENTE honesto: Mónaco de noche es bonito pero lo ven en 2 horas caminando. No hay actividades, no hay museo abierto de noche, no hay show. Es básicamente: ver el Casino iluminado, ver los yates, decir "wow qué lindo", y volver. El tour cobra $465 por esto. El tren cuesta €4-5 por persona. Es el ahorro más claro de todo el viaje. Si les da pereza ir solos de noche, honestamente pueden SALTARSE Mónaco por completo y descansar en el hotel — no se pierden nada esencial.</div>
+<div class="note info"><strong>🧭 Logística del día.</strong> <strong>Cómo viajan:</strong> bus del tour: Florencia → Pisa (parada ~1h, caminan a la torre, fotos) → Costa Azul/Niza (varias horas de bus).<br><br>
+<strong>Dónde duermen:</strong> hotel en zona de la Costa Azul (probablemente Niza o alrededores). 1 noche.<br><br>
+<strong>Mónaco:</strong> si contratan el tour nocturno: los recogen del hotel ~8 PM, los devuelven ~12:30 AM. Si van solos: tren desde Niza (~20 min, salen cada 15-30 min hasta ~11 PM). Último tren de vuelta ~11:30 PM.<br><br>
+<strong>Mañana siguiente:</strong> desayuno. EMPACAR. Bus largo a Barcelona (~660 km, casi todo el día en bus).</div>
+</div></details>
+
+<details class="block"><summary>🗣 Cómo se dice</summary><div class="block-body"><div class="vocab">
+<div class="v"><b>Buen día (OBLIGATORIO)</b><i>Bonjour</i><span>bon-YUR</span></div>
+<div class="v"><b>Adiós</b><i>Au revoir</i><span>o-re-VUAR</span></div>
+<div class="v"><b>Por favor</b><i>S'il vous plaît</i><span>sil vu PLÉ</span></div>
+<div class="v"><b>Gracias</b><i>Merci</i><span>mer-SÍ</span></div>
+<div class="v"><b>No, gracias</b><i>Non, merci</i><span>non mer-SÍ</span></div>
+<div class="v"><b>¿Habla español?</b><i>Parlez-vous espagnol?</i><span>parle-VÚ españól</span></div>
+<div class="v"><b>¿Cuánto cuesta?</b><i>Combien?</i><span>com-BIEN</span></div>
+<div class="v"><b>La cuenta</b><i>L'addition</i><span>la-di-SION</span></div>
+<div class="v"><b>¿Dónde está el baño?</b><i>Où sont les toilettes?</i><span>u son le tua-LET</span></div>
+<div class="v"><b>Déjeme en paz</b><i>Laissez-moi tranquille</i><span>le-SÉ muá tran-KÍL</span></div>
+</div></div></details>
+
+<details class="block"><summary>📸 Fotos que valen la pena</summary><div class="block-body"><div class="shots">
+<div class="shot"><b>Torre de Pisa:</b> LA FOTO "sosteniendo" la Torre, en la Piazza dei Miracoli. Cámara baja mirando arriba = mejor ángulo.</div>
+<div class="shot"><b>Casino de Montecarlo:</b> por fuera es un edificio espectacular iluminado de noche (gratis verlo).</div>
+<div class="shot"><b>Puerto de Mónaco:</b> caminar por el puerto con los yates gigantes; desde el Palacio, vista panorámica gratis.</div>
+</div></div></details>
+</section>
+
+<section class="screen day" id="dia16" data-day="16" data-date="Lunes 19 de octubre" data-short="Barcelona">
+<div class="hero"><div class="h-n">Día 16 de 19</div><h1>🇫🇷→🇪🇸 Costa Azul → Barcelona</h1><div class="h-date">Lunes 19 de octubre</div><div class="h-meta">660 km — RUTA MUY LARGA · 🇪🇺 EURO € (España también)</div></div>
+
+<div class="block"><h2>⏰ El día</h2><div class="block-body">
+<ul class="tl">
+<li><time class="eat">6:30 AM</time><div class="tl-c"><strong>Desayuno TEMPRANO</strong><p>+ EMPACAR TODO</p></div></li>
+<li><time class="go">7:30 AM</time><div class="tl-c"><strong>Sale el bus</strong><p>Hacia Barcelona (~8-9h de viaje)</p></div></li>
+<li><time class="go">~1:00 PM</time><div class="tl-c"><strong>Parada técnica</strong><p>Almuerzo rápido en área de servicio</p></div></li>
+<li><time class="go">~5:00 PM</time><div class="tl-c"><strong>Llegan a Barcelona</strong></div></li>
+<li><time class="tour">5:30-7:00 PM</time><div class="tl-c"><strong>BREVE VISITA INCLUIDA</strong><p>Sagrada Familia (exterior), Plaza Cataluña, Colón (~1.5h)</p></div></li>
+<li><time>7:30 PM</time><div class="tl-c"><strong>Check-in hotel</strong></div></li>
+<li><time class="eat">8:30 PM</time><div class="tl-c"><strong>Cena tapas</strong><p>En Poble Sec o Gràcia (¡ESPAÑA BARATA!)</p></div></li>
+</ul>
+
+<div class="gal">
+<img src="../img/sagrada_familia.jpg" alt="Sagrada Familia" loading="lazy">
+<img src="../img/gothic_quarter.jpg" alt="Barrio Gótico" loading="lazy">
+<img src="../img/barcelona.jpg" alt="Barcelona" loading="lazy">
+</div>
+
+<div class="note info"><strong>✅ INCLUIDO</strong> Bus largo. Llegada Barcelona: Sagrada Familia (exterior), Plaza Cataluña, Colón.</div>
+
+<div class="note danger"><strong>🚨 Barcelona = #1 Europa en carteristas</strong><br>📍 Las Ramblas, metro L1/L3, Plaça Catalunya<br><br>Los peores de Europa. Trabajan en grupo: uno distrae, otro roba. Increíblemente rápidos.<br><br>🛡️ Riñonera BAJO ropa. Mochila adelante. Celular con cordón. NADA en respaldo silla. Celular NO en mesa restaurante.</div>
+
+<div class="note warn"><strong>⚠️ LUNES:</strong> Tiendas abren con horario normal en Barcelona.</div>
+
+<div class="note info"><strong>🎉 ¡ESPAÑA!</strong> Hablan español. Diferencias: "vale"=OK, "tío"=amigo, "móvil"=celular, "patatas"=papas. Se entienden perfecto.</div>
+</div></div>
+
+<details class="block"><summary>💡 Tips prácticos y dinero</summary><div class="block-body">
+<div class="money"><strong>💰 Llevar: ~€30-40/persona.</strong> Traslado. Cena tapas (~€10-15/pp).</div>
+
+<div class="note food"><strong>🍽 TAPAS:</strong> España es BARATA. Patatas bravas €4, croquetas €5, jamón ibérico €8. 8-10 tapas entre 5 = cena por €40-50. O <strong>menú del día</strong>: entrada+plato+postre+bebida+pan por €11-15/pp. MEJOR deal de Europa.</div>
+
+<div class="note food"><strong>🍽 Platos típicos españoles:</strong> Paella · Tortilla Española · Jamón Ibérico · Patatas Bravas · Croquetas · Gazpacho · Churros con chocolate · Bocadillo de calamares · Tinto de verano · Pulpo a la gallega.</div>
+
+<div class="note info"><strong>🎭 Etiqueta española</strong>
+<ul>
+<li><strong>Horarios TARDES:</strong> Almuerzan a las 2-3 PM. Cenan a las 9-10 PM. NO intenten cenar a las 7 PM, los restaurantes están vacíos o cerrados.</li>
+<li><strong>Siesta:</strong> Muchas tiendas cierran 2-5 PM (en pueblos pequeños). En Madrid/Barcelona turísticas siguen abiertas.</li>
+<li><strong>Hablan FUERTE y DIRECTO.</strong> No están enojados, es normal.</li>
+<li><strong>Dos besos</strong> al saludar conocidos (empezando por la mejilla derecha).</li>
+<li><strong>Propina:</strong> 5-10% si el servicio fue bueno. No es obligatorio.</li>
+<li><strong>"Vosotros"</strong> en vez de "ustedes" (solo cuando hablan entre amigos).</li>
+<li><strong>NO pidan Sangría</strong> en bares locales (es turístico). Pidan tinto de verano o vermut.</li>
+</ul></div>
+
+<div class="note info"><strong>🧭 Logística del día</strong>
+<ul>
+<li><strong>🚌 Cómo viajan:</strong> Bus largo Costa Azul → Barcelona (~660 km, casi todo el día en bus). Llegada tarde. Breve tour de Barcelona al llegar.</li>
+<li><strong>🏨 Dónde duermen:</strong> Hotel en zona de Barcelona (1 noche). Probablemente periferia.</li>
+<li><strong>🔙 Noche:</strong> Si salen a cenar tapas, vuelven al hotel por su cuenta en metro/taxi/Uber. CUIDADO con carteristas, especialmente en el metro de noche.</li>
+<li><strong>📍 Mañana siguiente:</strong> Desayuno. EMPACAR. Bus a Zaragoza → Madrid.</li>
+</ul></div>
+</div></details>
+
+<details class="block"><summary>🎲 Datos curiosos</summary><div class="block-body">
+<p><strong>Sagrada Familia:</strong> Lleva en construcción desde 1882 (140+ años). En 2026 alcanzó su altura definitiva de 172,5 m al completarse la Torre de Jesucristo — pero <strong>NO está terminada</strong>: falta la Fachada de la Gloria, prevista recién para ~2034. Gaudí, el arquitecto, fue atropellado por un tranvía y nadie lo reconoció porque parecía mendigo.</p>
+<p><strong>Barcelona:</strong> El catalán y el castellano son <strong>ambos idiomas oficiales</strong> en Cataluña. Les van a entender perfectamente en castellano; el catalán es la lengua propia y la verán primero en carteles, menús y señalización.</p>
+</div></details>
+
+<details class="block"><summary>🗣 Cómo se dice</summary><div class="block-body">
+<div class="vocab">
+<div class="v"><b>OK / De acuerdo</b><i>Vale</i><span>—</span></div>
+<div class="v"><b>Chévere / cool</b><i>Mola</i><span>—</span></div>
+<div class="v"><b>Amigo</b><i>Tío / Tía</i><span>—</span></div>
+<div class="v"><b>Celular</b><i>Móvil</i><span>—</span></div>
+<div class="v"><b>Jugo</b><i>Zumo</i><span>—</span></div>
+<div class="v"><b>Papas</b><i>Patatas</i><span>—</span></div>
+<div class="v"><b>Carro</b><i>Coche</i><span>—</span></div>
+<div class="v"><b>Agarrar/tomar</b><i>Coger</i><span>—</span></div>
+<div class="v"><b>Chamba / trabajo</b><i>Curro</i><span>—</span></div>
+<div class="v"><b>¡Qué bacán!</b><i>¡Qué guay!</i><span>—</span></div>
+</div>
+<div class="note info">Ojo: "coger" en España significa tomar/agarrar. Ej: "voy a coger el bus" = voy a tomar el bus. No tiene el doble sentido que tiene en Latinoamérica.</div>
+</div></details>
+
+<details class="block"><summary>📸 Fotos que valen la pena</summary><div class="block-body">
+<div class="shots">
+<div class="shot"><b>Lugar:</b> Sagrada Familia (exterior) — la visita incluida pasa por acá entre 5:30 y 7:00 PM.</div>
+<div class="shot"><b>Lugar:</b> Plaza Cataluña — parada de la visita incluida.</div>
+<div class="shot"><b>Lugar:</b> Monumento a Colón — parada de la visita incluida.</div>
+<div class="shot"><b>Ojo:</b> Al sacar fotos, celular con cordón y nada apoyado en la mesa o en el respaldo de la silla. Acá están los peores carteristas de Europa.</div>
+</div>
+</div></details>
+</section>
+
+<section class="screen day" id="dia17" data-day="17" data-date="Martes 20 de octubre" data-short="Madrid">
+<div class="hero"><div class="h-n">Día 17 de 19</div><h1>🇪🇸 Barcelona → Zaragoza → Madrid</h1><div class="h-date">Martes 20 de octubre</div><div class="h-meta">620 km · 🇪🇺 EURO €</div></div>
+
+<div class="block"><h2>⏰ El día</h2><div class="block-body">
+<ul class="tl">
+<li><time class="eat">7:00 AM</time><div class="tl-c"><strong>Desayuno</strong><p>+ EMPACAR TODO</p></div></li>
+<li><time class="go">8:00 AM</time><div class="tl-c"><strong>Sale el bus</strong><p>Hacia Zaragoza (~3.5h)</p></div></li>
+<li><time class="free">~11:30 AM</time><div class="tl-c"><strong>Zaragoza - Basílica del Pilar</strong><p>~45 MIN · Paseo + fotos</p></div></li>
+<li><time class="go">12:15 PM</time><div class="tl-c"><strong>Bus hacia Madrid</strong><p>(~3.5h)</p></div></li>
+<li><time class="go">~4:00 PM</time><div class="tl-c"><strong>Llegan al hotel en Madrid</strong><p>Check-in</p></div></li>
+<li><time class="free">4:30-9:00 PM</time><div class="tl-c"><strong>NOCHE LIBRE</strong><p>4.5 HORAS · Primark Gran Vía (5 pisos), Zara, compras</p></div></li>
+<li><time class="eat">9:00 PM</time><div class="tl-c"><strong>Cena</strong><p>100 Montaditos o bocadillo de calamares en Plaza Mayor</p></div></li>
+</ul>
+
+<div class="gal">
+<img src="../img/plaza_mayor.jpg" alt="Plaza Mayor" loading="lazy">
+<img src="../img/retiro_park.jpg" alt="Parque del Retiro" loading="lazy">
+<img src="../img/madrid.jpg" alt="Madrid" loading="lazy">
+</div>
+
+<div class="note info"><strong>✅ INCLUIDO</strong> Zaragoza: Basílica del Pilar (impresionante, gratis). Bus a Madrid.</div>
+
+<div class="note info"><strong>⏱ Zaragoza:</strong> Parada corta ~45 min. Basílica enorme e impresionante. Fotos y paseo rápido.</div>
+</div></div>
+
+<details class="block"><summary>💡 Tips prácticos y dinero</summary><div class="block-body">
+<div class="money"><strong>💰 Llevar: ~€40-60/persona.</strong> Cena (~€10) + compras.</div>
+
+<div class="note save"><strong>🛍 COMPRAS AQUÍ:</strong> Zara, Mango, Bershka son ESPAÑOLAS = 20-30% más barato. <strong>Primark Gran Vía</strong> = 5 pisos, ropa desde €3.</div>
+
+<div class="note food"><strong>🍽 Cena Madrid:</strong> 100 Montaditos (mini-sándwiches €1-2 c/u) o bocadillo de calamares en Plaza Mayor (~€3.50).</div>
+
+<div class="note info"><strong>🧭 Logística del día</strong>
+<ul>
+<li><strong>🚌 Cómo viajan:</strong> Bus: Barcelona → Zaragoza (parada ~45 min, Basílica del Pilar) → Madrid.</li>
+<li><strong>🏨 Dónde duermen:</strong> Hotel en zona de Madrid (2 noches: Días 17 y 18).</li>
+<li><strong>🔙 Noche:</strong> Si salen a cenar/comprar, vuelven al hotel por su cuenta en metro/Uber.</li>
+<li><strong>📍 Mañana siguiente:</strong> Desayuno. Bus los recoge para tour panorámico de Madrid + Toledo (si lo contratan). ÚLTIMO DÍA COMPLETO.</li>
+</ul></div>
+</div></details>
+
+<details class="block"><summary>🎲 Datos curiosos</summary><div class="block-body">
+<p><strong>Madrid:</strong> Está a unos 650 m sobre el nivel del mar: es la capital más alta de la <strong>Unión Europea</strong> y la segunda de Europa, solo por detrás de Andorra la Vella (~1.023 m).</p>
+</div></details>
+
+<details class="block"><summary>📸 Fotos que valen la pena</summary><div class="block-body">
+<div class="shots">
+<div class="shot"><b>Lugar:</b> Basílica del Pilar, Zaragoza — la parada es de ~45 min, es paseo + fotos.</div>
+<div class="shot"><b>Lugar:</b> Plaza Mayor, Madrid — donde cenan el bocadillo de calamares.</div>
+<div class="shot"><b>Lugar:</b> Gran Vía — de camino al Primark de 5 pisos.</div>
+</div>
+</div></details>
+</section>
+
+<section class="screen day" id="dia18" data-day="18" data-date="Miércoles 21 de octubre" data-short="Madrid + Toledo">
+<div class="hero"><div class="h-n">Día 18 de 19</div><h1>🇪🇸 Madrid - Tour + Toledo</h1><div class="h-date">Miércoles 21 de octubre</div><div class="h-meta">ÚLTIMO DÍA COMPLETO — CRÍTICO · 🇪🇺 EURO €</div></div>
+
+<div class="block"><h2>⏰ El día</h2><div class="block-body">
+<ul class="tl">
+<li><time class="eat">7:30 AM</time><div class="tl-c"><strong>Desayuno</strong><p>En hotel</p></div></li>
+<li><time class="tour">9:00 AM</time><div class="tl-c"><strong>Bus del tour los recoge</strong><p>Del hotel</p></div></li>
+<li><time class="tour">9:30-12:30</time><div class="tl-c"><strong>TOUR PANORÁMICO MADRID</strong><p>Plaza España, Gran Vía, Cibeles, Puerta Alcalá, Plaza Mayor</p></div></li>
+<li><time class="free">12:30-1:30 PM</time><div class="tl-c"><strong>Almuerzo rápido</strong><p>1 HORA · Menú del día en La Latina (~€12)</p></div></li>
+<li><time class="tour">1:30 PM</time><div class="tl-c"><strong>EXCURSIÓN TOLEDO</strong><p>Bus los recoge desde el centro de Madrid</p></div></li>
+<li><time class="tour">2:30-7:30 PM</time><div class="tl-c"><strong>Toledo con guía</strong><p>Paseo + Catedral + damasquinado (6 horas total incluyendo viaje)</p></div></li>
+<li><time>7:30 PM</time><div class="tl-c"><strong>Fin Toledo</strong><p>Los devuelven al hotel en Madrid</p></div></li>
+<li><time class="eat">8:00 PM</time><div class="tl-c"><strong>🍽 ÚLTIMA CENA</strong><p>Cerca del hotel (NO lejos, tienen que empacar)</p></div></li>
+<li><time>9:30 PM</time><div class="tl-c"><strong>Al hotel - EMPACAR TODO</strong></div></li>
+<li><time class="go">~9:45 PM</time><div class="tl-c"><strong>🚨 SALIDA AL AEROPUERTO</strong><p>De Madrid Barajas (traslado incluido en el tour)</p></div></li>
+</ul>
+
+<div class="gal">
+<img src="../img/prado.jpg" alt="Museo del Prado" loading="lazy">
+<img src="../img/madrid.jpg" alt="Madrid" loading="lazy">
+<img src="../img/toledo.jpg" alt="Toledo" loading="lazy">
+</div>
+
+<div class="note info"><strong>✅ INCLUIDO</strong> Tour: Plaza España, Gran Vía, Cibeles, Puerta Alcalá, Plaza Mayor.</div>
+
+<div class="note save"><strong>✅ CONTRATAR — Toledo, $83/pp ($415)</strong><br>6h. Ciudad medieval Patrimonio Humanidad. 3 culturas. Catedral espectacular. Guía hace la diferencia. Broche de oro del viaje.</div>
+
+<div class="note warn"><strong>💰 Tax Free en España: NO hay compra mínima.</strong> El antiguo mínimo de €90,15 fue derogado en 2018, así que cualquier compra sirve — pidan el formulario en la tienda mostrando el pasaporte. Recuperan aproximadamente entre <strong>10% y 13%</strong> del precio pagado (el IVA es 21%, pero el operador cobra comisión). Mañana en el aeropuerto: validar en las pantallas <strong>DIVA</strong> de la zona de facturación <strong>ANTES de despachar maletas</strong>, porque Aduanas puede pedir ver la mercadería sin usar. <strong>Pidan el reembolso a tarjeta, no en efectivo</strong> — el efectivo depende de mostradores con horario y su vuelo sale de madrugada.</div>
+</div></div>
+
+<details class="block"><summary>💡 Tips prácticos y dinero</summary><div class="block-body">
+<div class="money"><strong>💰 Llevar: ~€50-70/persona.</strong> Toledo pagado. Almuerzo (~€8), cena (~€15), compras último minuto.</div>
+
+<div class="note info"><strong>⏱ ¿Aburrido?</strong> NO. Toledo es como película medieval. Calles de piedra, catedral llena de arte, 3 culturas. 6h pasan rápido.</div>
+
+<div class="note food"><strong>🍽 Última cena:</strong> Menú del día en La Latina/Lavapiés (€11-14/pp con TODO) o Mercado San Miguel (tapas gourmet €3-8).</div>
+
+<div class="note info"><strong>🧭 Logística del día</strong>
+<ul>
+<li><strong>🚌 Tour mañana:</strong> Bus los recoge del hotel. Tour panorámico Madrid por la mañana.</li>
+<li><strong>🚌 Toledo (si lo contratan):</strong> Después del tour de Madrid, bus a Toledo (~1h). Visitan Toledo con guía. Regresan al hotel en Madrid ~7:30 PM.</li>
+<li><strong>🏨 Dónde duermen:</strong> Mismo hotel en Madrid. PERO: el vuelo sale a la 01:45 AM, así que tienen que ir al aeropuerto a las ~10 PM. Básicamente llegan de Toledo, recogen maletas del hotel, y van al aeropuerto.</li>
+<li><strong>✈️ Traslado al aeropuerto:</strong> El tour incluye el traslado de salida al aeropuerto. Pregunten al guía a qué hora sale el bus/van al aeropuerto. Si no alcanza con el horario del tour, tomen Uber/taxi (~€30-40 al aeropuerto de Barajas).</li>
+</ul></div>
+</div></details>
+
+<details class="block"><summary>🎲 Datos curiosos</summary><div class="block-body">
+<p><strong>Toledo:</strong> Fue capital de España antes que Madrid (hasta 1561). Aquí convivieron cristianos, musulmanes y judíos en armonía durante siglos.</p>
+</div></details>
+
+<details class="block"><summary>📸 Fotos que valen la pena</summary><div class="block-body">
+<div class="shots">
+<div class="shot"><b>Lugar:</b> Cibeles y Puerta de Alcalá — paradas del tour panorámico de la mañana.</div>
+<div class="shot"><b>Lugar:</b> Plaza España y Gran Vía — también en el tour panorámico.</div>
+<div class="shot"><b>Lugar:</b> Toledo — calles de piedra y la Catedral, con guía. Es el broche de oro del viaje.</div>
+<div class="shot"><b>Lugar:</b> Damasquinado en Toledo — parte de la visita guiada.</div>
+</div>
+</div></details>
+</section>
+
+<section class="screen day" id="dia19" data-day="19" data-date="Jueves 22 de octubre" data-short="🏠 Vuelta">
+<div class="hero"><div class="h-n">Día 19 de 19</div><h1>✈️ Madrid → Lima</h1><div class="h-date">Jueves 22 de octubre</div><div class="h-meta">Vuelta a casa</div></div>
+
+<div class="block"><h2>⏰ El día</h2><div class="block-body">
+<ul class="tl">
+<li><time class="go">~9:45 PM (Día 18)</time><div class="tl-c"><strong>Salen del hotel</strong><p>Hacia aeropuerto Barajas</p></div></li>
+<li><time class="go">~10:30 PM</time><div class="tl-c"><strong>Llegan al aeropuerto</strong><p>Madrid Barajas — <strong>TERMINAL 4 (T4)</strong>, nivel 2 de salidas</p></div></li>
+<li><time>10:30-11:00 PM</time><div class="tl-c"><strong>Tax Free</strong><p>Mostrador DIVA/Global Blue ANTES de despachar maletas</p></div></li>
+<li><time>11:30 PM</time><div class="tl-c"><strong>Check-in + despacho maletas + migraciones</strong></div></li>
+<li><time class="go">01:45 AM</time><div class="tl-c"><strong>✈️ Vuelo IB6660</strong><p>Madrid → Lima (directo, 11h 45min, operado por LATAM)</p></div></li>
+<li><time class="go">06:30 AM</time><div class="tl-c"><strong>🏠 Llegada a Lima</strong><p>Jorge Chávez. ¡EN CASA!</p></div></li>
+</ul>
+
+<div class="note danger"><strong>⚠️ OJO CON EL HORARIO:</strong> El vuelo sale a la <strong>01:45 AM del jueves 22</strong>. Eso significa que tienen que estar en el aeropuerto a las <strong>~11:00 PM del MIÉRCOLES 21</strong> (Día 18). El tour de Toledo termina a las 7:30 PM → vuelven al hotel → recogen maletas → van al aeropuerto. Es justo pero alcanza. NO se demoren en Toledo, no vayan a comprar cosas de último minuto en Madrid después de Toledo. Directo al hotel y al aeropuerto.</div>
+</div></div>
+
+<div class="block"><h2>🛫 Cómo moverse en Barajas</h2><div class="block-body">
+<div class="note danger"><strong>⚠️ OJO — T4 y T4S NO son lo mismo, y esto los puede hacer perder el vuelo.</strong><br><br>
+<strong>T4</strong> es la terminal donde se hace TODO lo de tierra: check-in, despacho de maletas, seguridad. <strong>T4S es una terminal satélite sin acceso desde la calle</strong>: solo tiene puertas de embarque, y se llega únicamente en un <strong>tren automático subterráneo</strong> desde T4. Su avión sale de T4S, pero ustedes <strong>empiezan en T4</strong>.</div>
+
+<p><strong>Orden correcto:</strong></p>
+<div class="note warn">
+<ul>
+<li><strong>(1) Tax Free:</strong> validar en las pantallas <strong>DIVA de la zona de facturación de T4</strong>, ANTES de despachar las maletas, porque Aduanas puede pedir ver la mercadería.</li>
+<li><strong>(2)</strong> Check-in y despacho de maletas en T4.</li>
+<li><strong>(3)</strong> Control de seguridad.</li>
+<li><strong>(4) Tren a T4S</strong> — el viaje son 3 minutos, pero con las caminatas calculen 20-30.</li>
+<li><strong>(5) Control de pasaportes de salida:</strong> como son peruanos van a mostrador con agente, no a las puertas automáticas, así que puede haber cola. Acá también les toma la <strong>biometría de salida (EES)</strong>.</li>
+<li><strong>(6)</strong> Duty Free y puerta de embarque.</li>
+</ul>
+</div>
+
+<div class="note danger"><strong>Por eso conviene llegar 3 horas antes y no 2:</strong> el mínimo oficial que Aena da solo para ir de T4 a T4S ya son 55 minutos, y eso sin contar el check-in ni el tax free.</div>
+</div></div>
+
+<details class="block"><summary>💡 Tips prácticos y dinero</summary><div class="block-body">
+<div class="money"><strong>💰 Llevar: ~€20-30/persona.</strong> Café o snack en aeropuerto. Gasten euros sobrantes en el Duty Free.</div>
+
+<div class="note save"><strong>💰 Tax Free:</strong> Mostrador DIVA/Global Blue en aeropuerto ANTES de despachar maletas. Gasten euros sobrantes en Duty Free.</div>
+
+<div class="note info"><strong>🧭 Logística del día</strong>
+<ul>
+<li><strong>✈️ Vuelo:</strong> IB6660, Madrid Barajas → Lima Jorge Chávez. Directo, 11h 45min. Operado por LATAM.</li>
+<li><strong>🏠 Llegada a Lima:</strong> 6:30 AM hora de Lima. Migraciones de entrada a Perú (cola "Nacionales/Peruanos"). Recogen maletas. ¡ESTÁN EN CASA! 🇵🇪</li>
+</ul></div>
+</div></details>
+</section>
+
+<!-- ================= BOTTOM NAV ================= -->
+<nav class="botnav">
+  <button class="arrow" id="prev" aria-label="Día anterior">‹</button>
+  <button class="picker" id="picker">Elegir día</button>
+  <button class="arrow" id="next" aria-label="Día siguiente">›</button>
+  <button class="lost" id="btnLost" aria-label="Estoy perdido">🆘</button>
+</nav>
+
+<!-- ================= OVERLAY: DÍAS ================= -->
+<div class="ov" id="ovDays"><div class="sheet">
+  <div class="grab"></div>
+  <h2>¿Qué día?</h2>
+  <div class="daygrid" id="dayGrid"></div>
+  <button class="cta ghost" style="margin-top:14px" data-close>Cerrar</button>
+</div></div>
+
+<!-- ================= OVERLAY: BUSCAR ================= -->
+<div class="ov" id="ovSearch"><div class="sheet">
+  <div class="grab"></div>
+  <h2>Buscar</h2>
+  <p class="hint">Escriban un lugar, una comida, un precio… o "día 7" para saltar directo.</p>
+  <div class="searchbar"><input type="search" id="q" placeholder="góndola, euros, wifi, día 10…" autocomplete="off"></div>
+  <div class="res" id="res"></div>
+  <button class="cta ghost" style="margin-top:14px" data-close>Cerrar</button>
+</div></div>
+
+<!-- ================= OVERLAY: ESTOY PERDIDO ================= -->
+<div class="ov" id="ovLost"><div class="sheet">
+  <div class="grab"></div>
+  <h2>🆘 Estoy perdido</h2>
+  <a class="bigcall" href="tel:112">📞 LLAMAR AL 112</a>
+  <p class="hint">El 112 funciona en TODOS los países del viaje, incluso sin saldo y sin chip. Policía, ambulancia y bomberos.</p>
+  <div class="phrase" id="lostPhrase"></div>
+  <div class="lostfield"><label>Hotel de hoy — escríbanlo cada noche</label><input id="f_hotel" placeholder="Nombre y dirección del hotel"></div>
+  <div class="lostfield"><label>Teléfono del guía</label><input id="f_guia" type="tel" placeholder="+..."></div>
+  <div class="lostfield"><label>Celular 1</label><input id="f_c1" type="tel" placeholder="+51..."></div>
+  <div class="lostfield"><label>Celular 2</label><input id="f_c2" type="tel" placeholder="+51..."></div>
+  <div class="lostfield"><label>Celular 3</label><input id="f_c3" type="tel" placeholder="+51..."></div>
+  <div class="lostfield"><label>Celular 4</label><input id="f_c4" type="tel" placeholder="+51..."></div>
+  <p class="hint">Se guarda solo en este celular. Nadie más lo ve.</p>
+  <div id="lostCalls"></div>
+  <button class="cta ghost" data-close>Cerrar</button>
+</div></div>
+
+<script>
+(function(){
+'use strict';
+var days = [].slice.call(document.querySelectorAll('section.day'));
+var inicio = document.getElementById('inicio');
+var tbDay = document.getElementById('tbDay'), tbTitle = document.getElementById('tbTitle');
+var cur = 0; // 0 = inicio
+
+/* ---------- utilidades ----------
+   fold() quita tildes y mayúsculas para que "gondola" encuentre "góndola".
+   Se usa un mapa explícito en vez de un rango Unicode, porque así funciona
+   igual aunque el archivo se re-codifique al copiarlo o al servirlo. */
+var ACC = {'á':'a','à':'a','ä':'a','â':'a','ã':'a','é':'e','è':'e','ë':'e','ê':'e','í':'i','ì':'i','ï':'i','î':'i','ó':'o','ò':'o','ö':'o','ô':'o','õ':'o','ú':'u','ù':'u','ü':'u','û':'u','ñ':'n','ç':'c','ý':'y'};
+function fold(s){ s=(s||'').toLowerCase(); var o=''; for(var i=0;i<s.length;i++){ var c=s.charAt(i); o += (ACC[c]||c); } return o; }
+function byId(id){ return document.getElementById(id); }
+
+/* ---------- router ---------- */
+function show(n, noScroll){
+  cur = n;
+  inicio.classList.toggle('on', n === 0);
+  days.forEach(function(d){ d.classList.toggle('on', +d.dataset.day === n); });
+  if(n === 0){
+    tbDay.textContent = 'Antes de viajar';
+    tbTitle.textContent = 'Plan Europa 2026';
+  } else {
+    var d = days[n-1];
+    tbDay.textContent = 'Día ' + n + ' · ' + (d.dataset.date || '');
+    tbTitle.textContent = d.dataset.short || '';
+  }
+  byId('prev').disabled = (n <= 0);
+  byId('next').disabled = (n >= days.length);
+  if(!noScroll) window.scrollTo(0,0);
+  try{ localStorage.setItem('pe_last', n); }catch(e){}
+  setPhrase(n);
+}
+function goHash(){
+  var h = (location.hash||'').replace('#','');
+  if(!h || h === 'inicio'){ show(0,true); return; }
+  var m = h.match(/^dia(\d+)$/);
+  if(m){ show(Math.min(Math.max(+m[1],1),days.length), true); }
+}
+window.addEventListener('hashchange', goHash);
+
+byId('btnHome').onclick = function(){ location.hash = ''; show(0); };
+byId('prev').onclick = function(){ if(cur>0){ var n=cur-1; location.hash = n===0?'':'dia'+n; show(n); } };
+byId('next').onclick = function(){ if(cur<days.length){ var n=cur+1; location.hash='dia'+n; show(n); } };
+
+/* ---------- selector de días ---------- */
+var grid = byId('dayGrid');
+days.forEach(function(d){
+  var n = +d.dataset.day;
+  var a = document.createElement('a');
+  a.href = '#dia'+n;
+  a.className = (n===10?'bd':'');
+  a.innerHTML = (n===10?'🎂':'D'+n) + '<small>'+(d.dataset.short||'')+'</small>';
+  a.onclick = function(){ closeAll(); show(n); };
+  grid.appendChild(a);
+});
+function markGrid(){
+  [].slice.call(grid.children).forEach(function(a,i){ a.classList.toggle('here', (i+1)===cur); });
+}
+
+/* ---------- overlays ---------- */
+function openOv(id){ byId(id).classList.add('on'); document.body.style.overflow='hidden'; }
+function closeAll(){
+  ['ovDays','ovSearch','ovLost'].forEach(function(i){ byId(i).classList.remove('on'); });
+  document.body.style.overflow='';
+}
+document.addEventListener('click', function(e){
+  if(e.target.hasAttribute && e.target.hasAttribute('data-close')) closeAll();
+  if(e.target.classList && e.target.classList.contains('ov')) closeAll();
+});
+byId('picker').onclick = function(){ markGrid(); openOv('ovDays'); };
+byId('btnSearch').onclick = function(){ openOv('ovSearch'); setTimeout(function(){ byId('q').focus(); },120); };
+byId('btnLost').onclick = function(){ openOv('ovLost'); };
+
+/* ---------- buscador ---------- */
+var SYN = {
+  'plata':'dinero euros efectivo precio costo','dinero':'plata euros efectivo precio costo',
+  'euros':'dinero plata efectivo','wifi':'esim datos internet celular',
+  'datos':'esim wifi internet celular','internet':'esim wifi datos celular',
+  'esim':'wifi datos internet celular chip','comida':'comer restaurante almuerzo cena comer',
+  'comer':'comida restaurante almuerzo cena','tren':'metro estacion transporte',
+  'metro':'tren estacion transporte','hotel':'alojamiento dormir habitacion',
+  'foto':'fotos camara','bano':'servicio wc toilette','propina':'tip'
+};
+var index = [];
+function buildIndex(){
+  days.forEach(function(d){
+    var n = +d.dataset.day, label = 'Día '+n+' · '+(d.dataset.short||'');
+    // recorre bloques de texto
+    [].slice.call(d.querySelectorAll('li, p, .note, .money, .shot, .v, h1, h2, summary')).forEach(function(el){
+      var t = (el.textContent||'').replace(/\s+/g,' ').trim();
+      if(t.length < 12) return;
+      index.push({day:n, label:label, text:t, f:fold(t)});
+    });
+  });
+  // también el inicio
+  [].slice.call(inicio.querySelectorAll('li, p, .note, h2')).forEach(function(el){
+    var t = (el.textContent||'').replace(/\s+/g,' ').trim();
+    if(t.length < 12) return;
+    index.push({day:0, label:'Antes de viajar', text:t, f:fold(t)});
+  });
+}
+function esc(s){ return s.replace(/[&<>]/g, function(c){ return ({'&':'&amp;','<':'&lt;','>':'&gt;'})[c]; }); }
+function snippet(text, term){
+  var f = fold(text), i = f.indexOf(term);
+  if(i < 0) return esc(text.slice(0,150)) + (text.length>150?'…':'');
+  var a = Math.max(0, i-55), b = Math.min(text.length, i+term.length+95);
+  return (a>0?'…':'') + esc(text.slice(a,i)) + '<mark>' + esc(text.slice(i,i+term.length)) + '</mark>' + esc(text.slice(i+term.length,b)) + (b<text.length?'…':'');
+}
+var resBox = byId('res');
+byId('q').addEventListener('input', function(){
+  var raw = this.value.trim();
+  if(!raw){ resBox.innerHTML=''; return; }
+  // modo "ir al día"
+  var dm = fold(raw).match(/^dia\s*(\d{1,2})$/);
+  if(dm){
+    var n = Math.min(Math.max(+dm[1],1), days.length);
+    var d = days[n-1];
+    resBox.innerHTML = '<a href="#dia'+n+'" data-go="'+n+'"><span class="r-day">Ir al día '+n+'</span><div class="r-txt">'+esc(d.dataset.date||'')+' · '+esc(d.dataset.short||'')+'</div></a>';
+    bindGo(); return;
+  }
+  var term = fold(raw);
+  var terms = [term];
+  var syn = SYN[term]; if(syn) terms = terms.concat(syn.split(' '));
+  var seen = {}, out = [];
+  for(var t=0;t<terms.length && out.length<25;t++){
+    for(var i=0;i<index.length && out.length<25;i++){
+      var it = index[i];
+      if(it.f.indexOf(terms[t]) < 0) continue;
+      var k = it.day+'|'+it.text.slice(0,40);
+      if(seen[k]) continue; seen[k]=1;
+      out.push({it:it, term:terms[t]});
+    }
+  }
+  if(!out.length){ resBox.innerHTML = '<div class="empty">No encontré nada con «'+esc(raw)+'».<br>Probá con otra palabra, o escribí «día 7» para ir a un día.</div>'; return; }
+  resBox.innerHTML = out.map(function(o){
+    var href = o.it.day===0 ? '#inicio' : '#dia'+o.it.day;
+    return '<a href="'+href+'" data-go="'+o.it.day+'"><span class="r-day">'+esc(o.it.label)+'</span><div class="r-txt">'+snippet(o.it.text,o.term)+'</div></a>';
+  }).join('');
+  bindGo();
+});
+function bindGo(){
+  [].slice.call(resBox.querySelectorAll('a')).forEach(function(a){
+    a.onclick = function(){ closeAll(); show(+a.dataset.go); };
+  });
+}
+
+/* ---------- estoy perdido ---------- */
+var LANG = {en:{p:"I'm lost, can you help me please?",l:'inglés'},fr:{p:"Je suis perdu, pouvez-vous m'aider ?",l:'francés'},de:{p:"Ich habe mich verlaufen, können Sie mir helfen?",l:'alemán'},it:{p:"Mi sono perso, può aiutarmi?",l:'italiano'},es:{p:"Estoy perdido, ¿puede ayudarme?",l:'español'}};
+function langFor(n){
+  if(n>=1&&n<=3) return 'en';
+  if(n>=4&&n<=6) return 'fr';
+  if(n>=7&&n<=9) return 'de';
+  if(n>=10&&n<=14) return 'it';
+  if(n===15) return 'fr';
+  return 'es';
+}
+function setPhrase(n){
+  var L = LANG[langFor(n||1)];
+  byId('lostPhrase').innerHTML = '<b>'+esc(L.p)+'</b>Decir esto en '+L.l+'. Muestren la pantalla si no se anima a pronunciarlo.';
+}
+var FIELDS = ['f_hotel','f_guia','f_c1','f_c2','f_c3','f_c4'];
+FIELDS.forEach(function(id){
+  var el = byId(id);
+  try{ el.value = localStorage.getItem('pe_'+id) || ''; }catch(e){}
+  el.addEventListener('input', function(){
+    try{ localStorage.setItem('pe_'+id, el.value); }catch(e){}
+    renderCalls();
+  });
+});
+function renderCalls(){
+  var out = '';
+  [['f_guia','Guía'],['f_c1','Celular 1'],['f_c2','Celular 2'],['f_c3','Celular 3'],['f_c4','Celular 4']].forEach(function(p){
+    var v = (byId(p[0]).value||'').trim();
+    if(v) out += '<a class="cta" style="background:var(--green)" href="tel:'+v.replace(/[^+\d]/g,'')+'">📞 Llamar a '+p[1]+'</a>';
+  });
+  byId('lostCalls').innerHTML = out;
+}
+renderCalls();
+
+/* ---------- checklists persistentes ---------- */
+[].slice.call(document.querySelectorAll('.checklist input[type=checkbox]')).forEach(function(cb){
+  try{ cb.checked = localStorage.getItem('pe_ck_'+cb.id) === '1'; }catch(e){}
+  cb.parentElement.classList.toggle('done', cb.checked);
+  cb.addEventListener('change', function(){
+    try{ localStorage.setItem('pe_ck_'+cb.id, cb.checked?'1':'0'); }catch(e){}
+    cb.parentElement.classList.toggle('done', cb.checked);
+  });
+});
+
+/* ---------- arranque ---------- */
+buildIndex();
+if(location.hash) goHash(); else show(0,true);
+
+/* ---------- offline ---------- */
+if('serviceWorker' in navigator){
+  window.addEventListener('load', function(){
+    navigator.serviceWorker.register('sw.js').catch(function(){});
+  });
+}
+})();
+</script>
+</body>
+</html>
