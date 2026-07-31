@@ -238,6 +238,123 @@ mark.jump{background:#ffe9a8;animation:pulse 2.2s ease}
 
   <a class="cta" href="#dia1">Ver el itinerario día por día →</a>
 
+
+  <div class="block"><h2>📄 Dos cosas que hay que pedirle a la agencia</h2><div class="block-body">
+    <div class="note warn"><strong>1. El plan impreso completo.</strong> Es el documento que la agencia entrega con el viaje contratado: itinerario día por día, hoteles, qué comidas y qué traslados están incluidos, y las condiciones. <strong>No es lo mismo que el PDF que ya tienen</strong> — ese es de abril y es un resumen comercial. El documento definitivo ya demostró traer información que el PDF no trae (por ejemplo, que el bus al aeropuerto está incluido). <strong>Pídanlo por WhatsApp y guárdenlo en PDF</strong>, además de imprimirlo.</div>
+    <div class="note warn"><strong>2. El localizador de la reserva de vuelos.</strong> Es un código de <strong>6 letras y números</strong>, tipo <em>K7XM2P</em>. También lo llaman <em>código de reserva</em>, <em>PNR</em> o <em>record locator</em>. Es la llave de su reserva: con ese código y un apellido entran a <strong>iberia.com</strong> (o a <strong>latam.com</strong> para el vuelo de vuelta) y ven <strong>su</strong> reserva concreta: horarios exactos, qué equipaje incluye la tarifa, y ahí hacen el check-in.<br><br>
+    👉 <strong>Por qué importa:</strong> todo lo que este plan dice de los vuelos sale del PDF de la agencia y de los horarios públicos de Iberia. <strong>Con el localizador se confirma la reserva real de ustedes</strong>, que es lo único que cuenta el día del viaje. Sin él tampoco pueden hacer el check-in online.</div>
+    <div class="note info"><strong>Qué pedir, tal cual:</strong><br><em>"Hola Anahí, nos puedes pasar el localizador de la reserva de los vuelos y el plan completo del viaje en PDF? Gracias"</em></div>
+  </div></div>
+
+  <!-- ---------- RECORDATORIOS CON CUENTA REGRESIVA ---------- -->
+  <div class="block" id="recBlock"><h2>⏰ Recordatorios</h2><div class="block-body">
+    <p style="font-size:.87rem;color:var(--mute);margin-bottom:12px">Se actualiza solo: calcula cuántos días faltan y se pone en rojo cuando urge. <strong>No hace falta acordarse de ninguna fecha</strong> — entren cada tanto y hagan lo de arriba. Toquen el círculo cuando ya esté.</p>
+    <div id="recHoy" style="background:#1a1a1a;color:#fff;border-radius:10px;padding:12px 14px;margin-bottom:14px;font-size:.9rem;line-height:1.45">…</div>
+    <div id="recLista"></div>
+    <div id="recHechos"></div>
+  </div></div>
+
+<style>
+#recBlock .rec{display:flex;gap:11px;align-items:flex-start;background:#fff;border:1px solid #ddd8d0;border-left-width:5px;border-radius:10px;padding:13px 14px;margin-bottom:10px;color:#1a1a1a}
+#recBlock .rec *{color:#1a1a1a}
+#recBlock .rec-tick{flex:0 0 auto;width:30px;height:30px;border-radius:50%;border:2px solid #9a948a;background:#fff;margin-top:1px;font-size:.9rem;line-height:26px;text-align:center;padding:0;color:#1a7a45;font-weight:700}
+#recBlock .rec-body{flex:1;min-width:0}
+#recBlock .rec-top{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:5px}
+#recBlock .rec-dias{font-size:.68rem;font-weight:700;letter-spacing:.3px;text-transform:uppercase;padding:3px 8px;border-radius:20px;white-space:nowrap}
+#recBlock .rec-fecha{font-size:.74rem;color:#5a544c;font-weight:600}
+#recBlock .rec-tag{font-size:.63rem;font-weight:700;letter-spacing:.3px;text-transform:uppercase;padding:3px 7px;border-radius:5px;background:#3a0d0a;color:#fff}
+#recBlock .rec h4{font-size:.95rem;font-weight:700;margin:0 0 5px;line-height:1.3;color:#1a1a1a}
+#recBlock .rec p{font-size:.85rem;line-height:1.55;margin:0;color:#2a2a2a}
+#recBlock .rec-si{font-size:.8rem;line-height:1.5;background:#f6f3ee;border-radius:6px;padding:8px 10px;margin-top:7px;color:#2a2a2a}
+#recBlock .r-urg{border-left-color:#b3261e;background:#fff5f4}
+#recBlock .r-urg .rec-dias{background:#b3261e;color:#fff}
+#recBlock .r-pro{border-left-color:#b07800}
+#recBlock .r-pro .rec-dias{background:#fdf0d0;color:#5c3d00}
+#recBlock .r-ok{border-left-color:#1a7a45}
+#recBlock .r-ok .rec-dias{background:#e3f3ea;color:#0f5230}
+#recBlock .r-viaje{border-left-color:#2b5fa8;background:#f4f8fd}
+#recBlock .r-viaje .rec-dias{background:#2b5fa8;color:#fff}
+#recBlock .done{opacity:.5}
+#recBlock .done h4{text-decoration:line-through}
+#recBlock .done .rec-tick{background:#1a7a45;border-color:#1a7a45;color:#fff}
+#recBlock .rec-sep{font-size:.72rem;text-transform:uppercase;letter-spacing:1.5px;color:#5a544c;font-weight:700;margin:18px 0 9px;padding-bottom:5px;border-bottom:1px solid #ddd8d0}
+</style>
+
+<script>
+(function(){
+'use strict';
+var R = [
+ {f:'2026-07-31', t:'Revisar que los 5 pasaportes venzan después de abril de 2027', q:'Tienen que seguir vigentes al menos 6 meses DESPUÉS de volver. Si alguno vence antes, hay que renovarlo en Migraciones ya.', si:'Si uno vence antes y no lo ven ahora, esa persona no viaja. Es lo primero de todo.'},
+ {f:'2026-07-31', t:'Confirmar que el celular de papá esté liberado', q:'Todo el viaje depende de esa eSIM, y una eSIM no se instala en un celular amarrado a un operador. Llamen a la operadora y pregunten.', si:'Si está bloqueado y se enteran en septiembre, no da tiempo a buscar otra solución.'},
+ {f:'2026-08-15', t:'Comprar el seguro de viaje', q:'Cobertura mínima de €100.000, y que diga REINO UNIDO por escrito en la póliza. Unos US$150-250 por persona por los 19 días.', si:'Comprarlo temprano es lo que hace que además cubra cancelación. Si lo dejan para el final, ya solo cubre lo médico.'},
+ {f:'2026-08-20', t:'Comprar adaptadores de enchufe, power banks y riñonera', q:'El adaptador tiene que servir en SUIZA: el enchufe suizo no acepta el europeo grueso y redondeado. Que diga "Suiza" explícitamente, o lleven un par de los finos baratos.', si:'Comprándolo allá pagan el triple. Y sin adaptador suizo no cargan el celular justo el día del Titlis.'},
+ {f:'2026-09-01', t:'Reservar la cena de la quinceañera en Venecia', q:'Trattoria alla Madonna — Calle della Madonna 594, Rialto. ☎ +39 041 522 3824. Pidan el turno de las 19:00. Abre los martes; cierra los miércoles.', si:'Es LA cena del viaje y es un sitio conocido. Sin reserva, un martes de octubre, con cinco personas, es una apuesta.'},
+ {f:'2026-09-01', t:'Escribir a la pastelería por la torta', q:'info@rosasalva.it — Rosa Salva de Mestre, Via Cappuccina 17. Pregunten precio y con cuánta anticipación la encargan (el estándar de la zona son 48 horas). La retiran el lunes 12 o el martes 13 antes de salir.', si:'Las pastelerías de Venecia cierran a las 20:00 y ustedes llegan a las 19:00: ninguna sirve esa noche. Mestre es la única solución.'},
+ {f:'2026-09-01', t:'Revisar el calendario del Cambio de Guardia', q:'householddivision.org.uk — el calendario de octubre se publica con unos dos meses de anticipación, así que recién ahora se puede ver. No es diario: hay que mirar qué días de su estadía toca.', si:'Es gratis y es de las postales de Londres. Si no lo miran, se lo pierden por no saber el día.'},
+ {f:'2026-09-05', t:'Tramitar el ETA de Reino Unido', q:'Permiso electrónico obligatorio para entrar a Londres. Se hace online desde el celular en 15 minutos, £20 por persona (£100 los cinco). Se aprueba en horas, pero puede tardar hasta 3 días hábiles.', si:'SIN ETA NO LOS DEJAN EMBARCAR EN MADRID. Es el trámite que más caro sale olvidar.', dura:1},
+ {f:'2026-09-15', t:'Comprar la eSIM', q:'Airalo "Europe" — el de 42 países, US$71. ⚠️ NO el de 28 países (US$58): ese deja Suiza afuera. Va en el celular de papá, el único con eSIM.', si:'Esos US$13 de diferencia son toda la solución. Comprar el equivocado los deja sin datos justo en Suiza.'},
+ {f:'2026-09-16', t:'ÚLTIMO DÍA para agregar excursiones con Anahí', q:'La agencia no acepta excursiones con menos de 18 días de anticipación, y 18 días antes del 4 de octubre es exactamente el 16 de septiembre.', si:'Después de esta fecha ya no se puede agregar nada, aunque cambien de opinión. Decidan antes.', dura:1},
+ {f:'2026-09-16', t:'Se habilitan las entradas del Coliseo', q:'Se ponen a la venta 30 días antes. Para el día que van (16 de octubre) se habilitan hoy. Son €72 el grupo — la quinceañera entra gratis. Único sitio oficial: coopculture.it', si:'Se agotan. Si esperan, se quedan sin entrar al Coliseo por dentro.', dura:1},
+ {f:'2026-09-20', t:'Comprar la Casa de Julieta con hora fija', q:'verona.midaticket.it — hay que elegir franja horaria y NO se cambia ni se reembolsa. Es el día del cumpleaños, así que elijan la hora con cuidado.', si:'Es el balcón de Romeo y Julieta el día que ella cumple quince. Sin entrada comprada, se quedan afuera.'},
+ {f:'2026-09-25', t:'Avisar al banco que viajan', q:'Llamen y digan las fechas y los países. Lleven dos tarjetas por si una falla.', si:'Si no avisan, el banco bloquea la tarjeta apenas la usen en otro país. Suele pasar el primer día.'},
+ {f:'2026-09-27', t:'Descargar mapas offline y traductor', q:'Google Maps offline de TODAS las ciudades, en los 5 celulares. Google Translate offline en inglés, francés, italiano y alemán. Prueba obligatoria: pongan el celular en modo avión y vean si funciona.', si:'Solo un celular va a tener datos. Los otros cuatro dependen de lo que hayan descargado antes.'},
+ {f:'2026-09-27', t:'Imprimir todo en papel', q:'Reserva del tour, tickets de vuelo, póliza del seguro, y dos fotocopias de cada pasaporte. Además: foto de los pasaportes y de la póliza en el celular de CADA UNO y en Google Drive.', si:'Si roban un celular o se queda sin batería, el papel es lo único que queda.'},
+ {f:'2026-10-01', t:'Instalar la eSIM (todavía en Lima, con WiFi)', q:'Instalar requiere internet, así que se hace en casa. NO la activen todavía: los 30 días empiezan al activarla.', si:'Si intentan instalarla al llegar a Londres, necesitan internet para instalar el internet. Se quedan trabados.'},
+ {f:'2026-10-03', t:'Check-in online del vuelo de ida', q:'Se abre 24 horas antes. Vuelo IB0124, Lima 11:00 → Madrid. Por iberia.com.', si:'Hacerlo antes les ahorra cola en Lima, y van solo con equipaje de mano.'},
+ {f:'2026-10-04', t:'✈️ SALEN — Lima 11:00, vuelo IB0124', q:'Casaca liviana PUESTA desde Lima: llegan a Londres un día antes de poder comprar abrigo. Y suban con los celulares al 100%: desde marzo de 2026 está prohibido usar power banks durante el vuelo.', si:'', viaje:1},
+ {f:'2026-10-05', t:'Activar la eSIM al aterrizar en Londres', q:'Ahí arrancan los 30 días. Y ojo: aunque usen la eSIM, cada celular tiene que llevar puesto su chip peruano, porque en Alemania y Francia el 112 no funciona sin SIM.', si:'', viaje:1},
+ {f:'2026-10-20', t:'Check-in del vuelo de regreso — POR LATAM, no por Iberia', q:'El vuelo se llama IB6660 pero lo opera LATAM, e Iberia excluye expresamente a LATAM de su check-in online. Entren a latam.com.', si:'Si lo intentan por iberia.com les va a dar error y van a pensar que hay un problema con la reserva. No lo hay: es la web equivocada.', viaje:1},
+ {f:'2026-10-21', t:'🏠 VUELVEN — Madrid 01:45, vuelo IB6660', q:'El bus del hotel a Barajas los recoge a las 22:00 del día 20. Facturan en la T4 y el avión sale de la T4S: entre el tren y las caminatas, calculen 30 minutos solo para ese traslado.', si:'', viaje:1}
+];
+function dmy(iso){ var p=iso.split('-'); return new Date(+p[0], +p[1]-1, +p[2]); }
+var MES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+function bonito(d){ return d.getDate()+' de '+MES[d.getMonth()]+' de '+d.getFullYear(); }
+function pintar(){
+  var hoy=new Date(); hoy.setHours(0,0,0,0);
+  var salida=dmy('2026-10-04'), faltan=Math.round((salida-hoy)/86400000);
+  var cab=document.getElementById('recHoy');
+  if(!cab) return;
+  if(faltan>0) cab.innerHTML='Hoy es <strong>'+bonito(hoy)+'</strong>. Faltan <strong>'+faltan+' d\u00edas</strong> para el vuelo.';
+  else if(faltan===0) cab.innerHTML='<strong>HOY SALEN.</strong> Buen viaje.';
+  else cab.innerHTML='Hoy es <strong>'+bonito(hoy)+'</strong>. Est\u00e1n de viaje.';
+  var hechos=[]; try{ hechos=JSON.parse(localStorage.getItem('recHechos')||'[]'); }catch(e){}
+  var htmlP='', htmlH='', nH=0;
+  R.slice().sort(function(a,b){ return a.f<b.f?-1:(a.f>b.f?1:0); }).forEach(function(r){
+    var d=dmy(r.f), dias=Math.round((d-hoy)/86400000);
+    var clave=r.f+'|'+r.t.replace(/"/g,'');
+    var hecho=hechos.indexOf(clave)>=0, cls, txt;
+    if(r.viaje){ cls='r-viaje'; txt = dias>0 ? 'en '+dias+' d\u00edas' : (dias===0?'HOY':'ya pas\u00f3'); }
+    else if(dias<0){ cls='r-urg'; txt='VENCI\u00d3 hace '+(-dias)+' d'; }
+    else if(dias===0){ cls='r-urg'; txt='ES HOY'; }
+    else if(dias<=7){ cls='r-urg'; txt='faltan '+dias+' d\u00edas'; }
+    else if(dias<=25){ cls='r-pro'; txt='faltan '+dias+' d\u00edas'; }
+    else { cls='r-ok'; txt='faltan '+dias+' d\u00edas'; }
+    var h='<div class="rec '+cls+(hecho?' done':'')+'" data-k="'+clave+'">'+
+      '<button class="rec-tick" aria-label="Marcar como hecho">'+(hecho?'\u2713':'')+'</button>'+
+      '<div class="rec-body"><div class="rec-top">'+
+      '<span class="rec-dias">'+txt+'</span><span class="rec-fecha">'+bonito(d)+'</span>'+
+      (r.dura?'<span class="rec-tag">fecha l\u00edmite dura</span>':'')+
+      '</div><h4>'+r.t+'</h4><p>'+r.q+'</p>'+
+      (r.si?'<div class="rec-si"><strong>Si no lo hacen:</strong> '+r.si+'</div>':'')+
+      '</div></div>';
+    if(hecho){ htmlH+=h; nH++; } else { htmlP+=h; }
+  });
+  document.getElementById('recLista').innerHTML = htmlP || '<div class="rec r-ok"><div class="rec-body"><h4>No queda nada pendiente.</h4></div></div>';
+  document.getElementById('recHechos').innerHTML = nH ? '<div class="rec-sep">Ya hecho ('+nH+')</div>'+htmlH : '';
+  [].slice.call(document.querySelectorAll('#recBlock .rec-tick')).forEach(function(b){
+    b.onclick=function(){
+      var k=b.parentNode.getAttribute('data-k'), a=[];
+      try{ a=JSON.parse(localStorage.getItem('recHechos')||'[]'); }catch(e){}
+      var j=a.indexOf(k); if(j>=0) a.splice(j,1); else a.push(k);
+      localStorage.setItem('recHechos', JSON.stringify(a));
+      pintar();
+    };
+  });
+}
+if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',pintar); else pintar();
+})();
+</script>
+
   <!-- ---------- ANTES DE VIAJAR ---------- -->
   <div class="block"><h2>📅 Lo que hay que hacer antes</h2><div class="block-body">
     <p style="font-size:.87rem;color:var(--mute);margin-bottom:12px">Ordenado por urgencia. Toquen para marcar lo que ya hicieron — queda guardado en este celular.</p>
