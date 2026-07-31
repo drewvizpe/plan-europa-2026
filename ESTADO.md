@@ -35,7 +35,9 @@ Este documento reemplaza al `AUDITORIA.md` como resumen vigente. El `AUDITORIA.m
 | Cuándo | Qué | Nota |
 |---|---|---|
 | **Ahora** | Verificar que el celular del papá esté **liberado** | Si está amarrado, la eSIM no funciona |
-| **Ahora** | Mandarle a Anahí las 10 preguntas | La primera es la que más pesa: si los precios son por persona o por dos |
+| **Ahora** | Confirmar que la **reserva esté EN FIRME** y sin saldo pendiente | El documento es de diciembre y dice "NO está confirmada" |
+| **Ahora** | Pedir las **direcciones de los hoteles** y cerrar el **traslado de Gatwick** | La reserva confirma que el traslado incluido es solo para Heathrow |
+| **Ahora** | Mandarle a Anahí el resto de preguntas | La primera es la que más pesa: si los precios son por persona o por dos |
 | **Agosto** | Contratar el seguro médico | Mínimo €100.000. Que diga REINO UNIDO por escrito |
 | **Agosto** | Comprar power banks y adaptador que sirva en **Suiza** | El adaptador europeo grueso no entra en el enchufe suizo |
 | **~15 sep** | Comprar la eSIM: **Airalo "Europe", el de 42 países**, US$71 | El de 28 países no incluye Suiza |
@@ -52,14 +54,15 @@ Este documento reemplaza al `AUDITORIA.md` como resumen vigente. El `AUDITORIA.m
 ## 3. LO QUE FALTA — datos que solo ustedes pueden conseguir
 
 1. **¿Los precios del documento son por persona o por dos?** Es lo único que todavía puede mover todas las cuentas del viaje.
-2. **Las direcciones de los 17 hoteles.** Sin ellas no se pueden armar los botones de mapas ni calcular cuánto tardan del hotel al centro. También queda sin cerrar el dato de "45 minutos del hotel a Barajas", que sostiene todo el margen de la última noche.
-3. **El localizador de la reserva de vuelos.** Es lo único que confirma las condiciones exactas de la tarifa que compraron.
+2. **Las direcciones de los hoteles.** Es ahora el dato más importante que falta. La reserva confirma por escrito que **los hoteles están en las afueras**, no en el centro: *"La hotelería del circuito se encuentra en las ciudades aledañas de las grandes ciudades."* Sin las direcciones, cualquier "vuelvo caminando al hotel" del plan es una suposición — y en Niza decide si pueden ir a Mónaco o no.
+3. ~~El localizador de la reserva~~ ✅ **YA LO TIENEN.** Es el de la agencia (empieza con VJ). ⚠️ **No lo pongan en la página pública ni en grupos grandes:** con el localizador y un apellido se entra a la reserva. Guárdenlo en el campo privado de la v2, que se guarda solo en el celular. Lo que sigue faltando es el **localizador de la aerolínea**, para ver la reserva en iberia.com y hacer el check-in.
 4. **Las edades de los hermanos.** La tarifa joven de la Torre Eiffel cubría de 12 a 24 años; ya no aplica porque no suben, pero sigue importando para otros descuentos.
 5. **El plan impreso completo.** Ya demostró tener información que el PDF de abril no tiene.
+6. **La confirmación EN FIRME de la reserva.** El documento que tienen es del 2 de diciembre de 2025 y dice *"Tu petición NO está confirmada"*. Es normal en compras online y seguramente ya se confirmó, pero nadie lo revisó. Pídanla por escrito y verifiquen que no quede saldo pendiente.
 
 ---
 
-## 4. LAS 10 PREGUNTAS PARA ANAHÍ
+## 4. LAS PREGUNTAS PARA ANAHÍ
 
 1. ¿Los precios son **por persona o por dos personas**?
 2. **Titlis:** el teleférico giratorio está cerrado esas fechas. ¿Se hace igual con el otro? ¿Mismo precio? ¿Qué incluye?
@@ -67,9 +70,9 @@ Este documento reemplaza al `AUDITORIA.md` como resumen vigente. El `AUDITORIA.m
 4. **Titlis:** ¿garantizan el regreso antes de que salga el bus? ¿Hay reembolso si cierra por viento?
 5. **Toledo:** ya no van. ¿Estaba contratado? ¿Se devuelve?
 6. **Capri y Versalles:** confirmar que tampoco están contratados.
-7. **Gatwick:** monto exacto del recargo por escrito + **WhatsApp del conductor**.
-8. **Hoteles:** direcciones de las 16 noches.
-9. **Noches:** el documento dice 15 pero el itinerario necesita **16**. ¿Cuál es la correcta?
+7. **Gatwick:** ✅ confirmado que el traslado **NO está incluido** (la reserva dice que solo cubre Heathrow). Falta el **monto exacto por escrito** y el **WhatsApp del conductor**.
+8. **Hoteles: las direcciones.** Es lo más urgente. La reserva dice que están en las afueras, así que sin direcciones no se puede planificar ninguna noche libre.
+9. ~~Noches~~ ✅ **RESUELTO** — la reserva dice **18 días, 17 noches**, del 5 al 22 de octubre. En su lugar pregunten: *"¿podemos quedarnos con la habitación hasta las 22:00 del día 21, cuando pasa el bus?"*
 10. Su **número en formato internacional** y su WhatsApp.
 
 ---
@@ -119,6 +122,30 @@ Se marca aquí en vez de rellenarlo con estimaciones.
 | Precio exacto del **seguro** | Solo sale del cotizador con las fechas de nacimiento | Cotizar con las 5 edades |
 | Horarios de vuelo **de su reserva concreta** | Ninguna web pública lo muestra | iberia.com con el localizador |
 | Precios de comida en general | No existe fuente oficial por producto | Son estimaciones, están marcadas como tales |
+
+---
+
+---
+
+## 7. LO QUE CONFIRMÓ LA RESERVA (documento oficial de la agencia)
+
+| Dato | Qué dice |
+|---|---|
+| **Noches** | 18 días, **17 noches**, del 5 al 22 de octubre. Cubre todo el itinerario y sobra una |
+| **Régimen** | Alojamiento y **desayuno incluido** todos los días |
+| **Habitaciones** | 1 doble + 1 triple. ⚠️ La triple suele ser una doble con **sofá-cama o plegatín** |
+| **Hoteles** | ⚠️ **En las afueras**, no en el centro: *"ciudades aledañas de las grandes ciudades"* |
+| **Venecia** | Confirmado que duermen en **Mestre** |
+| **Gatwick** | ⚠️ El traslado **solo está incluido si el vuelo llega a Heathrow**. El suyo llega a Gatwick |
+| **Traslados** | Esperan **90 minutos** desde el aterrizaje y se van |
+| **Equipaje en el bus** | Una maleta de **20 kg** por persona. ⚠️ No confundir con el avión, que es solo cabina |
+| **Guía** | Si el grupo es de menos de 20 personas, va un **chofer-guía** |
+| **Habitación** | Se ocupa desde las **14:00**, se deja antes de las **11:00-12:00** |
+| **Excursiones** | Si una excursión pagada no se hace, **se devuelve el importe sin penalidad** — pero hay que pedirle el justificante al guía en el momento |
+| **Fecha límite excursiones** | 18 días antes de la salida del circuito (5 oct) = **17 de septiembre** |
+| **Precios** | Pueden variar por tipo de cambio, y las **tasas aéreas** hasta emitir los billetes |
+| **Cancelación** | Una vez emitidos los billetes, **100% de gastos** |
+| **Pasajeros** | Los cinco figuran como **adultos**, sin tarifa de menor |
 
 ---
 
