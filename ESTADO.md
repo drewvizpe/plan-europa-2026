@@ -15,6 +15,7 @@ Este documento reemplaza al `AUDITORIA.md` como resumen vigente. El `AUDITORIA.m
 | **Versalles** (Día 6) | ❌ No van | +$570 |
 | **Toledo** (Día 18) | ❌ No van | +$415 |
 | **Tour Este de Londres** (Día 3) | ❌ No van | +$365 |
+| **Tour Mónaco de noche** (Día 15) | ❌ No lo contratan — van por su cuenta, solo por fuera | +$465 |
 | **Subir a la Torre Eiffel** | ❌ No suben, la ven desde el Trocadéro | +€165 |
 | **Entrar a Notre Dame** | ❌ Solo por fuera | — |
 | **Subir a la Torre de Pisa** | ❌ No suben | — |
@@ -23,7 +24,9 @@ Este documento reemplaza al `AUDITORIA.md` como resumen vigente. El `AUDITORIA.m
 | **Equipaje** | ✅ Solo cabina: 10 kg + bolso por persona | — |
 | **eSIM** | ✅ Una sola, en el celular del papá (el único con eSIM) | — |
 
-**Total liberado por excursiones descartadas: $2.610 + €165.** El presupuesto pasó de tener un déficit de $200-400 por persona a tener margen.
+**Total liberado por excursiones descartadas: $3.075 + €165.** El presupuesto pasó de tener un déficit de $200-400 por persona a tener margen holgado.
+
+**Criterio que se repite en todas las decisiones:** no pagan por entrar a museos, iglesias ni miradores. Prefieren ver las ciudades desde la calle. Eso ya descartó la Torre Eiffel, Notre Dame por dentro, la Torre de Pisa, la cúpula del Duomo de Florencia y ahora Mónaco entero.
 
 ---
 
