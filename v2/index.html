@@ -211,6 +211,12 @@ mark.jump{background:#ffe9a8;animation:pulse 2.2s ease}
   .sheet{max-width:720px;margin:0 auto;border-radius:22px;bottom:20px;left:14px;right:14px}
 }
 @media print{.topbar,.botnav,.ov{display:none!important}.screen{display:block!important}details{open:true}}
+
+.ubic{background:#f4f7fa;border-left:4px solid #1f3a5f;border-radius:10px;padding:13px 15px;margin:0 0 14px}
+.ubic-t{font-size:.66rem;letter-spacing:1.6px;text-transform:uppercase;color:#1f3a5f;font-weight:700;margin-bottom:7px}
+.ubic p{margin:0 0 5px;font-size:.85rem;line-height:1.5;color:#1a1a1a}
+.ubic p:last-child{margin-bottom:0}
+.ubic strong{color:#1a1a1a}
 </style>
 </head>
 <body>
@@ -478,7 +484,7 @@ var R = [
  {f:'2026-09-15', t:'Comprar la eSIM', q:'Airalo "Europe" — el de 42 países, US$71. ⚠️ NO el de 28 países (US$58): ese deja Suiza afuera. Va en el celular de papá, el único con eSIM.', si:'Esos US$13 de diferencia son toda la solución. Comprar el equivocado los deja sin datos justo en Suiza.'},
  {f:'2026-09-16', t:'ÚLTIMO DÍA para cerrar y pagar las excursiones', q:'Ya están decididas las tres (Crucero del Sena, Monte Titlis y Museos Vaticanos, US$ 1.910 en total). Esta es la fecha límite para que queden confirmadas y pagadas: la agencia no acepta cambios con menos de 18 días antes de la salida del circuito.', si:'Después de esta fecha ya no se puede agregar ni modificar nada, aunque cambien de opinión.', dura:1},
  {f:'2026-09-16', t:'Se habilitan las entradas del Coliseo', q:'Se ponen a la venta 30 días antes. Para el día que van (16 de octubre) se habilitan hoy. Son €72 el grupo — la quinceañera entra gratis. Único sitio oficial: coopculture.it', si:'Se agotan. Si esperan, se quedan sin entrar al Coliseo por dentro.', dura:1},
- {f:'2026-09-20', t:'Comprar la Casa de Julieta — la entrada CON BALCÓN', q:'verona.midaticket.it. ⚠️ Compren la entrada COMPLETA (~12 EUR por persona, ~60 los cinco), la que incluye el interior de la casa Y EL BALCÓN. La barata solo entra al patio: desde ahí se ve el balcón de abajo pero no se sube. El vestido de Abi está inspirado en Julieta, así que la foto EN el balcón es el motivo de parar en Verona. Elijan hora entre 15:00 y 15:30.', si:'Solo se vende online, con hora fija, y no se cambia ni se reembolsa. Sin ella se quedan afuera el día de su cumpleaños.'},
+ {f:'2026-09-20', t:'Comprar la Casa de Julieta — 2 con balcón y 3 de patio', q:'verona.midaticket.it. Compren 2 entradas de 12 EUR (Abi y su papá, que suben AL BALCÓN) y 3 de 5 EUR (mamá, Andrew y Anddy, que se quedan en el patio justo abajo viendo y filmando). Total 39 EUR en vez de 60. ⚠️ Las cinco necesitan reserva online y todas de la MISMA franja horaria, entre 15:00 y 15:30. Se entra por el Teatro Nuovo en Piazzetta Navona, no por Via Cappello.', si:'No se vende en taquilla, no se cambia y no se reembolsa. Sin entrada se quedan afuera el día de su cumpleaños.'},
  {f:'2026-09-25', t:'Avisar al banco que viajan', q:'Llamen y digan las fechas y los países. Lleven dos tarjetas por si una falla.', si:'Si no avisan, el banco bloquea la tarjeta apenas la usen en otro país. Suele pasar el primer día.'},
  {f:'2026-09-27', t:'Descargar mapas offline y traductor', q:'Google Maps offline de TODAS las ciudades, en los 5 celulares. Google Translate offline en inglés, francés, italiano y alemán. Prueba obligatoria: pongan el celular en modo avión y vean si funciona.', si:'Solo un celular va a tener datos. Los otros cuatro dependen de lo que hayan descargado antes.'},
  {f:'2026-09-27', t:'Imprimir todo en papel', q:'Reserva del tour, tickets de vuelo, póliza del seguro, y dos fotocopias de cada pasaporte. Además: foto de los pasaportes y de la póliza en el celular de CADA UNO y en Google Drive.', si:'Si roban un celular o se queda sin batería, el papel es lo único que queda.'},
@@ -633,6 +639,8 @@ Comprar no gasta días: el QR espera en el correo.<span class="deadline">⏰ ~15
 <section class="screen day" id="dia1" data-day="1" data-date="Domingo 4 de octubre" data-short="Lima→Londres">
 <div class="hero"><div class="h-n">Día 1 de 19</div><h1>✈️ Lima → Madrid → Londres</h1><div class="h-date">Domingo 4 de octubre</div><div class="h-meta">Noche a bordo · no hay hotel</div></div>
 
+<div class="ubic"><div class="ubic-t">📍 Dónde están y qué pasa hoy</div><p><strong>En el aire y en aeropuertos, todo el día.</strong></p><p>⏰ <strong>Comprometido:</strong> 8:00 AM en Jorge Chávez · vuelo 11:00 AM · llegan a Madrid al amanecer del lunes.</p><p>🆓 <strong>Libre:</strong> Nada libre: es un día de viaje.</p><p>🛏 <strong>Duermen en:</strong> En el avión. No hay hotel.</p></div>
+
 <div class="block"><h2>⏰ El día</h2><div class="block-body">
 <ul class="tl">
 <li><time class="go">8:00 AM</time><div class="tl-c"><strong>Llegar al Jorge Chávez</strong><p>3 horas antes del vuelo.</p></div></li>
@@ -654,6 +662,8 @@ Comprar no gasta días: el QR espera en el correo.<span class="deadline">⏰ ~15
 
 <section class="screen day" id="dia2" data-day="2" data-date="Lunes 5 de octubre" data-short="Londres">
 <div class="hero"><div class="h-n">Día 2 de 19</div><h1>🇬🇧 Llegada a Londres</h1><div class="h-date">Lunes 5 de octubre</div><div class="h-meta">Libra £ · £1 ≈ $1.33 ≈ S/4.55</div></div>
+
+<div class="ubic"><div class="ubic-t">📍 Dónde están y qué pasa hoy</div><p><strong>Llegan a <strong>LONDRES</strong> a media mañana.</strong></p><p>⏰ <strong>Comprometido:</strong> Aterrizan 10:50 · traslado al hotel · tarde para instalarse.</p><p>🆓 <strong>Libre:</strong> La tarde, unas 4 horas, para un paseo suave cerca del hotel.</p><p>🛏 <strong>Duermen en:</strong> Londres, hotel en la periferia.</p></div>
 
 <div class="block"><h2>⏰ El día</h2><div class="block-body">
 <ul class="tl">
@@ -710,6 +720,8 @@ Comprar no gasta días: el QR espera en el correo.<span class="deadline">⏰ ~15
 
 <section class="screen day" id="dia3" data-day="3" data-date="Martes 6 de octubre" data-short="Londres libre">
 <div class="hero"><div class="h-n">Día 3 de 19</div><h1>🇬🇧 Londres — Tour + tarde libre</h1><div class="h-date">Martes 6 de octubre</div><div class="h-meta">Libra £ · hoy se compra la ropa de abrigo</div></div>
+
+<div class="ubic"><div class="ubic-t">📍 Dónde están y qué pasa hoy</div><p><strong>Todo el día en <strong>LONDRES</strong>.</strong></p><p>⏰ <strong>Comprometido:</strong> Tour incluido de 9:30 a 12:30.</p><p>🆓 <strong>Libre:</strong> Desde el mediodía hasta la noche, unas 7 horas y media: Primark, Borough Market, Tower Bridge.</p><p>🛏 <strong>Duermen en:</strong> El mismo hotel de Londres.</p></div>
 
 <div class="block"><h2>⏰ El día</h2><div class="block-body">
 <ul class="tl">
@@ -778,6 +790,8 @@ Ustedes viajan sin ropa de invierno a propósito, para comprarla acá que es má
 <section class="screen day" id="dia4" data-day="4" data-date="Miércoles 7 de octubre" data-short="Ferry a París">
 <div class="hero"><div class="h-n">Día 4 de 19</div><h1>🇬🇧→🇫🇷 Londres → Ferry → París</h1><div class="h-date">Miércoles 7 de octubre</div><div class="h-meta">470 km · cambio a euro € · €1 ≈ $1.14 ≈ S/3.90</div></div>
 
+<div class="ubic"><div class="ubic-t">📍 Dónde están y qué pasa hoy</div><p><strong>Día de traslado: <strong>Londres → ferry → PARÍS</strong>.</strong></p><p>⏰ <strong>Comprometido:</strong> Bus 8:00 AM · ferry · llegan al hotel ~6 PM · <strong>crucero del Sena 8 PM a 1 AM</strong>.</p><p>🆓 <strong>Libre:</strong> Hora y media entre que llegan y sale el bus del crucero.</p><p>🛏 <strong>Duermen en:</strong> París, primera de tres noches.</p></div>
+
 <div class="block"><h2>⏰ El día</h2><div class="block-body">
 <ul class="tl">
 <li><time class="eat">7:00 AM</time><div class="tl-c"><strong>Desayuno en el hotel</strong><p>EMPACAR TODO antes.</p></div></li>
@@ -816,6 +830,8 @@ Ustedes viajan sin ropa de invierno a propósito, para comprarla acá que es má
 
 <section class="screen day" id="dia5" data-day="5" data-date="Jueves 8 de octubre" data-short="París">
 <div class="hero"><div class="h-n">Día 5 de 19</div><h1>🇫🇷 París — Tour + Montmartre</h1><div class="h-date">Jueves 8 de octubre</div><div class="h-meta">Euro €</div></div>
+
+<div class="ubic"><div class="ubic-t">📍 Dónde están y qué pasa hoy</div><p><strong>Todo el día en <strong>PARÍS</strong>.</strong></p><p>⏰ <strong>Comprometido:</strong> Tour panorámico incluido de 9:30 a 12:30.</p><p>🆓 <strong>Libre:</strong> Desde el mediodía: Montmartre y Barrio Latino por su cuenta, unas 7 horas y media.</p><p>🛏 <strong>Duermen en:</strong> El mismo hotel de París.</p></div>
 
 <div class="block"><h2>⏰ El día</h2><div class="block-body">
 <ul class="tl">
@@ -886,6 +902,8 @@ Ustedes viajan sin ropa de invierno a propósito, para comprarla acá que es má
 
 <section class="screen day" id="dia6" data-day="6" data-date="Viernes 9 de octubre" data-short="París libre">
 <div class="hero"><div class="h-n">Día 6 de 19</div><h1>🇫🇷 París — Día completo libre</h1><div class="h-date">Viernes 9 de octubre</div><div class="h-meta">🇪🇺 EURO € · Última noche en París</div></div>
+
+<div class="ubic"><div class="ubic-t">📍 Dónde están y qué pasa hoy</div><p><strong><strong>PARÍS</strong>, y el día es entero suyo.</strong></p><p>⏰ <strong>Comprometido:</strong> Nada del tour. Cero horarios.</p><p>🆓 <strong>Libre:</strong> <strong>11 horas libres.</strong> Es el día más libre del viaje.</p><p>🛏 <strong>Duermen en:</strong> El mismo hotel de París, última noche ahí.</p></div>
 
 <div class="block"><h2>⏰ El día</h2><div class="block-body">
 <ul class="tl">
@@ -958,6 +976,8 @@ Si deciden subir, este es el día: no hay ningún tour ni horario que cumplir. <
 <section class="screen day" id="dia7" data-day="7" data-date="Sábado 10 de octubre" data-short="Rin y Frankfurt">
 <div class="hero"><div class="h-n">Día 7 de 19</div><h1>🇫🇷→🇱🇺→🇩🇪 París → Luxemburgo → Valle del Rin → Frankfurt</h1><div class="h-date">Sábado 10 de octubre</div><div class="h-meta">607 km · 🇪🇺 EURO €</div></div>
 
+<div class="ubic"><div class="ubic-t">📍 Dónde están y qué pasa hoy</div><p><strong>Día de ruta: <strong>París → Luxemburgo → Valle del Rin → FRANKFURT</strong>. 607 km.</strong></p><p>⏰ <strong>Comprometido:</strong> Bus desde las 7:30 AM, con paradas cortas.</p><p>🆓 <strong>Libre:</strong> Hora y media en Luxemburgo. El resto es carretera.</p><p>🛏 <strong>Duermen en:</strong> Frankfurt, una noche.</p></div>
+
 <div class="block"><h2>⏰ El día</h2><div class="block-body">
 <ul class="tl">
 <li><time class="eat">6:30 AM</time><div class="tl-c"><strong>Desayuno TEMPRANO</strong><p>+ EMPACAR TODO.</p></div></li>
@@ -1020,6 +1040,8 @@ Si deciden subir, este es el día: no hay ningún tour ni horario que cumplir. <
 <section class="screen day" id="dia8" data-day="8" data-date="Domingo 11 de octubre" data-short="Selva Negra">
 <div class="hero"><div class="h-n">Día 8 de 19</div><h1>🇩🇪→🇨🇭 Frankfurt → Heidelberg → Selva Negra → Zurich</h1><div class="h-date">Domingo 11 de octubre</div><div class="h-meta">422 km · 💱 CAMBIO: FRANCO SUIZO CHF · CHF 1 ≈ $1.24 ≈ S/4.20</div></div>
 
+<div class="ubic"><div class="ubic-t">📍 Dónde están y qué pasa hoy</div><p><strong>Día de ruta: <strong>Frankfurt → Heidelberg → Selva Negra → ZURICH</strong>. 422 km.</strong></p><p>⏰ <strong>Comprometido:</strong> Bus desde las 8:00 AM, con tres paradas.</p><p>🆓 <strong>Libre:</strong> Una hora y media en Heidelberg y otro tanto en la Selva Negra.</p><p>🛏 <strong>Duermen en:</strong> Zurich, una noche.</p></div>
+
 <div class="block"><h2>⏰ El día</h2><div class="block-body">
 <ul class="tl">
 <li><time class="eat">7:00 AM</time><div class="tl-c"><strong>Desayuno</strong><p>+ EMPACAR TODO.</p></div></li>
@@ -1071,6 +1093,8 @@ Si deciden subir, este es el día: no hay ningún tour ni horario que cumplir. <
 
 <section class="screen day" id="dia9" data-day="9" data-date="Lunes 12 de octubre" data-short="Titlis">
 <div class="hero"><div class="h-n">Día 9 de 19</div><h1>🇨🇭→🇱🇮→🇩🇪 Zurich → Lucerna → Titlis → Vaduz → Munich</h1><div class="h-date">Lunes 12 de octubre</div><div class="h-meta">423 km · 🇨🇭 CHF mañana → 🇪🇺 € tarde (Alemania)</div></div>
+
+<div class="ubic"><div class="ubic-t">📍 Dónde están y qué pasa hoy</div><p><strong>Día de ruta: <strong>Zurich → Lucerna → TITLIS → Vaduz → MUNICH</strong>. 423 km.</strong></p><p>⏰ <strong>Comprometido:</strong> Bus 8:00 AM · <strong>excursión al Titlis, la que contrataron</strong> · parada en Liechtenstein.</p><p>🆓 <strong>Libre:</strong> 4 horas en Lucerna si no suben, o el día entero en la montaña si suben.</p><p>🛏 <strong>Duermen en:</strong> Munich, una noche.</p></div>
 
 <div class="block"><h2>⏰ El día</h2><div class="block-body">
 <ul class="tl">
@@ -1136,6 +1160,8 @@ Dicho eso, <strong>algo de ambiente puede quedar</strong>: no es lo común, pero
 
 <section class="screen day" id="dia10" data-day="10" data-date="Martes 13 de octubre" data-short="🎂 Venecia">
 <div class="hero bday"><div class="h-n">Día 10 de 19</div><h1>🎂 Munich → Innsbruck → Verona → Venecia</h1><div class="h-date">Martes 13 de octubre</div><div class="h-meta">🎉 QUINCEAÑERA · 550 km · 🇪🇺 EURO € (todo el día) · 🎀 Feliz Quinceañera en Verona &amp; Venecia 🎀</div></div>
+
+<div class="ubic"><div class="ubic-t">📍 Dónde están y qué pasa hoy</div><p><strong>🎂 <strong>EL CUMPLEAÑOS.</strong> Ruta: <strong>Munich → Innsbruck → VERONA → VENECIA</strong>. 550 km.</strong></p><p>⏰ <strong>Comprometido:</strong> Bus 7:30 AM · <strong>Verona de 2:30 a 5:00 PM</strong> · llegan a Mestre 6:30 PM · <strong>cena de quinceañera 9:00 PM</strong>.</p><p>🆓 <strong>Libre:</strong> Hora y media en Innsbruck, 2 horas y media en Verona, y la noche en Venecia.</p><p>🛏 <strong>Duermen en:</strong> <strong>Mestre</strong>, que es la parte de tierra firme de Venecia.</p></div>
 
 <div class="block"><h2>⏰ El día</h2><div class="block-body">
 <ul class="tl">
@@ -1286,6 +1312,8 @@ Es una <strong>góndola privada solo para la familia</strong>, no compartida con
 <section class="screen day" id="dia11" data-day="11" data-date="Miércoles 14 de octubre" data-short="Venecia→Roma">
 <div class="hero"><div class="h-n">Día 11 de 19</div><h1>🇮🇹 Venecia → Roma</h1><div class="h-date">Miércoles 14 de octubre</div><div class="h-meta">527 km · 🇪🇺 EURO €</div></div>
 
+<div class="ubic"><div class="ubic-t">📍 Dónde están y qué pasa hoy</div><p><strong><strong>VENECIA</strong> por la mañana y bus a <strong>ROMA</strong> por la tarde. 527 km.</strong></p><p>⏰ <strong>Comprometido:</strong> Bus a Venecia 8:30 AM · <strong>reunión con el grupo 1:30 PM</strong> · salida a Roma 2:00 PM.</p><p>🆓 <strong>Libre:</strong> <strong>Toda la mañana en Venecia:</strong> la góndola, el Florian y San Marcos.</p><p>🛏 <strong>Duermen en:</strong> Roma, primera de tres noches.</p></div>
+
 <div class="block"><h2>⏰ El día</h2><div class="block-body">
 <ul class="tl">
 <li><time class="eat">7:30 AM</time><div class="tl-c"><strong>Desayuno</strong><p>+ EMPACAR TODO.</p></div></li>
@@ -1368,6 +1396,8 @@ Es una <strong>góndola privada solo para la familia</strong>, no compartida con
 <section class="screen day" id="dia12" data-day="12" data-date="Jueves 15 de octubre" data-short="Roma + Vaticano">
 <div class="hero"><div class="h-n">Día 12 de 19</div><h1>🇮🇹 Roma — Tour + Vaticano</h1><div class="h-date">Jueves 15 de octubre</div><div class="h-meta">DÍA MUY INTENSO · 🇪🇺 EURO €</div></div>
 
+<div class="ubic"><div class="ubic-t">📍 Dónde están y qué pasa hoy</div><p><strong>Todo el día en <strong>ROMA</strong>.</strong></p><p>⏰ <strong>Comprometido:</strong> Tour panorámico 9:30 a 12:30 · <strong>Vaticano desde las 4:30 PM</strong>, que sí contrataron.</p><p>🆓 <strong>Libre:</strong> De 12:30 a 4:30: Trevi, Panteón y Piazza Navona por su cuenta.</p><p>🛏 <strong>Duermen en:</strong> El mismo hotel de Roma.</p></div>
+
 <div class="block"><h2>⏰ El día</h2><div class="block-body">
 <ul class="tl">
 <li><time class="eat">7:30 AM</time><div class="tl-c"><strong>Desayuno en hotel</strong></div></li>
@@ -1430,6 +1460,8 @@ Es una <strong>góndola privada solo para la familia</strong>, no compartida con
 
 <section class="screen day" id="dia13" data-day="13" data-date="Viernes 16 de octubre" data-short="Roma libre">
 <div class="hero"><div class="h-n">Día 13 de 19</div><h1>🇮🇹 Roma — Día libre</h1><div class="h-date">Viernes 16 de octubre</div><div class="h-meta">DÍA LIBRE · 🇪🇺 EURO €</div></div>
+
+<div class="ubic"><div class="ubic-t">📍 Dónde están y qué pasa hoy</div><p><strong><strong>ROMA</strong>, y el día es entero suyo.</strong></p><p>⏰ <strong>Comprometido:</strong> Nada del tour. Se levantan a la hora que quieran.</p><p>🆓 <strong>Libre:</strong> <strong>10 horas libres.</strong> Trastevere, Villa Borghese, el Coliseo si compran entrada.</p><p>🛏 <strong>Duermen en:</strong> El mismo hotel de Roma, última noche ahí.</p></div>
 
 <div class="block"><h2>⏰ El día</h2><div class="block-body">
 <ul class="tl">
@@ -1496,6 +1528,8 @@ Es una <strong>góndola privada solo para la familia</strong>, no compartida con
 
 <section class="screen day" id="dia14" data-day="14" data-date="Sábado 17 de octubre" data-short="Roma→Florencia">
 <div class="hero"><div class="h-n">Día 14 de 19</div><h1>🇮🇹 Roma → Florencia</h1><div class="h-date">Sábado 17 de octubre</div><div class="h-meta">~275 km · 🇪🇺 EURO €</div></div>
+
+<div class="ubic"><div class="ubic-t">📍 Dónde están y qué pasa hoy</div><p><strong><strong>Roma → FLORENCIA</strong>. 275 km.</strong></p><p>⏰ <strong>Comprometido:</strong> Bus 8:30 AM · llegan al mediodía · <strong>tour a pie incluido de 12:30 a 2:30</strong>.</p><p>🆓 <strong>Libre:</strong> <strong>5 horas desde las 2:30:</strong> almuerzo, mercado de cuero y Piazzale Michelangelo.</p><p>🛏 <strong>Duermen en:</strong> Florencia, una noche.</p></div>
 
 <div class="block"><h2>⏰ El día</h2><div class="block-body">
 <ul class="tl">
@@ -1572,6 +1606,8 @@ Es una <strong>góndola privada solo para la familia</strong>, no compartida con
 
 <section class="screen day" id="dia15" data-day="15" data-date="Domingo 18 de octubre" data-short="Pisa→Costa Azul">
 <div class="hero"><div class="h-n">Día 15 de 19</div><h1>🇮🇹→🇲🇨 Florencia → Pisa → Costa Azul</h1><div class="h-date">Domingo 18 de octubre</div><div class="h-meta">451 km · 🇪🇺 EURO €</div></div>
+
+<div class="ubic"><div class="ubic-t">📍 Dónde están y qué pasa hoy</div><p><strong><strong>Florencia → Pisa → COSTA AZUL</strong>. 451 km.</strong></p><p>⏰ <strong>Comprometido:</strong> Bus 8:00 AM · parada en Pisa · llegan al hotel ~5:00 PM.</p><p>🆓 <strong>Libre:</strong> Una hora en Pisa, y la noche libre: Mónaco por su cuenta, o descansar.</p><p>🛏 <strong>Duermen en:</strong> Costa Azul, cerca de Niza. Una noche.</p></div>
 
 <div class="block"><h2>⏰ El día</h2><div class="block-body">
 <ul class="tl">
@@ -1675,6 +1711,8 @@ Y este día viene cargado: llegan al hotel a las 5 PM tras un día entero de bus
 
 <section class="screen day" id="dia16" data-day="16" data-date="Lunes 19 de octubre" data-short="Barcelona">
 <div class="hero"><div class="h-n">Día 16 de 19</div><h1>🇫🇷→🇪🇸 Costa Azul → Barcelona</h1><div class="h-date">Lunes 19 de octubre</div><div class="h-meta">660 km — RUTA MUY LARGA · 🇪🇺 EURO € (España también)</div></div>
+
+<div class="ubic"><div class="ubic-t">📍 Dónde están y qué pasa hoy</div><p><strong><strong>Costa Azul → BARCELONA</strong>. 660 km, el tramo más largo del viaje.</strong></p><p>⏰ <strong>Comprometido:</strong> Bus 7:30 AM, casi 9 horas · llegan 5:00 PM · <strong>visita incluida hasta las 7:00 PM</strong>.</p><p>🆓 <strong>Libre:</strong> <strong>La noche entera en el centro:</strong> compras hasta las 9 y cena de pinchos.</p><p>🛏 <strong>Duermen en:</strong> Barcelona, una noche. El bus los deja en el centro y vuelven por su cuenta.</p></div>
 
 <div class="block"><h2>⏰ El día</h2><div class="block-body">
 <ul class="tl">
@@ -1800,6 +1838,8 @@ Precios oficiales de 2026: <strong>sencillo 2,90 €</strong> • <strong>T-Fami
 <section class="screen day" id="dia17" data-day="17" data-date="Martes 20 de octubre" data-short="Madrid">
 <div class="hero"><div class="h-n">Día 17 de 19</div><h1>🇪🇸 Barcelona → Zaragoza → Madrid</h1><div class="h-date">Martes 20 de octubre</div><div class="h-meta">620 km · 🇪🇺 EURO €</div></div>
 
+<div class="ubic"><div class="ubic-t">📍 Dónde están y qué pasa hoy</div><p><strong><strong>Barcelona → Zaragoza → MADRID</strong>. 620 km.</strong></p><p>⏰ <strong>Comprometido:</strong> Bus 8:00 AM · <strong>45 min en Zaragoza</strong> · llegan a Madrid ~4:00 PM.</p><p>🆓 <strong>Libre:</strong> <strong>La tarde y la noche libres:</strong> Gran Vía, Primark y Plaza Mayor.</p><p>🛏 <strong>Duermen en:</strong> Madrid, una noche.</p></div>
+
 <div class="block"><h2>⏰ El día</h2><div class="block-body">
 <ul class="tl">
 <li><time class="eat">7:00 AM</time><div class="tl-c"><strong>Desayuno</strong><p>+ EMPACAR TODO</p></div></li>
@@ -1868,6 +1908,8 @@ Decía "20-30% más barato". Comparé <strong>los mismos artículos exactos</str
 <section class="screen day" id="dia18" data-day="18" data-date="Miércoles 21 de octubre" data-short="Madrid compras">
 <div class="hero"><div class="h-n">Día 18 de 19</div><h1>🇪🇸 Madrid — Tour + tarde libre de compras</h1><div class="h-date">Miércoles 21 de octubre</div><div class="h-meta">ÚLTIMO DÍA · 🇪🇺 EURO €</div></div>
 
+<div class="ubic"><div class="ubic-t">📍 Dónde están y qué pasa hoy</div><p><strong>ÚLTIMO DÍA COMPLETO. Todo en <strong>MADRID</strong>.</strong></p><p>⏰ <strong>Comprometido:</strong> Tour panorámico 9:30 a 12:30 · <strong>el bus al aeropuerto pasa a las 10:00 PM</strong>.</p><p>🆓 <strong>Libre:</strong> <strong>6 horas de tarde libre</strong> para las últimas compras.</p><p>🛏 <strong>Duermen en:</strong> Esta noche no hay hotel: la pasan en el aeropuerto y en el avión.</p></div>
+
 <div class="block"><h2>⏰ El día</h2><div class="block-body">
 <ul class="tl">
 <li><time class="eat">7:30 AM</time><div class="tl-c"><strong>Desayuno</strong><p>En hotel</p></div></li>
@@ -1934,6 +1976,8 @@ A las 9:30 PM vuelven, recogen todo y a las 10 PM sale el bus. Sin correr.</div>
 
 <section class="screen day" id="dia19" data-day="19" data-date="Jueves 22 de octubre" data-short="🏠 Vuelta">
 <div class="hero"><div class="h-n">Día 19 de 19</div><h1>✈️ Madrid → Lima</h1><div class="h-date">Jueves 22 de octubre</div><div class="h-meta">Vuelta a casa</div></div>
+
+<div class="ubic"><div class="ubic-t">📍 Dónde están y qué pasa hoy</div><p><strong><strong>Madrid → LIMA</strong>. Vuelta a casa.</strong></p><p>⏰ <strong>Comprometido:</strong> Llegan a Barajas 10:45 PM del día anterior · <strong>vuelo 01:45 AM</strong> · aterrizan en Lima 6:30 AM.</p><p>🆓 <strong>Libre:</strong> Nada libre: es aeropuerto y avión.</p><p>🛏 <strong>Duermen en:</strong> En casa.</p></div>
 
 <div class="block"><h2>⏰ El día</h2><div class="block-body">
 <ul class="tl">
