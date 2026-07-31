@@ -324,11 +324,12 @@ mark.jump{background:#ffe9a8;animation:pulse 2.2s ease}
     Abre <strong>24 h antes</strong> de cada vuelo.<br><br>
     ⚠️ <strong>Corrección:</strong> el plan decía que la vuelta se gestionaba en latam.com. <strong>Era incorrecto.</strong> La reserva dice que <strong>IB6660 lo opera Iberia</strong>. Todo va por iberia.com.</div>
 
-    <div class="note warn"><strong>⏰ Corregidos los horarios del segundo vuelo.</strong><br>
-    • <strong>IB1861 sale 09:35</strong> (no 09:30) y <strong>llega a Gatwick 10:55</strong> (no 10:50).<br>
-    • Escala en Madrid de <strong>3 h 55 min</strong>, no 3 h 50.<br><br>
-    Cinco minutos parecen nada, pero <strong>el que los recoge cuenta 90 minutos desde el aterrizaje real</strong>: el plazo vence <strong>12:25</strong>, no 12:20.<br><br>
-    <strong>Sin cambios:</strong> IB124 sale de Lima el <strong>domingo 4 a las 11:00</strong> y llega a Madrid el <strong>lunes 5 a las 05:40</strong>. IB6660 sale de Madrid el <strong>jueves 22 a la 01:45</strong> y llega a Lima ese mismo día a las <strong>06:30</strong>.</div>
+    <div class="note save"><strong>✈️ Iberia avisó de un cambio en el vuelo Madrid–Gatwick. La hora NO cambia.</strong><br>
+    El horario tachado y el nuevo son <strong>el mismo</strong>: sale <strong>09:30</strong>, llega <strong>10:50</strong>, 2 h 20 min. <strong>No hay nada que reorganizar.</strong><br><br>
+    <strong>Lo que cambió es quién lo vuela:</strong> ahora lo opera <strong>Iberia Express</strong> con un <strong>Airbus A320</strong>. Es la filial de bajo coste del mismo grupo: mismo número de vuelo, misma terminal, mismo billete.<br><br>
+    👉 Con un A320 lleno es aún más probable que en la puerta les pidan <strong>mandar algún trolley a bodega</strong>. Es gratis, pero por eso <strong>pasaportes, medicinas, cargadores y power banks van en el bolso pequeño</strong>.<br><br>
+    ⚠️ <strong>Corrige un dato que yo había cambiado mal:</strong> Atrápalo mostraba 09:35 y 10:55 y actualicé el plan con eso. <strong>Iberia dice 09:30 y 10:50</strong>, y en horarios manda la aerolínea. El plazo del traslado vence a las <strong>12:20</strong>.<br><br>
+    <strong>Los otros dos vuelos igual:</strong> Lima <strong>domingo 4, 11:00</strong> → Madrid <strong>lunes 5, 05:40</strong>. Madrid <strong>jueves 22, 01:45</strong> → Lima <strong>06:30</strong>.</div>
 
     <div class="note info"><strong>🧳 Equipaje confirmado, con medidas exactas.</strong><br>
     Para los cinco y en los dos sentidos: <strong>1 accesorio personal</strong> (bajo el asiento) + <strong>1 equipaje de mano de máximo 55 × 35 × 20 cm y 10 kg</strong>.<br><br>
@@ -397,11 +398,9 @@ mark.jump{background:#ffe9a8;animation:pulse 2.2s ease}
 (function(){
 'use strict';
 var R = [
- {f:'2026-07-31', t:'Revisar que los 5 pasaportes venzan después de abril de 2027', q:'Tienen que seguir vigentes al menos 6 meses DESPUÉS de volver. Si alguno vence antes, hay que renovarlo en Migraciones ya.', si:'Si uno vence antes y no lo ven ahora, esa persona no viaja. Es lo primero de todo.'},
- {f:'2026-07-31', t:'Confirmar que el celular de papá esté liberado', q:'Todo el viaje depende de esa eSIM, y una eSIM no se instala en un celular amarrado a un operador. Llamen a la operadora y pregunten.', si:'Si está bloqueado y se enteran en septiembre, no da tiempo a buscar otra solución.'},
  {f:'2026-08-10', t:'Pagar el saldo de USD 2.490,60', q:'Precio total USD 16.990,60, pagado USD 14.500,00. Andrew ya lo tiene previsto — este recordatorio está solo para que no se pase de fecha. ✅ La reserva ya figura CONFIRMADA y los pasajes EMITIDOS.', si:'Los pasajes ya están emitidos, pero el circuito y los hoteles dependen del pago completo.'},
- {f:'2026-08-01', t:'Pedir las direcciones de los hoteles y resolver el traslado de Gatwick', q:'Dos cosas en el mismo mensaje. (1) La reserva dice que los hoteles están en ciudades aleñadas, no en el centro: sin las direcciones no se puede calcular ninguna vuelta al hotel. (2) Su vuelo llega a GATWICK y el traslado incluido es solo para Heathrow, así que hay que contratar el suplemento por escrito y pedir el WhatsApp del conductor.', si:'Sin resolver Gatwick, aterrizan en Londres a las 10:55 sin nadie esperándolos. Y el que los recoge espera 90 minutos y se va.', dura:1},
- {f:'2026-08-05', t:'LLAMAR A ATRÁPALO: (511) 748 1400 — una sola llamada cierra 4 pendientes', q:'Ya no hace falta pedir el localizador ni la confirmación: eso ya salió de Mis Reservas. Lo que queda: (1) el SALDO de USD 2.490,60 — plazo y consecuencias; (2) las direcciones de los hoteles de las 17 noches; (3) el monto exacto del recargo de Gatwick por escrito y el WhatsApp del conductor; (4) las respuestas del Titlis. Atienden L-V 9:00-22:00 y fines de semana 9:00-20:00.', si:'Son los cuatro pendientes más grandes que quedan, y se resuelven en una llamada. Escribiendo por WhatsApp puede tomar semanas.', dura:1},
+ {f:'2026-08-01', t:'Pedir las direcciones de los hoteles y resolver el traslado de Gatwick', q:'Dos cosas en el mismo mensaje. (1) La reserva dice que los hoteles están en ciudades aleñadas, no en el centro: sin las direcciones no se puede calcular ninguna vuelta al hotel. (2) Su vuelo llega a GATWICK y el traslado incluido es solo para Heathrow, así que hay que contratar el suplemento por escrito y pedir el WhatsApp del conductor.', si:'Sin resolver Gatwick, aterrizan en Londres a las 10:50 sin nadie esperándolos. Y el que los recoge espera 90 minutos y se va.', dura:1},
+ {f:'2026-08-05', t:'LLAMAR A ATRÁPALO: (511) 748 1400 — una sola llamada cierra 4 pendientes', q:'Ya no hace falta pedir el localizador ni la confirmación: eso ya salió de Mis Reservas. Lo que queda: (1) el SALDO de USD 2.490,60 — plazo y consecuencias; (2) las direcciones de los hoteles de las 17 noches; (3) el monto exacto del recargo de Gatwick por escrito y el WhatsApp del conductor; (4) las respuestas del Titlis; (5) si el tour a pie de Florencia entra al Duomo o es por fuera. Atienden L-V 9:00-22:00 y fines de semana 9:00-20:00.', si:'Son los cuatro pendientes más grandes que quedan, y se resuelven en una llamada. Escribiendo por WhatsApp puede tomar semanas.', dura:1},
  {f:'2026-08-05', t:'Probar que la reserva abre en iberia.com, con los 2 apellidos juntos', q:'✅ Ya tienen el localizador del proveedor (5 caracteres, en Mis Reservas). Entren a iberia.com/pe/gestion-de-reservas y comprueben que abre. ⚠️ Los dos apellidos van JUNTOS Y SIN ESPACIOS: MontejoCaycho, FigueroaCornejo, MontejoReyes, MontejoFigueroa. Revisen que los 5 nombres estén igual que en el pasaporte y que la vuelta salga el 22 de octubre.', si:'Un nombre mal escrito se corrige gratis ahora y caro en el aeropuerto. Y conviene descubrir hoy que el login funciona, no la madrugada del check-in.'},
  {f:'2026-08-15', t:'Comprar el seguro de viaje', q:'Cobertura mínima de €100.000, y que diga REINO UNIDO por escrito en la póliza. Unos US$150-250 por persona por los 19 días.', si:'Comprarlo temprano es lo que hace que además cubra cancelación. Si lo dejan para el final, ya solo cubre lo médico.'},
  {f:'2026-08-20', t:'Comprar adaptadores de enchufe, power banks y riñonera', q:'El adaptador tiene que servir en SUIZA: el enchufe suizo no acepta el europeo grueso y redondeado. Que diga "Suiza" explícitamente, o lleven un par de los finos baratos.', si:'Comprándolo allá pagan el triple. Y sin adaptador suizo no cargan el celular justo el día del Titlis.'},
@@ -543,7 +542,7 @@ Comprar no gasta días: el QR espera en el correo.<span class="deadline">⏰ ~15
     <div class="note info"><strong>Los tres tramos</strong><br>
     <strong>1.</strong> Lima 11:00 → Madrid 05:40 del día siguiente (11h40, Iberia).<br>
     <strong>2.</strong> Escala en Madrid de 3h50. <strong>Buena noticia:</strong> llegan y salen de la misma terminal (T4S), no cambian de edificio y <strong>no pasan migraciones españolas</strong> — siguen en tránsito internacional.<br>
-    <strong>3.</strong> Madrid 09:35 → Londres Gatwick 10:55, <strong>Terminal Sur</strong>.</div>
+    <strong>3.</strong> Madrid 09:30 → Londres Gatwick 10:50, <strong>Terminal Sur</strong>.</div>
 
     <div class="note warn"><strong>Al llegar a Gatwick: este es el punto más justo del viaje.</strong><br>
     El chofer del traslado espera <strong>90 minutos desde que aterriza el avión</strong>, o sea hasta las <strong>12:20</strong>. Y migraciones puede tomar entre 45 y 90 minutos, porque los peruanos <strong>no pueden usar las máquinas automáticas</strong> y las 10-12 del día es hora pico.<br><br>
@@ -571,9 +570,9 @@ Comprar no gasta días: el QR espera en el correo.<span class="deadline">⏰ ~15
 <ul class="tl">
 <li><time class="go">8:00 AM</time><div class="tl-c"><strong>Llegar al Jorge Chávez</strong><p>3 horas antes del vuelo.</p></div></li>
 <li><time class="go">11:00 AM</time><div class="tl-c"><strong>Vuelo IB0124 Lima → Madrid</strong><p>11h 40min.</p></div></li>
-<li><time class="go">05:40 AM +1</time><div class="tl-c"><strong>Llegada a Madrid T4S</strong><p>Lunes 5 oct. Escala de 3h 55min. <strong>No cambian de terminal ni pasan migraciones.</strong></p></div></li>
-<li><time class="go">09:35 AM</time><div class="tl-c"><strong>Vuelo IB1861 Madrid (T4S) → Londres Gatwick</strong><p>Iberia Express, 2h 20min.</p></div></li>
-<li><time class="go">10:55 AM</time><div class="tl-c"><strong>Llegada a Londres Gatwick — Terminal Sur</strong><p>Sigue en el Día 2.</p></div></li>
+<li><time class="go">05:40 AM +1</time><div class="tl-c"><strong>Llegada a Madrid T4S</strong><p>Lunes 5 oct. Escala de 3h 50min. <strong>No cambian de terminal ni pasan migraciones.</strong></p></div></li>
+<li><time class="go">09:30 AM</time><div class="tl-c"><strong>Vuelo IB1861 Madrid (T4S) → Londres Gatwick</strong><p>Iberia Express, 2h 20min.</p></div></li>
+<li><time class="go">10:50 AM</time><div class="tl-c"><strong>Llegada a Londres Gatwick — Terminal Sur</strong><p>Sigue en el Día 2.</p></div></li>
 </ul>
 </div></div>
 
@@ -591,7 +590,7 @@ Comprar no gasta días: el QR espera en el correo.<span class="deadline">⏰ ~15
 
 <div class="block"><h2>⏰ El día</h2><div class="block-body">
 <ul class="tl">
-<li><time class="go">10:55 AM</time><div class="tl-c"><strong>Llegada a Gatwick (Terminal Sur)</strong><p>Migraciones + maletas: calculen <strong>45 a 90 min</strong>, no 45.</p></div></li>
+<li><time class="go">10:50 AM</time><div class="tl-c"><strong>Llegada a Gatwick (Terminal Sur)</strong><p>Migraciones + maletas: calculen <strong>45 a 90 min</strong>, no 45.</p></div></li>
 <li><time class="go">11:45 AM</time><div class="tl-c"><strong>Salen del aeropuerto</strong><p>El tour los recoge (si pagaron el recargo de Gatwick).</p></div></li>
 <li><time class="go">~1:00 PM</time><div class="tl-c"><strong>Llegan al hotel</strong><p>Traslado ~1h desde Gatwick.</p></div></li>
 <li><time>2:00 PM</time><div class="tl-c"><strong>Check-in hotel</strong><p>Antes de las 2 PM probablemente no puedan entrar a la habitación. Dejen maletas en recepción.</p></div></li>

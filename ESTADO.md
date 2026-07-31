@@ -34,7 +34,7 @@ Este documento reemplaza al `AUDITORIA.md` como resumen vigente. El `AUDITORIA.m
 
 | Cuándo | Qué | Nota |
 |---|---|---|
-| **Ahora** | Verificar que el celular del papá esté **liberado** | Si está amarrado, la eSIM no funciona |
+| ~~Ahora~~ | ~~Celular del papá liberado~~ ✅ **CONFIRMADO** | La eSIM va a funcionar |
 | **Ahora** | Confirmar que la **reserva esté EN FIRME** y sin saldo pendiente | El documento es de diciembre y dice "NO está confirmada" |
 | **Ahora** | Pedir las **direcciones de los hoteles** y cerrar el **traslado de Gatwick** | La reserva confirma que el traslado incluido es solo para Heathrow |
 | **Ahora** | Mandarle a Anahí el resto de preguntas | La primera es la que más pesa: si los precios son por persona o por dos |
@@ -68,11 +68,11 @@ Este documento reemplaza al `AUDITORIA.md` como resumen vigente. El `AUDITORIA.m
 2. **Titlis:** el teleférico giratorio está cerrado esas fechas. ¿Se hace igual con el otro? ¿Mismo precio? ¿Qué incluye?
 3. **Titlis:** ¿los $175 se cobran igual por la menor de 15, o tiene tarifa de niño?
 4. **Titlis:** ¿garantizan el regreso antes de que salga el bus? ¿Hay reembolso si cierra por viento?
-5. **Toledo:** ya no van. ¿Estaba contratado? ¿Se devuelve?
-6. **Capri y Versalles:** confirmar que tampoco están contratados.
+5. ~~Toledo, Capri y Versalles~~ ✅ **RESUELTO.** Eran opcionales y nunca se contrataron: no hay nada que devolver.
+6. **Florencia:** el tour a pie **que ya viene incluido** dice "Duomo, Campanario Giotto, Baptisterio". ¿Entra o es por fuera? Entrar cuesta €20 por persona.
 7. **Gatwick:** ✅ confirmado que el traslado **NO está incluido** (la reserva dice que solo cubre Heathrow). Falta el **monto exacto por escrito** y el **WhatsApp del conductor**.
 8. **Hoteles: las direcciones.** Es lo más urgente. La reserva dice que están en las afueras, así que sin direcciones no se puede planificar ninguna noche libre.
-9. ~~Noches~~ ✅ **RESUELTO** — la reserva dice **18 días, 17 noches**, del 5 al 22 de octubre. En su lugar pregunten: *"¿podemos quedarnos con la habitación hasta las 22:00 del día 21, cuando pasa el bus?"*
+9. ~~Noches~~ ✅ **RESUELTO** — la reserva dice **18 días, 17 noches**, del 5 al 22 de octubre.
 10. Su **número en formato internacional** y su WhatsApp.
 
 ---
@@ -158,8 +158,8 @@ Se marca aquí en vez de rellenarlo con estimaciones.
 | **Estado** | ✅ Confirmado · pasajes emitidos | Estaba en duda |
 | **Precio** | USD 16.990,60 total · **pagado 14.500 → faltan 2.490,60** | Se desconocía |
 | **IB124** Lima→Madrid | dom 4 oct 11:00 → lun 5 oct 05:40 | ✅ igual |
-| **IB1861** Madrid→Gatwick | lun 5 oct **09:35 → 10:55** | ❌ decía 09:30 → 10:50 |
-| Escala en Madrid | **3 h 55 min** | ❌ decía 3 h 50 |
+| **IB1861** Madrid→Gatwick | lun 5 oct **09:30 → 10:50**, ahora operado por **Iberia Express** (A320) | ✅ la hora no cambió. Atrápalo mostraba 09:35/10:55, pero manda Iberia |
+| Escala en Madrid | **3 h 50 min** | ✅ igual |
 | **IB6660** Madrid→Lima | jue 22 oct 01:45 → 06:30, **operado por Iberia** | ❌ decía operado por LATAM |
 | Check-in de vuelta | **iberia.com** | ❌ decía latam.com |
 | Equipaje (los 5, ida y vuelta) | 1 personal + 1 de mano **55×35×20 cm, 10 kg** | ✅ igual, ahora con medidas |
