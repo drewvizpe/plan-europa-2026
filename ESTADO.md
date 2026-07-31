@@ -169,4 +169,25 @@ Se marca aquí en vez de rellenarlo con estimaciones.
 
 ---
 
+---
+
+## 9. BARCELONA — verificada al final, y era la peor
+
+Era la única ciudad que nunca había pasado por verificación. Caen un **lunes**, y eso rompía tres cosas:
+
+| Problema | Realidad |
+|---|---|
+| Recorrido de 1,5 h **a pie** | Son **3,7 km**: imposible. El tramo largo tiene que ir en bus |
+| Compras | Las tiendas **cierran a las 21:00** y el recorrido acababa a 1,2 km de ellas, con la cena a las 20:30 |
+| Cena en **Gràcia** | Está a 2 km en dirección contraria. **Poble Sec** está a 12 min de Colón |
+| **T-Casual** para 5 | Es **unipersonal**: costaría €65. Va la **T-Familiar, €11,50** |
+| "Foto al atardecer" | A las 17:30 hay plena luz; el sol se pone ~19:00 |
+| El Xampanyet / La Pubilla | **Cerrados los lunes por la noche** |
+
+**Solución:** se invirtió el orden del día — compras primero (19:00–21:00), cena de pinchos en el Carrer de Blai a las 21:15. Y se añadió Passeig de Gràcia (Casa Batlló y La Pedrera por fuera, gratis), que está justo en el camino.
+
+**Pregunta nueva para el guía:** si al terminar en Colón el bus los lleva al hotel o pueden quedarse en el centro. De eso depende toda la tarde.
+
+---
+
 *Actualizado el 30 de julio de 2026. Los datos verificados citan su fuente en el plan; el resto está marcado como estimado.*
