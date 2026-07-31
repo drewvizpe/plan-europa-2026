@@ -16,6 +16,13 @@ Este documento reemplaza al `AUDITORIA.md` como resumen vigente. El `AUDITORIA.m
 | **Toledo** (Día 18) | ❌ No van | +$415 |
 | **Tour Este de Londres** (Día 3) | ❌ No van | +$365 |
 | **Tour Mónaco de noche** (Día 15) | ❌ No lo contratan — van por su cuenta, solo por fuera | +$465 |
+| **Montmartre + Barrio Latino** (Día 5) | ❌ No lo contratan — lo hacen solos, es gratis | +$390 |
+| **Verona** (Día 10) | ❌ No lo contratan — lo hacen solos | +$275 |
+| **Roma Barroca** (Día 12) | ❌ No lo contratan — se solapaba con el Vaticano | +$365 |
+| **Crucero del Sena + París Iluminado** (Día 4) | ✅ **SÍ lo contratan** | −$465 |
+| **Museos Vaticanos + Capilla Sixtina** (Día 12) | ✅ **SÍ lo contratan** | −$570 |
+| **Monte Titlis** (Día 9) | ✅ **SÍ lo contratan** | −$875 |
+| **Florencia** | ❌ No entran a ningún monumento, todo por fuera | +€20/pp |
 | **Subir a la Torre Eiffel** | ❌ No suben, la ven desde el Trocadéro | +€165 |
 | **Entrar a Notre Dame** | ❌ Solo por fuera | — |
 | **Subir a la Torre de Pisa** | ❌ No suben | — |
@@ -24,7 +31,9 @@ Este documento reemplaza al `AUDITORIA.md` como resumen vigente. El `AUDITORIA.m
 | **Equipaje** | ✅ Solo cabina: 10 kg + bolso por persona | — |
 | **eSIM** | ✅ Una sola, en el celular del papá (el único con eSIM) | — |
 
-**Total liberado por excursiones descartadas: $3.075 + €165.** El presupuesto pasó de tener un déficit de $200-400 por persona a tener margen holgado.
+**Excursiones: contratan 3 por US$ 1.910 y descartan 8, ahorrando US$ 3.105 + €165.**
+
+**Los precios son POR PERSONA**, confirmado. Esa duda quedó cerrada. El presupuesto pasó de tener un déficit de $200-400 por persona a tener margen holgado.
 
 **Criterio que se repite en todas las decisiones:** no pagan por entrar a museos, iglesias ni miradores. Prefieren ver las ciudades desde la calle. Eso ya descartó la Torre Eiffel, Notre Dame por dentro, la Torre de Pisa, la cúpula del Duomo de Florencia y ahora Mónaco entero.
 
@@ -190,4 +199,34 @@ Era la única ciudad que nunca había pasado por verificación. Caen un **lunes*
 
 ---
 
-*Actualizado el 30 de julio de 2026. Los datos verificados citan su fuente en el plan; el resto está marcado como estimado.*
+---
+
+## 10. LO QUE QUEDA PENDIENTE (al 31 de julio)
+
+### Las 5 consultas a Anahí — ya enviadas
+Están en el PDF `CONSULTAS VIAJE EUROPA - para Anahi.pdf` del Escritorio.
+1. Confirmar las 3 excursiones y el total a pagar
+2. **Las direcciones de los hoteles** ← la más importante
+3. Contratar el traslado de Gatwick + WhatsApp del conductor
+4. Las 4 consultas del Titlis
+5. Si el Vaticano ya incluye la Basílica de San Pedro
+
+### Decisiones que faltan, pero son de ustedes
+- **La góndola de Venecia: qué día.** Está decidido que es privada y familiar, con la foto de la quinceañera sola primero. Falta elegir entre la **noche del Día 10 (€110)** o la **mañana del Día 11 (€90, con luz plena y sin apurar la cena)**. El plan recomienda la mañana del 11.
+
+### Lo que solo se puede cerrar en septiembre
+- Fechas del **Cambio de Guardia** de octubre (se publican con ~2 meses de antelación)
+- Reconfirmar la **tasa de Venecia** (hoy no se cobra)
+- Cotizar el **seguro** con las 5 fechas de nacimiento
+- Llamar al **Primark de Barcelona** el mismo día: su web no publica el horario del lunes
+
+### Lo que se desbloquea con las direcciones de los hoteles
+Cuando lleguen, se puede hacer lo que no se pudo hasta ahora:
+- Los **botones de Google Maps** en cada día
+- Calcular los tiempos reales de vuelta al hotel en Londres, París, Roma y Madrid
+- Decidir con certeza lo de **Mónaco** (depende de si el hotel está en Niza ciudad o en las afueras)
+- Confirmar el margen del traslado a Barajas
+
+---
+
+*Actualizado el 31 de julio de 2026. Los datos verificados citan su fuente en el plan; el resto está marcado como estimado.*
