@@ -53,12 +53,12 @@ Este documento reemplaza al `AUDITORIA.md` como resumen vigente. El `AUDITORIA.m
 
 ## 3. LO QUE FALTA — datos que solo ustedes pueden conseguir
 
-1. **¿Los precios del documento son por persona o por dos?** Es lo único que todavía puede mover todas las cuentas del viaje.
+1. ~~¿Los precios son por persona o por dos?~~ ✅ **RESUELTO.** Mis Reservas dice **precio total USD 16.990,60 por los cinco** — unos **USD 3.398 por persona**, con vuelos, hoteles y desayunos. ⚠️ **Pero figura pagado solo USD 14.500,00: faltan USD 2.490,60.** Averiguar plazo y consecuencias.
 2. **Las direcciones de los hoteles.** Es ahora el dato más importante que falta. La reserva confirma por escrito que **los hoteles están en las afueras**, no en el centro: *"La hotelería del circuito se encuentra en las ciudades aledañas de las grandes ciudades."* Sin las direcciones, cualquier "vuelvo caminando al hotel" del plan es una suposición — y en Niza decide si pueden ir a Mónaco o no.
-3. ~~El localizador de la reserva~~ ✅ **YA LO TIENEN.** Es el de la agencia (empieza con VJ). ⚠️ **No lo pongan en la página pública ni en grupos grandes:** con el localizador y un apellido se entra a la reserva. Guárdenlo en el campo privado de la v2, que se guarda solo en el celular. Lo que sigue faltando es el **localizador de la aerolínea**, para ver la reserva en iberia.com y hacer el check-in.
+3. ~~Los localizadores~~ ✅ **RESUELTO.** Tienen los dos: el de Atrápalo (empieza con V) y el **del proveedor, de 5 caracteres**, que es el que pide Iberia. ⚠️ Para el check-in hay que usar el **del proveedor**, y escribir **los dos apellidos juntos y sin espacios** (MontejoCaycho, FigueroaCornejo…). Eso era lo que hacía que "no saliera". No publicarlos: son la llave de la reserva.
 4. **Las edades de los hermanos.** La tarifa joven de la Torre Eiffel cubría de 12 a 24 años; ya no aplica porque no suben, pero sigue importando para otros descuentos.
 5. **El plan impreso completo.** Ya demostró tener información que el PDF de abril no tiene.
-6. **La confirmación EN FIRME de la reserva.** El documento que tienen es del 2 de diciembre de 2025 y dice *"Tu petición NO está confirmada"*. Es normal en compras online y seguramente ya se confirmó, pero nadie lo revisó. Pídanla por escrito y verifiquen que no quede saldo pendiente.
+6. ~~La confirmación en firme~~ ✅ **RESUELTO.** Los tres vuelos y el circuito figuran **Confirmado**, y dice *"Tus pasajes han sido emitidos."*
 
 ---
 
@@ -120,7 +120,7 @@ Se marca aquí en vez de rellenarlo con estimaciones.
 | Gastos de gestión de las boleterías de Verona y Roma | Ninguna fuente oficial los publica | Se verá al comprar |
 | Precio de subir a la **Torre de Pisa** | La web oficial publica las tarifas como imagen | Irrelevante: no suben |
 | Precio exacto del **seguro** | Solo sale del cotizador con las fechas de nacimiento | Cotizar con las 5 edades |
-| Horarios de vuelo **de su reserva concreta** | Ninguna web pública lo muestra | iberia.com con el localizador |
+| ~~Horarios de vuelo de su reserva~~ | ✅ **RESUELTOS** con Mis Reservas | IB1861 iba corrido 5 min: sale **09:35**, llega **10:55** |
 | Precios de comida en general | No existe fuente oficial por producto | Son estimaciones, están marcadas como tales |
 
 ---
@@ -146,6 +146,26 @@ Se marca aquí en vez de rellenarlo con estimaciones.
 | **Precios** | Pueden variar por tipo de cambio, y las **tasas aéreas** hasta emitir los billetes |
 | **Cancelación** | Una vez emitidos los billetes, **100% de gastos** |
 | **Pasajeros** | Los cinco figuran como **adultos**, sin tarifa de menor |
+
+---
+
+---
+
+## 8. LO QUE CONFIRMÓ "MIS RESERVAS" (estado: Confirmado)
+
+| Dato | Real | Qué decía el plan |
+|---|---|---|
+| **Estado** | ✅ Confirmado · pasajes emitidos | Estaba en duda |
+| **Precio** | USD 16.990,60 total · **pagado 14.500 → faltan 2.490,60** | Se desconocía |
+| **IB124** Lima→Madrid | dom 4 oct 11:00 → lun 5 oct 05:40 | ✅ igual |
+| **IB1861** Madrid→Gatwick | lun 5 oct **09:35 → 10:55** | ❌ decía 09:30 → 10:50 |
+| Escala en Madrid | **3 h 55 min** | ❌ decía 3 h 50 |
+| **IB6660** Madrid→Lima | jue 22 oct 01:45 → 06:30, **operado por Iberia** | ❌ decía operado por LATAM |
+| Check-in de vuelta | **iberia.com** | ❌ decía latam.com |
+| Equipaje (los 5, ida y vuelta) | 1 personal + 1 de mano **55×35×20 cm, 10 kg** | ✅ igual, ahora con medidas |
+| Localizador para check-in | El **del proveedor**, 5 caracteres | Faltaba |
+| Apellidos en el check-in | **Juntos y sin espacios** | Faltaba — era el error |
+| Titular / agente | María Celia Figueroa Cornejo / Anahí Guerrero | Faltaba |
 
 ---
 
