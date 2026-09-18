@@ -3,7 +3,7 @@
    Estrategia: la página se guarda al instalar; las fotos se van guardando
    a medida que se ven, y a partir de ahí salen de la memoria del celular. */
 
-var CACHE = 'plan-europa-v2-31';
+var CACHE = 'plan-europa-v2-34';
 var CORE = ['./', './index.html'];
 
 self.addEventListener('install', function(e){
@@ -31,7 +31,7 @@ self.addEventListener('fetch', function(e){
   if(url.origin !== self.location.origin) return;
 
   // Documento: red primero (para recibir correcciones), caché si no hay señal.
-  if(req.mode === 'navigate' || (req.headers.get('accept')||'').indexOf('text/html') > -1){
+  if(req.mode === 'navigate' || (req.headers.get('accept')||'').indexOf('text/html') > -1 || url.pathname.slice(-4) === '.txt'){
     e.respondWith(
       fetch(req).then(function(res){
         var copy = res.clone();
