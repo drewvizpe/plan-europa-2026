@@ -126,13 +126,11 @@ details.block .block-body{padding-top:14px}
 .rvo{font-size:.82rem;color:var(--ink2);margin:4px 0 0 4px;line-height:1.35}.rvb{display:flex;gap:8px;margin-top:8px}.rvb button{flex:1;height:38px;border-radius:10px;border:1px solid var(--line);background:var(--bg);font-weight:800;font-size:.85rem}
 /* ---- lectura cómoda para papás (19 sep): texto más grande y botones grandes ---- */
 html{-webkit-text-size-adjust:100%}
-body.big{font-size:20px}
-body.big .tl .tl-c{font-size:1rem}body.big .tl .tl-c p{font-size:.95rem}
-body.big .opt-t{font-size:1rem}body.big .opt-r{font-size:.95rem}body.big .opt-p{font-size:.92rem}
-body.big details.more>summary,body.big details.tip>summary,body.big .opt-b .gmaps,body.big a.lb{font-size:.88rem;padding:9px 14px}
-body.big .note{font-size:.98rem}
-#fsz{position:fixed;right:10px;bottom:150px;z-index:60;width:52px;height:52px;border-radius:50%;border:2px solid var(--line);background:var(--card);font-weight:800;font-size:1rem;box-shadow:0 4px 14px rgba(0,0,0,.14)}
-body.big #fsz{background:var(--ink);color:#fff;border-color:var(--ink)}
+body{font-size:20px}
+body .tl .tl-c{font-size:1rem}body .tl .tl-c p{font-size:.95rem}
+body .opt-t{font-size:1rem}body .opt-r{font-size:.95rem}body .opt-p{font-size:.92rem}
+details.more>summary,details.tip>summary,.opt-b .gmaps,a.lb{font-size:.88rem;padding:9px 14px}
+body .note{font-size:.98rem}
 /* ---- fichas (formato conciso 19 sep) ---- */
 .opts{display:flex;flex-direction:column;gap:8px;margin-top:6px}
 .opt{border:1px solid var(--line);border-radius:12px;padding:9px 11px;background:var(--card)}
@@ -249,7 +247,7 @@ mark.jump{background:#ffe9a8;animation:pulse 2.2s ease}
 @keyframes pulse{0%,100%{background:#ffe9a8}50%{background:#ffd35e}}
 /* ---------- DESKTOP (secundario) ---------- */
 @media(min-width:820px){
-  body{font-size:18px}
+  body{font-size:20px}
   .screen{max-width:720px;margin:0 auto;padding:26px 24px 40px}
   .topbar{justify-content:center}
   .topbar .tb-txt{max-width:660px}
@@ -307,7 +305,6 @@ body.has-step{padding-bottom:calc(var(--nav-h) + var(--safe-b) + 96px)}
 
   <a class="cta" href="#dia1">Ver el itinerario día por día →</a>
   <a class="cta" style="background:var(--green);margin-top:8px" href="#revision">👍 Revisar en familia: ¿qué les gusta y qué cambiamos?</a>
-  <button class="cta" type="button" id="dlFotos" style="background:#6b4fa3;margin-top:8px;width:100%">⬇️ Guardar todas las fotos en este celular (para verlas sin internet)</button>
   <a class="cta" style="background:#333;margin-top:8px" href="para-claude.txt" target="_blank" rel="noopener">🤖 Archivo para Claude (asistente del celular)</a>
 
 
@@ -3263,33 +3260,6 @@ function goHash(){
 window.addEventListener('hashchange', goHash);
 
 byId('btnHome').onclick = function(){ location.hash = ''; show(0); };
-
-/* ---------- letra grande (para papás) y fotos guardadas en el celular ---------- */
-(function(){
-  var b=document.createElement('button'); b.id='fsz'; b.type='button'; b.textContent='A+';
-  b.setAttribute('aria-label','Letra más grande'); document.body.appendChild(b);
-  function set(on){ document.body.classList.toggle('big',on); b.textContent=on?'A−':'A+'; try{ localStorage.setItem('pe_big',on?'1':'0'); }catch(e){} }
-  var ini=false; try{ ini=localStorage.getItem('pe_big')==='1'; }catch(e){}
-  set(ini);
-  b.onclick=function(){ set(!document.body.classList.contains('big')); };
-})();
-(function(){ // descargar todas las fotos al celular (para verlas sin internet)
-  var btn=document.getElementById('dlFotos'); if(!btn) return;
-  btn.onclick=async function(){
-    var urls=[].slice.call(document.querySelectorAll('a.lb,a.lbt')).map(function(a){ return a.getAttribute('href'); })
-      .concat([].slice.call(document.querySelectorAll('.thumbs img')).map(function(i){ return i.getAttribute('src'); }))
-      .filter(function(u){ return u && u.indexOf('fotos/')===0; });
-    urls=urls.filter(function(u,i){ return urls.indexOf(u)===i; });
-    var n=0; btn.disabled=true;
-    for(var i=0;i<urls.length;i++){
-      try{ await fetch(urls[i], {cache:'reload'}); n++; }catch(e){}
-      btn.textContent='⬇️ Guardando fotos… '+n+'/'+urls.length;
-    }
-    btn.textContent='✅ '+n+' fotos guardadas en este celular';
-    try{ localStorage.setItem('pe_fotos_ok', String(n)); }catch(e){}
-  };
-  try{ var ya=localStorage.getItem('pe_fotos_ok'); if(ya) btn.textContent='✅ '+ya+' fotos ya guardadas — tocar para actualizar'; }catch(e){}
-})();
 
 /* ---------- visor de fotos (sin salir de la página) ----------
    <a class="lb" href="IMG" data-cap="texto" data-src="URL de crédito" data-g="grupo">📷 …</a>
