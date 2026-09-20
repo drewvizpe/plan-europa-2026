@@ -1,4 +1,4 @@
-# ESTADO DEL PLAN — 30 de julio de 2026
+# ESTADO DEL PLAN — actualizado el 12 de septiembre de 2026
 
 Este documento reemplaza al `AUDITORIA.md` como resumen vigente. El `AUDITORIA.md` sigue siendo útil como registro histórico de la primera pasada, pero describe un plan que ya cambió mucho.
 
@@ -63,7 +63,7 @@ Este documento reemplaza al `AUDITORIA.md` como resumen vigente. El `AUDITORIA.m
 ## 3. LO QUE FALTA — datos que solo ustedes pueden conseguir
 
 1. ~~¿Los precios son por persona o por dos?~~ ✅ **RESUELTO.** Mis Reservas dice **precio total USD 16.990,60 por los cinco** — unos **USD 3.398 por persona**, con vuelos, hoteles y desayunos. ⚠️ **Pero figura pagado solo USD 14.500,00: faltan USD 2.490,60.** Averiguar plazo y consecuencias.
-2. **Las direcciones de los hoteles.** Es ahora el dato más importante que falta. La reserva confirma por escrito que **los hoteles están en las afueras**, no en el centro: *"La hotelería del circuito se encuentra en las ciudades aledañas de las grandes ciudades."* Sin las direcciones, cualquier "vuelvo caminando al hotel" del plan es una suposición — y en Niza decide si pueden ir a Mónaco o no.
+2. ~~Las direcciones de los hoteles~~ ✅ **RESUELTO el 12 de septiembre.** Llegó el listado oficial de los 11 hoteles con dirección y teléfono: está en `HOTELES.md`. Confirmado que todos están en las afueras. Los dos que más cambian el plan: **Barcelona duermen en Sabadell** (25 km del centro) y **Madrid en San Fermín** (sur, no en el centro).
 3. ~~Los localizadores~~ ✅ **RESUELTO.** Tienen los dos: el de Atrápalo (empieza con V) y el **del proveedor, de 5 caracteres**, que es el que pide Iberia. ⚠️ Para el check-in hay que usar el **del proveedor**, y escribir **los dos apellidos juntos y sin espacios** (MontejoCaycho, FigueroaCornejo…). Eso era lo que hacía que "no saliera". No publicarlos: son la llave de la reserva.
 4. **Las edades de los hermanos.** La tarifa joven de la Torre Eiffel cubría de 12 a 24 años; ya no aplica porque no suben, pero sigue importando para otros descuentos.
 5. **El plan impreso completo.** Ya demostró tener información que el PDF de abril no tiene.
@@ -230,3 +230,35 @@ Cuando lleguen, se puede hacer lo que no se pudo hasta ahora:
 ---
 
 *Actualizado el 31 de julio de 2026. Los datos verificados citan su fuente en el plan; el resto está marcado como estimado.*
+
+
+---
+
+## 11. LO QUE LLEGÓ EL 12 DE SEPTIEMBRE
+
+| Dato | Estado |
+|---|---|
+| **ETA Reino Unido** | ✅ Los cinco aprobados el 11 de septiembre. Guardar los cinco correos con el número de 16 dígitos |
+| **Direcciones de los 11 hoteles** | ✅ Recibidas. Ver `HOTELES.md`. Barcelona = Sabadell; Madrid = San Fermín (Usera) |
+| **Traslado de llegada Gatwick** | ✅ Anahí confirmó el 12 de septiembre que los USD 155 están incluidos y pagados. Punto de encuentro: frente a la farmacia BOOTS, cartel con su nombre, WhatsApp +44 7733 448902 |
+| **Traslado de salida** | ✅ Confirmado por escrito por la agencia: *"21 OCTUBRE — TRASLADO DE SALIDA — VUELO IB 6660 — SALIDA 01:45 HRS DEL DÍA 22 OCTUBRE — RECOGIDA 21 OCTUBRE A LAS 21:00 HORAS"*. El plan decía 22:00: corregido a **21:00** en el Día 18 y 19, con cena temprana y 15 minutos de margen en recepción |
+| **Guía del Viajero maseuropa** | ✅ Leída (9 páginas). Teléfonos de emergencia y de traslados copiados a `HOTELES.md`. Punto de encuentro en Gatwick: frente a la farmacia BOOTS |
+
+**Preguntas nuevas para Anahí que salen de la guía:**
+1. ~~¿El extra del traslado de Gatwick (USD 155) ya está contratado?~~ ✅ **RESUELTO el 12 de septiembre:** Anahí confirmó que está incluido y pagado.
+2. La guía dice que en la Serie Colores se pagan **90 USD por pasajero** de impuestos y tasas hoteleras en origen. ¿Está incluido en los USD 16.990,60 ya pagados o es aparte (USD 450 los cinco)?
+3. Las excursiones opcionales necesitan **mínimo 20 pasajeros**. Si Titlis, Sena o Vaticano no llegan al mínimo, ¿se devuelve completo?
+
+**Lo que cambia en el plan con las direcciones reales (verificado el 12 de septiembre con fuentes oficiales de transporte):**
+
+| Ciudad | Cómo se llega al centro | Qué cambia |
+|---|---|---|
+| Londres (Cranford, junto a Heathrow) | Piccadilly line desde Hounslow West, a 2,2 km del hotel (bus H98 o 28 min a pie). Contactless £3,80 valle / £5,30 punta, tope diario £15,30 | Sumar 40 min por trayecto. Bus nocturno N9 desde Trafalgar Square |
+| París (Le Blanc-Mesnil) | RER B desde Le Blanc-Mesnil (800 m) a Châtelet, 20 min, €2,55 | Solo paran los trenes de la rama Mitry-Claye. Último RER ~medianoche (sin verificar) |
+| Múnich (Parkstadt Schwabing) | U2 Frankfurter Ring a 600 m, €4,20 | Metro hasta la 1:00 |
+| Venecia (Mestre, Forte Marghera) | **Tranvía T1** a Piazzale Roma, 11 min, €1,50. Último 00:16, luego bus N1 cada 30 min | El hotel NO está cerca de la estación de Mestre: el tren de las 23:51 deja de ser la referencia, el tranvía desde Piazzale Roma es la vuelta |
+| Roma (Magliana) | Tren FL1 desde Muratella (800 m) a Trastevere/Ostiense 15 min + metro B. BIT €1,50 | ⚠️ Último FL1 a las 22:21 desde Ostiense; después bus sustitutivo. Las noches en Roma terminan temprano |
+| Florencia (San Donnino) | Bus 35 a Leopolda 25 min, €1,70 | Últimos del sábado 23:45, 00:10, 00:40 |
+| Niza (Promenade oeste, junto al aeropuerto) | Tranvía L2 Parc Phoenix a 350 m, 20 min al centro, €1,70 | ✅ **Mónaco por su cuenta es viable**: tren desde Nice Saint-Augustin (1 parada de tranvía), €6,10, 22 min, último de vuelta 23:19 |
+| Barcelona (**Sabadell**) | FGC S2 desde Sabadell Nord a Plaça Catalunya, 50 min, 2 zonas €4,15 | ⚠️ La T-Familiar no cubre la vuelta a Sabadell. Último S2 del lunes desde Pl. Catalunya 23:15. Hay que reordenar la tarde del Día 16 |
+| Madrid (San Fermín) | Metro L3 San Fermín-Orcasur a 6 min, directo a Sol 10 min, €1,50 | Fuera de la M-30: la tarifa fija de taxi €33 no aplica. ✅ Reserva de 2 noches: la habitación del 21 es suya hasta las 21:00 |
