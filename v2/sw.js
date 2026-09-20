@@ -3,8 +3,11 @@
    Estrategia: la página se guarda al instalar; las fotos se van guardando
    a medida que se ven, y a partir de ahí salen de la memoria del celular. */
 
-var CACHE = 'plan-europa-v2-53';
+var CACHE = 'plan-europa-v2-54';
 var CORE = ['./', './index.html'];
+/* 20 sep: las fotos viven en su propia caja, sin número de versión, para que
+   NO se borren cada vez que se publica una corrección del plan. */
+var FOTOS = 'plan-europa-fotos';
 
 self.addEventListener('install', function(e){
   self.skipWaiting();
@@ -17,7 +20,7 @@ self.addEventListener('activate', function(e){
   e.waitUntil(
     caches.keys().then(function(keys){
       return Promise.all(keys.map(function(k){
-        return k === CACHE ? null : caches.delete(k);
+        return (k === CACHE || k === FOTOS) ? null : caches.delete(k);
       }));
     }).then(function(){ return self.clients.claim(); })
   );
@@ -47,13 +50,15 @@ self.addEventListener('fetch', function(e){
   }
 
   // Fotos y demás: caché primero (rápido y sin gastar datos), red si falta.
+  var esFoto = url.pathname.indexOf('/fotos/') > -1;
+  var caja = esFoto ? FOTOS : CACHE;
   e.respondWith(
     caches.match(req).then(function(hit){
       if(hit) return hit;
       return fetch(req).then(function(res){
         if(res && res.status === 200){
           var copy = res.clone();
-          caches.open(CACHE).then(function(c){ c.put(req, copy); });
+          caches.open(caja).then(function(c){ c.put(req, copy); });
         }
         return res;
       }).catch(function(){ return hit; });
