@@ -148,7 +148,7 @@ _Noche a bordo · no hay hotel_
 - En el aire y en aeropuertos, todo el día.
 - ⏰ Comprometido: 8:00 AM en Jorge Chávez · vuelo 11:00 AM · llegan a Madrid al amanecer del lunes.
 - 🆓 Libre: Nada libre: es un día de viaje.
-- 🛏 Duermen en: En el avión. No hay hotel.
+- ✈️ Esta noche: en el avión, no hay hotel.
 
 **Horario:**
 - **8:00 AM** — **Llegar al Jorge Chávez** 3 horas antes del vuelo.
@@ -178,7 +178,7 @@ _Libra £ · £1 ≈ $1.33 ≈ S/4.55_
 - Llegan a LONDRES a media mañana.
 - ⏰ Comprometido: Aterrizan 10:50 · check-in desde las 15:00.
 - 🆓 Libre: tarde tranquila junto al hotel, NO van al centro hoy. Después de almorzar: Osterley Park.
-- 🛏 Duermen en: Ibis Budget Heathrow Central, Cranford.
+- 🏨 Su hotel esta noche: Ibis Budget London Heathrow Central. 📍 Dirección: 700 Bath Road, Cranford, Londres TW5 9TW (barrio pegado al aeropuerto de Heathrow, al oeste de Londres; al centro son ~1 h en bus + metro). [📍 Hotel en el mapa](https://www.google.com/maps/search/?api=1&query=Ibis%20Budget%20London%20Heathrow%20Central%2C%20700%20Bath%20Road%2C%20Cranford%2C%20Londres%20TW5%209TW)
 
 **Horario:**
 - **10:50 AM** — **Llegada a Gatwick (Terminal Sur)** Migraciones + maletas: calculen 45 a 90 min.
@@ -229,7 +229,7 @@ _Libra £ · hoy: ropa de abrigo_
 - Todo el día en LONDRES.
 - ⏰ Tour 9:30–12:30.
 - 🆓 Bancone, Primark, Sky Garden, Leadenhall, Tower Bridge, cena St Katharine Docks.
-- 🛏 Mismo hotel.
+- 🏨 Su hotel esta noche: Ibis Budget London Heathrow Central. 📍 Dirección: 700 Bath Road, Cranford, Londres TW5 9TW (el mismo de anoche). [📍 Hotel en el mapa](https://www.google.com/maps/search/?api=1&query=Ibis%20Budget%20London%20Heathrow%20Central%2C%20700%20Bath%20Road%2C%20Cranford%2C%20Londres%20TW5%209TW)
 
 **Horario:**
 - **7:30 AM** — **Desayuno en el hotel** Incluido.
@@ -297,7 +297,7 @@ _470 km · cambio a euro € · €1 ≈ $1.14 ≈ S/3.90_
 - Día de traslado: Londres → ferry → PARÍS.
 - ⏰ Comprometido: Bus 8:00 AM · ferry · llegan al hotel ~5:30–6:00 PM · crucero del Sena 8 PM a 1 AM.
 - 🆓 Libre: Hora y media entre que llegan y sale el bus del crucero.
-- 🛏 Duermen en: París, primera de tres noches.
+- 🏨 Su hotel esta noche: Campanile Prime Le Blanc-Mesnil. 📍 Dirección: 219 Avenue Descartes, Le Blanc-Mesnil (suburbio al noreste de París, cerca del aeropuerto Le Bourget; 3 noches). [📍 Hotel en el mapa](https://www.google.com/maps/search/?api=1&query=Campanile%20Prime%20Le%20Blanc-Mesnil%2C%20219%20Avenue%20Descartes%2C%20Le%20Blanc-Mesnil)
 
 **Horario:**
 - **7:00 AM** — **Desayuno en el hotel** EMPACAR TODO antes.
@@ -339,7 +339,7 @@ _Euro €_
 - Todo el día en PARÍS.
 - ⏰ Tour 9:30–12:30.
 - 🆓 Montmartre, Arco de Triunfo, Ópera, terraza Printemps, cena Bouillon Julien.
-- 🛏 Mismo hotel.
+- 🏨 Su hotel esta noche: Campanile Prime Le Blanc-Mesnil. 📍 Dirección: 219 Avenue Descartes, Le Blanc-Mesnil (el mismo de anoche). [📍 Hotel en el mapa](https://www.google.com/maps/search/?api=1&query=Campanile%20Prime%20Le%20Blanc-Mesnil%2C%20219%20Avenue%20Descartes%2C%20Le%20Blanc-Mesnil)
 
 **Horario:**
 - **7:30 AM** — **Desayuno en el hotel** Incluido.
@@ -396,7 +396,7 @@ _Euro €_
 _🇪🇺 EURO € · Última noche en París_
 - PARÍS, día libre — nada del tour, cero horarios.
 - 🆓 Hoy: las fotos de los 15 de Abi con su vestido — Luxemburgo por la mañana, la torre por la tarde y de noche.
-- 🛏 Duermen en: el mismo hotel de París, última noche ahí.
+- 🏨 Su hotel esta noche: Campanile Prime Le Blanc-Mesnil. 📍 Dirección: 219 Avenue Descartes, Le Blanc-Mesnil (el mismo; última noche en París). [📍 Hotel en el mapa](https://www.google.com/maps/search/?api=1&query=Campanile%20Prime%20Le%20Blanc-Mesnil%2C%20219%20Avenue%20Descartes%2C%20Le%20Blanc-Mesnil)
 
 **Horario:**
 - **7:30 AM** — **Desayuno liviano y vestido puesto** Abi se pone el vestido en el hotel, abrigo encima.👗 NotaEn el camino no hay dónde cambiarse. Zapatos de fiesta en una bolsa.
@@ -460,7 +460,7 @@ _607 km · 🇪🇺 EURO €_
 - Día de ruta: París → Luxemburgo → Valle del Rin → FRANKFURT. 607 km.
 - ⏰ Comprometido: Bus desde las 7:30 AM, con paradas cortas.
 - 🆓 Libre: ~1–1,5 h en Luxemburgo (confirmen con el guía). El resto es carretera.
-- 🛏 Duermen en: Frankfurt, una noche.
+- 🏨 Su hotel esta noche: Holiday Inn Express Frankfurt Airport. 📍 Dirección: Langener Straße 200, Mörfelden-Walldorf (junto al aeropuerto de Frankfurt, solo de paso; 1 noche). [📍 Hotel en el mapa](https://www.google.com/maps/search/?api=1&query=Holiday%20Inn%20Express%20Frankfurt%20Airport%2C%20Langener%20Stra%C3%9Fe%20200%2C%20M%C3%B6rfelden-Walldorf)
 
 **Horario:**
 - **6:30 AM** — **Desayuno TEMPRANO** + EMPACAR TODO.
@@ -503,7 +503,7 @@ _422 km · 💱 CAMBIO: FRANCO SUIZO CHF · CHF 1 ≈ $1.24 ≈ S/4.20_
 - Día de ruta: Frankfurt → Heidelberg → Selva Negra → ZURICH. 422 km.
 - ⏰ Comprometido: Bus desde las 8:00 AM, con tres paradas.
 - 🆓 Libre: Una hora y media en Heidelberg y otro tanto en la Selva Negra.
-- 🛏 Duermen en: Zurich, una noche.
+- 🏨 Su hotel esta noche: B&B Hotel Zürich Airport Rümlang. 📍 Dirección: Hofwiesenstrasse 52, Rümlang (junto al aeropuerto de Zúrich, solo de paso; 1 noche). [📍 Hotel en el mapa](https://www.google.com/maps/search/?api=1&query=B%26B%20Hotel%20Z%C3%BCrich%20Airport%20R%C3%BCmlang%2C%20Hofwiesenstrasse%2052%2C%20R%C3%BCmlang)
 
 **Horario:**
 - **7:00 AM** — **Desayuno** + EMPACAR TODO.
@@ -543,7 +543,7 @@ _423 km · 🇨🇭 CHF mañana → 🇪🇺 € tarde (Alemania)_
 - Día de ruta: Zurich → Lucerna → TITLIS → Vaduz → MUNICH. 423 km.
 - ⏰ Comprometido: Bus 8:00 AM · excursión al Titlis, la que contrataron · parada en Liechtenstein.
 - 🆓 Libre: 4 horas en Lucerna si no suben, o el día entero en la montaña si suben.
-- 🛏 Duermen en: Munich, una noche.
+- 🏨 Su hotel esta noche: Hampton by Hilton Munich City North. 📍 Dirección: Ingolstädter Straße 44, Múnich (zona norte de Múnich; 1 noche). [📍 Hotel en el mapa](https://www.google.com/maps/search/?api=1&query=Hampton%20by%20Hilton%20Munich%20City%20North%2C%20Ingolst%C3%A4dter%20Stra%C3%9Fe%2044%2C%20M%C3%BAnich)
 
 **Horario:**
 - **7:00 AM** — **Desayuno** + EMPACAR TODO.
@@ -588,7 +588,7 @@ _423 km · 🇨🇭 CHF mañana → 🇪🇺 € tarde (Alemania)_
 _🎉 QUINCEAÑERA · 550 km · 🇪🇺 EURO € (todo el día) · 🎀 Feliz Quinceañera en Verona & Venecia 🎀_
 - 🎂 EL CUMPLEAÑOS. Ruta: Munich → Innsbruck → Verona → Venecia, 550 km.
 - ⏰ Comprometido: bus 7:30 AM · Verona 14:30 a 17:00 (Piazza Bra) · cena de quinceañera 20:00–20:30.
-- 🛏 Duermen en: Mestre, la parte de tierra firme de Venecia.
+- 🏨 Su hotel esta noche: San Giuliano Venice. 📍 Dirección: Via Forte Marghera 193/A, Mestre (Mestre es la parte de tierra firme de Venecia; a la isla se va en tranvía; 1 noche). [📍 Hotel en el mapa](https://www.google.com/maps/search/?api=1&query=San%20Giuliano%20Venice%2C%20Via%20Forte%20Marghera%20193/A%2C%20Mestre)
 
 **Horario:**
 - **6:30 AM** — **Desayuno + EMPACAR** Celebración matutina con la cumpleañera 🎂. Que sepa que hoy es SU día.
@@ -685,7 +685,7 @@ _🎉 QUINCEAÑERA · 550 km · 🇪🇺 EURO € (todo el día) · 🎀 Feliz Q
 _527 km · 🇪🇺 EURO €_
 - VENECIA mañana, bus a ROMA tarde.
 - ⏰ Bus 8:30 · reunión con el grupo 1:30 PM · sale a Roma 2:00 PM.
-- 🛏 Duermen en Roma, 3 noches.
+- 🏨 Su hotel esta noche: Parco de' Medici Hotel. 📍 Dirección: Via Cesare Giulio Viola 19, Roma (zona Magliana, al suroeste de Roma; 3 noches). [📍 Hotel en el mapa](https://www.google.com/maps/search/?api=1&query=Parco%20de%27%20Medici%20Hotel%2C%20Via%20Cesare%20Giulio%20Viola%2019%2C%20Roma)
 
 **Horario:**
 - **7:30 AM** — **Desayuno** + EMPACAR TODO.
@@ -762,7 +762,7 @@ _527 km · 🇪🇺 EURO €_
 _DÍA MUY INTENSO · 🇪🇺 EURO €_
 - Todo el día en ROMA.
 - ⏰ Tour 9:30–12:30 · Vaticano por la tarde (~16:30 estimado).
-- 🛏 Duermen en el mismo hotel.
+- 🏨 Su hotel esta noche: Parco de' Medici Hotel. 📍 Dirección: Via Cesare Giulio Viola 19, Roma (el mismo de anoche). [📍 Hotel en el mapa](https://www.google.com/maps/search/?api=1&query=Parco%20de%27%20Medici%20Hotel%2C%20Via%20Cesare%20Giulio%20Viola%2019%2C%20Roma)
 
 **Horario:**
 - **7:30 AM** — **Desayuno en hotel**
@@ -820,7 +820,7 @@ _DÍA MUY INTENSO · 🇪🇺 EURO €_
 ## Día 13 de 19 · Viernes 16 de octubre — 🇮🇹 Roma — Día libre
 _DÍA LIBRE · 🇪🇺 EURO €_
 - ROMA libre: Panteón, Coliseo, Trastevere.
-- 🛏 Mismo hotel, última noche.
+- 🏨 Su hotel esta noche: Parco de' Medici Hotel. 📍 Dirección: Via Cesare Giulio Viola 19, Roma (el mismo; última noche en Roma). [📍 Hotel en el mapa](https://www.google.com/maps/search/?api=1&query=Parco%20de%27%20Medici%20Hotel%2C%20Via%20Cesare%20Giulio%20Viola%2019%2C%20Roma)
 
 **Horario:**
 - **8:00 AM** — **Desayuno fuerte en el hotel** Salado por papá; almuerzo a las 15:30. 🎫 NotaCompren antes los billetes BIT (€1,50) en máquina o tabaquería: en el tren FL1 no se paga con tarjeta.
@@ -884,7 +884,7 @@ _DÍA LIBRE · 🇪🇺 EURO €_
 _~275 km · 🇪🇺 EURO €_
 - Roma → FLORENCIA. Bus 8:30, tour a pie 12:30–2:30.
 - 🆓 Tarde: Signoria, almuerzo, helado, atardecer en Piazzale Michelangelo.
-- 🛏 Florencia, una noche.
+- 🏨 Su hotel esta noche: Spazio Reale Garden Hotel. 📍 Dirección: Via San Donnino 4/6, Campi Bisenzio (a las afueras de Florencia, por el oeste; 1 noche). [📍 Hotel en el mapa](https://www.google.com/maps/search/?api=1&query=Spazio%20Reale%20Garden%20Hotel%2C%20Via%20San%20Donnino%204/6%2C%20Campi%20Bisenzio)
 
 **Horario:**
 - **7:30 AM** — **Desayuno + EMPACAR TODO** Por papá; almuerzo a las 15:00. NotaEn la parada del bus en la autopista (~10:30) coman algo salado (panino o tramezzino del Autogrill).
@@ -941,7 +941,7 @@ _~275 km · 🇪🇺 EURO €_
 _451 km · 🇪🇺 EURO €_
 - Florencia → Pisa → COSTA AZUL. Bus 8:00, llegan ~17:00.
 - 🆓 1 h en Pisa; noche en Niza: I ♥ Nice, atardecer, cena de socca.
-- 🛏 Costa Azul (Niza), 1 noche.
+- 🏨 Su hotel esta noche: Greet Hotel Nice Aéroport. 📍 Dirección: 385 Promenade des Anglais, Niza (al final de la Promenade, junto al aeropuerto; 1 noche). [📍 Hotel en el mapa](https://www.google.com/maps/search/?api=1&query=Greet%20Hotel%20Nice%20A%C3%A9roport%2C%20385%20Promenade%20des%20Anglais%2C%20Niza)
 
 **Horario:**
 - **7:00 AM** — **Desayuno** + EMPACAR TODO.
@@ -987,7 +987,7 @@ _451 km · 🇪🇺 EURO €_
 _660 km · 🇪🇺 EURO €_
 - Costa Azul → BARCELONA · bus 7:30 AM.
 - 🆓 Noche libre: compras y cena de pinchos.
-- 🛏 Bus deja en el centro.
+- 🏨 Su hotel esta noche: Catalonia Gran Hotel Verdi. 📍 Dirección: Avinguda de Francesc Macià 62, Sabadell (Sabadell es otra ciudad, a 25 km de Barcelona; vuelven en tren; 1 noche). [📍 Hotel en el mapa](https://www.google.com/maps/search/?api=1&query=Catalonia%20Gran%20Hotel%20Verdi%2C%20Avinguda%20de%20Francesc%20Maci%C3%A0%2062%2C%20Sabadell)
 
 **Horario:**
 - **6:30 AM** — **Desayuno TEMPRANO** + EMPACAR TODO
@@ -1041,7 +1041,7 @@ _660 km · 🇪🇺 EURO €_
 _620 km · 🇪🇺 EURO €_
 - Barcelona → Zaragoza → MADRID.
 - 🆓 Tarde y noche libres.
-- 🛏 Madrid, una noche.
+- 🏨 Su hotel esta noche: B&B Hotel Madrid San Fermín. 📍 Dirección: Calle Magacela 6, Madrid (barrio San Fermín, al sur de Madrid; 1 noche). [📍 Hotel en el mapa](https://www.google.com/maps/search/?api=1&query=B%26B%20Hotel%20Madrid%20San%20Ferm%C3%ADn%2C%20Calle%20Magacela%206%2C%20Madrid)
 
 **Horario:**
 - **7:00 AM** — **Desayuno** + empacar
@@ -1087,7 +1087,7 @@ _620 km · 🇪🇺 EURO €_
 _ÚLTIMO DÍA · 🇪🇺 EURO €_
 - ÚLTIMO DÍA. Tour 9:30–12:30 · bus al aeropuerto 9:00 PM.
 - 🆓 4,5 h de tarde libre para compras.
-- 🛏 Sin hotel: aeropuerto y avión.
+- 🛫 Esta noche: sin hotel. A las 21:00 los recogen y pasan la madrugada en el aeropuerto de Barajas.
 
 **Horario:**
 - **7:30 AM** — **Desayuno** En hotel
@@ -1132,7 +1132,7 @@ _ÚLTIMO DÍA · 🇪🇺 EURO €_
 _Vuelta a casa_
 - Madrid → LIMA: Barajas ~9:45 PM · vuelo 01:45 AM · Lima 6:30 AM.
 - 🆓 Nada libre: aeropuerto y avión.
-- 🛏 En casa.
+- 🏠 Esta noche: en casa, en Lima.
 
 **Horario:**
 - **9:00 PM (Día 18)** — **🚌 El bus los recoge del hotel** Traslado incluido, confirmado por la agencia: 21:00. 📅 Ojo con la fechaEl vuelo sale a la 01:45 AM del jueves 22, pero eso NO significa que se van el jueves: salen del hotel el MIÉRCOLES 21 a las 9 de la noche y pasan la madrugada en el aeropuerto.
