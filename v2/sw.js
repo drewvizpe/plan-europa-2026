@@ -3,7 +3,7 @@
    Estrategia: la página se guarda al instalar; las fotos se van guardando
    a medida que se ven, y a partir de ahí salen de la memoria del celular. */
 
-var CACHE = 'plan-europa-v2-92';
+var CACHE = 'plan-europa-v2-93';
 var CORE = ['./', './index.html'];
 /* 20 sep: las fotos viven en su propia caja, sin número de versión, para que
    NO se borren cada vez que se publica una corrección del plan. */
