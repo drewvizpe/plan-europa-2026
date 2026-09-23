@@ -2653,7 +2653,8 @@ function show(n, noScroll){
     tbTitle.textContent = '¿Qué les gusta?';
   } else {
     var d = days[n-1];
-    tbDay.textContent = 'Día ' + n + ' · ' + (d.dataset.date || '');
+    var dd=(d.dataset.date||'').replace(/^(\S{3})\S*\s+(\d+)\s+de\s+(\S{3})\S*$/,'$1 $2 $3').toLowerCase().replace(/^./,function(c){return c.toUpperCase();});
+    tbDay.textContent = 'Día ' + n + ' · ' + dd;
     tbTitle.textContent = d.dataset.short || '';
   }
   // el botón de abajo también dice en qué día están, no solo "Elegir día"
