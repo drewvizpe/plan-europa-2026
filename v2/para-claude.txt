@@ -120,7 +120,7 @@ Multas: Londres £100 · París €70 · Venecia €56,50 (tranvía) / €64,50 
 
 ## 🚕 Regla del taxi (Andrew, 22 sep)
 Taxi si hay riesgo (van con Abi: noches en París, Roma, Florencia) o si cuesta hasta ~€15–20 más para los 5 (≈ €4 por persona). Transporte público si es seguro y el taxi sale mucho más caro. Para 5: UberXL en Londres, París y Niza (confirmado en uber.com); en Roma, Florencia y Madrid taxi grande por teléfono; si no hay, 2 taxis.
-- 🚕 Taxi: Londres Neal's Yard→Horizon 22 (£15–25) · París jue 8 todos los tramos (Montmartre €14–18, Arco €16–20, Ópera €12–15, vuelta al hotel €40–50) · París vie 9 Luxemburgo→Alma (€15–20) y Trocadéro→hotel (€45–55) · Roma jue 15 Vaticano→Trastevere y Trastevere→hotel · Roma vie 16 Trastevere→hotel (~€30 grande) · Florencia sáb 17 vuelta (~€30 grande) · Niza dom 18 ida y vuelta (€20–25 c/u) · Madrid mar 20 todos los tramos y mié 21 la vuelta al hotel (€8–20).
+- 🚕 Taxi: Londres Neal's Yard→Horizon 22 (£15–25) · París jue 8 todos los tramos (Montmartre €14–18, Arco €16–20, Ópera €12–15, vuelta al hotel €40–50) · París vie 9 Luxemburgo→Alma (€15–20) y Trocadéro→hotel (€45–55) · Roma jue 15 Vaticano→Trastevere y Trastevere→hotel · Roma vie 16 Trastevere→hotel (~€30 grande) · Florencia sáb 17 vuelta (~€30 grande) · Niza dom 18 ida y vuelta (€20–40 c/u, taxi o UberXL) · Madrid mar 20 todos los tramos y mié 21 la vuelta al hotel (€8–20).
 - 🚇 Transporte: Londres vuelta al hotel (taxi £70+) · París vie 9 mañana (bus + RER) · Venecia tranvía T1 · Roma vie 16 mañana (FL1 + tranvía 8) · Barcelona FGC a Sabadell (taxi €50–60).
 - Abi: la Global66 de papá en su celular (probarlo antes del viaje). Si no se puede: en Londres una Oyster (pidan el descuento Young Visitor, 50%, se activa en una estación con ella presente); en el resto, papá le paga. En Venecia una tarjeta paga por los 5.
 
@@ -344,7 +344,7 @@ _Euro €_
 - **~20:05** — **🏨 Llegan al hotel** Descansan; se quedan otra noche en el mismo hotel.
 
 **🚇 Transporte hoy:**
-- 🚕 Hoy los traslados largos van en taxi. Lo de abajo es solo si usan metro o bus. Taxi para 5: pidan uno grande (entran 5). Si no hay, 2 taxis.
+- 🚕 Hoy los traslados largos van en taxi. Lo de abajo es solo si usan metro o bus. Taxi para 5: UberXL (entran 5) o un taxi grande. Si no hay, 2 taxis.
 - 🚇 Metro y RER (tren de cercanías): NO aceptan la tarjeta del banco. En la máquina de la estación compren una tarjeta Navigo Easy (€2, una por persona) y cárguenle boletos Metro-Tren-RER (€2,55 el viaje). Quien tenga iPhone también puede comprar el boleto en la app Wallet, sin crear cuenta.
 - 👉 Pasen el boleto al entrar. En el RER, también al salir.
 - 🚌 Bus y 🚡 funicular de Montmartre: sí aceptan la Global66, acercándola al subir (€2,55).
@@ -388,7 +388,7 @@ _🇪🇺 EURO € · Última noche en París_
 - **~20:45** — **🏨 Llegan al hotel** Descansan: mañana sale el bus del tour.
 
 **🚇 Transporte hoy:**
-- 🚇 En la mañana, bus y tren. 🚕 Después, en taxi. Taxi para 5: pidan uno grande (entran 5). Si no hay, 2 taxis.
+- 🚇 En la mañana, bus y tren. 🚕 Después, en taxi. Taxi para 5: UberXL (entran 5) o un taxi grande. Si no hay, 2 taxis.
 - 🚇 Metro y RER (tren de cercanías): NO aceptan la tarjeta del banco. En la máquina de la estación compren una tarjeta Navigo Easy (€2, una por persona) y cárguenle boletos Metro-Tren-RER (€2,55 el viaje). Quien tenga iPhone también puede comprar el boleto en la app Wallet, sin crear cuenta.
 - 👉 Pasen el boleto al entrar. En el RER, también al salir.
 - 🚌 Bus y 🚡 funicular de Montmartre: sí aceptan la Global66, acercándola al subir (€2,55).
@@ -910,17 +910,17 @@ _451 km · 🇪🇺 euro €_
 - **~9:30** — **📸 Tienen 1 hora libre en Pisa: foto con la torre inclinada** 1 hora · gratis Compran algo en el Carrefour y lo comen en el bus. Tienda (única opción)Carrefour Express (supermercado) Según lo que compren 👉 Algo salado para el bus, pensando en papá. [📍 Mapa](https://www.google.com/maps/dir/?api=1&travelmode=walking&destination=Carrefour%20Express%2C%20Via%20Santa%20Maria%2077%2C%20Pisa) 🕒 Horario y dirección🕒 Horario: domingo 9:00–20:30 📍 Dirección: Via Santa Maria 77, en la calle que va a la Torre ℹ️ Único lugar abierto antes de las 10:30 un domingo cerca de la Torre; el resto abre después de que salga el bus.
 - **10:30** — **Sale el bus hacia la Costa Azul** Unas 6 h 30 de viaje, con paradas. 🥪 En la parada del bus (Autogrill), papá come algo salado; en el Carrefour de Pisa compren doble (una parte para el bus y otra para la tarde).
 - **~17:00** — **Llegan al hotel en Niza y hacen el check-in** Después de unas 8 horas de bus (y la parada en Pisa), descansan un poco antes de salir.
-- **17:35** — **🚕 Van del hotel a Port Lympia (puerto) en taxi** 🚕 Mejor taxi: unos €25 los 5 (domingo), poco más que el tranvía, y no tienen que comprar la tarjeta del tranvía. Unos 15–20 min. Pidan un UberXL (entran 5) o, en la recepción, un taxi grande. 🚋 Si prefieren tranvía🚶 5 min a pie a la parada Parc Phoenix (350 m) 🚋 Tranvía L2 → Port Lympia · unos 30 min 🎫 La tarjeta del banco no sirve: tarjeta "La Carte" (€2) + viajes "Solo" (€1,70 cada uno) en la máquina del andén. Pasarla por el lector al subir, una vez por persona. [📍 Parada Parc Phoenix](https://www.google.com/maps/dir/?api=1&travelmode=walking&destination=Parc%20Phoenix%20tram%20stop%2C%20Nice)
+- **17:35** — **🚕 Van del hotel a Port Lympia (puerto) en taxi** 🚕 Mejor taxi: unos €25–40 los 5 (taxi o UberXL, domingo), y no tienen que comprar la tarjeta del tranvía. Unos 15–20 min. Pidan un UberXL (entran 5) o, en la recepción, un taxi grande. 🚋 Si prefieren tranvía🚶 5 min a pie a la parada Parc Phoenix (350 m) 🚋 Tranvía L2 → Port Lympia · unos 30 min 🎫 La tarjeta del banco no sirve: tarjeta "La Carte" (€2) + viajes "Solo" (€1,70 cada uno) en la máquina del andén. Pasarla por el lector al subir, una vez por persona. [📍 Parada Parc Phoenix](https://www.google.com/maps/dir/?api=1&travelmode=walking&destination=Parc%20Phoenix%20tram%20stop%2C%20Nice)
 - **18:10** — **🚶 Caminan de Port Lympia a Rauba-Capeù** Rauba-Capeù (mirador junto al mar): 630 m (8 min), plano.
 - **18:20** — **⭐ Imperdible 📸 Toman fotos en las letras "I ♥ NICE" y ven el atardecer en Rauba-Capeù** 20 a 30 minutos · gratis · sin cola, va poca gente El sol se pone a las 18:44. DetalleMirador sobre el mar donde termina el Paseo de los Ingleses, junto al monumento a los caídos. Toda la Bahía de los Ángeles de frente. La Colina del Castillo no se puede: el ascensor gratis abre solo de 8:30 a 18:00. [📍 I ♥ Nice / Rauba-Capeù](https://www.google.com/maps/dir/?api=1&travelmode=walking&destination=Quai%20Rauba%20Capeu%2C%20Nice)
 - **18:50** — **🚶 Caminan de Rauba-Capeù al casco antiguo (Vieux Nice)** 1 km (14 min), parte del mismo paseo por la costa.
 - **19:05** — **🍽 Cenan comida típica de Niza: elijan una opción** Al pasoLou Pilha Leva (puesto de comida callejera) desde €3 👉 Socca (crepe salada de garbanzo), pissaladière (tarta de cebolla) y buñuelos, para los 5. [📍 Mapa](https://www.google.com/maps/dir/?api=1&travelmode=walking&destination=Lou%20Pilha%20Leva%2C%2010%20Rue%20du%20Collet%2C%20Nice) 📷 Así es 🕒 Horario y dirección🕒 Horario: domingo 11:00–22:00 📍 Dirección: 10 Rue du Collet ℹ️ Socca: crepe salada de garbanzo, buena para papá. Ver otras 3 opciones Comedor popularChez René Socca menos de €10 por persona 👉 Se pide en el mostrador, mesas largas afuera. [📍 Mapa](https://www.google.com/maps/dir/?api=1&travelmode=walking&destination=Chez%20Ren%C3%A9%20Socca%2C%202%20Rue%20Miralheti%2C%20Nice) 🕒 Horario y dirección🕒 Horario: domingo 9:00–21:00 📍 Dirección: 2 Rue Miralhéti, a 300 m de Lou Pilha Leva TiendaCarrefour Express Según lo que compren 👉 Sándwiches y agua. [📍 Mapa](https://www.google.com/maps/dir/?api=1&travelmode=walking&destination=Carrefour%20Express%2C%203%20Place%20Saint-Francois%2C%20Nice) 🕒 Horario y dirección🕒 Horario: domingo 9:00–20:00 📍 Dirección: 3-5 Place Saint-François, a 250 m Si se emocionan, sentadosChez Pipo €3,50–7,50 👉 Socca a la leña desde 1923, junto al puerto. [📍 Mapa](https://www.google.com/maps/dir/?api=1&travelmode=walking&destination=Chez%20Pipo%2C%2013%20Rue%20Bavastro%2C%20Nice) 🕒 Horario y dirección🕒 Horario: domingo 17:30–22:00 📍 Dirección: 13 Rue Bavastro, a 4 min del tranvía Port Lympia
 - **20:05** — **Ven la Place Masséna y el espejo de agua, de noche** 15 minutos · gratis La plaza central de Niza (8 min a pie desde Lou Pilha Leva) tiene estatuas iluminadas que cambian de color. ▸ más detalleAl lado está el espejo de agua, con chorros iluminados que se pueden caminar, hasta las 21:00. [📍 Place Masséna](https://www.google.com/maps/dir/?api=1&travelmode=walking&destination=Place%20Mass%C3%A9na%2C%20Nice) [📍 Espejo de agua](https://www.google.com/maps/dir/?api=1&travelmode=walking&destination=Miroir%20d%27eau%2C%20Promenade%20du%20Paillon%2C%20Nice)
-- **20:25** — **🚕 Vuelven al hotel en taxi** 🚕 Mejor taxi: unos €20–25 los 5. Unos 15 min. Pidan un UberXL o llamen al ☎ +33 4 93 13 78 78 (también WhatsApp) desde la plaza. 🚋 Si prefieren tranvía🚶 670 m a la parada Jean Médecin 🚋 Tranvía L2 → Parc Phoenix · unos 20 min 🚶 350 m al hotel
+- **20:25** — **🚕 Vuelven al hotel en taxi** 🚕 Mejor taxi: unos €20–35 los 5 (taxi o UberXL). Unos 15 min. Pidan un UberXL o llamen al ☎ +33 4 93 13 78 78 (también WhatsApp) desde la plaza. 🚋 Si prefieren tranvía🚶 670 m a la parada Jean Médecin 🚋 Tranvía L2 → Parc Phoenix · unos 20 min 🚶 350 m al hotel
 - **~20:45** — **🧳 Llegan al hotel y empacan todo** Única noche en este hotel.
 
 **🚇 Transporte hoy:**
-- 🚕 Hoy van en taxi. Lo de abajo es solo si usan el tranvía. Taxi para 5: pidan uno grande (entran 5). Si no hay, 2 taxis.
+- 🚕 Hoy van en taxi. Lo de abajo es solo si usan el tranvía. Taxi para 5: UberXL (entran 5) o un taxi grande. Si no hay, 2 taxis.
 - 🚋 Tranvía: NO se acerca la tarjeta. En la máquina del andén (acepta tarjeta) compren la tarjeta "La Carte" (€2) y cárguenle viajes "Solo" (€1,70 cada uno), o usen la app Lignes d'Azur Tickets. Pásenla por el lector al subir, una vez por persona.
 - ⚠️ Sin boleto: multa de €60.
 - 🚕 Taxi: UberXL (hasta 6 personas) o ☎/WhatsApp +33 4 93 13 78 78 (Taxi Nice Riviera, taxis de 5 a 7 plazas: digan que son 5).
@@ -938,7 +938,7 @@ _451 km · 🇪🇺 euro €_
 > Por qué y qué hacenRequiere reserva con franja horaria fija en opapisa.it y solo tienen una hora de parada. Menores de 8 no suben, de 8 a 18 solo acompañados.
 > Hacen la foto clásica "sosteniendo" la torre en la Piazza dei Miracoli, gratis.
 
-> 💰 Llevar: unos €40-50/persona. Almuerzo en Pisa (unos €8), su parte de los taxis (unos €10), cena en Niza (socca unos €3–8 por persona).
+> 💰 Llevar: unos €40-50/persona. Almuerzo en Pisa (unos €8), su parte de los taxis (unos €10–15), cena en Niza (socca unos €3–8 por persona).
 
 > 🏨 Duermen en Greet Hotel Nice Aéroport, 385 Promenade des Anglais, Niza, ☎ +33 4 93 71 72 13 — 1 noche, junto al aeropuerto. Tranvía L2 (parada Parc Phoenix, 350 m) a Jean Médecin, 20 min, €1,70 por viaje.
 
