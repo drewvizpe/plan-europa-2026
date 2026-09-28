@@ -80,12 +80,13 @@ Italia/Francia/España = Lima +7 h. Llamar en horario del restaurante (hora de a
 
 Si la reserva ya está hecha, el cuadro de "Reservas y entradas" dirá ✅.
 
-## Pendientes ANTES de salir (estado al 22 sep)
+## Pendientes ANTES de salir (estado al 28 sep)
+- **Global66 (28 sep):** mamá no pasa la verificación de la tarjeta virtual (sigue intentando); papá tiene cuenta, falta la virtual; Anddy la saca esta semana; Abi no tiene (usa la de papá o Oyster £10).
 - **Vie 25 sep, en casa de los papás: Global66 de todos.** Andrew, mamá, papá y Anddy abren su cuenta (app Global66, DNI, mayores de 18), piden la tarjeta virtual y la agregan a Google Wallet. Papá agrega además su Global66 en el celular de Abi. Prueba: cargar S/ 10 y pagar algo acercando el celular en una bodega, con cada celular.
 - **Vie 25 sep: eSIM Airalo** instalada en el celular de papá (con WiFi), dejarla apagada hasta el 5 oct.
 - **Casa de Julieta:** comprar en verona.midaticket.it el día que aparezca octubre (franja de las 16:00; 3 × €12 + 2 × €5 = €46). Revisar cada día.
 - **Ostaria Da Rioba:** ✅ reservado mar 13 oct 21:00 (tranvía 20:20, vuelta ~23:15).
-- **Torta de Abi:** pedida a Da Rioba por correo el 28 sep (torta o postre con vela, "Abi 15 anni"); esperando respuesta. Si no contestan, llamar +39 041 524 4379.
+- **Torta de Abi:** pedida a Da Rioba por correo el 28 sep (torta o postre con vela, "Abi 15 anni"); esperando respuesta. Si no se puede: tiramisú de su carta + la vela que llevan de Lima.
 - **Vaticano (jue 15 oct):** hora y punto de encuentro los da el guía el día anterior; ya no se le pregunta a Anahí. Contexto 18 sep: el itinerario anclado en la web y el de papel dicen el orden AL REVÉS (web: Vaticano primero y "Roma Barroca" por la tarde-noche; papel: Roma Barroca primero y Vaticano 16:30). Anahí manda el itinerario firme; hasta tenerlo, el Día 12 sigue con Vaticano ~16:30 como estimado. Solución (18 sep): el Panteón se pasa al **viernes 16 a las 10:00** (entradas ya cambiadas el 18 sep); el jueves queda solo Trevi (entrada abierta) y el Vaticano a la hora que diga la agencia. Los viernes el acceso al borde de la Fontana di Trevi abre recién 11:30, por eso Trevi se queda el jueves. Trevi no tiene hora. "Roma Barroca" es una excursión opcional que NO contrataron: esa parte la hacen por su cuenta.
 - **Revisión en familia:** pantalla "Revisar en familia" de la web (👍/✘) y mandar la lista a Andrew.
 - **Imprimir:** ✅ PDFs enviados a papá el 18 sep.
@@ -658,7 +659,7 @@ _🎉 QUINCEAÑERA · 550 km · 🇪🇺 EURO € (todo el día) · 🎀 Feliz Q
 > Recomendado: la góndola la mañana del Día 11, antes de salir a Roma — €90, luz plena, y el Día 10 menos apretado.
 > Plan para las dos fotos: primero sube sola la quinceañera, los demás le toman la foto desde el muelle; luego suben los otros cuatro. Avísenle al gondolero antes: "È il suo compleanno di 15 anni. Possiamo fare qualche foto con lei da sola prima di salire tutti?"
 
-> 🎀 Tiara y vela: llévenlas desde Lima. Torta: pedida a Da Rioba por correo (esperando respuesta).
+> 🎀 Tiara y vela: llévenlas desde Lima. Torta: pedida a Da Rioba por correo (esperando respuesta). Si no se puede, tiramisú de su carta + la vela.
 > Dónde comprar y frase para el restauranteGlobos: llévenlos desde Lima, desinflados. Flores: si ven una florería abierta cerca de la estación Santa Lucia, ramo pequeño €10–20. Tarjeta: cualquier tabaccheria (tienda de tabaco con una T en el letrero). Pídanle al restaurante que decore la mesa: "È il compleanno di 15 anni di mia figlia. Potete decorare il tavolo?"
 
 > 🌊 Acqua Alta (marea alta, de octubre a enero): el mar puede cubrir plazas y calles 5-20 cm. No es peligroso: los venecianos la viven cada año. Ponen pasarelas de madera y venden botas plásticas unos €10 en cualquier tienda. App "Acqua Alta Venezia".
