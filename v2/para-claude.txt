@@ -87,7 +87,7 @@ Decidido el 28 sep: la única reserva de comida que importa es la cena del cumpl
 - **Casa de Julieta:** ✅ comprada el 1 oct: 5 entradas para el mar 13 oct a las 16:00 (3 casa + balcón, 2 patio), nominativas: llevar los 5 pasaportes. Imprimir ENTRADAS_CASA_JULIETA.pdf o mostrar el QR del correo.
 - **Ostaria Da Rioba:** ✅ reservado mar 13 oct 21:00 (tranvía T1 de las 20:19, vuelta ~23:15).
 - **HOJA_EMERGENCIA:** ✅ nombre revisado (29 sep): «Andrew Manuel Martín Caycho» es correcto; el billete omite «Martín» y no hay problema. Ya se puede imprimir.
-- **Torta de Abi:** pedida a Da Rioba por correo el 28 sep (torta o postre con vela, "Abi 15 anni"); esperando respuesta. Si no se puede: tiramisú de su carta + la vela que llevan de Lima.
+- **Torta de Abi:** ✅ decidido (3 oct): Da Rioba no respondió; piden un postre de la carta (tiramisú) y ponen las velas que llevan de Lima.
 - **Vaticano (jue 15 oct):** hora y punto de encuentro los da el guía el día anterior; ya no se le pregunta a Anahí. Contexto 18 sep: el itinerario anclado en la web y el de papel dicen el orden AL REVÉS (web: Vaticano primero y "Roma Barroca" por la tarde-noche; papel: Roma Barroca primero y Vaticano 16:30). Hasta que el guía dé la hora, el Día 12 sigue con Vaticano ~16:30 como estimado. Solución (18 sep): el Panteón se pasa al **viernes 16 a las 10:00** (entradas ya cambiadas el 18 sep); el jueves queda solo Trevi (entrada abierta) y el Vaticano a la hora que diga la agencia. Los viernes el acceso al borde de la Fontana di Trevi abre recién 11:30, por eso Trevi se queda el jueves. Trevi no tiene hora. "Roma Barroca" es una excursión opcional que NO contrataron: esa parte la hacen por su cuenta.
 - **Revisión en familia:** pantalla "Revisar en familia" de la web (👍/✘) y mandar la lista a Andrew.
 - **Imprimir:** ✅ PDFs enviados a papá el 18 sep. La entrada de Horizon 22 (ENTRADAS_HORIZON22.pdf, 28 sep) es posterior: basta el QR del correo de Andrew; imprimirla solo si quieren papel. La Casa de Julieta (comprada el 1 oct): ENTRADAS_CASA_JULIETA.pdf, 5 páginas.
@@ -95,7 +95,7 @@ Decidido el 28 sep: la única reserva de comida que importa es la cena del cumpl
 ## Pendientes y cómo resolverlos durante el viaje
 - **Verona (13 oct):** parada 14:30–17:00 en Piazza Bra (documento de la agencia). Casa de Julieta: franja de las 16:00. Innsbruck–Verona son 271 km, más de 3 h en bus: la llegada real es ~15:30–15:45, no 14:30.
 - **Vaticano (jue 15 oct, por la tarde):** hora y punto de encuentro los dice el guía el día anterior. De Piazza Navona a la entrada de los Museos Vaticanos: 2,3 km, 31 min a pie por el camino directo; siguiendo el paseo del Día 12 (Campo de' Fiori, Ponte Sant'Angelo y Piazza San Pietro) son unos 44 min sin contar paradas. Si se atrasan, taxi desde Navona (10 min).
-- **Torta de Abi (13 oct):** pedida a Da Rioba por correo el 28 sep, esperando respuesta. Si no se puede: el tiramisú de su carta + la vela que llevan de Lima. Las pastelerías de Venecia no sirven ese día: llegan a Piazzale Roma recién ~20:30 y ya cerraron (**Pasticceria Dal Mas**, Lista di Spagna 150, abre 6:30–19:30, el correo de Andrew · +39 041 715 101; **Tonolo**, Calle San Pantalon 3764, Dorsoduro, martes 7:30–20:00 según guías, +39 041 5237209).
+- **Torta de Abi (13 oct):** postre de la carta de Da Rioba (tiramisú) + velas desde Lima.
 
 ## 🎫 Cómo pagar el transporte sin multas (explicárselo a la familia así de simple)
 ✅ = pasar la tarjeta o el billete · ❌ = no hacer nada
@@ -666,7 +666,7 @@ _🎉 QUINCEAÑERA · 550 km · 🇪🇺 EURO € (todo el día) · 🎀 Feliz Q
 > Recomendado: la góndola la mañana del Día 11, antes de salir a Roma — €90, luz plena, y el Día 10 menos apretado.
 > Plan para las dos fotos: primero sube sola la quinceañera, los demás le toman la foto desde el muelle; luego suben los otros cuatro. Avísenle al gondolero antes: "È il suo compleanno di 15 anni. Possiamo fare qualche foto con lei da sola prima di salire tutti?"
 
-> 🎀 Tiara y vela: llévenlas desde Lima. Torta: pedida a Da Rioba por correo (esperando respuesta). Si no se puede, tiramisú de su carta + la vela.
+> 🎀 Tiara y vela: llévenlas desde Lima. Torta: un postre de la carta de Da Rioba (tiramisú) + las velas que llevan de Lima.
 > Dónde comprar y frase para el restauranteGlobos: llévenlos desde Lima, desinflados. Flores: si ven una florería abierta cerca de la estación Santa Lucia, ramo pequeño €10–20. Tarjeta: cualquier tabaccheria (tienda de tabaco con una T en el letrero). Pídanle al restaurante que decore la mesa: "È il compleanno di 15 anni di mia figlia. Potete decorare il tavolo?"
 
 > 🌊 Acqua Alta (marea alta, de octubre a enero): el mar puede cubrir plazas y calles 5-20 cm. No es peligroso: los venecianos la viven cada año. Ponen pasarelas de madera y venden botas plásticas unos €10 en cualquier tienda. App "Acqua Alta Venezia".
